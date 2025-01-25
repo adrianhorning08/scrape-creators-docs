@@ -1,27 +1,56 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { createPortal } from 'react-dom';
-import { ChevronDown, Play, Triangle as TriangleExclamation, ChevronRight, Copy, Check } from 'lucide-react';
-import CodeBlock from './CodeBlock';
-import { apis } from '../constants/apis';
-import { formatJson } from '../utils/jsonFormatter';
+import React, { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
+import CodeMirror from "@uiw/react-codemirror";
+import { githubDark } from "@uiw/codemirror-theme-github";
+import { json } from "@codemirror/lang-json";
+import {
+  ChevronDown,
+  Play,
+  Triangle as TriangleExclamation,
+  ChevronRight,
+  Copy,
+  Check,
+} from "lucide-react";
+import CodeBlock from "./CodeBlock";
+import { apis } from "../constants/apis";
 
 export default function TryEndpoint({ isOpen, onClose, endpoint }) {
   const [selectedEndpoint, setSelectedEndpoint] = useState(() => {
-    const api = apis.find(api => api.endpoints.some(ep => ep.path === endpoint.path));
-    const foundEndpoint = api?.endpoints.find(ep => ep.path === endpoint.path);
+    const api = apis.find((api) =>
+      api.endpoints.some((ep) => ep.path === endpoint.path)
+    );
+    const foundEndpoint = api?.endpoints.find(
+      (ep) => ep.path === endpoint.path
+    );
     return foundEndpoint || endpoint;
   });
+
+  // Update selectedEndpoint when endpoint prop changes
+  useEffect(() => {
+    const api = apis.find((api) =>
+      api.endpoints.some((ep) => ep.path === endpoint.path)
+    );
+    const foundEndpoint = api?.endpoints.find(
+      (ep) => ep.path === endpoint.path
+    );
+    setSelectedEndpoint(foundEndpoint || endpoint);
+  }, [endpoint]);
+
   const [showEndpointDropdown, setShowEndpointDropdown] = useState(false);
   const [formState, setFormState] = useState({
-    apiKey: '',
-    params: selectedEndpoint?.params?.reduce((acc, param) => ({
-      ...acc,
-      [param.name]: ''
-    }), {}) || {}
+    apiKey: "",
+    params:
+      selectedEndpoint?.params?.reduce(
+        (acc, param) => ({
+          ...acc,
+          [param.name]: "",
+        }),
+        {}
+      ) || {},
   });
   const [expandedSections, setExpandedSections] = useState({
     authorization: true,
-    query: true
+    query: true,
   });
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -30,20 +59,24 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
   const formRef = useRef(null);
 
   const toggleSection = (section) => {
-    setExpandedSections(prev => ({
+    setExpandedSections((prev) => ({
       ...prev,
-      [section]: !prev[section]
+      [section]: !prev[section],
     }));
   };
 
   // Update form state when endpoint changes
   useEffect(() => {
-    setFormState(prev => ({
+    setFormState((prev) => ({
       ...prev,
-      params: selectedEndpoint?.params?.reduce((acc, param) => ({
-        ...acc,
-        [param.name]: ''
-      }), {}) || {}
+      params:
+        selectedEndpoint?.params?.reduce(
+          (acc, param) => ({
+            ...acc,
+            [param.name]: "",
+          }),
+          {}
+        ) || {},
     }));
   }, [selectedEndpoint]);
 
@@ -54,15 +87,21 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
 
     // Validate required fields
     if (!formState.apiKey) {
-      setError('API key is required');
+      setError("API key is required");
       setIsLoading(false);
       return;
     }
 
-    const requiredParams = endpoint.params?.filter(p => p.required) || [];
-    const missingParams = requiredParams.filter(p => !formState.params[p.name]);
+    const requiredParams = endpoint.params?.filter((p) => p.required) || [];
+    const missingParams = requiredParams.filter(
+      (p) => !formState.params[p.name]
+    );
     if (missingParams.length > 0) {
-      setError(`Required parameters missing: ${missingParams.map(p => p.name).join(', ')}`);
+      setError(
+        `Required parameters missing: ${missingParams
+          .map((p) => p.name)
+          .join(", ")}`
+      );
       setIsLoading(false);
       return;
     }
@@ -72,21 +111,23 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
       const queryString = Object.entries(formState.params)
         .filter(([_, value]) => value)
         .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
-        .join('&');
+        .join("&");
 
-      const url = `https://api.scrapecreators.com${selectedEndpoint.path}${queryString ? `?${queryString}` : ''}`;
-      
+      const url = `https://api.scrapecreators.com${selectedEndpoint.path}${
+        queryString ? `?${queryString}` : ""
+      }`;
+
       const response = await fetch(url, {
         method: selectedEndpoint.method,
         headers: {
-          'x-api-key': formState.apiKey
-        }
+          "x-api-key": formState.apiKey,
+        },
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || 'Request failed');
+        throw new Error(data.message || "Request failed");
       }
 
       setResponseData(data);
@@ -98,7 +139,7 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSend();
     }
@@ -109,11 +150,11 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
   return createPortal(
     <div className="fixed inset-0 z-[100]">
       {/* Backdrop */}
-      <div 
+      <div
         className="fixed inset-0 bg-gray-900/50 backdrop-blur-sm"
         onClick={onClose}
       />
-      
+
       {/* Modal */}
       <div className="fixed inset-4 sm:inset-6 md:inset-8 bg-background-light dark:bg-background-dark rounded-xl shadow-2xl ring-1 ring-gray-200/5 dark:ring-gray-800/50 overflow-hidden">
         <div className="flex flex-col mx-auto max-w-screen-xl transform overflow-hidden">
@@ -121,78 +162,88 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
             <div className="flex items-center justify-between gap-x-2 mb-5">
               {/* Method Selector */}
               <div className="relative">
-              <button 
-                type="button" 
-                onClick={() => setShowEndpointDropdown(!showEndpointDropdown)}
-                className="group bg-background-light dark:bg-background-dark disabled:pointer-events-none [&>span]:line-clamp-1 rounded-lg overflow-hidden group outline-none items-center py-0.5 gap-1 text-sm text-zinc-950/50 dark:text-white/50 group-hover:text-zinc-950/70 dark:group-hover:text-white/70 hidden lg:block"
-              >
-                <div className="flex items-center gap-x-2 border-standard rounded-xl p-1.5 pr-3 min-w-80 hover:bg-gray-50 dark:hover:bg-white/5">
-                  <div className={`rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 dark:bg-green-400/20 dark:text-green-400 text-white bg-[#2AB673]`}>
-                    {selectedEndpoint.method}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    {(() => {
-                      const api = apis.find(api => api.endpoints.some(ep => ep.path === selectedEndpoint.path));
-                      if (api?.icon) {
-                        const Icon = api.icon;
-                        return <Icon className="w-4 h-4" />;
-                      }
-                      return null;
-                    })()}
-                  <div className="flex-1 text-left text-sm font-medium text-gray-900 dark:text-white truncate">
-                    {selectedEndpoint.name}
-                  </div>
-                  </div>
-                  <div>
-                    <ChevronDown className="w-4 h-4 text-gray-500 dark:text-gray-400" />
-                  </div>
-                </div>
-              </button>
-              
-              {showEndpointDropdown && (
-                <div className="absolute z-50 mt-2 w-full bg-background-light dark:bg-background-dark rounded-xl border-standard shadow-lg overflow-hidden">
-                  <div className="max-h-[300px] overflow-y-auto">
-                    {apis.map((api) => (
-                      <div key={api.id}>
-                        <div className="px-3 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-white/5 flex items-center gap-2">
-                          <api.icon className="w-4 h-4" />
-                          {api.name}
-                        </div>
-                        {api.endpoints.map((ep) => (
-                          <button
-                            key={ep.path}
-                            onClick={() => {
-                              setSelectedEndpoint(ep);
-                              setShowEndpointDropdown(false);
-                            }}
-                            className="w-full flex items-center px-3 py-2 hover:bg-gray-50 dark:hover:bg-white/5"
-                          >
-                            <div className={`rounded-lg font-bold px-1.5 py-0.5 text-xs leading-5 ${
-                              ep.method === 'GET'
-                                ? 'bg-green-400/20 text-green-700 dark:bg-green-400/20 dark:text-green-400'
-                                : ep.method === 'POST'
-                                ? 'bg-blue-400/20 text-blue-700 dark:bg-blue-400/20 dark:text-blue-400'
-                                : ep.method === 'PUT'
-                                ? 'bg-yellow-400/20 text-yellow-700 dark:bg-yellow-400/20 dark:text-yellow-400'
-                                : 'bg-red-400/20 text-red-700 dark:bg-red-400/20 dark:text-red-400'
-                            } mr-2`}>
-                              {ep.method}
-                            </div>
-                            <span className="text-sm text-gray-900 dark:text-white">
-                              {ep.name}
-                            </span>
-                          </button>
-                        ))}
+                <button
+                  type="button"
+                  onClick={() => setShowEndpointDropdown(!showEndpointDropdown)}
+                  className="group bg-background-light dark:bg-background-dark disabled:pointer-events-none [&>span]:line-clamp-1 rounded-lg overflow-hidden group outline-none items-center py-0.5 gap-1 text-sm text-zinc-950/50 dark:text-white/50 group-hover:text-zinc-950/70 dark:group-hover:text-white/70 hidden lg:block"
+                >
+                  <div className="flex items-center gap-x-2 border-standard rounded-xl p-1.5 pr-3 min-w-80 hover:bg-gray-50 dark:hover:bg-white/5">
+                    <div
+                      className={`rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 dark:bg-green-400/20 dark:text-green-400 text-white bg-[#2AB673]`}
+                    >
+                      {selectedEndpoint.method}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      {(() => {
+                        const api = apis.find((api) =>
+                          api.endpoints.some(
+                            (ep) => ep.path === selectedEndpoint.path
+                          )
+                        );
+                        if (api?.icon) {
+                          const Icon = api.icon;
+                          return <Icon className="w-4 h-4" />;
+                        }
+                        return null;
+                      })()}
+                      <div className="flex-1 text-left text-sm font-medium text-gray-900 dark:text-white truncate">
+                        {selectedEndpoint.name}
                       </div>
-                    ))}
+                    </div>
+                    <div>
+                      <ChevronDown className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                    </div>
                   </div>
-                </div>
-              )}
+                </button>
+
+                {showEndpointDropdown && (
+                  <div className="absolute z-50 mt-2 w-full bg-background-light dark:bg-background-dark rounded-xl border-standard shadow-lg overflow-hidden">
+                    <div className="max-h-[300px] overflow-y-auto">
+                      {apis.map((api) => (
+                        <div key={api.id}>
+                          <div className="px-3 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-white/5 flex items-center gap-2">
+                            <api.icon className="w-4 h-4" />
+                            {api.name}
+                          </div>
+                          {api.endpoints.map((ep) => (
+                            <button
+                              key={ep.path}
+                              onClick={() => {
+                                setSelectedEndpoint(ep);
+                                setShowEndpointDropdown(false);
+                              }}
+                              className="w-full flex items-center px-3 py-2 hover:bg-gray-50 dark:hover:bg-white/5"
+                            >
+                              <div
+                                className={`rounded-lg font-bold px-1.5 py-0.5 text-xs leading-5 ${
+                                  ep.method === "GET"
+                                    ? "bg-green-400/20 text-green-700 dark:bg-green-400/20 dark:text-green-400"
+                                    : ep.method === "POST"
+                                    ? "bg-blue-400/20 text-blue-700 dark:bg-blue-400/20 dark:text-blue-400"
+                                    : ep.method === "PUT"
+                                    ? "bg-yellow-400/20 text-yellow-700 dark:bg-yellow-400/20 dark:text-yellow-400"
+                                    : "bg-red-400/20 text-red-700 dark:bg-red-400/20 dark:text-red-400"
+                                } mr-2`}
+                              >
+                                {ep.method}
+                              </div>
+                              <span className="text-sm text-gray-900 dark:text-white">
+                                {ep.name}
+                              </span>
+                            </button>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* URL Display */}
               <div className="relative flex-1 flex gap-2 min-w-0 rounded-xl items-center cursor-pointer p-1.5 border-standard bg-gray-50 dark:bg-white/5">
-                <div className={`rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 bg-green-400/20 text-green-700 dark:bg-green-400/20 dark:text-green-400`}>
+                <div
+                  className={`rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 bg-green-400/20 text-green-700 dark:bg-green-400/20 dark:text-green-400`}
+                >
                   {selectedEndpoint.method}
                 </div>
                 <div className="flex items-center space-x-2 overflow-x-auto flex-1 no-scrollbar">
@@ -206,7 +257,7 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
               </div>
 
               {/* Send Button */}
-              <button 
+              <button
                 onClick={handleSend}
                 disabled={isLoading}
                 className="flex items-center justify-center px-3 h-9 text-white font-medium rounded-xl mouse-pointer disabled:opacity-70 hover:opacity-80 gap-1.5 bg-[#2AB673] w-24"
@@ -237,8 +288,8 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
                 {/* Authorization Section */}
                 <div className="space-y-2 mt-6">
                   <div>
-                    <button 
-                      onClick={() => toggleSection('authorization')}
+                    <button
+                      onClick={() => toggleSection("authorization")}
                       className="flex w-full px-4 py-2.5 items-center justify-between border-standard cursor-pointer hover:bg-gray-50 dark:hover:bg-white/5 !border-b-0 border-t border-x rounded-t-2xl relative"
                     >
                       <div className="flex items-center gap-x-2.5">
@@ -259,50 +310,57 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
                     </button>
                     {expandedSections.authorization && (
                       <div className="bg-background-light dark:bg-background-dark flex-1 px-4 rounded-b-xl border-standard !border-t-0 divide-y divide-gray-100 dark:divide-white/10">
-                      <div className="flex space-x-3 items-start">
-                        <div className="flex-1 grid lg:grid-cols-2 gap-x-12 gap-y-4 py-5">
-                          <div className="space-y-2">
-                            <div className="flex items-center justify-between font-mono font-bold">
-                              <div className="flex flex-wrap items-center gap-2 text-xs truncate">
-                                <div className="text-sm truncate">
-                                  <span className="font-semibold text-gray-900 dark:text-gray-100">x-api-key</span>
+                        <div className="flex space-x-3 items-start">
+                          <div className="flex-1 grid lg:grid-cols-2 gap-x-12 gap-y-4 py-5">
+                            <div className="space-y-2">
+                              <div className="flex items-center justify-between font-mono font-bold">
+                                <div className="flex flex-wrap items-center gap-2 text-xs truncate">
+                                  <div className="text-sm truncate">
+                                    <span className="font-semibold text-gray-900 dark:text-gray-100">
+                                      x-api-key
+                                    </span>
+                                  </div>
+                                  <div className="relative flex items-center px-2 py-0.5 rounded-md bg-gray-100/50 dark:bg-white/5 text-gray-600 dark:text-gray-300 font-medium">
+                                    <div>string</div>
+                                  </div>
+                                  <span className="px-2 py-0.5 rounded-md bg-red-100/50 dark:bg-red-400/10 text-red-600 dark:text-red-300 font-medium">
+                                    required
+                                  </span>
                                 </div>
-                                <div className="relative flex items-center px-2 py-0.5 rounded-md bg-gray-100/50 dark:bg-white/5 text-gray-600 dark:text-gray-300 font-medium">
-                                  <div>string</div>
-                                </div>
-                                <span className="px-2 py-0.5 rounded-md bg-red-100/50 dark:bg-red-400/10 text-red-600 dark:text-red-300 font-medium">
-                                  required
-                                </span>
+                              </div>
+                              <div className="prose prose-sm prose-gray dark:prose-invert text-gray-500 dark:text-gray-400">
+                                <p className="whitespace-pre-line">
+                                  Your Scrape Creators API key
+                                </p>
                               </div>
                             </div>
-                            <div className="prose prose-sm prose-gray dark:prose-invert text-gray-500 dark:text-gray-400">
-                              <p className="whitespace-pre-line">Your Scrape Creators API key</p>
+                            <div className="grid grid-cols-1 w-full items-start divide-y divide-gray-50 dark:divide-white/5">
+                              <input
+                                className="flex-1 min-w-0 bg-transparent outline-none text-gray-900 dark:text-white px-2 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 focus:border-primary dark:focus:border-primary-light"
+                                placeholder="enter api key"
+                                type="text"
+                                value={formState.apiKey}
+                                onKeyDown={handleKeyDown}
+                                onChange={(e) =>
+                                  setFormState((prev) => ({
+                                    ...prev,
+                                    apiKey: e.target.value,
+                                  }))
+                                }
+                              />
                             </div>
-                          </div>
-                          <div className="grid grid-cols-1 w-full items-start divide-y divide-gray-50 dark:divide-white/5">
-                            <input
-                              className="flex-1 min-w-0 bg-transparent outline-none text-gray-900 dark:text-white px-2 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 focus:border-primary dark:focus:border-primary-light"
-                              placeholder="enter api key"
-                              type="text"
-                              value={formState.apiKey}
-                              onKeyDown={handleKeyDown}
-                              onChange={(e) => setFormState(prev => ({
-                                ...prev,
-                                apiKey: e.target.value
-                              }))}
-                            />
                           </div>
                         </div>
                       </div>
-                    </div>)}
+                    )}
                   </div>
                 </div>
 
                 {/* Query Parameters Section */}
                 <div className="space-y-2 mt-6">
                   <div>
-                    <button 
-                      onClick={() => toggleSection('query')}
+                    <button
+                      onClick={() => toggleSection("query")}
                       className="flex w-full px-4 py-2.5 items-center justify-between border-standard cursor-pointer hover:bg-gray-50 dark:hover:bg-white/5 !border-b-0 border-t border-x rounded-t-2xl relative"
                     >
                       <div className="flex items-center gap-x-2.5">
@@ -323,48 +381,59 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
                     </button>
                     {expandedSections.query && (
                       <div className="bg-background-light dark:bg-background-dark flex-1 px-4 rounded-b-xl border-standard !border-t-0 divide-y divide-gray-100 dark:divide-white/10">
-                      {selectedEndpoint.params?.map((param) => (
-                        <div key={param.name} className="flex space-x-3 items-start">
-                          <div className="flex-1 grid lg:grid-cols-2 gap-x-12 gap-y-4 py-5">
-                            <div className="space-y-2">
-                              <div className="flex items-center justify-between font-mono font-bold">
-                                <div className="flex flex-wrap items-center gap-2 text-xs truncate">
-                                  <div className="text-sm truncate">
-                                    <span className="font-semibold text-gray-900 dark:text-gray-100">{param.name}</span>
+                        {selectedEndpoint.params?.map((param) => (
+                          <div
+                            key={param.name}
+                            className="flex space-x-3 items-start py-5"
+                          >
+                            <div className="flex-1 grid lg:grid-cols-2 gap-x-12 gap-y-4 py-5">
+                              <div className="space-y-2">
+                                <div className="flex items-center justify-between font-mono font-bold">
+                                  <div className="flex flex-wrap items-center gap-2 text-xs truncate">
+                                    <div className="text-sm truncate">
+                                      <span className="font-semibold text-gray-900 dark:text-gray-100">
+                                        {param.name}
+                                      </span>
+                                    </div>
+                                    <div className="relative flex items-center px-2 py-0.5 rounded-md bg-gray-100/50 dark:bg-white/5 text-gray-600 dark:text-gray-300 font-medium">
+                                      <div>{param.type}</div>
+                                    </div>
+                                    {param.required && (
+                                      <span className="px-2 py-0.5 rounded-md bg-red-100/50 dark:bg-red-400/10 text-red-600 dark:text-red-300 font-medium">
+                                        required
+                                      </span>
+                                    )}
                                   </div>
-                                  <div className="relative flex items-center px-2 py-0.5 rounded-md bg-gray-100/50 dark:bg-white/5 text-gray-600 dark:text-gray-300 font-medium">
-                                    <div>{param.type}</div>
-                                  </div>
-                                  {param.required && (
-                                    <span className="px-2 py-0.5 rounded-md bg-red-100/50 dark:bg-red-400/10 text-red-600 dark:text-red-300 font-medium">
-                                      required
-                                    </span>
-                                  )}
+                                </div>
+                                <div className="prose prose-sm prose-gray dark:prose-invert text-gray-500 dark:text-gray-400">
+                                  <p className="whitespace-pre-line">
+                                    {param.description}
+                                  </p>
                                 </div>
                               </div>
-                              <div className="prose prose-sm prose-gray dark:prose-invert text-gray-500 dark:text-gray-400">
-                                <p className="whitespace-pre-line">{param.description}</p>
+                              <div className="grid grid-cols-1 w-full items-start divide-y divide-gray-50 dark:divide-white/5">
+                                <input
+                                  className="flex-1 min-w-0 bg-transparent outline-none text-gray-900 dark:text-white px-2 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 focus:border-primary dark:focus:border-primary-light"
+                                  placeholder={`enter ${param.name}`}
+                                  type={
+                                    param.type === "integer" ? "number" : "text"
+                                  }
+                                  value={formState.params[param.name] || ""}
+                                  onKeyDown={handleKeyDown}
+                                  onChange={(e) =>
+                                    setFormState((prev) => ({
+                                      ...prev,
+                                      params: {
+                                        ...prev.params,
+                                        [param.name]: e.target.value,
+                                      },
+                                    }))
+                                  }
+                                />
                               </div>
                             </div>
-                            <div className="grid grid-cols-1 w-full items-start divide-y divide-gray-50 dark:divide-white/5">
-                              <input
-                                className="flex-1 min-w-0 bg-transparent outline-none text-gray-900 dark:text-white px-2 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 focus:border-primary dark:focus:border-primary-light"
-                                placeholder={`enter ${param.name}`}
-                                type={param.type === 'integer' ? 'number' : 'text'}
-                                value={formState.params[param.name] || ''}
-                                onKeyDown={handleKeyDown}
-                                onChange={(e) => setFormState(prev => ({
-                                  ...prev, 
-                                  params: { 
-                                    ...prev.params,
-                                    [param.name]: e.target.value
-                                  }
-                                }))}
-                              />
-                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
                       </div>
                     )}
                   </div>
@@ -382,51 +451,69 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
                           {error ? (
                             <>
                               <TriangleExclamation className="w-3.5 h-3.5 text-red-500" />
-                              <div className="text-xs text-gray-200 font-medium">Error</div>
+                              <div className="text-xs text-gray-200 font-medium">
+                                Error
+                              </div>
                             </>
                           ) : (
                             <>
                               <div className="w-2 h-2 rounded-full bg-green-500" />
-                              <div className="text-xs text-gray-200 font-medium">Response</div>
+                              <div className="text-xs text-gray-200 font-medium">
+                                Response
+                              </div>
                             </>
                           )}
                         </div>
+                      </div>
+                      <div className="">
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            navigator.clipboard.writeText(
+                              JSON.stringify(responseData, null, 2)
+                            );
+                            setCopied(true);
+                            setTimeout(() => setCopied(false), 2000);
+                          }}
+                          type="button"
+                          className="p-1.5 hover:bg-gray-800/50 rounded-md group relative"
+                        >
+                          {copied ? (
+                            <Check className="w-4 h-4 text-green-400" />
+                          ) : (
+                            <Copy className="w-4 h-4 text-gray-400 group-hover:text-gray-300" />
+                          )}
+                          <div className="absolute right-0 top-full mt-1 hidden group-hover:block text-xs bg-gray-800 text-white px-2 py-1 rounded whitespace-nowrap">
+                            {copied ? "Copied!" : "Copy response"}
+                          </div>
+                        </button>
                       </div>
                     </div>
                     <div className="bg-response-body-dark rounded-b-xl overflow-auto">
                       {error ? (
                         <div className="pb-8 pt-10 px-6 space-y-4 flex flex-col items-center">
                           <TriangleExclamation className="h-8 w-8 text-white/20" />
-                          <div className="text-sm text-center text-white">{error}</div>
+                          <div className="text-sm text-center text-white">
+                            {error}
+                          </div>
                         </div>
                       ) : (
                         <div className="relative">
-                          <div className="absolute right-2 top-2">
-                            <button
-                              onClick={(e) => {
-                                e.preventDefault(); // Prevent default button behavior
-                                e.stopPropagation(); // Stop event from reaching modal backdrop
-                                navigator.clipboard.writeText(JSON.stringify(responseData, null, 2));
-                                setCopied(true);
-                                setTimeout(() => setCopied(false), 2000);
+                          <div className="h-[300px]">
+                            <CodeMirror
+                              value={JSON.stringify(responseData, null, 2)}
+                              height="100%"
+                              theme={githubDark}
+                              extensions={[json()]}
+                              editable={false}
+                              basicSetup={{
+                                lineNumbers: true,
+                                foldGutter: true,
+                                highlightActiveLine: false,
+                                highlightActiveLineGutter: false,
                               }}
-                              type="button" // Explicitly set button type to prevent form submission
-                              className="p-1.5 hover:bg-gray-800/50 rounded-md group relative z-50"
-                            >
-                              {copied ? (
-                                <Check className="w-4 h-4 text-green-400" />
-                              ) : (
-                                <Copy className="w-4 h-4 text-gray-400 group-hover:text-gray-300" />
-                              )}
-                              <div className="absolute right-0 top-full mt-1 hidden group-hover:block text-xs bg-gray-800 text-white px-2 py-1 rounded">
-                                {copied ? 'Copied!' : 'Copy response'}
-                              </div>
-                            </button>
-                          </div>
-                          <div className="h-[300px] overflow-auto p-5 scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-white/20 dark:scrollbar-thumb-white/20 hover:scrollbar-thumb-white/25 dark:hover:scrollbar-thumb-white/25 active:scrollbar-thumb-white/25 dark:active:scrollbar-thumb-white/25">
-                          <pre className="text-xs leading-[1.35rem] text-white">
-                            <code dangerouslySetInnerHTML={{ __html: formatJson(responseData) }} />
-                          </pre>
+                            />
                           </div>
                         </div>
                       )}
@@ -435,19 +522,18 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
                 )}
 
                 {/* Request Code Preview */}
-                <CodeBlock 
-                  language="JavaScript" 
-                  endpoint={selectedEndpoint} 
-                  formState={formState} 
+                <CodeBlock
+                  language="JavaScript"
+                  endpoint={selectedEndpoint}
+                  formState={formState}
                   inModal={true}
                 />
-                
               </div>
             </div>
           </form>
         </div>
       </div>
     </div>,
-    document.getElementById('modal-root')
+    document.getElementById("modal-root")
   );
 }
