@@ -300,7 +300,7 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
                         )}
                         <div className="flex-1 flex items-center space-x-2">
                           <div className="text-sm font-medium text-gray-800 dark:text-gray-200 leading-6">
-                            Authorization
+                            Headers
                           </div>
                         </div>
                       </div>
