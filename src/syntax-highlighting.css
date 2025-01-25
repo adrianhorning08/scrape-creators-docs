@@ -1,0 +1,117 @@
+/* Base code styles */
+.codeblock-dark {
+  color: #9cdcfe;
+  background: #0F1117;
+}
+
+/* Namespace */
+.codeblock-dark .namespace {
+  opacity: .7;
+  color: #4ec9b0;
+}
+
+/* Keywords */
+.codeblock-dark .token.keyword {
+  color: #569cd6;
+}
+
+.codeblock-dark .token.keyword.control-flow,
+.codeblock-dark .token.keyword.module {
+  color: #c586c0;
+}
+
+/* Functions */
+.codeblock-dark .token.function,
+.codeblock-dark .token.function .token.maybe-class-name {
+  color: #dcdcaa;
+}
+
+/* Punctuation */
+.codeblock-dark .token.punctuation {
+  color: #d4d4d4;
+}
+
+/* Strings */
+.codeblock-dark .token.string {
+  color: #ce9178;
+}
+
+/* Variables and Properties */
+.codeblock-dark .token.property,
+.codeblock-dark .token.variable {
+  color: #9cdcfe;
+}
+
+/* Operators */
+.codeblock-dark .token.operator {
+  color: rgb(148 163 184);
+}
+
+.codeblock-dark .token.operator.arrow {
+  color: #569cd6;
+}
+
+/* Parameters */
+.codeblock-dark .token.parameter {
+  color: #9cdcfe;
+}
+
+/* Console */
+.codeblock-dark .token.console {
+  color: #9cdcfe;
+}
+
+/* Class names */
+.codeblock-dark .token.class-name,
+.codeblock-dark .token.maybe-class-name {
+  color: #4ec9b0;
+}
+
+/* Comments */
+.codeblock-dark .token.comment,
+.codeblock-dark .token.prolog {
+  color: #6a9955;
+}
+
+/* Constants */
+.codeblock-dark .token.constant {
+  color: #9cdcfe;
+}
+
+/* JSON specific */
+.codeblock-dark .token.property {
+  color: #9cdcfe;
+}
+
+/* JSON specific */
+.codeblock-dark .token.number {
+  color: #b5cea8;
+}
+
+.codeblock-dark .token.string {
+  color: #ce9178;
+}
+
+.codeblock-dark .token.operator {
+  color: #d4d4d4;
+}
+
+.codeblock-dark .token.punctuation {
+  color: #d4d4d4;
+}
+
+/* Code block container */
+.codeblock-dark pre {
+  margin: 0;
+  padding: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.codeblock-dark code {
+  display: block;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  tab-size: 2;
+}

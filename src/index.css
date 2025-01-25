@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 13 147 115;
+  --primary-light: 7 201 131;
+  --primary-dark: 13 147 115;
+  --background-light: 255 255 255;
+  --background-dark: 9 13 13;
+  --gray-50: 243 247 246;
+  --gray-100: 238 242 241;
+  --gray-200: 222 226 226;
+  --gray-300: 206 210 209;
+  --gray-400: 158 163 162;
+  --gray-500: 112 116 115;
+  --gray-600: 80 84 83;
+  --gray-700: 62 67 66;
+  --gray-800: 37 41 40;
+  --gray-900: 23 27 26;
+  --gray-950: 10 14 13;
+}
+
+.border-standard {
+  @apply border border-gray-200/5 dark:border-gray-800/40;
+}

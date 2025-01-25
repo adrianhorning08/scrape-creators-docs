@@ -1,0 +1,50 @@
+import EndpointHeader from '../../components/api/EndpointHeader';
+import EndpointMethod from '../../components/api/EndpointMethod';
+import ParameterSection from '../../components/api/ParameterSection';
+import CodeBlock from '../../components/CodeBlock';
+
+<EndpointHeader 
+  title="Profile"
+  description="Returns TikTok profile information for a given username"
+/>
+
+<div className="mt-6 flex w-full flex-col space-y-4">
+  <EndpointMethod 
+    method="GET"
+    path="v1/tiktok/profile"
+    onTryClick={() => console.log('Try endpoint')}
+  />
+  
+  <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-6 xl:hidden">
+      <CodeBlock language="JavaScript" />
+      <CodeBlock language="200" />
+    </div>
+  </div>
+</div>
+
+<div className="relative mt-8 prose prose-gray dark:prose-invert">
+  <ParameterSection
+    title="Headers"
+    parameters={[
+      {
+        name: "x-api-key",
+        type: "string",
+        required: true,
+        description: 'Your Scrape Creators API key'
+      }
+    ]}
+  />
+  
+  <ParameterSection
+    title="Query Parameters"
+    parameters={[
+      {
+        name: "handle",
+        type: "string",
+        required: true,
+        description: "The TikTok username to fetch profile information for"
+      }
+    ]}
+  />
+</div>
