@@ -56,6 +56,7 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
   const [isLoading, setIsLoading] = useState(false);
   const [responseData, setResponseData] = useState(null);
   const [copied, setCopied] = useState(false);
+  const [expandedResponse, setExpandedResponse] = useState(false);
   const formRef = useRef(null);
 
   const toggleSection = (section) => {
@@ -465,7 +466,21 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
                           )}
                         </div>
                       </div>
-                      <div className="">
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setExpandedResponse(!expandedResponse);
+                          }}
+                          className="p-1.5 hover:bg-gray-800/50 rounded-md group relative"
+                        >
+                          {expandedResponse ? (
+                            <ChevronDown className="w-4 h-4 text-gray-400" />
+                          ) : (
+                            <ChevronRight className="w-4 h-4 text-gray-400" />
+                          )}
+                        </button>
                         <button
                           onClick={(e) => {
                             e.preventDefault();
@@ -499,23 +514,13 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
                           </div>
                         </div>
                       ) : (
-                        <div className="relative">
-                          <div className="h-[300px]">
-                            <CodeMirror
-                              value={JSON.stringify(responseData, null, 2)}
-                              height="100%"
-                              theme={githubDark}
-                              extensions={[json()]}
-                              editable={false}
-                              basicSetup={{
-                                lineNumbers: true,
-                                foldGutter: true,
-                                highlightActiveLine: false,
-                                highlightActiveLineGutter: false,
-                              }}
-                            />
-                          </div>
-                        </div>
+                        <pre
+                          className={`overflow-auto font-mono text-sm p-4 text-gray-200 ${
+                            expandedResponse ? "max-h-[80vh]" : "max-h-[300px]"
+                          }`}
+                        >
+                          <code>{JSON.stringify(responseData, null, 2)}</code>
+                        </pre>
                       )}
                     </div>
                   </div>

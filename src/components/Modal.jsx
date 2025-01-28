@@ -1,26 +1,32 @@
-import React, { useEffect } from 'react';
-import { createPortal } from 'react-dom';
-import { XCircle } from 'lucide-react';
+import React, { useEffect } from "react";
+import { createPortal } from "react-dom";
+import { XCircle } from "lucide-react";
 
-export default function Modal({ isOpen, onClose, children, isSearchOpen, setIsSearchOpen }) {
+export default function Modal({
+  isOpen,
+  onClose,
+  children,
+  isSearchOpen,
+  setIsSearchOpen,
+}) {
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         onClose();
-      } else if ((e.metaKey || e.ctrlKey) && e.key === 'f' && isOpen) {
+      } else if ((e.metaKey || e.ctrlKey) && e.key === "f" && isOpen) {
         e.preventDefault();
         setIsSearchOpen(true);
       }
     };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
     };
   }, [isOpen, onClose, setIsSearchOpen]);
 
@@ -28,7 +34,7 @@ export default function Modal({ isOpen, onClose, children, isSearchOpen, setIsSe
 
   return createPortal(
     <div className="fixed inset-0 z-[100]">
-      <div 
+      <div
         className="absolute inset-0 bg-gray-900/50 backdrop-blur-sm"
         onClick={onClose}
       />
@@ -42,6 +48,6 @@ export default function Modal({ isOpen, onClose, children, isSearchOpen, setIsSe
         {children}
       </div>
     </div>,
-    document.getElementById('modal-root')
+    document.getElementById("modal-root")
   );
 }

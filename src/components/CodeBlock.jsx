@@ -311,7 +311,9 @@ export default function CodeBlock({
               <div className="group z-10 relative">
                 <button
                   type="button"
-                  className="h-7 w-7 flex items-center justify-center rounded-md backdrop-blur"
+                  className={`h-7 w-7 flex items-center justify-center rounded-md backdrop-blur ${
+                    isFullscreen ? "mr-8" : ""
+                  }`}
                   data-testid="copy-code-button"
                   onClick={(e) => {
                     e.preventDefault();
@@ -469,7 +471,7 @@ export default function CodeBlock({
                   )}
                 </div>
                 <button
-                  className="p-1.5 text-gray-400 hover:text-gray-300 rounded-md hover:bg-gray-800"
+                  className="p-1.5 text-gray-400 hover:text-gray-300 rounded-md hover:bg-gray-800 mr-12"
                   onClick={handleCopy}
                 >
                   {copied ? (
