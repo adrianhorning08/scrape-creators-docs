@@ -12671,7 +12671,8 @@ export const apis = [
       {
         name: "User Posts v2",
         method: "GET",
-        description: "Get user posts",
+        description:
+          "Get user posts. Whats the difference between this and /v1/instagram/users/posts? The response payload is different, and the views on reels might be more accurate.",
         path: "/v2/instagram/user/posts",
         paginationField: "next_max_id",
         sampleResponse: {
