@@ -9,7 +9,7 @@ export default function LLMPromptGenerator({ endpoint, selectedLanguage }) {
       endpoint.path
     }. Here are the details:
 
-Endpoint: ${endpoint.method} https://api.scrapecreators.com${endpoint.path}
+Endpoint: ${endpoint.path} https://api.scrapecreators.com${endpoint.path}
 
 Description: ${endpoint.description}
 
