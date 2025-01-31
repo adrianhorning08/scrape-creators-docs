@@ -11,10 +11,9 @@ export default function CodeBlock({
   endpoint,
   formState,
   inModal,
+  selectedLanguage,
+  setSelectedLanguage,
 }) {
-  const [selectedLanguage, setSelectedLanguage] = useState(
-    language === "JavaScript" ? "cURL" : language
-  );
   const [selectedStatus, setSelectedStatus] = useState("200");
   const [copied, setCopied] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -278,33 +277,35 @@ export default function CodeBlock({
                     )}
                   </button>
                 ))
-              : Object.keys(languageExamples).map((lang) => (
-                  <button
-                    key={lang}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      setSelectedLanguage(lang);
-                    }}
-                    className={`group flex items-center relative px-2 pt-2.5 pb-2 outline-none whitespace-nowrap font-medium ${
-                      selectedLanguage === lang
-                        ? "text-primary-light"
-                        : "text-gray-400"
-                    }`}
-                    role="tab"
-                    aria-selected={selectedLanguage === lang}
-                    tabIndex={selectedLanguage === lang ? 0 : -1}
-                  >
-                    <div
-                      className={`px-2 rounded-lg z-10 group-hover:bg-gray-700/60 group-hover:text-primary-light`}
+              : Object.keys(languageExamples).map((lang) => {
+                  return (
+                    <button
+                      key={lang}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setSelectedLanguage(lang);
+                      }}
+                      className={`group flex items-center relative px-2 pt-2.5 pb-2 outline-none whitespace-nowrap font-medium ${
+                        selectedLanguage === lang
+                          ? "text-primary-light"
+                          : "text-gray-400"
+                      }`}
+                      role="tab"
+                      aria-selected={selectedLanguage === lang}
+                      tabIndex={selectedLanguage === lang ? 0 : -1}
                     >
-                      {lang}
-                    </div>
-                    {selectedLanguage === lang && (
-                      <div className="absolute inset-0 border-b pointer-events-none border-primary dark:border-primary-light"></div>
-                    )}
-                  </button>
-                ))}
+                      <div
+                        className={`px-2 rounded-lg z-10 group-hover:bg-gray-700/60 group-hover:text-primary-light`}
+                      >
+                        {lang}
+                      </div>
+                      {selectedLanguage === lang && (
+                        <div className="absolute inset-0 border-b pointer-events-none border-primary dark:border-primary-light"></div>
+                      )}
+                    </button>
+                  );
+                })}
           </div>
           <div className="flex h-full absolute top-0 right-0 rounded-tr z-10 items-center gap-2 pr-4">
             <div className="flex items-center justify-center h-[42px]">

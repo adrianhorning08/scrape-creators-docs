@@ -8,6 +8,7 @@ import CodeBlock from "./components/CodeBlock";
 import EndpointDocs from "./components/EndpointDocs";
 
 export default function App() {
+  const [selectedLanguage, setSelectedLanguage] = React.useState("cURL");
   const location = useLocation();
   const isIntroduction =
     location.pathname === "/" || location.pathname === "/introduction";
@@ -55,17 +56,34 @@ export default function App() {
             <Sidebar />
             <div className="relative grow box-border flex-col w-full mx-auto px-1 lg:pl-[23.7rem] lg:-ml-12 xl:w-[calc(100%-56rem)]">
               <Routes>
-                <Route path="*" element={<EndpointDocs />} />
+                <Route
+                  path="*"
+                  element={
+                    <EndpointDocs
+                      selectedLanguage={selectedLanguage}
+                      setSelectedLanguage={setSelectedLanguage}
+                    />
+                  }
+                />
               </Routes>
             </div>
             {!isIntroduction && (
               <div className="hidden xl:flex self-start sticky top-[calc(8rem+1.5rem)] h-[calc(100vh-8rem-1.5rem)] overflow-y-auto">
                 <div className="w-[28rem] gap-6 flex flex-col">
                   {endpointData && (
-                    <CodeBlock language="JavaScript" endpoint={endpointData} />
+                    <CodeBlock
+                      language="JavaScript"
+                      endpoint={endpointData}
+                      selectedLanguage={selectedLanguage}
+                      setSelectedLanguage={setSelectedLanguage}
+                    />
                   )}
                   {endpointData && (
-                    <CodeBlock language="200" endpoint={endpointData} />
+                    <CodeBlock
+                      language="200"
+                      endpoint={endpointData}
+                      setSelectedLanguage={() => null}
+                    />
                   )}
                 </div>
               </div>

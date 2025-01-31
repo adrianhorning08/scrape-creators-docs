@@ -1,45 +1,14 @@
 import React, { useState } from "react";
 import { Check, Sparkles } from "lucide-react";
+import { generateAIPrompt } from "../utils/promptGenerator";
 
 export default function LLMPromptGenerator({ endpoint, selectedLanguage }) {
   const [copied, setCopied] = useState(false);
 
-  const generatePrompt = () => {
-    const prompt = `I want to make an API call to ${
-      endpoint.path
-    }. Here are the details:
-
-Endpoint: ${endpoint.path} https://api.scrapecreators.com${endpoint.path}
-
-Description: ${endpoint.description}
-
-Required Headers:
-- x-api-key: Your API key
-
-${
-  endpoint.params.length > 0
-    ? `Parameters:
-${endpoint.params
-  .map(
-    (param) =>
-      `- ${param.name} (${param.type})${param.required ? " (Required)" : ""}: ${
-        param.description
-      }`
-  )
-  .join("\n")}`
-    : ""
-}
-
-Example Response:
-${JSON.stringify(endpoint.sampleResponse, null, 2)}
-
-Please help me write code in ${selectedLanguage} to make this API call and handle the response appropriately. Include error handling and best practices.`;
-
-    return prompt;
-  };
-
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(generatePrompt());
+    await navigator.clipboard.writeText(
+      generateAIPrompt(endpoint, selectedLanguage)
+    );
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

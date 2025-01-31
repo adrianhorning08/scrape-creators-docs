@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Introduction() {
   return (
@@ -171,6 +172,28 @@ export default function Introduction() {
             adrian@thewebscrapingguy.com
           </a>
         </p>
+
+        <nav className="mt-12 flex items-center justify-between border-t border-gray-200 dark:border-gray-800 pt-8">
+          <div />
+          <Link
+            to="/v1/tiktok/profile"
+            className="group flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+          >
+            TikTok Profile
+            <svg
+              className="ml-3 h-5 w-5"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </Link>
+        </nav>
       </div>
     </div>
   );
