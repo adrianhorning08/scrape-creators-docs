@@ -20714,121 +20714,32 @@ export const apis = [
       {
         name: "Channel Videos",
         method: "GET",
-        description: "Get all videos from a channel with detailed information",
+        description:
+          "Get all videos from a channel with detailed information. Can pass channelId or handle.",
         path: "/v1/youtube/channel-videos",
         paginationField: "continuationToken",
         sampleResponse: {
           videos: [
             {
-              videoId: "54AvM1k24rs",
-              thumbnail: {
-                thumbnails: [
-                  {
-                    url: "https://i.ytimg.com/vi/54AvM1k24rs/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDQ0MV1J0r-4QX7NllityqLDo10xw",
-                    width: 168,
-                    height: 94,
-                  },
-                  {
-                    url: "https://i.ytimg.com/vi/54AvM1k24rs/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA1ExyZFHfeIR4cgWymR9Z3UE9GTQ",
-                    width: 196,
-                    height: 110,
-                  },
-                  {
-                    url: "https://i.ytimg.com/vi/54AvM1k24rs/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCsq2e0vYCuESmKj6CGBpnx-KomUw",
-                    width: 246,
-                    height: 138,
-                  },
-                  {
-                    url: "https://i.ytimg.com/vi/54AvM1k24rs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBPDGqe8cYl-uM277Z77ORHkEvJ8w",
-                    width: 336,
-                    height: 188,
-                  },
-                ],
-              },
-              title: {
-                runs: [
-                  {
-                    text: "The Pat McAfee Show Picks & Predicts NFL's Conference Championship Playoff Games",
-                  },
-                ],
-                accessibility: {
-                  accessibilityData: {
-                    label:
-                      "The Pat McAfee Show Picks & Predicts NFL's Conference Championship Playoff Games by The Pat McAfee Show 5,402 views 18 minutes ago 7 minutes, 28 seconds",
-                  },
-                },
-              },
-              descriptionSnippet: {
-                runs: [
-                  {
-                    text: "Welcome to The Pat McAfee Show LIVE from Noon-3PM EST Mon-Fri. You can also find us live on ESPN, ESPN+, & TikTok!\n\nBecome a #McAfeeMafia member! https://www.youtube.com/channel/UCxcTeAKWJca6XyJ37_...",
-                  },
-                ],
-              },
-              publishedTimeText: {
-                simpleText: "18 minutes ago",
-              },
-              lengthText: {
-                accessibility: {
-                  accessibilityData: {
-                    label: "7 minutes, 28 seconds",
-                  },
-                },
-                simpleText: "7:28",
-              },
-              viewCountText: {
-                simpleText: "5,402 views",
-              },
-              navigationEndpoint: {
-                clickTrackingParams:
-                  "CPwBENwwIhMIpfjYo6SPiwMVjUhMCB3KnhxuWhhVQ3hjVGVBS1dKY2E2WHlKMzdfWm9LSVGaAQMQ8jg=",
-                commandMetadata: {
-                  webCommandMetadata: {
-                    url: "/watch?v=54AvM1k24rs",
-                    webPageType: "WEB_PAGE_TYPE_WATCH",
-                    rootVe: 3832,
-                  },
-                },
-                watchEndpoint: {
-                  videoId: "54AvM1k24rs",
-                  watchEndpointSupportedOnesieConfig: {
-                    html5PlaybackOnesieConfig: {
-                      commonConfig: {
-                        url: "https://rr2---sn-a5mlrnll.googlevideo.com/initplayback?source=youtube&oeis=1&c=WEB&oad=3200&ovd=3200&oaad=11000&oavd=11000&ocs=700&oewis=1&oputc=1&ofpcc=1&msp=1&odepv=1&id=e7802f335936e2bb&ip=45.73.164.19&mt=1737752663&oweuc=",
-                      },
-                    },
-                  },
-                },
-              },
-              shortViewCountText: {
-                accessibility: {
-                  accessibilityData: {
-                    label: "5.4K views",
-                  },
-                },
-                simpleText: "5.4K views",
-              },
-              richThumbnail: {
-                movingThumbnailRenderer: {
-                  movingThumbnailDetails: {
-                    thumbnails: [
-                      {
-                        url: "https://i.ytimg.com/an_webp/54AvM1k24rs/mqdefault_6s.webp?du=3000&sqp=CMjNz7wG&rs=AOn4CLDmX_9IU7we89hn5gicXfxAwsckCw",
-                        width: 320,
-                        height: 180,
-                      },
-                    ],
-                    logAsMovingThumbnail: true,
-                  },
-                  enableHoveredLogging: true,
-                  enableOverlay: true,
-                },
-              },
-              channelId: "UCxcTeAKWJca6XyJ37_ZoKIQ",
+              videoId: "AS2k4PtmWps",
+              thumbnail:
+                "https://i.ytimg.com/vi/AS2k4PtmWps/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAKbso8v-yylb6ToRijuA-Ajnod3g",
+              title: "Every API Documentation needs this button",
+              url: "https://www.youtube.com/watch?v=AS2k4PtmWps",
+              descriptionSnippet:
+                "Check out my product scrapecreators.com for all social media scraping API's\n\nCheck out my web scraping course 👉  https://adrianhorning.gumroad.com/l/the-ultimate-web-scraping-course\n\nUse...",
+              publishedTimeText: "1 hour ago",
+              lengthText: "3:06",
+              viewCountText: "7 views",
+              viewCountInt: 7,
+              shortViewCountText: "7 views",
+              shortViewCountInt: 7,
+              movingThumbnail:
+                "https://i.ytimg.com/an_webp/AS2k4PtmWps/mqdefault_6s.webp?du=3000&sqp=CKfE9LwG&rs=AOn4CLBRgWojJ6bQCWUzOdO-rhhfWY92Ow",
+              channelId: "UCdFJWUa43smRm4IpHBpPg_A",
             },
           ],
-          continuationToken:
-            "4qmFsgKrCBIYVUN4Y1RlQUtXSmNhNlh5SjM3X1pvS0lRGo4IOGdhRUJocUJCbnItQlFyNUJRclFCVUZTVEhWbFVWWTVSazlhVkZGaU9WQjZNWG8wUmprMmFqWlFhVTVHWVVaak9ITkZMUzA1V1dKM1EyaFZPVWt6WmxnMWJUTTRSbFJxWmpobVoyNTRNa3RKU0hOdFIyMWxhVXd0YURVdFRIWlJZVkl6U25wa1VqSTBVR3ROUWpndFRIcE5iRGhZWmpSdldGVk5WRUpMUVc5QlNHVjNRek5VWDJFM1lYTnBXRVUwZDNocGJWWnFiRFprTTJreVJURm9VVkExTnpaUldXVjBOa3hRVFc5dVZGcEROMVZ0VGpCaVFXbG5OWEl5TFdseFYxQnNObVZZTmpCRFdDMWhjVTF2ZFcxb2NtRjROVjlhUWtaT1MzZHlUWFEwWjJwa1RIWlJZMlZJTFRaUlgwazJNVVZCZVhWWVgwNXZTMDlzZFVkUVNEQjRYM2RsV0VwRWF6Sm9UazFvVUZobWVFaElOR2h2YlRCWVN6ZFlXbXhSZUVOMWFDMWhhMEp3WVRjM1RqQmtRa1V0WTB4TWFrZ3lSelZmUldoaGNGcG5MWGcxWldSaVFqRmxRVE5FYUZGWlh6ZFRURXhaYWpOTFYzTlFVMkkyV0hJMVdrVmhSRW95TVV4aVprSk5YMU5TWkhSc1kwMXRlV2RzVEVSMGEzRlllRGxyWmtKV2NIbEtTVFpNWlRNNFEwUnpWbko2VEhGUU0xWmlWMHQ0Wm1kRU5sWlhkVEpSYjNoMGVsQmFjREE1Y1VWWk9FOXdiRlZuVEV0QlZVZHNlVGhhYUU1ZmJrdHlVRGN3TUd4UFoxWlZSVU5TZEVsSlVVaGtVVlphYWpWb1lsZGxWbFpGV2tWRFlXVmZiMUJXWmtSUlJuUkpkbWxpYlMxMGJFOWZhek5GYVVKWVZsaFVaVzlOZFVaU2MzQlpWRXc1WVZjM2VEQjFWbkJOUmxVM2VrdEdSVjlKWVc1b1MxTkZkbGxhTnpCVGNrRktZblU0Y214R1owWmhUSFYxY1hKUU1XazBSekJQWjNoUmJGWkhUVzlsWldodFNUWk5ZVFZEUlRWMExXZEVhRmRmYjNCUVUyTnBjRWRUZFhSRlIwRklPRWRVTFc1Q1JqbFRhakZEUm5KSVpEUm9TR1UxZWtWSFFYZFdaVlJ6Y25NMk9DMUJiMFJWVFUxelpUaHVYMFl6V1hvMVpuRTNPRXhPZUdkSWRISXdNbFZTUWsweldIZEJOemhTUzBGVWRsRm9PVTQxTldoYVlXOHhNbGxtTTBSTGFrOHhaMUpXUTNkSWRESTFXUklrTmpkaU1HUmpaVGt0TURBd01DMHlaV05oTFdFM05UVXRaalF3TXpBME0yVXlObVEwSUFRJTNE",
+          continuationToken: "4qmFsgKPCRIYVUNk.....",
         },
         params: [
           {
