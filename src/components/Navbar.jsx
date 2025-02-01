@@ -56,7 +56,7 @@ export default function Navbar() {
                         alt="Scrape Creators logo"
                       />
                       <span className="text-lg font-semibold text-gray-900 dark:text-white">
-                        Scrape Creators Documentation
+                        Documentation
                       </span>
                     </div>
                   </Link>
