@@ -20778,8 +20778,7 @@ export const apis = [
           type: "video",
           title:
             "Charles Barkley Reacts to the Luka Doncic-Anthony Davis Trade | NBA GameTime",
-          description:
-            "Charles Barkley joins GameTime on NBA TV to give his reaction to the blockbuster Mavericks and Lakers trade, how Dallas may know something we don't about Luka Doncic, why the Mavs are now the second best team in the West, if Luka and LeBron James will fit well together as teammates, and more.\n\nSubscribe: https://www.youtube.com/user/Bleacher...\nFollow us on IG:   / bleacherreport  \nFollow us on Twitter:   / bleacherreport  \nFollow us on TikTok:   / bleacherreport  \nLike us on Facebook:   / bleacherreport  \n\nDownload the B/R App: https://br.app.link/oFaC6OBCxEb\n\n#nba #lakers #mavericks #lukadoncic",
+          description: "Charles Barkley joins GameTime on NBA TV to",
           commentCountText: "237",
           commentCountInt: 237,
           likeCountText: "1,131",
