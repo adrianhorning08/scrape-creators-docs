@@ -13783,7 +13783,7 @@ export const apis = [
         name: "Post/Reel Info",
         method: "GET",
         description: "Get detailed information about a specific post or reel",
-        path: "/v1/instagram/post",
+        path: "/v2/instagram/post",
         sampleResponse: {
           media_or_ad: {
             taken_at: 1734811943,
