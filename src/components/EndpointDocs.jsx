@@ -125,6 +125,8 @@ export default function EndpointDocs({
           method={endpointData.method}
           path={endpointData.path}
           onTryClick={() => console.log("Try endpoint")}
+          selectedLanguage={selectedLanguage}
+          setSelectedLanguage={setSelectedLanguage}
         />
 
         <div className="flex items-center gap-6 p-6 bg-primary/10 dark:bg-primary-light/10 border border-primary/20 dark:border-primary-light/20 rounded-xl">

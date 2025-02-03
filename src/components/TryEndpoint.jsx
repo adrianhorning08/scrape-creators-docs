@@ -14,7 +14,13 @@ import {
 import CodeBlock from "./CodeBlock";
 import { apis } from "../constants/apis";
 
-export default function TryEndpoint({ isOpen, onClose, endpoint }) {
+export default function TryEndpoint({
+  isOpen,
+  onClose,
+  endpoint,
+  selectedLanguage,
+  setSelectedLanguage,
+}) {
   const [selectedEndpoint, setSelectedEndpoint] = useState(() => {
     const api = apis.find((api) =>
       api.endpoints.some((ep) => ep.path === endpoint.path)
@@ -138,7 +144,10 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-gray-900/50 backdrop-blur-sm"
-        onClick={onClose}
+        onClick={() => {
+          onClose();
+          setResponseData(null);
+        }}
       />
 
       {/* Modal */}
@@ -516,6 +525,8 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
 
                 {/* Request Code Preview */}
                 <CodeBlock
+                  selectedLanguage={selectedLanguage}
+                  setSelectedLanguage={setSelectedLanguage}
                   language="JavaScript"
                   endpoint={selectedEndpoint}
                   formState={formState}
