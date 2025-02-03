@@ -93,20 +93,6 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
       return;
     }
 
-    const requiredParams = endpoint.params?.filter((p) => p.required) || [];
-    const missingParams = requiredParams.filter(
-      (p) => !formState.params[p.name]
-    );
-    if (missingParams.length > 0) {
-      setError(
-        `Required parameters missing: ${missingParams
-          .map((p) => p.name)
-          .join(", ")}`
-      );
-      setIsLoading(false);
-      return;
-    }
-
     try {
       // Build query string
       const queryString = Object.entries(formState.params)
@@ -141,7 +127,6 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
       handleSend();
     }
   };
@@ -259,7 +244,10 @@ export default function TryEndpoint({ isOpen, onClose, endpoint }) {
 
               {/* Send Button */}
               <button
-                onClick={handleSend}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleSend();
+                }}
                 disabled={isLoading}
                 className="flex items-center justify-center px-3 h-9 text-white font-medium rounded-xl mouse-pointer disabled:opacity-70 hover:opacity-80 gap-1.5 bg-[#2AB673] w-24"
               >
