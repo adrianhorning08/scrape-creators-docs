@@ -390,7 +390,9 @@ export default function CodeBlock({
       </div>
       <Modal
         isOpen={isFullscreen}
-        onClose={() => setIsFullscreen(false)}
+        onClose={() => {
+          setIsFullscreen(false);
+        }}
         isSearchOpen={isSearchOpen}
         setIsSearchOpen={setIsSearchOpen}
       >
