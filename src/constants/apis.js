@@ -1250,6 +1250,33 @@ export const apis = [
           status_code: 0,
           status_msg: "",
         },
+        responseFields: [
+          {
+            path: "aweme_list[0].desc",
+            description: "tiktok description",
+          },
+          {
+            path: "aweme_list[0].video.download_addr.url_list[0]",
+            description: "The actual video you can download (with watermark)",
+          },
+          {
+            path: "aweme_list[0].video.download_no_watermark_addr.url_list[0]",
+            description:
+              "The actual video you can download (without watermark)",
+          },
+          {
+            path: "aweme_list[0].cha_list",
+            description: `Hashtag List. They call hashtags "challenges" for whatever reason`,
+          },
+          {
+            path: "aweme_list[0].video.origin_cover.url_list[0]",
+            description: "The original cover image of the video",
+          },
+          {
+            path: "aweme_list[0].video.dynamic_cover.url_list[0]",
+            description: "The dynamic cover image of the video",
+          },
+        ],
       },
       {
         name: "Profile Videos (We handle pagination)",
