@@ -123,6 +123,18 @@ export default function Introduction() {
           </p>
         </div>
 
+        <div className="bg-emerald-50/50 dark:bg-emerald-500/10 border border-emerald-500/20 dark:border-emerald-500/30 rounded-lg p-4 mt-4">
+          <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white flex items-center gap-2">
+            <span>🔍</span>
+            JSON Path Navigation
+          </h3>
+          <p className="text-gray-600 dark:text-gray-300">
+            In fullscreen mode, hover over any JSON key to see its complete
+            path. Right-click to copy either the full path or just the key name
+            - perfect for navigating complex response structures.
+          </p>
+        </div>
+
         <h2 className="text-xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">
           Response Codes
         </h2>

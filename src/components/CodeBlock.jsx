@@ -4,6 +4,9 @@ import { Check, Copy, Expand, Search, Sparkles } from "lucide-react";
 import Modal from "./Modal";
 import { formatJson } from "../utils/jsonFormatter";
 import LLMPromptGenerator from "./LLMPromptGenerator";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
+import { createRoot } from "react-dom/client";
 
 export default function CodeBlock({
   code,
@@ -26,6 +29,15 @@ export default function CodeBlock({
   const languageExamples = getLanguageExamples(endpoint, formState, inModal);
   const displayCode = languageExamples[selectedLanguage] || code;
   const [customResponse, setCustomResponse] = useState(null);
+  const [contextMenu, setContextMenu] = useState({
+    visible: false,
+    x: 0,
+    y: 0,
+    path: "",
+    key: "",
+  });
+
+  console.log("contextMenu", contextMenu);
 
   // Get the response content based on the selected status code
   const getResponseContent = () => {
@@ -73,12 +85,10 @@ export default function CodeBlock({
   const handleCopy = async () => {
     let textToCopy;
     if (isResponseExample) {
-      // For response examples, copy the raw JSON
       const responseData =
         endpoint?.sampleResponse || statusCodes[selectedStatus].content;
       textToCopy = JSON.stringify(responseData, null, 2);
     } else {
-      // For code examples, strip HTML tags
       textToCopy = displayCode.replace(/<[^>]+>/g, "");
     }
     await navigator.clipboard.writeText(textToCopy);
@@ -142,72 +152,6 @@ export default function CodeBlock({
     200: {
       code: "200",
       color: "text-[#2AB673]",
-      content: formatJson({
-        user: {
-          id: "6659752019493208069",
-          shortId: "",
-          uniqueId: "stoolpresidente",
-          nickname: "Dave Portnoy",
-          avatarLarger:
-            "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7310178711609032710~c5_1080x1080.jpeg?lk3s=a5d48078&nonce=15998&refresh_token=7cf59772528fdede8ae2ca283b10c73c&x-expires=1737910800&x-signature=rzbwsx1qg5Y6QpkDot%2BvsttsVJQ%3D&shp=a5d48078&shcp=81f88b70",
-          avatarMedium:
-            "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7310178711609032710~c5_720x720.jpeg?lk3s=a5d48078&nonce=90349&refresh_token=6f7bb6230d53dd65419bae48b3552456&x-expires=1737910800&x-signature=WPFwwF36AsQM4A5t8xJjMprWhZg%3D&shp=a5d48078&shcp=81f88b70",
-          avatarThumb:
-            "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7310178711609032710~c5_100x100.jpeg?lk3s=a5d48078&nonce=7248&refresh_token=b453a6aa44d9ea28a263c860e9755fd4&x-expires=1737910800&x-signature=eSEvLbtEAlwMAs43WEGBuY5P28k%3D&shp=a5d48078&shcp=81f88b70",
-          signature: "El Presidente/Barstool Sports Founder.",
-          createTime: 1550594547,
-          verified: true,
-          secUid:
-            "MS4wLjABAAAAINC_ElRR-l1RCcnEjOZhNO-9wOzAMf-YHXqRY8vvG9bEhMRa6iu23TaE3JPZYXBD",
-          ftc: false,
-          relation: 0,
-          openFavorite: false,
-          bioLink: {
-            link: "https://www.barstoolsports.com/bios/Surviving-Barstool",
-            risk: 0,
-          },
-          commentSetting: 0,
-          commerceUserInfo: {
-            commerceUser: false,
-          },
-          duetSetting: 0,
-          stitchSetting: 0,
-          privateAccount: false,
-          secret: false,
-          isADVirtual: false,
-          roomId: "",
-          uniqueIdModifyTime: 0,
-          ttSeller: false,
-          region: "US",
-          downloadSetting: 0,
-          profileTab: {
-            showMusicTab: false,
-            showQuestionTab: false,
-            showPlayListTab: true,
-          },
-          followingVisibility: 1,
-          recommendReason: "",
-          nowInvitationCardUrl: "",
-          nickNameModifyTime: 0,
-          isEmbedBanned: false,
-          canExpPlaylist: true,
-          profileEmbedPermission: 1,
-          language: "en",
-          eventList: [],
-          suggestAccountBind: false,
-          isOrganization: 0,
-        },
-        stats: {
-          followerCount: 4100000,
-          followingCount: 74,
-          heart: 190300000,
-          heartCount: 190300000,
-          videoCount: 2016,
-          diggCount: 0,
-          friendCount: 52,
-        },
-        itemList: [],
-      }),
     },
     400: {
       code: "400",
@@ -223,6 +167,64 @@ export default function CodeBlock({
         message: "<string>",
       }),
     },
+  };
+
+  const handleContextMenu = (e, path, key) => {
+    e.preventDefault();
+    console.log("Context menu triggered", { path, key }); // Debug log
+    setContextMenu({
+      visible: true,
+      x: e.clientX,
+      y: e.clientY,
+      path: path, // Use the path that was passed in from the Tippy component
+      key: key,
+    });
+  };
+
+  const handleMouseOver = (e) => {
+    if (!isFullscreen) return;
+
+    const path = e.target.getAttribute("data-path");
+    if (path) {
+      console.log("JSON path:", path);
+
+      const element = e.target;
+      if (!element._tippy) {
+        const TippyComponent = () => (
+          <Tippy
+            content={path.split(".").join(".\u200B")}
+            placement="top"
+            arrow={true}
+            delay={[200, 0]}
+            className="max-w-xs px-4 py-2 rounded-lg text-sm break-words whitespace-pre-wrap"
+          >
+            <span
+              className={element.className}
+              dangerouslySetInnerHTML={{ __html: element.innerHTML }}
+              onContextMenu={(e) => {
+                e.preventDefault();
+                handleContextMenu(
+                  e,
+                  path,
+                  element.textContent.replace(/['"]/g, "")
+                );
+              }}
+            />
+          </Tippy>
+        );
+
+        const wrapper = document.createElement("span");
+        element.parentNode.insertBefore(wrapper, element);
+        const root = createRoot(wrapper);
+        root.render(<TippyComponent />);
+        element.remove();
+      }
+    }
+  };
+
+  const handleCopyFromContextMenu = async (text) => {
+    await navigator.clipboard.writeText(text);
+    setContextMenu({ ...contextMenu, visible: false });
   };
 
   useEffect(() => {
@@ -241,6 +243,14 @@ export default function CodeBlock({
       document.removeEventListener("keydown", handleEscape);
     };
   }, [isFullscreen]);
+
+  // Close context menu when clicking outside
+  useEffect(() => {
+    const handleClick = () =>
+      setContextMenu({ ...contextMenu, visible: false });
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
 
   return (
     <>
@@ -362,6 +372,7 @@ export default function CodeBlock({
             isResponseExample ? "h-[300px]" : "h-[180px]"
           }`}
           style={{ fontVariantLigatures: "none" }}
+          onMouseOver={handleMouseOver}
         >
           <div className="relative">
             <pre>
@@ -487,7 +498,11 @@ export default function CodeBlock({
             </div>
           </div>
           <div className="flex-1 overflow-auto p-6">
-            <pre className="h-full text-gray-50" ref={codeRef}>
+            <pre
+              className="h-full text-gray-50"
+              ref={codeRef}
+              onMouseOver={handleMouseOver}
+            >
               <code
                 dangerouslySetInnerHTML={{
                   __html: isResponseExample
@@ -501,6 +516,30 @@ export default function CodeBlock({
               />
             </pre>
           </div>
+          {contextMenu.visible && (
+            <div
+              className="fixed z-50 bg-gray-900 rounded-lg shadow-lg py-1 min-w-[160px] border border-gray-800"
+              style={{
+                left: contextMenu.x,
+                top: contextMenu.y,
+              }}
+            >
+              <button
+                className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-gray-800 flex items-center gap-2"
+                onClick={() => handleCopyFromContextMenu(contextMenu.path)}
+              >
+                <Copy className="h-4 w-4" />
+                Copy Path
+              </button>
+              <button
+                className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-gray-800 flex items-center gap-2"
+                onClick={() => handleCopyFromContextMenu(contextMenu.key)}
+              >
+                <Copy className="h-4 w-4" />
+                Copy Key
+              </button>
+            </div>
+          )}
         </div>
       </Modal>
     </>
