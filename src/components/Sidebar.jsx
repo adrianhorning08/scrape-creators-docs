@@ -28,7 +28,7 @@ export default function Sidebar() {
                 Community
               </a>
             </li> */}
-            <li className="list-none">
+            {/* <li className="list-none">
               <a
                 href="https://scrapecreators.com/blog"
                 target="_blank"
@@ -48,7 +48,7 @@ export default function Sidebar() {
                 </div>
                 Blog
               </a>
-            </li>
+            </li> */}
             <div className="mt-12 lg:mt-8">
               <h5 className="pl-4 mb-3.5 lg:mb-2.5 font-semibold text-gray-900 dark:text-gray-200">
                 API Documentation
