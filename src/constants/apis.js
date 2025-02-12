@@ -21118,6 +21118,261 @@ export const apis = [
           },
         ],
       },
+      {
+        name: "Reel",
+        method: "GET",
+        description: "Get reel details",
+        path: "/v1/facebook/user/reel",
+        sampleResponse: {
+          self_view_boost: null,
+          video: {
+            id: "433712053064866",
+            first_frame_thumbnail:
+              "https://scontent-sjc3-1.xx.fbcdn.net/v/t51.71878-15/476169677_1228890849239254_6232950371948354945_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=110&ccb=1-7&_nc_sid=1bf86e&_nc_ohc=md4BBuJK1JMQ7kNvgFXhY0r&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYB_32sT57R-Cg8dhnWqGWy8nqHvoDFpopmnlKTVMoLAFQ&oe=67B3180F",
+            __typename: "Video",
+            playable_duration_in_ms: 30041,
+            embeddable: true,
+            owner: { __typename: "User", id: "100044216926934" },
+            audio_availability: "AVAILABLE",
+          },
+          if_should_change_url_for_reels: null,
+          shareable_url: "https://www.facebook.com/reel/433712053064866",
+          playback_video: {
+            height: 1920,
+            width: 1080,
+            length_in_second: 30.041,
+            id: "433712053064866",
+            thumbnailImage: {
+              uri: "https://scontent-sjc3-1.xx.fbcdn.net/v/t51.29350-10/475909344_1337620183924143_3617672300260549753_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c3bc4c&_nc_ohc=srUT4hzrVvcQ7kNvgG0nqEa&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYBHyz5a9XByUAo2tq0ogr1Zp5ivEFW6Zztpj3NNCrr1-Q&oe=67B2F1B2",
+            },
+            animated_image_caption: null,
+            broadcaster_origin: null,
+            broadcast_id: null,
+            broadcast_status: null,
+            is_live_streaming: false,
+            is_live_trace_enabled: false,
+            is_looping: false,
+            is_video_broadcast: false,
+            is_podcast_video: false,
+            loop_count: 0,
+            is_spherical: false,
+            is_spherical_enabled: true,
+            unsupported_browser_message: null,
+            pmv_metadata: null,
+            latency_sensitive_config: null,
+            live_playback_instrumentation_configs: null,
+            is_ncsr: false,
+            permalink_url: "https://www.facebook.com/reel/433712053064866/",
+            captions_url:
+              "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2093-6/475891612_433712393064832_4787332594767228115_n.srt?_nc_cat=106&ccb=1-7&_nc_sid=c211c2&_nc_ohc=SHajVdG9leoQ7kNvgHL8Rts&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYDLUQPHuue0h1OCgCTqxgAoG6PmHsKE-0t9qI-F8ZA-8A&oe=67B312DF",
+            seo_web_crawler_lookaside_url: null,
+            dash_prefetch_experimental: [
+              "645361181498376v",
+              "507008122412623a",
+            ],
+            video_available_captions_locales: [
+              {
+                localized_creation_method: "अपने आप अनुवाद किया गया",
+                captions_url:
+                  "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2093-6/475815263_433728229729915_1987753356117961997_n.srt?_nc_cat=102&ccb=1-7&_nc_sid=c211c2&_nc_ohc=0VfjZ8Dvj8sQ7kNvgHoayJl&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYBzUu81AP7POpTlPsU98UAAX-AUSLD0KNhPcyaOuMuQcg&oe=67B31B6D",
+                locale: "hi_IN",
+                localized_language: "हिन्दी",
+                localized_country: null,
+              },
+              {
+                localized_creation_method: "แปลอัตโนมัติ",
+                captions_url:
+                  "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2093-6/476446332_433728253063246_3331318211020844080_n.srt?_nc_cat=110&ccb=1-7&_nc_sid=c211c2&_nc_ohc=IlYndk24EicQ7kNvgGX4hgO&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYChkIUUd9SUAtxePX8xA3KCXzkQSwuEul-KTDy27sZdIw&oe=67B30FA1",
+                locale: "th_TH",
+                localized_language: "ภาษาไทย",
+                localized_country: null,
+              },
+              {
+                localized_creation_method: "Traduzido automaticamente",
+                captions_url:
+                  "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2093-6/475970425_433728239729914_6512582137404629861_n.srt?_nc_cat=105&ccb=1-7&_nc_sid=c211c2&_nc_ohc=abtYqpCUevMQ7kNvgGnNcfh&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYAbR2-Q-Kq8YQ4DtBK8cwKZGBgxTreW_5v7dmcfHxOHmw&oe=67B2EFF8",
+                locale: "pt_PT",
+                localized_language: "Português",
+                localized_country: null,
+              },
+              {
+                localized_creation_method: "خودکار ترجمہ کردہ",
+                captions_url:
+                  "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2093-6/475797595_433728233063248_4822062209552998201_n.srt?_nc_cat=108&ccb=1-7&_nc_sid=c211c2&_nc_ohc=2Ci2pPhgWTsQ7kNvgGuIWku&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYBtVb4kajq1PaBI6i1Jl-oo4g1mUUPOQt6W4qKU3Rjo-A&oe=67B3135D",
+                locale: "ur_PK",
+                localized_language: "اردو",
+                localized_country: null,
+              },
+              {
+                localized_creation_method: "அதுவாகவே மொழிபெயர்க்கப்பட்டது",
+                captions_url:
+                  "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2093-6/475831375_433728246396580_1395399978086097461_n.srt?_nc_cat=109&ccb=1-7&_nc_sid=c211c2&_nc_ohc=R5nVfuHHTHcQ7kNvgGL4sL-&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYAOZFHl7SH6nnMwIuXISoj4C3vq0Mc4lZzoZFxzVhmMpA&oe=67B2F19F",
+                locale: "ta_IN",
+                localized_language: "தமிழ்",
+                localized_country: null,
+              },
+              {
+                localized_creation_method: "ఆటోమేటిక్‌గా అనువదించబడింది",
+                captions_url:
+                  "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2093-6/475851805_433728256396579_4329930750698252558_n.srt?_nc_cat=105&ccb=1-7&_nc_sid=c211c2&_nc_ohc=NFgGidiqWpwQ7kNvgG51DA9&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYBKizT8KzLTYOztTpUq3ardVXI8qsPK918BjD44Soxmfw&oe=67B30848",
+                locale: "te_IN",
+                localized_language: "తెలుగు",
+                localized_country: null,
+              },
+              {
+                localized_creation_method: "Traducido automáticamente",
+                captions_url:
+                  "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2093-6/475850882_433728236396581_5553808724238214293_n.srt?_nc_cat=104&ccb=1-7&_nc_sid=c211c2&_nc_ohc=VbPS9G68FxsQ7kNvgHsh_07&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYDT3m4GWgNr6WgDGNk6LmG8zZrgmAieD978Js4ezvrUMA&oe=67B3130D",
+                locale: "es_LA",
+                localized_language: "Español",
+                localized_country: null,
+              },
+              {
+                localized_creation_method: "Terjemahan otomatis",
+                captions_url:
+                  "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2093-6/475427256_433728243063247_5765022858539750412_n.srt?_nc_cat=105&ccb=1-7&_nc_sid=c211c2&_nc_ohc=x5mAu6MxbhEQ7kNvgGkqRQ3&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYAN3QIgG5rfJFD54czFJLhFO1sZ59kzicvYeyqvSRLdQQ&oe=67B31FF0",
+                locale: "id_ID",
+                localized_language: "Bahasa Indonesia",
+                localized_country: null,
+              },
+              {
+                localized_creation_method: "Dịch tự động",
+                captions_url:
+                  "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2093-6/476191585_433728249729913_9064201330213805877_n.srt?_nc_cat=105&ccb=1-7&_nc_sid=c211c2&_nc_ohc=t3yLuTH5eR4Q7kNvgGuUZ3I&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYB6NOr3bfxybUoViHNomdusERU1MbvesyliE3Z_sRQurQ&oe=67B2F04D",
+                locale: "vi_VN",
+                localized_language: "Tiếng Việt",
+                localized_country: null,
+              },
+              {
+                localized_creation_method: "Auto-generated",
+                captions_url:
+                  "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2093-6/475891612_433712393064832_4787332594767228115_n.srt?_nc_cat=106&ccb=1-7&_nc_sid=c211c2&_nc_ohc=SHajVdG9leoQ7kNvgHL8Rts&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYDLUQPHuue0h1OCgCTqxgAoG6PmHsKE-0t9qI-F8ZA-8A&oe=67B312DF",
+                locale: "en_US",
+                localized_language: "English",
+                localized_country: null,
+              },
+            ],
+            video_status_type: "OK",
+            can_use_oz: true,
+            min_quality_preference: null,
+            audio_user_preferred_language: "en",
+            spherical_video_fallback_urls: null,
+            comet_video_player_nextgendash_availability:
+              "UNAVAILABLE_NEXTGENDASH_GK",
+            videoDeliveryLegacyFields: {
+              dash_manifest_xml_string:
+                '<?xml version="1.0" encoding="UTF-8"?>\n<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 DASH-MPD.xsd" profiles="urn:mpeg:dash:profile:isoff-on-demand:2011" minBufferTime="PT2S" type="static" mediaPresentationDuration="PT30.041666S" FBTagsetUsed="r2av1-r1gen2vp9" FBManifestIdentifier="FgAYD3IyYXYxLXIxZ2VuMnZwORmWnvnG8ODH5gGQ8My/+7ylAoq5+MnXracDovPbpb2DkQTs6q+dq6PMBMLbgpXz7tYEwvnCuZPBtgXK99Od8ZnwDfzWw+WUhbcgIhgQYXVkaW9fYWFjX2xuX3ZicgA="><Period id="0" duration="PT30.041666S"><AdaptationSet id="0" contentType="video" frameRate="12288/512" subsegmentAlignment="true" par="9:16" FBUnifiedUploadResolutionMos="360:77.3,480:77.3,720:77.3,1080:77.3"><SupplementalProperty schemeIdUri="urn:mpeg:mpegB:cicp:MatrixCoefficients" value="1"/><SupplementalProperty schemeIdUri="urn:mpeg:mpegB:cicp:ColourPrimaries" value="1"/><SupplementalProperty schemeIdUri="urn:mpeg:mpegB:cicp:TransferCharacteristics" value="1"/><Representation id="9128234223957438v" bandwidth="58080" codecs="av01.0.01M.08.0.111.01.01.01.0" mimeType="video/mp4" sar="1:1" FBEncodingTag="dash_r2av1-r1gen2vp9_q20" FBPlaybackResolutionMos="0:100,360:29.6,480:27.1,720:25.6,1080:27.6" FBPlaybackResolutionMosConfidenceLevel="high" FBPlaybackResolutionCsvqm="0:100,360:63.3,480:54.4,720:42.2,1080:30.5" width="360" height="640" FBDefaultQuality="1" FBQualityClass="sd" FBQualityLabel="240p"><BaseURL>https://video-sjc3-1.xx.fbcdn.net/o1/v/t2/f2/m367/AQOa5pOVdEDqG-wTzitj4CHlkn0k3E-cGL43iy8V9pUI-a8qvM4DViiLiWJFIojbnlF92DBtkqwl9jnK1iyWXWppgpeT9tGTc2AIAo7p4q_G.mp4?strext=1&amp;_nc_cat=109&amp;_nc_sid=9ca052&amp;_nc_ht=video-sjc3-1.xx.fbcdn.net&amp;_nc_ohc=C17czRmFQOIQ7kNvgEAMELC&amp;efg=eyJ2ZW5jb2RlX3RhZyI6ImRhc2hfcjJhdjEtcjFnZW4ydnA5X3EyMCIsInZpZGVvX2lkIjo0MzM3MTIwNTMwNjQ4NjYsImNsaWVudF9uYW1lIjoidW5rbm93biIsIm9pbF91cmxnZW5fYXBwX2lkIjowLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&amp;ccb=9-4&amp;_nc_zt=28&amp;oh=00_AYDkewPnvJGgbJon92CUKfV02rDfrYgXz6P6w_OeIEmMfw&amp;oe=67B2E917</BaseURL><SegmentBase indexRange="826-941" timescale="12288" FBFirstSegmentRange="942-51966"><Initialization range="0-825"/></SegmentBase></Representation><Representation id="1527241441304161v" bandwidth="118222" codecs="av01.0.05M.08.0.111.01.01.01.0" mimeType="video/mp4" sar="1:1" FBEncodingTag="dash_r2av1-r1gen2vp9_q30" FBPlaybackResolutionMos="0:100,360:48.7,480:44,720:40.1,1080:39.9" FBPlaybackResolutionMosConfidenceLevel="high" FBPlaybackResolutionCsvqm="0:100,360:82.3,480:75.8,720:64.8,1080:53.2" width="720" height="1280" FBQualityClass="hd" FBQualityLabel="270p"><BaseURL>https://video-sjc3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQPURl8sBvqyI2BC-f4ybs8q_mtoHTtX_HOMwQUlmMm4Rc8Ucc0DGO9rYVlLixtBFYHOmFg3m8Yaqxq4aCmkhgsC.mp4?strext=1&amp;_nc_cat=108&amp;_nc_sid=9ca052&amp;_nc_ht=video-sjc3-1.xx.fbcdn.net&amp;_nc_ohc=yGB-uVMUHhwQ7kNvgEy-qZo&amp;efg=eyJ2ZW5jb2RlX3RhZyI6ImRhc2hfcjJhdjEtcjFnZW4ydnA5X3EzMCIsInZpZGVvX2lkIjo0MzM3MTIwNTMwNjQ4NjYsImNsaWVudF9uYW1lIjoidW5rbm93biIsIm9pbF91cmxnZW5fYXBwX2lkIjowLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&amp;ccb=9-4&amp;_nc_zt=28&amp;oh=00_AYCr3ln72vctX_450ADZMpz9C9l2SJoWvP8aSn_B-1NCEg&amp;oe=67B31666</BaseURL><SegmentBase indexRange="826-941" timescale="12288" FBFirstSegmentRange="942-107552"><Initialization range="0-825"/></SegmentBase></Representation><Representation id="645361181498376v" bandwidth="241412" codecs="av01.0.05M.08.0.111.01.01.01.0" mimeType="video/mp4" sar="1:1" FBEncodingTag="dash_r2av1-r1gen2vp9_q40" FBPlaybackResolutionMos="0:100,360:67.8,480:63,720:57.3,1080:55.1" FBPlaybackResolutionMosConfidenceLevel="high" FBPlaybackResolutionCsvqm="0:100,360:95.4,480:91.8,720:84.4,1080:74.8" width="720" height="1280" FBQualityClass="hd" FBQualityLabel="360p"><BaseURL>https://video-sjc3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQPdMormtG3Fo71QxIe4CdL-IrA3lknSbnFuUX__86bpst4DzU3YDCPaX7ja2rXu7YpnztM5JJELCCggybUFgK1X.mp4?strext=1&amp;_nc_cat=110&amp;_nc_sid=9ca052&amp;_nc_ht=video-sjc3-1.xx.fbcdn.net&amp;_nc_ohc=4n9DrpgC7awQ7kNvgFS4Rgg&amp;efg=eyJ2ZW5jb2RlX3RhZyI6ImRhc2hfcjJhdjEtcjFnZW4ydnA5X3E0MCIsInZpZGVvX2lkIjo0MzM3MTIwNTMwNjQ4NjYsImNsaWVudF9uYW1lIjoidW5rbm93biIsIm9pbF91cmxnZW5fYXBwX2lkIjowLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&amp;ccb=9-4&amp;_nc_zt=28&amp;oh=00_AYChQunZUzBh_SNPUeuz8PQkkV1pQqDLBFn8HG_uhRiolQ&amp;oe=67B308E8</BaseURL><SegmentBase indexRange="826-941" timescale="12288" FBFirstSegmentRange="942-214468"><Initialization range="0-825"/></SegmentBase></Representation><Representation id="1163343068626129v" bandwidth="365753" codecs="av01.0.05M.08.0.111.01.01.01.0" mimeType="video/mp4" sar="1:1" FBEncodingTag="dash_r2av1-r1gen2vp9_q50" FBPlaybackResolutionMos="0:100,360:75.5,480:71.3,720:65.8,1080:62.6" FBPlaybackResolutionMosConfidenceLevel="high" FBPlaybackResolutionCsvqm="0:100,360:98.8,480:97.2,720:92,1080:84.2" width="720" height="1280" FBQualityClass="hd" FBQualityLabel="480p"><BaseURL>https://video-sjc3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQOjhreFmXmNGMPY5SdStwEt3OqYMZDCJSe2Y-GYcTJhLvW2FctfiMitiG6qgzlhMSbH5rrGdAOCrG_htcmcAvyV.mp4?strext=1&amp;_nc_cat=109&amp;_nc_sid=9ca052&amp;_nc_ht=video-sjc3-1.xx.fbcdn.net&amp;_nc_ohc=y-dtMDc-NWQQ7kNvgGx7oAM&amp;efg=eyJ2ZW5jb2RlX3RhZyI6ImRhc2hfcjJhdjEtcjFnZW4ydnA5X3E1MCIsInZpZGVvX2lkIjo0MzM3MTIwNTMwNjQ4NjYsImNsaWVudF9uYW1lIjoidW5rbm93biIsIm9pbF91cmxnZW5fYXBwX2lkIjowLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&amp;ccb=9-4&amp;_nc_zt=28&amp;oh=00_AYCUL3riNTt4YIht5rZJBPZ2rRkddAu8pPyKh4uA2nCHHg&amp;oe=67B3187D</BaseURL><SegmentBase indexRange="826-941" timescale="12288" FBFirstSegmentRange="942-323541"><Initialization range="0-825"/></SegmentBase></Representation><Representation id="3905909996289509v" bandwidth="484975" codecs="av01.0.05M.08.0.111.01.01.01.0" mimeType="video/mp4" sar="1:1" FBEncodingTag="dash_r2av1-r1gen2vp9_q60" FBPlaybackResolutionMos="0:100,360:80.1,480:75.8,720:70.7,1080:67.3" FBPlaybackResolutionMosConfidenceLevel="high" FBPlaybackResolutionCsvqm="0:100,360:99.531,480:99.201,720:96.2,1080:89.6" width="720" height="1280" FBQualityClass="hd" FBQualityLabel="540p"><BaseURL>https://video-sjc3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQMTmrsPt399LMf0dJiHEtRtObSNGAbB4ljjSBMGC36UQIzvamiz7KXOoDdpX1fU9QRrJYogSLIReU85S13pxM0m.mp4?strext=1&amp;_nc_cat=106&amp;_nc_sid=9ca052&amp;_nc_ht=video-sjc3-1.xx.fbcdn.net&amp;_nc_ohc=luDBKDi3nqkQ7kNvgEBTgW1&amp;efg=eyJ2ZW5jb2RlX3RhZyI6ImRhc2hfcjJhdjEtcjFnZW4ydnA5X3E2MCIsInZpZGVvX2lkIjo0MzM3MTIwNTMwNjQ4NjYsImNsaWVudF9uYW1lIjoidW5rbm93biIsIm9pbF91cmxnZW5fYXBwX2lkIjowLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&amp;ccb=9-4&amp;_nc_zt=28&amp;oh=00_AYCKxBciXLR-AbqZNPywpPCHnjpKpHsCpVV5RTUVkIHJAA&amp;oe=67B2ECFC</BaseURL><SegmentBase indexRange="826-941" timescale="12288" FBFirstSegmentRange="942-426416"><Initialization range="0-825"/></SegmentBase></Representation><Representation id="930971685686853v" bandwidth="648419" codecs="av01.0.05M.08.0.111.01.01.01.0" mimeType="video/mp4" sar="1:1" FBEncodingTag="dash_r2av1-r1gen2vp9_q70" FBPlaybackResolutionMos="0:100,360:84.4,480:80,720:74.8,1080:71.4" FBPlaybackResolutionMosConfidenceLevel="high" FBPlaybackResolutionCsvqm="0:100,360:99.613,480:99.561,720:98.69,1080:94.1" width="720" height="1280" FBQualityClass="hd" FBQualityLabel="640p"><BaseURL>https://video-sjc3-1.xx.fbcdn.net/o1/v/t2/f2/m367/AQMOOT1ZzmqYvOiuQS4xzCcAd32oZKQ63lh2UyqfT3OxhzX6DkxW94AvPCzrcCWinm8yZ7p84gCE0mcv2vNFvtgfg7vGQ_0u_n2vcJT94wEy.mp4?strext=1&amp;_nc_cat=101&amp;_nc_sid=9ca052&amp;_nc_ht=video-sjc3-1.xx.fbcdn.net&amp;_nc_ohc=3747_2Heba0Q7kNvgEVY8ql&amp;efg=eyJ2ZW5jb2RlX3RhZyI6ImRhc2hfcjJhdjEtcjFnZW4ydnA5X3E3MCIsInZpZGVvX2lkIjo0MzM3MTIwNTMwNjQ4NjYsImNsaWVudF9uYW1lIjoidW5rbm93biIsIm9pbF91cmxnZW5fYXBwX2lkIjowLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&amp;ccb=9-4&amp;_nc_zt=28&amp;oh=00_AYBRqvwI5xgWL4LYhhi-sXdQgl2xUOsQZnW5PKcuMMidDQ&amp;oe=67B30C7F</BaseURL><SegmentBase indexRange="826-941" timescale="12288" FBFirstSegmentRange="942-571124"><Initialization range="0-825"/></SegmentBase></Representation><Representation id="1316921149511393v" bandwidth="823330" codecs="av01.0.05M.08.0.111.01.01.01.0" mimeType="video/mp4" sar="1:1" FBEncodingTag="dash_r2av1-r1gen2vp9_q80" FBPlaybackResolutionMos="0:100,360:87.2,480:83.3,720:77.5,1080:74.2" FBPlaybackResolutionMosConfidenceLevel="high" FBPlaybackResolutionCsvqm="0:100,360:99.624,480:99.587,720:99.438,1080:96.8" width="720" height="1280" FBQualityClass="hd" FBQualityLabel="720p"><BaseURL>https://video-sjc3-1.xx.fbcdn.net/o1/v/t2/f2/m367/AQOnWG_ms_5QeZaAEm-jxBR49uK8Pc0oOFgkG9uskT_rihVOmNqBe4CJQ1XOf851taewPst3yWlUXjguLeK8nWzNeSCSFp8uHNDu_F58Mgcz.mp4?strext=1&amp;_nc_cat=104&amp;_nc_sid=9ca052&amp;_nc_ht=video-sjc3-1.xx.fbcdn.net&amp;_nc_ohc=ARANnTAqczMQ7kNvgGzcADJ&amp;efg=eyJ2ZW5jb2RlX3RhZyI6ImRhc2hfcjJhdjEtcjFnZW4ydnA5X3E4MCIsInZpZGVvX2lkIjo0MzM3MTIwNTMwNjQ4NjYsImNsaWVudF9uYW1lIjoidW5rbm93biIsIm9pbF91cmxnZW5fYXBwX2lkIjowLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&amp;ccb=9-4&amp;_nc_zt=28&amp;oh=00_AYD9ZY9hGQ0QtwpoJBIYNfp2DILJDa5ZvZscIZtJVG1Gnw&amp;oe=67B2F0E0</BaseURL><SegmentBase indexRange="826-941" timescale="12288" FBFirstSegmentRange="942-729847"><Initialization range="0-825"/></SegmentBase></Representation><Representation id="1293632771848886v" bandwidth="1129765" codecs="av01.0.08M.08.0.111.01.01.01.0" mimeType="video/mp4" sar="1:1" FBEncodingTag="dash_r2av1-r1gen2vp9_q90" FBPlaybackResolutionMos="0:100,360:90.6,480:87.3,720:82.5,1080:78.6" FBPlaybackResolutionMosConfidenceLevel="high" FBPlaybackResolutionCsvqm="0:100,360:99.652,480:99.614,720:99.53,1080:99.21" width="1080" height="1920" FBQualityClass="hd" FBQualityLabel="1080p"><BaseURL>https://video-sjc3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQNCJh8etKYfOCc-2AzdorqlhyPouZXR55IPnsBoiaf1zMt72tkEkT3AWZA5vpFQTyqsjHt-zhWWBGMw0EWZIiGe.mp4?strext=1&amp;_nc_cat=106&amp;_nc_sid=9ca052&amp;_nc_ht=video-sjc3-1.xx.fbcdn.net&amp;_nc_ohc=U0slejPAC5oQ7kNvgEmMhAc&amp;efg=eyJ2ZW5jb2RlX3RhZyI6ImRhc2hfcjJhdjEtcjFnZW4ydnA5X3E5MCIsInZpZGVvX2lkIjo0MzM3MTIwNTMwNjQ4NjYsImNsaWVudF9uYW1lIjoidW5rbm93biIsIm9pbF91cmxnZW5fYXBwX2lkIjowLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&amp;ccb=9-4&amp;_nc_zt=28&amp;oh=00_AYCfoKpxxNBiey4RcvEmijgP7y8zEztWJFOCK1IC_cC3lg&amp;oe=67B2EE08</BaseURL><SegmentBase indexRange="826-941" timescale="12288" FBFirstSegmentRange="942-990666"><Initialization range="0-825"/></SegmentBase></Representation></AdaptationSet><AdaptationSet id="1" contentType="audio" subsegmentStartsWithSAP="1" subsegmentAlignment="true"><Representation id="507008122412623a" bandwidth="77578" codecs="mp4a.40.5" mimeType="audio/mp4" FBAvgBitrate="77578" audioSamplingRate="44100" FBEncodingTag="dash_ln_heaac_vbr3_audio" FBDefaultQuality="1"><AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/><BaseURL>https://video-sjc3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQMVR6VIjqpLv2D7x9HsMUYRB3AoeFCQDhwWkbe93E5uJodDGL6FuFPImZ3lCV8jPYwG8J8CNrmR1ewmE_v8JDgY.mp4?strext=1&amp;_nc_cat=102&amp;_nc_sid=9ca052&amp;_nc_ht=video-sjc3-1.xx.fbcdn.net&amp;_nc_ohc=dkrvb3Js0Q8Q7kNvgG-VC2r&amp;efg=eyJ2ZW5jb2RlX3RhZyI6ImRhc2hfbG5faGVhYWNfdmJyM19hdWRpbyIsInZpZGVvX2lkIjo0MzM3MTIwNTMwNjQ4NjYsImNsaWVudF9uYW1lIjoidW5rbm93biIsIm9pbF91cmxnZW5fYXBwX2lkIjowLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&amp;ccb=9-4&amp;_nc_zt=28&amp;oh=00_AYDg0ZD5cIsMKXXNVkbDG5PIraZzDTonq2X8l2BKzh_Hzg&amp;oe=67B2EC70</BaseURL><SegmentBase indexRange="824-1035" timescale="44100" FBFirstSegmentRange="1036-22496"><Initialization range="0-823"/></SegmentBase></Representation></AdaptationSet></Period></MPD>\n',
+              dash_manifest_url:
+                "https://www.facebook.com/dash_mpd_debug.mpd?v=433712053064866&dummy=.mpd",
+              browser_native_sd_url:
+                "https://video-sjc3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQMx6E_PbEBxrYnaOx1aqgf0JAT5kDE9sEAWqSjC4BEAjBPKAJGIRZGgEddG_pgOMy4x8bFz3yRUlOdLqrNp4o9J.mp4?strext=1&_nc_cat=106&_nc_sid=8bf8fe&_nc_ht=video-sjc3-1.xx.fbcdn.net&_nc_ohc=9Qv2mVHBW1sQ7kNvgG8ADh6&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnByb2dyZXNzaXZlX2gyNjQtYmFzaWMtZ2VuMl8zNjBwIiwieHB2X2Fzc2V0X2lkIjo2MjE2NDg2MDA1MTM5NzQsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=9-4&_nc_zt=28&oh=00_AYCLraWNwGp2-K7azxPsGh3MKWWAiZmXJ5l6jX4Bb20sNg&oe=67B300D4",
+              browser_native_hd_url:
+                "https://video-sjc3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQOTKT0oKsgGu6vsWmhe7-noYJb16dEovA-MfH3jFbi2zYms_4w4VRE8tMy09mpLJZKnW1z-pDw6utNPrFgagrfe.mp4?strext=1&_nc_cat=110&_nc_sid=8bf8fe&_nc_ht=video-sjc3-1.xx.fbcdn.net&_nc_ohc=vj3sojPiF1EQ7kNvgFzIRzA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLnByb2dyZXNzaXZlX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjo2MjE2NDg2MDA1MTM5NzQsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=9-4&_nc_zt=28&oh=00_AYBumE_6wMKlZ8Q3mwpNbOAsGpyuEMcuMIsGy-uKT9hk9A&oe=67B2F220",
+              id: "433712053064866",
+            },
+            videoDeliveryResponseFragment: null,
+            is_gaming_video: false,
+            is_latency_menu_enabled: false,
+            fbls_tier: null,
+            is_latency_sensitive_broadcast: false,
+            video_player_shaka_performance_logger_init: {
+              __typename: "VideoPlayerShakaPerformanceLoggerInit",
+              __module_operation_useVideoPlayerShakaPerformanceLoggerRelayImpl_video:
+                {
+                  __dr: "useVideoPlayerShakaPerformanceLoggerRelayImpl_init$normalization.graphql",
+                },
+              __module_component_useVideoPlayerShakaPerformanceLoggerRelayImpl_video:
+                { __dr: "VideoPlayerShakaPerformanceLogger" },
+            },
+            video_player_shaka_performance_logger_should_sample: false,
+            video_player_shaka_performance_logger_init2: {
+              __typename: "VideoPlayerShakaPerformanceLoggerInit",
+              __module_operation_useVideoPlayerShakaPerformanceLoggerBuilder_video:
+                {
+                  __dr: "useVideoPlayerShakaPerformanceLoggerBuilder_init$normalization.graphql",
+                },
+              __module_component_useVideoPlayerShakaPerformanceLoggerBuilder_video:
+                { __dr: "VideoPlayerShakaPerformanceLoggerBuilder" },
+              per_session_sampling_rate: null,
+            },
+            autoplay_gating_result: "all_page_organic_allowed",
+            viewer_autoplay_setting: "default_autoplay",
+            can_autoplay: true,
+            drm_info:
+              '{"video_license_uri_map":{},"graph_api_video_license_uri":null,"fairplay_cert":null,"widevine_cert":"CsECCAMSEBcFuRfMEgSGiwYzOi93KowYgrSCkgUijgIwggEKAoIBAQCZ7Vs7Mn2rXiTvw7YqlbWYUgrVvMs3UD4GRbgU2Ha430BRBEGtjOOtsRu4jE5yWl5KngeVKR1YWEAjp+GvDjipEnk5MAhhC28VjIeMfiG\\/+\\/7qd+EBnh5XgeikX0YmPRTmDoBYqGB63OBPrIRXsTeo1nzN6zNwXZg6IftO7L1KEMpHSQykfqpdQ4IY3brxyt4zkvE9b\\/tkQv0x4b9AsMYE0cS6TJUgpL+X7r1gkpr87vVbuvVk4tDnbNfFXHOggrmWEguDWe3OJHBwgmgNb2fG2CxKxfMTRJCnTuw3r0svAQxZ6ChD4lgvC2ufXbD8Xm7fZPvTCLRxG88SUAGcn1oJAgMBAAE6FGxpY2Vuc2Uud2lkZXZpbmUuY29tEoADrjRzFLWoNSl\\/JxOI+3u4y1J30kmCPN3R2jC5MzlRHrPMveoEuUS5J8EhNG79verJ1BORfm7BdqEEOEYKUDvBlSubpOTOD8S\\/wgqYCKqvS\\/zRnB3PzfV0zKwo0bQQQWz53ogEMBy9szTK\\/NDUCXhCOmQuVGE98K\\/PlspKkknYVeQrOnA+8XZ\\/apvTbWv4K+drvwy6T95Z0qvMdv62Qke4XEMfvKUiZrYZ\\/DaXlUP8qcu9u\\/r6DhpV51Wjx7zmVflkb1gquc9wqgi5efhn9joLK3\\/bNixbxOzVVdhbyqnFk8ODyFfUnaq3fkC3hR3f0kmYgI41sljnXXjqwMoW9wRzBMINk+3k6P8cbxfmJD4\\/Paj8FwmHDsRfuoI6Jj8M76H3CTsZCZKDJjM3BQQ6Kb2m+bQ0LMjfVDyxoRgvfF\\/\\/M\\/EEkPrKWyU2C3YBXpxaBquO4C8A0ujVmGEEqsxN1HX9lu6c5OMm8huDxwWFd7OHMs3avGpr7RP7DUnTikXrh6X0"}',
+            p2p_settings: null,
+            audio_settings: null,
+            captions_settings: null,
+            broadcast_low_latency_config: null,
+            audio_availability: "AVAILABLE",
+            muted_segments: [],
+            spherical_video_renderer: null,
+            preferred_thumbnail: {
+              image: {
+                uri: "https://scontent-sjc3-1.xx.fbcdn.net/v/t51.29350-10/475909344_1337620183924143_3617672300260549753_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=cb5bf7&_nc_ohc=srUT4hzrVvcQ7kNvgG0nqEa&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYBHyz5a9XByUAo2tq0ogr1Zp5ivEFW6Zztpj3NNCrr1-Q&oe=67B2F1B2",
+              },
+              image_preview_payload: null,
+              id: "643375581595522",
+            },
+            video_imf_data: null,
+            warning_screen_renderer: null,
+            cix_screen: null,
+          },
+          video_owner: {
+            __typename: "User",
+            id: "100044216926934",
+            __isActor: "User",
+            name: "Tom Brady",
+            enable_reels_tab_deeplink: true,
+            is_verified: true,
+            url: "https://www.facebook.com/TomBrady",
+            displayPicture: {
+              uri: "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.6435-1/106296873_4387231321317984_4259106234273322140_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&_nc_cat=105&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=q40gxz2rbO8Q7kNvgHE69tg&_nc_zt=24&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYBNS3vDhKsFOjLDcjQd-aOkBNBWgdqJxDK_TfwP05TMKw&oe=67D4AA8E",
+            },
+            subscribe_status: "CANNOT_SUBSCRIBE",
+            delegate_page: {
+              id: "214003275307497",
+              woodhenge_creator_info: null,
+            },
+          },
+          is_passive_content: false,
+          fb_shorts_reshare_context: {
+            is_reshare: false,
+            reshare_creator: {
+              __typename: "User",
+              __isActor: "User",
+              id: "100044216926934",
+              name: "Tom Brady",
+              enable_reels_tab_deeplink: true,
+              is_verified: true,
+              url: "https://www.facebook.com/TomBrady",
+            },
+          },
+          remix_info: { is_remixable: false, status: "ENABLED" },
+          video_owner_type: "FACEBOOK_USER",
+          soundtrack_info: null,
+          track_title: null,
+          music_album_art_uri:
+            "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.6435-1/106296873_4387231321317984_4259106234273322140_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=105&ccb=1-7&_nc_sid=0fc832&_nc_ohc=q40gxz2rbO8Q7kNvgHE69tg&_nc_zt=24&_nc_ht=scontent-sjc3-1.xx&_nc_gid=A4VHRgrjrkt8q-yHAzlaXTX&oh=00_AYCUyqvne4BeHW8MN5HPDgWXxRTX-hQHaek5d9pmvowPNQ&oe=67D4AA8E",
+          is_original_audio_on_facebook: true,
+          transcript:
+            "1\n00:00:00,000 --> 00:00:05,921\nOh the late slide no flag how\nfast I get up I definitely slid\n\n2\n00:00:05,921 --> 00:00:08,561\nlate that would 100% be a\npenalty now in the NFL right\n\n3\n00:00:08,561 --> 00:00:12,001\neven though I slid late you\ndeserve that one yeah I mean it\n\n4\n00:00:12,001 --> 00:00:15,281\nwas was he supposed to do\nsupposed to knock the at me and\n\n5\n00:00:15,281 --> 00:00:17,201\ntry to knock the ball off me\nand say he knocked the helmet\n\n6\n00:00:17,201 --> 00:00:20,241\noff me Nate that was a good hit\nyou have the ability to protect\n\n7\n00:00:20,241 --> 00:00:23,201\nyourself on offense or defense\nif you want protection get rid\n\n8\n00:00:23,201 --> 00:00:26,001\nof the ball I'm trying to get\nthe first down yeah and they're\n\n9\n00:00:26,001 --> 00:00:28,001\ntrying to keep me from getting\nthe first down great defense\n\n10\n00:00:28,001 --> 00:00:31,601\nhas defended every blade of\ngrass",
+        },
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Facebook reel URL",
+          },
+          {
+            name: "get_transcript",
+            type: "boolean",
+            required: false,
+            description: "Get the transcript of the reel",
+          },
+        ],
+      },
     ],
   },
   {
