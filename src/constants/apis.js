@@ -1176,7 +1176,7 @@ export const apis = [
         method: "GET",
         description:
           "Scrapes videos from a TikTok profile. Just pass handle and amount you want.",
-        path: "/v2/tiktok/profile-videos",
+        path: "/v3/tiktok/profile-videos",
         params: [
           {
             name: "handle",
