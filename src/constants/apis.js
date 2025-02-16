@@ -7,7 +7,9 @@ import {
   SiX,
   SiReddit,
   SiKick, // closest match for Kick
+  SiPersonio,
 } from "react-icons/si";
+import { MdPerson } from "react-icons/md";
 
 export const apis = [
   {
@@ -24731,6 +24733,35 @@ export const apis = [
             description: "Kick clip URL",
             placeholder:
               "https://kick.com/xqc/clips/clip_01JGJHB6CEVFCQRYTVPM8DW892",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "age-and-gender",
+    name: "Age and Gender",
+    icon: MdPerson,
+    description: "Get age and gender of creator",
+    endpoints: [
+      {
+        name: "Get Age and Gender",
+        method: "GET",
+        description:
+          "Get age and gender of creator. This just analyzed the profile image. In the future it will be more sophisticated.",
+        path: "/v1/detect-age-gender",
+        sampleResponse: {
+          ageRange: { low: 23, high: 29 },
+          gender: "Male",
+          confidence: { gender: 82.51082611083984 },
+        },
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "URL to users social profile",
+            placeholder: "https://twitter.com/levelsio",
           },
         ],
       },
