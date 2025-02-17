@@ -12058,7 +12058,7 @@ export const apis = [
         name: "Get popular songs",
         method: "GET",
         description:
-          "Get popular songs from TikTok. If you want to check out the page this is actually scraping, check out: https://ads.tiktok.com/business/creativecenter/inspiration/popular/music/pc/en",
+          "This endpoint can take up to 30 seconds. Get popular songs from TikTok. If you want to check out the page this is actually scraping, check out: https://ads.tiktok.com/business/creativecenter/inspiration/popular/music/pc/en",
         path: "/v1/tiktok/songs/popular",
         params: [
           {
