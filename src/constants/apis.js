@@ -12062,6 +12062,12 @@ export const apis = [
         path: "/v1/tiktok/songs/popular",
         params: [
           {
+            name: "page",
+            type: "number",
+            placeholder: 1,
+            description: "Page number",
+          },
+          {
             name: "timePeriod",
             type: "select",
             options: [7, 30, 130],
