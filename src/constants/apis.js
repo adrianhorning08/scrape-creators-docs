@@ -12432,6 +12432,12 @@ export const apis = [
             description: "This is clipId and not songId like you'd think.",
             placeholder: "7439295283975702544",
           },
+          {
+            name: "cursor",
+            type: "number",
+            description: "The cursor to get the next page of results.",
+            placeholder: 12,
+          },
         ],
         sampleResponse: {
           aweme_list: [
