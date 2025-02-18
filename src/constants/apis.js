@@ -12060,6 +12060,7 @@ export const apis = [
         description:
           "This endpoint can take up to 30 seconds. Get popular songs from TikTok. If you want to check out the page this is actually scraping, check out: https://ads.tiktok.com/business/creativecenter/inspiration/popular/music/pc/en",
         path: "/v1/tiktok/songs/popular",
+        youtubeId: "YMOQjj9seaY",
         params: [
           {
             name: "page",
@@ -12285,6 +12286,7 @@ export const apis = [
         description:
           "Scraping details from the song detail on the TikTok creative center: https://ads.tiktok.com/business/creativecenter/song/luther-7439295283975702544/pc/en?countryCode=US&period=7",
         path: "/v1/tiktok/song",
+        youtubeId: "YMOQjj9seaY",
         params: [
           {
             name: "clipId",
@@ -12425,6 +12427,7 @@ export const apis = [
         description: "Get the TikToks using a song",
         path: "/v1/tiktok/song/videos",
         method: "GET",
+        youtubeId: "YMOQjj9seaY",
         params: [
           {
             name: "clipId",

@@ -129,6 +129,19 @@ export default function EndpointDocs({
           setSelectedLanguage={setSelectedLanguage}
         />
 
+        {/* Add YouTube video section if video ID exists */}
+        {endpointData.youtubeId && (
+          <div className="w-full aspect-video rounded-xl overflow-hidden">
+            <iframe
+              className="w-full h-full"
+              src={`https://www.youtube.com/embed/${endpointData.youtubeId}`}
+              title={`${endpointData.name} API Demo`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        )}
+
         <div className="flex items-center gap-6 p-6 bg-primary/10 dark:bg-primary-light/10 border border-primary/20 dark:border-primary-light/20 rounded-xl">
           <div className="flex flex-col w-full gap-4">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
