@@ -23295,6 +23295,27 @@ export const apis = [
               "Continuation token to get more videos. Get 'continuationToken' from previous response.",
             placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
           },
+          {
+            name: "uploadDate",
+            type: "select",
+            required: false,
+            description: "Upload date",
+            options: [
+              "last_hour",
+              "today",
+              "this_week",
+              "this_month",
+              "this_year",
+            ],
+          },
+          {
+            name: "sortBy",
+            type: "select",
+            required: false,
+            description: "Sort by",
+            options: ["relevance", "upload_date"],
+            placeholder: "relevance",
+          },
         ],
       },
       {
