@@ -11017,6 +11017,21 @@ export const apis = [
               "Cursor to get more videos. Get 'cursor' from previous response.",
             placeholder: 10,
           },
+          {
+            name: "date_posted",
+            type: "select",
+            required: false,
+            description: "Time Frame",
+            placeholder: "all-time",
+            options: [
+              "yesterday",
+              "this-week",
+              "this-month",
+              "last-3-months",
+              "last-6-months",
+              "all-time",
+            ],
+          },
         ],
       },
       {

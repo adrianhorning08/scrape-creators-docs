@@ -5,7 +5,7 @@ function Parameter({ name, type, required, description, options }) {
     if (type === "select" && options?.length > 0) {
       const firstOption = options[0];
       const optionType = typeof firstOption;
-      return `enum<${optionType}>`;
+      return `${optionType}`;
     }
     return type;
   };
