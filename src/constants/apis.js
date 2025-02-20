@@ -11,8 +11,27 @@ import {
 } from "react-icons/si";
 import { MdPerson } from "react-icons/md";
 import { placeholder } from "@uiw/react-codemirror";
+import ScrapeCreatorsIcon from "../components/ScrapeCreatorsIcon";
 
 export const apis = [
+  {
+    id: "scrape-creators",
+    name: "Scrape Creators",
+    icon: ScrapeCreatorsIcon,
+    description: "For Scrape Creators customers",
+    endpoints: [
+      {
+        name: "Get credit balance",
+        method: "GET",
+        description: "How many credits you have left",
+        path: "/v1/credit-balance",
+        params: [],
+        sampleResponse: {
+          creditCount: 333,
+        },
+      },
+    ],
+  },
   {
     id: "tiktok",
     name: "TikTok",
