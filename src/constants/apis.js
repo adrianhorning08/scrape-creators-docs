@@ -23555,6 +23555,8 @@ export const apis = [
         description: "Get reel details",
         path: "/v1/facebook/user/reel",
         sampleResponse: {
+          description:
+            "Hahahahhaa , okay wash yah hands 😂 #baby #couple #pregnancy #charlesandalyssaforever #charlesandalyssa #love #couples #couplegoals #funny #jokes",
           self_view_boost: null,
           video: {
             id: "433712053064866",
