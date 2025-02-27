@@ -1214,6 +1214,14 @@ export const apis = [
             placeholder: "20",
             description: "Number of videos to fetch (default: 20)",
           },
+          {
+            name: "trim",
+            type: "boolean",
+            required: false,
+            placeholder: "false",
+            description:
+              "Trims the response to only the essential fields (you'll most likely only use this for no-code platforms like clay or make)",
+          },
         ],
         sampleResponse: [
           {
@@ -2353,6 +2361,13 @@ export const apis = [
             voice_filter_ids: null,
             with_promotional_music: false,
             without_watermark: false,
+          },
+        ],
+        responseFields: [
+          {
+            path: "aweme_id",
+            description:
+              "The id of the tiktok. Beats me why TikTok uses this convention, but they use 'aweme' everywhere for whatever reason.",
           },
         ],
       },
