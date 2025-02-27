@@ -23806,6 +23806,28 @@ export const apis = [
           },
         ],
       },
+      {
+        name: "Post",
+        method: "GET",
+        description:
+          "Get the post details from Facebook. Not much on the response payload right now. Just let me know what you want to see added: adrian@thewebscrapinguy.com",
+        path: "/v1/facebook/user/post",
+        sampleResponse: {
+          post_id: "2365250707186040",
+          author: "Ouflah Loli",
+          description:
+            "Brown Butter Dubai Pistachio Chocolate Chip Cookie Bars 🍪\n \n Indulge in these luxurious cookie bars that blend rich flavors and textures, perfect for any occasion! \n \n INGREDIENTS: \n 🧈 1 cup salted butter \n 🍬 1 cup brown sugar (light or dark) \n 🍬 1/2 cup granulated sugar \n 🥚 1 large egg \n 🥛 1/4 cup heavy cream \n 🌿 1 tsp vanilla extract \n 🌾 2 cups all-purpose flour \n 🥄 1 tsp baking soda \n 🥄 1 tsp baking powder \n 🧂 1/2 tsp salt \n 🍫 1 cup semi-sweet chocolate chips \n 🥜 1 cup kataifi (shredded phyllo dough) \n 🥜 1/2 cup pistachio cream/butter \n 🥜 Chopped pistachios (optional, for garnishing) \n \n INSTRUCTIONS: \n 1. Preheat your oven to 350°F (175°C) and line a baking pan with parchment paper. \n 2. In a saucepan, melt the butter over medium heat until it turns golden brown and smells nutty. Let it cool slightly. \n 3. In a mixing bowl, combine the brown sugar, granulated sugar, and the cooled brown butter. Mix well. \n 4. Add the egg, heavy cream, and vanilla extract, stirring until smooth. \n 5. In another bowl, whisk together the flour, baking soda, baking powder, and salt. Gradually add this to the wet mixture until combined. \n 6. Fold in the chocolate chips. \n 7. Press half of the cookie dough into the bottom of the prepared pan. \n 8. In a separate pan, toast the kataifi with a bit of butter until golden brown. Mix with pistachio cream and spread over the cookie base. \n 9. Top with the remaining cookie dough, spreading it evenly. \n 10. Bake for 25-30 minutes or until golden. Let cool before slicing. \n \n PREP TIME & NUTRITION: \n Prep Time: 20 minutes \n Servings: 12 bars \n Calories: 320 per bar \n Net Carbs: 30g \n Fats: 18g \n Protein: 5g \n \n #BrownButterCookies #PistachioDelight #ChocolateChipBars #GourmetDesserts",
+          url: "https://www.facebook.com/groups/2147499542294492/permalink/2365250707186040/",
+        },
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Facebook post URL",
+          },
+        ],
+      },
     ],
   },
   {
