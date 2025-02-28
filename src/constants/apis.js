@@ -12476,7 +12476,8 @@ export const apis = [
         description: "Get the TikToks using a song",
         path: "/v1/tiktok/song/videos",
         method: "GET",
-        paginationField: "cursor",        
+        paginationField: "cursor",
+        youtubeId: "bZojkaxapwU",
         params: [
           {
             name: "clipId",
