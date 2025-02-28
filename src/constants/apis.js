@@ -12476,12 +12476,13 @@ export const apis = [
         description: "Get the TikToks using a song",
         path: "/v1/tiktok/song/videos",
         method: "GET",
-        youtubeId: "YMOQjj9seaY",
+        paginationField: "cursor",        
         params: [
           {
             name: "clipId",
             type: "string",
-            description: "This is clipId and not songId like you'd think.",
+            description:
+              "This is clipId. Can be found on a url like so: https://www.tiktok.com/music/That%27s-Who-I-Praise-7370375686554782506, where 7370375686554782506 is the clipId",
             placeholder: "7439295283975702544",
           },
           {
