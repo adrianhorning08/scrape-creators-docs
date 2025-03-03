@@ -24060,6 +24060,13 @@ export const apis = [
             placeholder: "1610035449650583",
           },
         ],
+        responseFields: [
+          {
+            path: "ad_archive_id",
+            description:
+              "This is the ad id. You'd think it'd be 'ad_id', but facebook decided to make it confusing 🤦‍♂️",
+          },
+        ],
       },
       {
         name: "Search",
@@ -24194,6 +24201,13 @@ export const apis = [
             description: "Cursor to paginate through results",
             placeholder:
               "AQHRYLVDkoMkvGv7yK1rcce-vJmKiKv330R4v3j9KHSOaYvmF1bq1QkotG0rgW8Fkrj-",
+          },
+        ],
+        responseFields: [
+          {
+            path: "ad_archive_id",
+            description:
+              "This is the ad id. You'd think it'd be 'ad_id', but facebook decided to make it confusing 🤦‍♂️",
           },
         ],
       },
@@ -24333,6 +24347,13 @@ export const apis = [
             description: "Cursor to paginate through results",
             placeholder:
               "AQHRBUAxNmFlxBVMFL6uTb1ICFsV65O4SqmPbcVZJhiveBpPS1hFHAmL6yCJcF760cXP",
+          },
+        ],
+        responseFields: [
+          {
+            path: "ad_archive_id",
+            description:
+              "This is the ad id. You'd think it'd be 'ad_id', but facebook decided to make it confusing 🤦‍♂️",
           },
         ],
       },
