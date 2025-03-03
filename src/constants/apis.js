@@ -24197,6 +24197,7 @@ export const apis = [
           cursor:
             "AQHRYLVDkoMkvGv7yK1rcce-vJmKiKv330R4v3j9KHSOaYvmF1bq1QkotG0rgW8Fkrj-",
         },
+        paginationField: "cursor",
         params: [
           {
             name: "query",
@@ -24225,6 +24226,7 @@ export const apis = [
       {
         name: "Company Ads",
         method: "GET",
+        paginationField: "cursor",
         description: "Get all the ads a company has running",
         path: "/v1/facebook/adLibrary/company/ads",
         sampleResponse: {
