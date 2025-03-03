@@ -1192,6 +1192,17 @@ export const apis = [
           status_code: 0,
           status_msg: "",
         },
+        responseFields: [
+          {
+            path: "aweme_list[0].video.dynamic_cover.url_list",
+            description: "This is the path to get the thumbnail of the tiktok.",
+          },
+          {
+            path: "aweme_list[0].video.bit_rate[0].play_addr.url_list",
+            description:
+              "This is the path to get the video of the tiktok (without watermark)",
+          },
+        ],
       },
       {
         name: "Profile Videos (We handle pagination)",
