@@ -12343,8 +12343,7 @@ export const apis = [
       {
         name: "Get Song Details",
         method: "GET",
-        description:
-          "Scraping details from the song detail on the TikTok creative center: https://ads.tiktok.com/business/creativecenter/song/luther-7439295283975702544/pc/en?countryCode=US&period=7",
+        description: "Scraping details from the song detail",
         path: "/v1/tiktok/song",
         youtubeId: "YMOQjj9seaY",
         params: [
@@ -12355,6 +12354,12 @@ export const apis = [
             description:
               "This is a little confusing because this isn't songId like you'd think. It is the clipId. I guess because you can clip different portions of a song 🤷‍♂️",
             placeholder: "7439295283975702544",
+          },
+        ],
+        responseFields: [
+          {
+            path: "music_info.user_count",
+            description: "The number of videos using this song",
           },
         ],
         sampleResponse: {
