@@ -23594,7 +23594,7 @@ export const apis = [
         name: "Comments",
         method: "GET",
         description:
-          "Get comments from a video including replies and engagement data",
+          "Get comments from a video. Can only get 1k top comments and about 7k new comments.",
         path: "/v1/youtube/video/comments",
         paginationField: "continuationToken",
         sampleResponse: {
