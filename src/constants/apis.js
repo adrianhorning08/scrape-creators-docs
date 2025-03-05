@@ -143,6 +143,9 @@ export const apis = [
               "Cursor to get more videos. Get 'max_cursor' from previous response.",
           },
         ],
+        youtubeId: "HYoBzNIUfOM",
+        codeExample:
+          "https://github.com/adrianhorning08/scrape-creators-examples/blob/master/scrapeProfilesTiktoks.js",
         sampleResponse: {
           aweme_list: [
             {
@@ -12620,6 +12623,8 @@ export const apis = [
         method: "GET",
         paginationField: "cursor",
         youtubeId: "bZojkaxapwU",
+        codeExample:
+          "https://github.com/adrianhorning08/scrape-creators-examples/blob/master/getTiktoksFromSong.js",
         params: [
           {
             name: "clipId",

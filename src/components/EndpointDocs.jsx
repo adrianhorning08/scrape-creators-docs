@@ -142,7 +142,7 @@ export default function EndpointDocs({
               ></iframe>
             </div>
             <a
-              href={`https://github.com/adrianhorning08/scrape-creators-examples`}
+              href={endpointData.codeExample}
               target="_blank"
               rel="noopener noreferrer"
               className="self-start flex items-center gap-2 px-4 py-2 font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-colors"
