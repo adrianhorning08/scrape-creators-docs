@@ -85,31 +85,34 @@ export default function Sidebar() {
                       <li key={endpoint.path}>
                         <Link
                           to={endpoint.path}
-                          className={`group mt-2 lg:mt-0 flex items-center pr-3 py-1.5 cursor-pointer focus:outline-primary dark:focus:outline-primary-light space-x-3 rounded-xl ${
+                          className={`group mt-2 lg:mt-0 flex items-center pr-3 py-1.5 cursor-pointer focus:outline-primary dark:focus:outline-primary-light rounded-xl relative ${
                             currentPath === endpoint.path
                               ? "bg-primary/10 text-primary font-semibold dark:text-primary-light dark:bg-primary-light/10"
                               : "hover:bg-gray-600/5 dark:hover:bg-gray-200/5 text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
                           }`}
                           style={{ paddingLeft: "1rem" }}
                         >
-                          <span className="w-8 flex items-center">
-                            <span
-                              className={`px-1 py-0.5 rounded-md text-[0.55rem] leading-tight font-bold ${
-                                endpoint.method === "GET"
-                                  ? "bg-green-400/20 text-green-700 dark:bg-green-400/20 dark:text-green-400"
-                                  : endpoint.method === "POST"
-                                  ? "bg-blue-400/20 text-blue-700 dark:bg-blue-400/20 dark:text-blue-400"
-                                  : endpoint.method === "PUT"
-                                  ? "bg-yellow-400/20 text-yellow-700 dark:bg-yellow-400/20 dark:text-yellow-400"
-                                  : "bg-red-400/20 text-red-700 dark:bg-red-400/20 dark:text-red-400"
-                              }`}
-                            >
-                              {endpoint.method}
+                          <div className="flex items-center min-w-0 gap-3">
+                            <span className="w-8 flex-shrink-0">
+                              <span
+                                className={`px-1 py-0.5 rounded-md text-[0.55rem] leading-tight font-bold ${
+                                  endpoint.method === "GET"
+                                    ? "bg-green-400/20 text-green-700 dark:bg-green-400/20 dark:text-green-400"
+                                    : endpoint.method === "POST"
+                                    ? "bg-blue-400/20 text-blue-700 dark:bg-blue-400/20 dark:text-blue-400"
+                                    : endpoint.method === "PUT"
+                                    ? "bg-yellow-400/20 text-yellow-700 dark:bg-yellow-400/20 dark:text-yellow-400"
+                                    : "bg-red-400/20 text-red-700 dark:bg-red-400/20 dark:text-red-400"
+                                }`}
+                              >
+                                {endpoint.method}
+                              </span>
                             </span>
-                          </span>
-                          <div className="flex-1 flex items-center space-x-2.5">
-                            <div>{endpoint.name}</div>
+                            <div className="truncate">{endpoint.name}</div>
                           </div>
+                          {endpoint.creditCost > 1 && (
+                            <span className="absolute right-3 h-2 w-2 rounded-full bg-purple-800 dark:bg-purple-800" />
+                          )}
                         </Link>
                       </li>
                     ))}

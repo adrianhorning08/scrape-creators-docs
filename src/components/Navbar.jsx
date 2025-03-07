@@ -237,29 +237,44 @@ export default function Navbar() {
                       {api.name}
                     </h5>
                   </div>
-                  {api.endpoints.map((endpoint) => (
-                    <Link
-                      key={endpoint.path}
-                      to={endpoint.path}
-                      className="block py-2 pl-6 text-base text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      <span
-                        className={`px-1 py-0.5 rounded-md text-[0.6rem] leading-tight font-bold mr-2 ${
-                          endpoint.method === "GET"
-                            ? "bg-green-400/20 text-green-700 dark:bg-green-400/20 dark:text-green-400"
-                            : endpoint.method === "POST"
-                            ? "bg-blue-400/20 text-blue-700 dark:bg-blue-400/20 dark:text-blue-400"
-                            : endpoint.method === "PUT"
-                            ? "bg-yellow-400/20 text-yellow-700 dark:bg-yellow-400/20 dark:text-yellow-400"
-                            : "bg-red-400/20 text-red-700 dark:bg-red-400/20 dark:text-red-400"
-                        }`}
+                  {api.endpoints.map((endpoint) => {
+                    console.log(
+                      "Endpoint:",
+                      endpoint.name,
+                      "Cost:",
+                      endpoint.creditCost
+                    );
+                    return (
+                      <Link
+                        key={endpoint.path}
+                        to={endpoint.path}
+                        className="block py-2 pl-6 text-base text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300"
+                        onClick={() => setIsMenuOpen(false)}
                       >
-                        {endpoint.method}
-                      </span>
-                      {endpoint.name}
-                    </Link>
-                  ))}
+                        <div className="flex items-center gap-2">
+                          <span
+                            className={`px-1 py-0.5 rounded-md text-[0.6rem] leading-tight font-bold ${
+                              endpoint.method === "GET"
+                                ? "bg-green-400/20 text-green-700 dark:bg-green-400/20 dark:text-green-400"
+                                : endpoint.method === "POST"
+                                ? "bg-blue-400/20 text-blue-700 dark:bg-blue-400/20 dark:text-blue-400"
+                                : endpoint.method === "PUT"
+                                ? "bg-yellow-400/20 text-yellow-700 dark:bg-yellow-400/20 dark:text-yellow-400"
+                                : "bg-red-400/20 text-red-700 dark:bg-red-400/20 dark:text-red-400"
+                            }`}
+                          >
+                            {endpoint.method}
+                          </span>
+                          <span>{endpoint.name}</span>
+                          {endpoint.creditCost && endpoint.creditCost > 1 ? (
+                            <span className="px-2 py-1 text-xs font-semibold bg-purple-500 text-white rounded-full ml-2">
+                              {endpoint.creditCost} credits
+                            </span>
+                          ) : null}
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </div>
               ))}
             </div>

@@ -87,6 +87,18 @@ export default function Introduction() {
         </div>
 
         <h2 className="text-xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">
+          Premium Endpoints
+        </h2>
+        <p className="flex items-center gap-2">
+          <span className="h-2.5 w-2.5 rounded-full bg-purple-800 inline-block" />
+          <span>
+            Endpoints marked with this purple indicator are premium endpoints
+            that cost 2 credits per request. All other endpoints cost 1 credit
+            per request.
+          </span>
+        </p>
+
+        <h2 className="text-xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">
           Using the Documentation
         </h2>
         {/* <p>
