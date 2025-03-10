@@ -1,0 +1,186 @@
+{
+  "results": [
+    {
+      "url": "https://x.com/levelsio/status/1893385114496766155",
+      "tweet_id": "1893385114496766155",
+      "creation_date": "Sat Feb 22 19:39:23 +0000 2025",
+      "text": "Ok it's done, you can play it at\n\n✈️ https://t.co/UVJczDtp9x\n\nI've never ever made a game before and just made my own flight simulator 100% with Cursor in I'd say 3 hours by just telling it what I wanted\n\nIt didn't go 100% smooth ofc, but 80% yes, a few times I had to go back to previous versions and keep asking the same thing a few times to fix a problem\n\nBut I love this AI vibe coding\n\nVERY FUN!!! 😁\n\n(and yes the whole flight sim is one HTML file)",
+      "media_url": [
+        "https://pbs.twimg.com/ext_tw_video_thumb/1893383592505479169/pu/img/NNIjYcEPWdhjFmD-.jpg"
+      ],
+      "video_url": [
+        {
+          "content_type": "application/x-mpegURL",
+          "url": "https://video.twimg.com/ext_tw_video/1893349175338631168/pu/pl/ia09VwszbxPLh80j.m3u8?tag=12&v=cfc"
+        },
+        {
+          "bitrate": 256000,
+          "content_type": "video/mp4",
+          "url": "https://video.twimg.com/ext_tw_video/1893349175338631168/pu/vid/avc1/388x270/uazTbBYy3JkYBuLG.mp4?tag=12"
+        },
+        {
+          "bitrate": 832000,
+          "content_type": "video/mp4",
+          "url": "https://video.twimg.com/ext_tw_video/1893349175338631168/pu/vid/avc1/518x360/fkOYwNFJ1OYh6YmX.mp4?tag=12"
+        },
+        {
+          "bitrate": 2176000,
+          "content_type": "video/mp4",
+          "url": "https://video.twimg.com/ext_tw_video/1893349175338631168/pu/vid/avc1/1038x720/WDbs3XAXoI--gfEP.mp4?tag=12"
+        }
+      ],
+      "user": {
+        "creation_date": "Mon Jul 08 09:31:59 +0000 2013",
+        "user_id": "1577241403",
+        "username": "levelsio",
+        "name": "@levelsio",
+        "follower_count": 630035,
+        "following_count": 1754,
+        "favourites_count": 130148,
+        "is_private": null,
+        "is_verified": false,
+        "is_blue_verified": true,
+        "location": "📕 My book $14K/m 👉",
+        "profile_pic_url": "https://pbs.twimg.com/profile_images/1589756412078555136/YlXMBzhp_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1577241403/1665964220",
+        "description": "🇪🇺https://t.co/NdorAWqJC3 @euaccofficial\n✈️https://t.co/UVJczDtp9x $67K/m\n📸https://t.co/lAyoqmSBRX $123K/m\n🏡https://t.co/1oqUgfD6CZ $35K/m\n🌍https://t.co/UXK5AFqCaQ $24K/m\n🛰https://t.co/ZHSvI2wjyW $32K/m\n👙https://t.co/RyXpqGuFM3 $12K",
+        "external_url": "http://euacc.com",
+        "number_of_tweets": 148466,
+        "bot": false,
+        "timestamp": 1373275919,
+        "has_nft_avatar": false,
+        "category": null,
+        "default_profile": false,
+        "default_profile_image": false,
+        "listed_count": 6764,
+        "verified_type": null
+      },
+      "language": "en",
+      "favorite_count": 4495,
+      "retweet_count": 230,
+      "reply_count": 263,
+      "quote_count": 53,
+      "retweet": false,
+      "views": 1056625,
+      "timestamp": 1740253163,
+      "video_view_count": null,
+      "in_reply_to_status_id": null,
+      "quoted_status_id": "1893350391158292550",
+      "binding_values": null,
+      "expanded_url": "https://x.com/levelsio/status/1893385114496766155/video/1",
+      "retweet_tweet_id": null,
+      "extended_entities": {
+        "media": [
+          {
+            "display_url": "pic.x.com/lJb4FhYNZF",
+            "expanded_url": "https://x.com/levelsio/status/1893350391158292550/video/1",
+            "id_str": "1893349175338631168",
+            "indices": [276, 299],
+            "media_key": "7_1893349175338631168",
+            "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/1893349175338631168/pu/img/9avJ3XfYl_-0Z8Am.jpg",
+            "type": "video",
+            "url": "https://t.co/lJb4FhYNZF",
+            "additional_media_info": { "monetizable": false },
+            "ext_media_availability": { "status": "Available" },
+            "sizes": {
+              "large": { "h": 1419, "w": 2048, "resize": "fit" },
+              "medium": { "h": 831, "w": 1200, "resize": "fit" },
+              "small": { "h": 471, "w": 680, "resize": "fit" },
+              "thumb": { "h": 150, "w": 150, "resize": "crop" }
+            },
+            "original_info": {
+              "height": 1894,
+              "width": 2734,
+              "focus_rects": []
+            },
+            "video_info": {
+              "aspect_ratio": [1367, 947],
+              "duration_millis": 40300,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/ext_tw_video/1893349175338631168/pu/pl/ia09VwszbxPLh80j.m3u8?tag=12&v=cfc"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/ext_tw_video/1893349175338631168/pu/vid/avc1/388x270/uazTbBYy3JkYBuLG.mp4?tag=12"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/ext_tw_video/1893349175338631168/pu/vid/avc1/518x360/fkOYwNFJ1OYh6YmX.mp4?tag=12"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/ext_tw_video/1893349175338631168/pu/vid/avc1/1038x720/WDbs3XAXoI--gfEP.mp4?tag=12"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "conversation_id": "1893385114496766155",
+      "retweet_status": null,
+      "quoted_status": {
+        "tweet_id": "1893350391158292550",
+        "creation_date": "Sat Feb 22 17:21:24 +0000 2025",
+        "text": "✨ Today I thought what if I ask Cursor to build a flight simulator\n\nSo I asked  \"make a 3d flying game in browser with skyscrapers\" \n\nAnd after many questions and comments from me I now have the official [ ✈️ Pieter .com Flight Simulator ] in vanilla HTML and JS\n\nIt's in my… https://t.co/lJb4FhYNZF",
+        "media_url": null,
+        "video_url": null,
+        "user": {
+          "creation_date": "Mon Jul 08 09:31:59 +0000 2013",
+          "user_id": "1577241403",
+          "username": "levelsio",
+          "name": "@levelsio",
+          "follower_count": 630035,
+          "following_count": 1754,
+          "favourites_count": 130148,
+          "is_private": null,
+          "is_verified": false,
+          "is_blue_verified": true,
+          "location": "📕 My book $14K/m 👉",
+          "profile_pic_url": "https://pbs.twimg.com/profile_images/1589756412078555136/YlXMBzhp_normal.jpg",
+          "profile_banner_url": "https://pbs.twimg.com/profile_banners/1577241403/1665964220",
+          "description": "🇪🇺https://t.co/NdorAWqJC3 @euaccofficial\n✈️https://t.co/UVJczDtp9x $67K/m\n📸https://t.co/lAyoqmSBRX $123K/m\n🏡https://t.co/1oqUgfD6CZ $35K/m\n🌍https://t.co/UXK5AFqCaQ $24K/m\n🛰https://t.co/ZHSvI2wjyW $32K/m\n👙https://t.co/RyXpqGuFM3 $12K",
+          "external_url": "http://euacc.com",
+          "number_of_tweets": 148466,
+          "bot": false,
+          "timestamp": 1373275919,
+          "has_nft_avatar": false,
+          "category": null,
+          "default_profile": false,
+          "default_profile_image": false,
+          "listed_count": 6764,
+          "verified_type": null
+        },
+        "language": "en",
+        "favorite_count": 1110,
+        "retweet_count": 57,
+        "reply_count": 64,
+        "quote_count": 20,
+        "retweet": false,
+        "views": null,
+        "timestamp": 1740244884,
+        "video_view_count": null,
+        "in_reply_to_status_id": null,
+        "quoted_status_id": "1892989471546843259",
+        "binding_values": null,
+        "expanded_url": null,
+        "retweet_tweet_id": null,
+        "extended_entities": null,
+        "conversation_id": "1893350391158292550",
+        "retweet_status": null,
+        "quoted_status": null,
+        "bookmark_count": 654,
+        "source": null,
+        "community_note": null
+      },
+      "bookmark_count": 2231,
+      "source": "Twitter Web App",
+      "community_note": null
+    }
+  ],
+  "continuation_token": "DAACCgACGlpGMPJAJxAKAAMaWkYw8j..."
+}
