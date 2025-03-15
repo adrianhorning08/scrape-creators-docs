@@ -23727,6 +23727,153 @@ export const apis = [
         ],
       },
       {
+        name: "Profile Posts",
+        method: "GET",
+        description:
+          "Get public Facebook profile posts. This only returns the posts you would see from an incognito browser session. You can pass a url or a pageId. pageId is faster. pageId is the id of the profile page.",
+        path: "/v1/facebook/profile/posts",
+        paginationField: "cursor",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            description: "Facebook profile URL",
+            placeholder: "https://www.facebook.com/pacemorby",
+          },
+          {
+            name: "pageId",
+            type: "string",
+            description: "Facebook profile page id",
+            placeholder: "100063669491743",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            placeholder: "Cg8Ob3JnYW5pY19jdXJzb3IJA...",
+            description: "To paginate through the posts",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          posts: [
+            {
+              id: "1204545088344463",
+              text: "I've had such a blast doing the No One Left Behind Challenge this year! Join me this Friday Dec 20 @ 5PM MST to learn about next month's challenge! https://subto.sjv.io/3Jk9Py",
+              url: "https://www.facebook.com/reel/486651220706068/",
+              permalink: "https://www.facebook.com/reel/486651220706068/",
+              author: {
+                __typename: "User",
+                name: "Pace Morby",
+                short_name: "Pace Morby",
+                id: "100063669491743",
+              },
+              videoDetails: {
+                sdUrl:
+                  "https://video-atl3-2.xx.fbcdn.net/o1/v/t2/f2/m69/AQM-5pP3onM9DT-mhIF1lsU_5QIoHD3ezSh_534fSvquBk1J89JZc5j6cQzDP7ksAp5LQGEiJSVYnPWJVYmbgj42.mp4?strext=1&_nc_cat=111&_nc_sid=8bf8fe&_nc_ht=video-atl3-2.xx.fbcdn.net&_nc_ohc=myLadhBf0ekQ7kNvgH7M8Js&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjM2MC5zdmVfc2QiLCJ4cHZfYXNzZXRfaWQiOjExMjIwMjE0NDI4NDEyMTYsInZpX3VzZWNhc2VfaWQiOjEwMTIwLCJkdXJhdGlvbl9zIjo0MSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_zt=28&oh=00_AYEC_emahkqbCvG8fdT8745B6NgR005IOXFslY3cbX8vVQ&oe=67DBF193",
+                hdUrl:
+                  "https://video-atl3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQPpb__shxY1O25oSbb2cYJJZdDS1uvPXNvL_wuUl3A5X4oczA14gCptufMdZIQ44Fa1nPHR7BJne11vQR0-kjxg.mp4?strext=1&_nc_cat=110&_nc_sid=5e9851&_nc_ht=video-atl3-1.xx.fbcdn.net&_nc_ohc=A8zHzpvkW7gQ7kNvgH7rC10&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjcxOC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjoxMTIyMDIxNDQyODQxMjE2LCJ2aV91c2VjYXNlX2lkIjoxMDEyMCwiZHVyYXRpb25fcyI6NDEsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=55aa7ea7f63fa16a&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HQ0RxRHh4LTh0cUt3UFlEQUw2b0RSdTQ0dXQyYm1kakFBQUYVAALIAQAVAhg6cGFzc3Rocm91Z2hfZXZlcnN0b3JlL0dKbUREeHpUY0l2OUotMERBRGd5RVFhbXo2OWZickZxQUFBRhUCAsgBACgAGAAbAogHdXNlX29pbAExEnByb2dyZXNzaXZlX3JlY2lwZQExFQAAJoCqv5ifnv4DFQIoA0MzZSwXQETe2RaHKwIYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCAA&_nc_zt=28&oh=00_AYHZ0-S4uD1baiPZOqxXl42i74UuWxjyYp-k5Dr7yuQs8w&oe=67DBE6E0",
+                thumbnailUrl:
+                  "https://scontent-atl3-1.xx.fbcdn.net/v/t15.5256-10/470601406_1890766051448666_5960639905933280594_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=110&ccb=1-7&_nc_sid=be8305&_nc_ohc=J2akzbIcN6YQ7kNvgG1IA8_&_nc_oc=AdjagDgUUwSzsa_e8vqInwXyyB57thjMdZ0w4daZ0kLaM1g4xZsv56Q-2REAPzOzDdesjbOxpKtxdUYKNQetO-u3&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&_nc_gid=1q0R8aSRmKitPpFFDxvSfQ&oh=00_AYGj7VpqDzBwgIcAEKdSnqMq2IuwKqbNtTrpNKE6y5EsCQ&oe=67DBEC4D",
+              },
+              reactionCount: 133,
+              commentCount: 12,
+              videoViewCount: null,
+              publishTime: 1734553170,
+              topComments: [
+                {
+                  id: "Y29tbWVudDoxMjA0NTQ1MDg4MzQ0NDYzXzEzMDU4NDQ3ODM3NjA1ODk=",
+                  text: "How can I sign up?",
+                  publishTime: 1734569761,
+                  author: {
+                    id: "pfbid02uDNsa8qhySfhQJ83VUcVD5mmVShgxNrtepNZ2TwCsg22xMN3NhdNBQbxPjj2dyr9l",
+                    name: "BeezMo Jenkins",
+                    gender: "MALE",
+                    url: null,
+                  },
+                },
+              ],
+            },
+            {
+              id: "1177973017668337",
+              text: "Getting into real estate isn't easy. But you know what makes it easier? \n\nHaving a team of people working TOGETHER to get their deals!\n\nJoin the NOLB Challenge - Nov 17th-19th to see a full walkthrough on how to get your first deal!\n\nReserve your spot here: NOLBChallenge.com",
+              url: "https://www.facebook.com/reel/1548769829113168/",
+              permalink: "https://www.facebook.com/reel/1548769829113168/",
+              author: {
+                __typename: "User",
+                name: "Pace Morby",
+                short_name: "Pace Morby",
+                id: "100063669491743",
+              },
+              reactionCount: 138,
+              commentCount: 26,
+              videoViewCount: null,
+              publishTime: 1731616669,
+              videoDetails: {
+                sdUrl:
+                  "https://video-atl3-2.xx.fbcdn.net/o1/v/t2/f2/m69/AQMFIW3e9oV2zs9L0t7voV8Ki3fR8hTq-aaIH-l38BklHr5OnluDrnN5WZLk4szbPk-URXtJTQSCd8muXdfo0Zj0.mp4?strext=1&_nc_cat=105&_nc_sid=8bf8fe&_nc_ht=video-atl3-2.xx.fbcdn.net&_nc_ohc=BbdgXqRXB-MQ7kNvgFiNHS6&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjM2MC5zdmVfc2QiLCJ4cHZfYXNzZXRfaWQiOjE0NzA5ODkwMzA0MzA3NjksInZpX3VzZWNhc2VfaWQiOjEwMTIwLCJkdXJhdGlvbl9zIjo0NSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_zt=28&oh=00_AYEa1o37H0d2uYdaAtnlEVQD3wyIvQf3-L9AlCM7LsTVwA&oe=67DBE711",
+                hdUrl:
+                  "https://video-atl3-2.xx.fbcdn.net/o1/v/t2/f2/m69/AQO8YLkiCOyEYG0QEfHaxH2Ir1SwDgiSIn0DaNeo9FgWXucOCd795Hzvq2bVo4ZG0yxL5l0NNuzQTfJAT1uBfczY.mp4?strext=1&_nc_cat=111&_nc_sid=5e9851&_nc_ht=video-atl3-2.xx.fbcdn.net&_nc_ohc=56Pz5OYiUTYQ7kNvgFAqLpy&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjcyMC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjoxNDcwOTg5MDMwNDMwNzY5LCJ2aV91c2VjYXNlX2lkIjoxMDEyMCwiZHVyYXRpb25fcyI6NDUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=60f8b36f7319b883&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HQUxrYXh5aEsxOHlxTUVFQU1yZUhROGFHLThQYm1kakFBQUYVAALIAQAVAhg6cGFzc3Rocm91Z2hfZXZlcnN0b3JlL0dKOXcxQnNIQjRKdWozOEVBSGRHbVVxNVVaUWpidjRHQUFBRhUCAsgBACgAGAAbAogHdXNlX29pbAExEnByb2dyZXNzaXZlX3JlY2lwZQExFQAAJuLghKrq9pwFFQIoA0MzZSwXQEaSj1wo9cMYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCAA&_nc_zt=28&oh=00_AYHkBwqncbOAkzlqRtuZ0eQ8QHog1WAQg3R82Q4drDl1Mg&oe=67DBDF5B",
+                thumbnailUrl:
+                  "https://scontent-atl3-2.xx.fbcdn.net/v/t15.5256-10/466866876_1271142887643537_2312089751444611039_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=104&ccb=1-7&_nc_sid=be8305&_nc_ohc=JbZ1MpDcaTMQ7kNvgGZJGtJ&_nc_oc=AdguYBOJ5RZQRq5_rQzInbYxAjpzdP-_Qo-yTRIJBabw-26kNKGCII6-bChYEA__EMKp-hO9k216n7PmviYZfEM5&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=1q0R8aSRmKitPpFFDxvSfQ&oh=00_AYFT7RLoadj2r2vEgFDNURnmKe6MyX8WHO6PIpQ731AwNA&oe=67DBF3C6",
+              },
+              topComments: [
+                {
+                  id: "Y29tbWVudDoxMTc3OTczMDE3NjY4MzM3Xzk3MDAzMjYwNDk1NTg0Ng==",
+                  text: "I'm in",
+                  publishTime: 1732158216,
+                  author: {
+                    id: "pfbid0VvEMYiX5n4A4SpFMHp7yMAdtMRPV6vXZ9MtWY1Dsz4q8EPZdSrcB8JPiUEeUsZZtl",
+                    name: "Ray Bales",
+                    gender: "MALE",
+                    url: "https://www.facebook.com/people/Ray-Bales/pfbid0VvEMYiX5n4A4SpFMHp7yMAdtMRPV6vXZ9MtWY1Dsz4q8EPZdSrcB8JPiUEeUsZZtl/",
+                  },
+                },
+              ],
+            },
+            {
+              id: "1866425187502168",
+              text: "Pace Morby is joined Jared Morrison on this episode of Get Creative, a young entrepreneur in the SubTo community who has been learning the ropes from Pace and recently decided to make the leap into Real Estate full time.",
+              url: "https://www.facebook.com/pacemorby/videos/1866425187502168/",
+              permalink:
+                "https://www.facebook.com/pacemorby/videos/1866425187502168/",
+              author: {
+                __typename: "User",
+                name: "Pace Morby",
+                short_name: "Pace Morby",
+                id: "100063669491743",
+              },
+              reactionCount: 124,
+              commentCount: 51,
+              videoViewCount: 3209,
+              publishTime: 1727319674,
+              videoDetails: {
+                sdUrl:
+                  "https://video-atl3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQOzqRyree2mh4It52sA1YxVXzQqne_rX6qGJi4uojEmYneuKthdglmy8cuhg1iAuSbDIhUwHobq_CYVBPuzz1cA.mp4?strext=1&_nc_cat=110&_nc_sid=5e9851&_nc_ht=video-atl3-1.xx.fbcdn.net&_nc_ohc=UQ6UrNgEADUQ7kNvgFaZacJ&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjY0MC5kYXNoX2xpdmVfbWRfZnJhZ18yX3ZpZGVvIiwieHB2X2Fzc2V0X2lkIjo1MTIwNDMyMjQ3NzM2MTcsInZpX3VzZWNhc2VfaWQiOjEwMTI1LCJkdXJhdGlvbl9zIjoyMDM2LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=6712e7739b2a8e04&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HSUNXbUFDcXVnQnI3cnNkQUVjaGdIVUlSelpBYnY0R0FBQUYVAALIAQAVAhg6cGFzc3Rocm91Z2hfZXZlcnN0b3JlL0dQejlmaHZzdGpsTnlTZ0RBTUpzYUZwQVRUQnRidjRHQUFBRhUCAsgBACgAGAAbAogHdXNlX29pbAExEnByb2dyZXNzaXZlX3JlY2lwZQExFQAAJuLPrajr7OgBFQIoA0MzZSwXQJ_Td87ZFocYGWRhc2hfbGl2ZV9tZF9mcmFnXzJfdmlkZW8RAHUCAA&_nc_zt=28&oh=00_AYEuJStxX0QCSzj-UDimfF_YUKDSL2JnzRsxHGqlOmWPnQ&oe=67DBE308",
+                hdUrl:
+                  "https://video-atl3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQOzqRyree2mh4It52sA1YxVXzQqne_rX6qGJi4uojEmYneuKthdglmy8cuhg1iAuSbDIhUwHobq_CYVBPuzz1cA.mp4?strext=1&_nc_cat=110&_nc_sid=5e9851&_nc_ht=video-atl3-1.xx.fbcdn.net&_nc_ohc=UQ6UrNgEADUQ7kNvgFaZacJ&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjY0MC5kYXNoX2xpdmVfbWRfZnJhZ18yX3ZpZGVvIiwieHB2X2Fzc2V0X2lkIjo1MTIwNDMyMjQ3NzM2MTcsInZpX3VzZWNhc2VfaWQiOjEwMTI1LCJkdXJhdGlvbl9zIjoyMDM2LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=6712e7739b2a8e04&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HSUNXbUFDcXVnQnI3cnNkQUVjaGdIVUlSelpBYnY0R0FBQUYVAALIAQAVAhg6cGFzc3Rocm91Z2hfZXZlcnN0b3JlL0dQejlmaHZzdGpsTnlTZ0RBTUpzYUZwQVRUQnRidjRHQUFBRhUCAsgBACgAGAAbAogHdXNlX29pbAExEnByb2dyZXNzaXZlX3JlY2lwZQExFQAAJuLPrajr7OgBFQIoA0MzZSwXQJ_Td87ZFocYGWRhc2hfbGl2ZV9tZF9mcmFnXzJfdmlkZW8RAHUCAA&_nc_zt=28&oh=00_AYEuJStxX0QCSzj-UDimfF_YUKDSL2JnzRsxHGqlOmWPnQ&oe=67DBE308",
+                thumbnailUrl:
+                  "https://scontent-atl3-3.xx.fbcdn.net/v/t15.5256-10/461312532_1733514994134084_3133899825757197059_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=109&ccb=1-7&_nc_sid=50ce42&_nc_ohc=xKIMJ6frN9kQ7kNvgHK8vTF&_nc_oc=AdhRFzUKkuQ0qae1BFbvvmYGaJ_plQD4RFn3z0xxfoFtc-ds-cxZwEN7dSj0Y4SR3lWORs-Gf8qv5TZQnFqVK4GM&_nc_zt=23&_nc_ht=scontent-atl3-3.xx&_nc_gid=1q0R8aSRmKitPpFFDxvSfQ&oh=00_AYGYyhxcf7jzJS-G8ptyiPCJP9Usw2jD7tGK7Xqrfnl3WA&oe=67DBCD47",
+              },
+              topComments: [
+                {
+                  id: "Y29tbWVudDoxODY2NDI1MTg3NTAyMTY4XzM4NzQxNDAzNjI4MDUzNDA=",
+                  text: "YO EVERYONE!!!! Drop your Q's and we will try to get to them when we can",
+                  publishTime: 1727319870,
+                  author: {
+                    id: "100063669491743",
+                    name: "Pace Morby",
+                    gender: "NEUTER",
+                    url: "https://www.facebook.com/pacemorby",
+                  },
+                },
+              ],
+            },
+          ],
+          cursor:
+            "Cg8Ob3JnYW5pY19jdXJzb3IJAAABxEFRSFI4N0N6eHZvYWlsRnJ3TlFMQTU4NUtmTzdSR2hQUzJpa25iTHlaMS1zbG1pTjZtTWFtN0JrNjB3UXVyUFFDOUJabC1JbjYwV2lhQmdqdTYzOXZTaHlMTGhIcGZXV21jRjVtZzBNY3dtSGlkLUNObnVFang4Ym1vYjVxSEZYYXBOZlVwSlVXVWpZbHF5X2xYODNGZzdNNmlIeUVCX1Yxb19ZLTEtanczRGJidm9XZDgxYlk0TmlaXzAtTm11T3dQZC1rY2FyVm44eERCYldjLTBEMXpxU1NCNG4wMjl1SHdaSmY2NjdURHJKUUxPcDRzZXFTZ3gzQk5JbTN5djRVNWQzMnFMMGp4Z3EtY1FWSFZMOWdKbUROQmR3TGx4c1dkWFpicnJlbUpsRVhqU0dodHNBS0tPcWZ2Q0U3QjFHbVhwbVluV3phMmdEMnBnVTZQTG5wMXhXMVAtQWQ2TVBCMXlMZGJlMUJGaHVYSWNpZEJnYUlwUXctSWgxZzhIVlBWZWhjbXJMTEVCVi1SSzRMQUJFZVcxcGR3Mm1YbzBiUjdWV1QyaDY0NmpYT1dHeDduSFZGWHdnM3pvZHpvNXEyTGxUDwlhZF9jdXJzb3IODw9nbG9iYWxfcG9zaXRpb24CAA8Gb2Zmc2V0AgAPEGxhc3RfYWRfcG9zaXRpb24C/wE=",
+        },
+      },
+      {
         name: "Reel",
         method: "GET",
         description: "Get reel details",
