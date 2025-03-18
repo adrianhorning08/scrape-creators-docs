@@ -24365,7 +24365,8 @@ export const apis = [
       {
         name: "Search",
         method: "GET",
-        description: "Search Ad Library By Keyword",
+        description:
+          "Search Ad Library By Keyword. Searches only active ads right now. Email me if you want me to change that.",
         path: "/v1/facebook/adLibrary/search/ads",
         sampleResponse: {
           searchResults: [
@@ -24488,6 +24489,14 @@ export const apis = [
             required: true,
             description: "Keyword to search for",
             placeholder: "running",
+          },
+          {
+            name: "country",
+            type: "string",
+            required: false,
+            description:
+              "This can only be one country. It has to be the 2 letter code for the country. It defaults to ALL.",
+            placeholder: "ALL",
           },
           {
             name: "cursor",
