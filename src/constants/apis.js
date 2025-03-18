@@ -23264,6 +23264,62 @@ export const apis = [
         ],
       },
       {
+        name: "Channel Shorts",
+        method: "GET",
+        description:
+          "Get the shorts from a channel. Can only get the latest shorts. If you'd like me to add support for 'Popular' or 'Oldest', email me: adrian@thewebscrapingguy.com",
+        path: "/v1/youtube/channel/shorts",
+        paginationField: "continuationToken",
+        sampleResponse: {
+          success: true,
+          shorts: [
+            {
+              type: "short",
+              id: "01D3CgMZ29I",
+              url: "https://www.youtube.com/watch?v=01D3CgMZ29I",
+              title: "WHAT A MATCH",
+              thumbnail:
+                "https://i.ytimg.com/vi/01D3CgMZ29I/oardefault.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLC9HKSvAwuaWKMyklKCnLr5ElK_WA",
+              viewCountText: "13K",
+              viewCountInt: 13000,
+            },
+            {
+              type: "short",
+              id: "zCgeCq9hKhY",
+              url: "https://www.youtube.com/watch?v=zCgeCq9hKhY",
+              title: "THE FINAL BOSS ALWAYS HAS A PLAN",
+              thumbnail:
+                "https://i.ytimg.com/vi/zCgeCq9hKhY/oardefault.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLAmBhUDDOIZdUytfQp28SS82FJHqw",
+              viewCountText: "36K",
+              viewCountInt: 36000,
+            },
+          ],
+          continuationToken: "4qmFsgLv....",
+        },
+        params: [
+          {
+            name: "handle",
+            type: "string",
+            description: "Can pass channelId or handle",
+            placeholder: "ThePatMcAfeeShow",
+          },
+          {
+            name: "channelId",
+            type: "string",
+            description: "Can pass channelId or handle",
+            placeholder: "UC-9-kyTW8ZkZNDHQJ6FgpwQ",
+          },
+          {
+            name: "continuationToken",
+            type: "string",
+            required: false,
+            description:
+              "Continuation token to get more videos. Get 'continuationToken' from previous response.",
+            placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
+          },
+        ],
+      },
+      {
         name: "Video/Short Details",
         method: "GET",
         description:
