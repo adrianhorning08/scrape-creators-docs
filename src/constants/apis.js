@@ -23326,6 +23326,66 @@ export const apis = [
         ],
       },
       {
+        name: "Channel Shorts (we handle the pagination)",
+        method: "GET",
+        description:
+          "Convenience endpoint to get the latest shorts from a channel. We handle the pagination for you. This will cost you more credits because under the hood we're using the 'Channel Shorts' endpoint, just like you would. But making it easier for you.",
+        path: "/v1/youtube/channel/shorts/simple",
+        sampleResponse: [
+          {
+            type: "short",
+            id: "01D3CgMZ29I",
+            url: "https://www.youtube.com/watch?v=01D3CgMZ29I",
+            title: "WHAT A MATCH",
+            thumbnail:
+              "https://i.ytimg.com/vi/01D3CgMZ29I/oardefault.jpg?sqp=-oaymwEoCJUDENAFSFqQAgHyq4qpAxcIARUAAIhC2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLBTI26rFmtMoUSzLVbr1Izv5pxfkQ",
+            viewCountText: "13K",
+            viewCountInt: 13000,
+          },
+          {
+            type: "short",
+            id: "zCgeCq9hKhY",
+            url: "https://www.youtube.com/watch?v=zCgeCq9hKhY",
+            title: "THE FINAL BOSS ALWAYS HAS A PLAN",
+            thumbnail:
+              "https://i.ytimg.com/vi/zCgeCq9hKhY/oardefault.jpg?sqp=-oaymwEoCJUDENAFSFqQAgHyq4qpAxcIARUAAIhC2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLClaxJ3g_esWOslLUTBKseo6C2JUw",
+            viewCountText: "37K",
+            viewCountInt: 37000,
+          },
+          {
+            type: "short",
+            id: "95pq2gD-h3c",
+            url: "https://www.youtube.com/watch?v=95pq2gD-h3c",
+            title: "HOLY SHIT IT'S RapSheet 😂😂😂",
+            thumbnail:
+              "https://i.ytimg.com/vi/95pq2gD-h3c/oardefault.jpg?sqp=-oaymwEoCJUDENAFSFqQAgHyq4qpAxcIARUAAIhC2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLBu2MDEIFE42RwtnCrjeGbkpTHgoQ",
+            viewCountText: "88K",
+            viewCountInt: 88000,
+          },
+        ],
+        params: [
+          {
+            name: "handle",
+            type: "string",
+            description: "Can pass channelId or handle",
+            placeholder: "ThePatMcAfeeShow",
+          },
+          {
+            name: "channelId",
+            type: "string",
+            description: "Can pass channelId or handle",
+            placeholder: "UC-9-kyTW8ZkZNDHQJ6FgpwQ",
+          },
+          {
+            name: "amount",
+            type: "number",
+            required: true,
+            description: "The amount of shorts to return.",
+            placeholder: 20,
+          },
+        ],
+      },
+      {
         name: "Video/Short Details",
         method: "GET",
         description:
