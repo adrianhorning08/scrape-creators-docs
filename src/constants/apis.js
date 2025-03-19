@@ -9524,6 +9524,12 @@ export const apis = [
             placeholder: 10,
           },
         ],
+        responseFields: [
+          {
+            path: "aweme_list[0].video.bit_rate[0].play_addr.url_list",
+            description: "The URL of the actual video",
+          },
+        ],
       },
       {
         name: "Search by Keyword",
