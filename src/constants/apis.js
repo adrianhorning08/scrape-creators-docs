@@ -24387,9 +24387,9 @@ export const apis = [
         ],
         responseFields: [
           {
-            path: "ad_archive_id",
+            path: "adArchiveID",
             description:
-              "This is the ad id. You'd think it'd be 'ad_id', but facebook decided to make it confusing 🤦‍♂️",
+              "This is the ad id. You'd think it'd be 'adid', but facebook decided to make it confusing 🤦‍♂️",
           },
         ],
       },
