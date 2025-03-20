@@ -2379,6 +2379,10 @@ export const apis = [
         ],
         responseFields: [
           {
+            path: "[0].video.bit_rate[1].play_addr.url_list[0]",
+            description: "The URL of the video",
+          },
+          {
             path: "aweme_id",
             description:
               "The id of the tiktok. Beats me why TikTok uses this convention, but they use 'aweme' everywhere for whatever reason.",
@@ -2408,6 +2412,10 @@ export const apis = [
           },
         ],
         responseFields: [
+          {
+            path: "aweme_detail.video.bit_rate[0].play_addr.url_list[0]",
+            description: "The URL of the video",
+          },
           {
             path: "digg_count",
             description:
@@ -11037,6 +11045,12 @@ export const apis = [
             },
           ],
         },
+        responseFields: [
+          {
+            path: "search_item_list[0].aweme_info.video.bit_rate[0].play_addr.url_list[0]",
+            description: "The URL of the video",
+          },
+        ],
         params: [
           {
             name: "query",
@@ -11075,6 +11089,12 @@ export const apis = [
         description:
           "Scrapes trending TikTok videos. No cursor needed. Will fetch new videos on every request.",
         path: "/v1/tiktok/get-trending-feed",
+        responseFields: [
+          {
+            path: "aweme_list[0].video.play_addr.url_list[0]",
+            description: "The URL of the video",
+          },
+        ],
         sampleResponse: {
           status_code: 0,
           min_cursor: 0,
@@ -14689,6 +14709,12 @@ export const apis = [
         description: "Get all posts from a user's profile",
         path: "/v1/instagram/user/posts",
         paginationField: "cursor",
+        responseFields: [
+          {
+            path: "posts[0].node.video_url",
+            description: "If the post is video, this is the URL of the video",
+          },
+        ],
         sampleResponse: {
           posts: [
             {
@@ -15255,6 +15281,12 @@ export const apis = [
           "Get user posts. Whats the difference between this and /v1/instagram/users/posts? The response payload is different, and the views on reels might be more accurate.",
         path: "/v2/instagram/user/posts",
         paginationField: "next_max_id",
+        responseFields: [
+          {
+            path: "items[0].video_versions[0].url",
+            description: "If the post is video, this is the URL of the video",
+          },
+        ],
         sampleResponse: {
           profile_grid_items: null,
           profile_grid_items_cursor: null,
@@ -16364,6 +16396,12 @@ export const apis = [
         method: "GET",
         description: "Get detailed information about a specific post or reel",
         path: "/v1/instagram/post",
+        responseFields: [
+          {
+            path: "data.xdt_shortcode_media.video_url",
+            description: "If the post is video, this is the URL of the video",
+          },
+        ],
         sampleResponse: {
           data: {
             xdt_shortcode_media: {
@@ -17141,6 +17179,12 @@ export const apis = [
           },
           status: "ok",
         },
+        responseFields: [
+          {
+            path: "items[0].media.video_versions[0].url",
+            description: "The URL of the video",
+          },
+        ],
         params: [
           {
             name: "user_id",
@@ -17164,6 +17208,12 @@ export const apis = [
         description: "Get the reels from a user's profile",
         path: "/v1/instagram/user/reels/simple",
         paginationField: "max_id",
+        responseFields: [
+          {
+            path: "[0].media.video_versions[0].url",
+            description: "The URL of the video",
+          },
+        ],
         sampleResponse: [
           {
             media: {
