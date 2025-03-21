@@ -14856,6 +14856,14 @@ export const apis = [
             placeholder: "ALL",
           },
           {
+            name: "status",
+            type: "select",
+            required: false,
+            description: "Status of the ad",
+            placeholder: "ALL",
+            options: ["ALL", "ACTIVE", "INACTIVE"],
+          },
+          {
             name: "cursor",
             type: "string",
             required: false,
@@ -15004,6 +15012,22 @@ export const apis = [
             description:
               "The companies ad library page id. You can get this with my Search For Companies Endpoint. ",
             placeholder: "367152833370567",
+          },
+          {
+            name: "country",
+            type: "string",
+            required: false,
+            description:
+              "This can only be one country. It has to be the 2 letter code for the country. It defaults to ALL.",
+            placeholder: "ALL",
+          },
+          {
+            name: "status",
+            type: "select",
+            required: false,
+            description: "Status of the ad",
+            placeholder: "ALL",
+            options: ["ALL", "ACTIVE", "INACTIVE"],
           },
           {
             name: "cursor",
