@@ -14829,6 +14829,16 @@ export const apis = [
             "AQHRYLVDkoMkvGv7yK1rcce-vJmKiKv330R4v3j9KHSOaYvmF1bq1QkotG0rgW8Fkrj-",
         },
         paginationField: "cursor",
+        responseFields: [
+          {
+            path: "is_active",
+            description: "Whether the ad is currently running",
+          },
+          {
+            path: "ad_archive_id",
+            description: "The *actual* ad id",
+          },
+        ],
         params: [
           {
             name: "query",
@@ -14852,13 +14862,6 @@ export const apis = [
             description: "Cursor to paginate through results",
             placeholder:
               "AQHRYLVDkoMkvGv7yK1rcce-vJmKiKv330R4v3j9KHSOaYvmF1bq1QkotG0rgW8Fkrj-",
-          },
-        ],
-        responseFields: [
-          {
-            path: "ad_archive_id",
-            description:
-              "This is the ad id. You'd think it'd be 'ad_id', but facebook decided to make it confusing 🤦‍♂️",
           },
         ],
       },
@@ -14983,6 +14986,16 @@ export const apis = [
           cursor:
             "AQHRBUAxNmFlxBVMFL6uTb1ICFsV65O4SqmPbcVZJhiveBpPS1hFHAmL6yCJcF760cXP",
         },
+        responseFields: [
+          {
+            path: "is_active",
+            description: "Whether the ad is currently running",
+          },
+          {
+            path: "ad_archive_id",
+            description: "The *actual* ad id",
+          },
+        ],
         params: [
           {
             name: "pageId",
@@ -14999,13 +15012,6 @@ export const apis = [
             description: "Cursor to paginate through results",
             placeholder:
               "AQHRBUAxNmFlxBVMFL6uTb1ICFsV65O4SqmPbcVZJhiveBpPS1hFHAmL6yCJcF760cXP",
-          },
-        ],
-        responseFields: [
-          {
-            path: "ad_archive_id",
-            description:
-              "This is the ad id. You'd think it'd be 'ad_id', but facebook decided to make it confusing 🤦‍♂️",
           },
         ],
       },
