@@ -14859,8 +14859,8 @@ export const apis = [
             name: "status",
             type: "select",
             required: false,
-            description: "Status of the ad",
-            placeholder: "ALL",
+            description: "Status of the ad. Defaults to ACTIVE.",
+            placeholder: "ACTIVE",
             options: ["ALL", "ACTIVE", "INACTIVE"],
           },
           {
@@ -15025,8 +15025,8 @@ export const apis = [
             name: "status",
             type: "select",
             required: false,
-            description: "Status of the ad",
-            placeholder: "ALL",
+            description: "Status of the ad. Defaults to ACTIVE.",
+            placeholder: "ACTIVE",
             options: ["ALL", "ACTIVE", "INACTIVE"],
           },
           {
