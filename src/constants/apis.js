@@ -8,6 +8,7 @@ import {
   SiReddit,
   SiKick, // closest match for Kick
   SiPersonio,
+  SiSnapchat,
 } from "react-icons/si";
 import { MdPerson } from "react-icons/md";
 import { placeholder } from "@uiw/react-codemirror";
@@ -19021,6 +19022,368 @@ export const apis = [
             description: "Kick clip URL",
             placeholder:
               "https://kick.com/xqc/clips/clip_01JGJHB6CEVFCQRYTVPM8DW892",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "snapchat",
+    name: "Snapchat",
+    icon: SiSnapchat,
+    description: "Scrape Snapchat user profiles and thier stories",
+    endpoints: [
+      {
+        name: "User Profile",
+        method: "GET",
+        description: "Get Snapchat user profile",
+        path: "/v1/snapchat/profile",
+        sampleResponse: {
+          success: true,
+          userProfile: {
+            username: "zane",
+            title: "Zane",
+            snapcodeImageUrl:
+              "https://app.snapchat.com/web/deeplink/snapcode?username=zane&type=SVG&bitmoji=enable",
+            badge: 1,
+            categoryStringId: "",
+            subcategoryStringId: "",
+            subscriberCount: "1535700",
+            bio: "Time to get buck wild baby",
+            websiteUrl: "",
+            profilePictureUrl:
+              "https://cf-st.sc-cdn.net/aps/bolt/aHR0cHM6Ly9jZi1zdC5zYy1jZG4ubmV0L2QvSG5jNU4zNFh5MWNacFlPR0Y2T3pxP2JvPUVnMGFBQm9BTWdFRVNBSlFHV0FCJnVjPTI1._RS0,90_FMjpeg",
+            address: "",
+            bitmoji3d: null,
+            hasCuratedHighlights: true,
+            hasSpotlightHighlights: true,
+            mutableName: "",
+            publisherType: "",
+            squareHeroImageUrl:
+              "https://cf-st.sc-cdn.net/aps/bolt/aHR0cHM6Ly9jZi1zdC5zYy1jZG4ubmV0L2QvZnl5TndBTlZVU1IzckVGWWpuQlZnP2JvPUVnMGFBQm9BTWdFRVNBSlFHV0FCJnVjPTI1._RS0,1080_FMjpeg",
+            primaryColor: "",
+            hasStory: false,
+            relatedAccountsInfo: [
+              {
+                publicProfileInfo: {
+                  username: "imnotscottysire",
+                  title: "Scotty Sire",
+                  snapcodeImageUrl: "",
+                  badge: 1,
+                  categoryStringId: "",
+                  subcategoryStringId: "",
+                  subscriberCount: "0",
+                  bio: "",
+                  websiteUrl: "",
+                  profilePictureUrl:
+                    "https://cf-st.sc-cdn.net/aps/bolt/aHR0cHM6Ly9jZi1zdC5zYy1jZG4ubmV0L2QvZUhZSzNoRVRGcEhLeHFaVEtKOEQwP2JvPUVna3lBUVJJQWxBWllBRSUzRCZ1Yz0yNQ._RS0,640_FMjpeg",
+                  address: "",
+                  bitmoji3d: null,
+                  hasCuratedHighlights: false,
+                  hasSpotlightHighlights: false,
+                  mutableName: "",
+                  publisherType: "",
+                  squareHeroImageUrl: "",
+                  primaryColor: "",
+                  hasStory: true,
+                  relatedAccountsInfo: [],
+                  creationTimestampMs: null,
+                  lastUpdateTimestampMs: null,
+                  businessProfileId: "ebc366e6-3058-4c94-8e85-35a4e50c6737",
+                },
+                subscribeLink: {
+                  oneLinkBaseUrl: "https://click.snapchat.com/aVHG",
+                  pidKeys: ["af_pid", "utm_source"],
+                  pidFallbackValue: "consumer_web",
+                  campaignKeys: ["af_c", "utm_campaign"],
+                  campaignFallbackValue: "add_user",
+                  googleClickIdParam: "af_sub1",
+                  deepLinkUrl:
+                    "https://www.snapchat.com/add/imnotscottysire?sc_referrer=web",
+                  iosAppStoreUrl:
+                    "https://apps.apple.com/app/apple-store/id447188370?pt=614006&ct=add_user&mt=8",
+                  desktopPageUrl:
+                    "https://snapchat.com/download?purpose=web_stories&sp=add_user",
+                },
+              },
+              {
+                publicProfileInfo: {
+                  username: "toddysmithy",
+                  title: "toddysmithy",
+                  snapcodeImageUrl: "",
+                  badge: 1,
+                  categoryStringId: "",
+                  subcategoryStringId: "",
+                  subscriberCount: "0",
+                  bio: "",
+                  websiteUrl: "",
+                  profilePictureUrl:
+                    "https://cf-st.sc-cdn.net/aps/bolt/aHR0cHM6Ly9jZi1zdC5zYy1jZG4ubmV0L2QvRU0yNWJseUVVaTJWVFNNUk9vNkJvP2JvPUVnMGFBQm9BTWdFRVNBSlFHV0FCJnVjPTI1._RS0,640_FMjpeg",
+                  address: "",
+                  bitmoji3d: null,
+                  hasCuratedHighlights: false,
+                  hasSpotlightHighlights: false,
+                  mutableName: "",
+                  publisherType: "",
+                  squareHeroImageUrl: "",
+                  primaryColor: "",
+                  hasStory: true,
+                  relatedAccountsInfo: [],
+                  creationTimestampMs: null,
+                  lastUpdateTimestampMs: null,
+                  businessProfileId: "98af2236-b98c-48f6-81c1-b788b6216624",
+                },
+                subscribeLink: {
+                  oneLinkBaseUrl: "https://click.snapchat.com/aVHG",
+                  pidKeys: ["af_pid", "utm_source"],
+                  pidFallbackValue: "consumer_web",
+                  campaignKeys: ["af_c", "utm_campaign"],
+                  campaignFallbackValue: "add_user",
+                  googleClickIdParam: "af_sub1",
+                  deepLinkUrl:
+                    "https://www.snapchat.com/add/toddysmithy?sc_referrer=web",
+                  iosAppStoreUrl:
+                    "https://apps.apple.com/app/apple-store/id447188370?pt=614006&ct=add_user&mt=8",
+                  desktopPageUrl:
+                    "https://snapchat.com/download?purpose=web_stories&sp=add_user",
+                },
+              },
+              {
+                publicProfileInfo: {
+                  username: "jason23nash",
+                  title: "Jason Nash",
+                  snapcodeImageUrl: "",
+                  badge: 1,
+                  categoryStringId: "",
+                  subcategoryStringId: "",
+                  subscriberCount: "0",
+                  bio: "",
+                  websiteUrl: "",
+                  profilePictureUrl:
+                    "https://cf-st.sc-cdn.net/aps/bolt/aHR0cHM6Ly9jZi1zdC5zYy1jZG4ubmV0L2QvY1JVOFlWTDlXSGc1VEY3U1ZYUmZoP2JvPUVnMGFBQm9BTWdFRVNBSlFHV0FCJnVjPTI1._RS0,640_FMjpeg",
+                  address: "",
+                  bitmoji3d: null,
+                  hasCuratedHighlights: false,
+                  hasSpotlightHighlights: false,
+                  mutableName: "",
+                  publisherType: "",
+                  squareHeroImageUrl: "",
+                  primaryColor: "",
+                  hasStory: true,
+                  relatedAccountsInfo: [],
+                  creationTimestampMs: null,
+                  lastUpdateTimestampMs: null,
+                  businessProfileId: "57bb8cac-662d-460f-9dc2-1aac606264ec",
+                },
+                subscribeLink: {
+                  oneLinkBaseUrl: "https://click.snapchat.com/aVHG",
+                  pidKeys: ["af_pid", "utm_source"],
+                  pidFallbackValue: "consumer_web",
+                  campaignKeys: ["af_c", "utm_campaign"],
+                  campaignFallbackValue: "add_user",
+                  googleClickIdParam: "af_sub1",
+                  deepLinkUrl:
+                    "https://www.snapchat.com/add/jason23nash?sc_referrer=web",
+                  iosAppStoreUrl:
+                    "https://apps.apple.com/app/apple-store/id447188370?pt=614006&ct=add_user&mt=8",
+                  desktopPageUrl:
+                    "https://snapchat.com/download?purpose=web_stories&sp=add_user",
+                },
+              },
+            ],
+            creationTimestampMs: { value: "1584846804362" },
+            lastUpdateTimestampMs: { value: "1741518441231" },
+            businessProfileId: "e123b268-312b-41d6-8088-b51c12c6f2c6",
+          },
+          story: null,
+          curatedHighlights: [
+            {
+              storyType: 3,
+              snapList: [
+                {
+                  snapIndex: 0,
+                  snapId: { value: "" },
+                  snapMediaType: 0,
+                  snapUrls: {
+                    mediaUrl:
+                      "https://cf-st.sc-cdn.net/d/21JGtXabuZ1AfXw5L5vjB.400.IRZXSOY?mo=GlQaGhoAGgAyAQQ6AX1CBgjusM6eBkgDUF5gAXABWhBQdWJsaWNJbWFnZVN0b3J5ogEQCJADIgsSACoHSVJaWFNPWaIBEAjnByILEgAqB0lSWlhTT1k%3D&uc=94",
+                    mediaPreviewUrl: {
+                      value:
+                        "https://cf-st.sc-cdn.net/d/21JGtXabuZ1AfXw5L5vjB.410.IRZXSOY?mo=GkEaGhoAGgAyAQQ6AX1CBgjusM6eBkgDUF5gAXABWhBEZkxhcmdlVGh1bWJuYWlsogEQCJoDIgsSACoHSVJaWFNPWQ%3D%3D&uc=94",
+                    },
+                    overlayUrl: null,
+                    attachmentUrl: null,
+                  },
+                  isSponsored: null,
+                  timestampInSec: { value: "1670431570" },
+                  snapTitle: null,
+                  snapSubtitles: null,
+                  lat: null,
+                  lng: null,
+                  hasAttachment: null,
+                  intervalStartTimeMs: null,
+                  audioTranscriptionObjectUrl: null,
+                },
+              ],
+              storyId: { value: "" },
+              storyTitle: { value: "FULL HAIR TRANSFORMATION (PART 1)" },
+              thumbnailUrl: {
+                value:
+                  "https://cf-st.sc-cdn.net/d/bNrrl36C71xV5GeTS13qP.410.IRZXSOY?mo=GkEaGhoAGgAyAQQ6AX1CBgjxsM6eBkgDUF5gAXABWhBEZkxhcmdlVGh1bWJuYWlsogEQCJoDIgsSACoHSVJaWFNPWQ%3D%3D&uc=94",
+              },
+              storySubtitle: null,
+              storyShareId: null,
+              canonicalUrlSuffix: null,
+              emoji: null,
+              storyTapId: "0",
+              videoTrackUrl: null,
+              highlightId: { value: "39f6379c-1787-4f79-859c-8cee75a8076e" },
+              isAttributed: null,
+            },
+          ],
+          spotlightHighlights: [
+            {
+              storyType: 3,
+              snapList: [
+                {
+                  snapIndex: 0,
+                  snapId: {
+                    value:
+                      "W7_EDlXWTBiXAEEniNoMPwAAYZGJ6d3NyYWdiAYdiSHKKAYdiSG6AAAAAAQ",
+                  },
+                  snapMediaType: 1,
+                  snapUrls: {
+                    mediaUrl:
+                      "https://cf-st.sc-cdn.net/d/QV9a3I5ISW0cgJwjHW0BS.1034.IRZXSOY?mo=GkAaDRoAGgAyAQRIA1AuYAGiAS4IiggSHAoaIAFKEQoMY0Y9R0RFR0M5OU8uEPQDWgMQsz8iCxIAKgdJUlpYU09Z&uc=46",
+                    mediaPreviewUrl: {
+                      value:
+                        "https://cf-st.sc-cdn.net/d/QV9a3I5ISW0cgJwjHW0BS.256.IRZXSOY?mo=GkcaDRoAGgAyAQRIAlAuYAFaEERmTGFyZ2VUaHVtYm5haWyiARAIgAIiCxIAKgdJUlpYU09ZogEQCJoKIgsSACoHSVJaWFNPWQ%3D%3D&uc=46",
+                    },
+                    overlayUrl: null,
+                    attachmentUrl: null,
+                  },
+                  isSponsored: null,
+                  timestampInSec: { value: "1680981126" },
+                  snapTitle: null,
+                  snapSubtitles: null,
+                  lat: null,
+                  lng: null,
+                  hasAttachment: null,
+                  intervalStartTimeMs: null,
+                  audioTranscriptionObjectUrl: null,
+                },
+              ],
+              storyId: {
+                value:
+                  "W7_EDlXWTBiXAEEniNoMPwAAYZGJ6d3NyYWdiAYdiSHKKAYdiSG6AAAAAAQ",
+              },
+              storyTitle: { value: "" },
+              thumbnailUrl: {
+                value:
+                  "https://cf-st.sc-cdn.net/d/QV9a3I5ISW0cgJwjHW0BS.256.IRZXSOY?mo=GkcaDRoAGgAyAQRIAlAuYAFaEERmTGFyZ2VUaHVtYm5haWyiARAIgAIiCxIAKgdJUlpYU09ZogEQCJoKIgsSACoHSVJaWFNPWQ%3D%3D&uc=46",
+              },
+              storySubtitle: null,
+              storyShareId: null,
+              canonicalUrlSuffix: null,
+              emoji: null,
+              storyTapId: "0",
+              videoTrackUrl: null,
+              highlightId: {
+                value:
+                  "W7_EDlXWTBiXAEEniNoMPwAAYZGJ6d3NyYWdiAYdiSHKKAYdiSG6AAAAAAQ",
+              },
+              isAttributed: null,
+            },
+          ],
+          spotlightStoryMetadata: [
+            {
+              videoMetadata: {
+                name: "Turn around sir",
+                description:
+                  "Another Spotlight Snap brought to you by Snapchat",
+                thumbnailUrl:
+                  "https://cf-st.sc-cdn.net/d/QV9a3I5ISW0cgJwjHW0BS.256.IRZXSOY?mo=GkcaDRoAGgAyAQRIAlAuYAFaEERmTGFyZ2VUaHVtYm5haWyiARAIgAIiCxIAKgdJUlpYU09ZogEQCJoKIgsSACoHSVJaWFNPWQ%3D%3D&uc=46",
+                uploadDateMs: "1680981126784",
+                viewCount: "11937",
+                contentUrl:
+                  "https://cf-st.sc-cdn.net/d/QV9a3I5ISW0cgJwjHW0BS.27.IRZXSOY?mo=GlIaDRoAGgAyAQRIAlAuYAFaEFNwb3RsaWdodFNoYXJpbmeiAS4IGxIdChsgAUoSCg2AAWRTY2VgX21QTXA9EPQDWgMQmT8iCxIAKgdJUlpYU09Z&uc=46",
+                creator: {
+                  $case: "personCreator",
+                  personCreator: {
+                    username: "zane",
+                    url: "https://www.snapchat.com/add/zane",
+                    name: "Zane",
+                    followerCount: "0",
+                    websiteUrl: "",
+                  },
+                },
+                durationMs: "6200",
+                width: 540,
+                height: 960,
+                keywords: [],
+                shareCount: "0",
+                embeddedTextCaption: "Turn around sir",
+              },
+              userMetadata: null,
+              lensMetadata: null,
+              hashtags: [],
+              contextCards: [
+                {
+                  contextType: 2,
+                  title: "@zane's Sound",
+                  subtitle: "",
+                  url: "",
+                  thumbnailUrl:
+                    "https://cf-st.sc-cdn.net/d/6YKRUxipwtyh6YMgtaJbK?bo=Eg0aABoAMgEESAJQCGAB&uc=8",
+                  snapcodeUrl: "",
+                  thumbnailType: 2,
+                  hasBadge: false,
+                },
+                {
+                  contextType: 3,
+                  title: "Zane",
+                  subtitle: "zane",
+                  url: "https://www.snapchat.com/add/zane",
+                  thumbnailUrl:
+                    "https://cf-st.sc-cdn.net/aps/bolt/aHR0cHM6Ly9jZi1zdC5zYy1jZG4ubmV0L2QvSG5jNU4zNFh5MWNacFlPR0Y2T3pxP2JvPUVnMGFBQm9BTWdFRVNBSlFHV0FCJnVjPTI1._RS0,640_FMjpeg",
+                  snapcodeUrl:
+                    "https://app.snapchat.com/web/deeplink/snapcode?username=zane&type=SVG&bitmoji=enable",
+                  thumbnailType: 0,
+                  hasBadge: true,
+                },
+              ],
+              engagementStats: {
+                viewCount: "11937",
+                shareCount: "6",
+                commentCount: "10",
+              },
+              deeplink:
+                "https://click.snapchat.com/aVHG?pid=snapchat_download_page&af_dp=https://www.snapchat.com/spotlight/W7_EDlXWTBiXAEEniNoMPwAAYZGJ6d3NyYWdiAYdiSHKKAYdiSG6AAAAAAQ?sc_referrer%3Dweb&af_web_dp=https://snapchat.com/download?purpose%3Dweb_stories%26sp%3Dspotlight&af_ios_url=https://apps.apple.com/app/apple-store/id447188370?pt%3D614006%26ct%3Dspotlight%26mt%3D8",
+              oneLinkParams: {
+                oneLinkBaseUrl: "https://click.snapchat.com/aVHG",
+                pidKeys: ["af_pid", "utm_source"],
+                pidFallbackValue: "consumer_web",
+                campaignKeys: ["af_c", "utm_campaign"],
+                campaignFallbackValue: "spotlight",
+                googleClickIdParam: "af_sub1",
+                deepLinkUrl:
+                  "https://www.snapchat.com/spotlight/W7_EDlXWTBiXAEEniNoMPwAAYZGJ6d3NyYWdiAYdiSHKKAYdiSG6AAAAAAQ?sc_referrer=web",
+                iosAppStoreUrl:
+                  "https://apps.apple.com/app/apple-store/id447188370?pt=614006&ct=spotlight&mt=8",
+                desktopPageUrl:
+                  "https://snapchat.com/download?purpose=web_stories&sp=spotlight",
+              },
+              description: "",
+            },
+          ],
+        },
+        params: [
+          {
+            name: "handle",
+            type: "string",
+            required: true,
+            description: "Snapchat username",
+            placeholder: "zane",
           },
         ],
       },
