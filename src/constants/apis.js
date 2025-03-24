@@ -14866,7 +14866,7 @@ export const apis = [
           },
           {
             name: "start_date",
-            type: "date",
+            type: "string",
             required: false,
             description:
               "Impressions start date. Needs to be in YYYY-MM-DD format.",
@@ -14874,7 +14874,7 @@ export const apis = [
           },
           {
             name: "end_date",
-            type: "date",
+            type: "string",
             required: false,
             description:
               "Impressions end date. Needs to be in YYYY-MM-DD format.",
