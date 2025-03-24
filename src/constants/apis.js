@@ -14714,7 +14714,7 @@ export const apis = [
         name: "Search",
         method: "GET",
         description:
-          "Search Ad Library By Keyword. Searches only active ads right now. Email me if you want me to change that.",
+          "Search Ad Library By Keyword. This endpoint will tap out around 1,500 results, beacuse the cursor becomes enormous. If you need more results, use the POST endpoint below.",
         path: "/v1/facebook/adLibrary/search/ads",
         sampleResponse: {
           searchResults: [
@@ -14863,6 +14863,202 @@ export const apis = [
             description: "Status of the ad. Defaults to ACTIVE.",
             placeholder: "ACTIVE",
             options: ["ALL", "ACTIVE", "INACTIVE"],
+          },
+          {
+            name: "start_date",
+            type: "date",
+            required: false,
+            description:
+              "Impressions start date. Needs to be in YYYY-MM-DD format.",
+            placeholder: "2025-01-05",
+          },
+          {
+            name: "end_date",
+            type: "date",
+            required: false,
+            description:
+              "Impressions end date. Needs to be in YYYY-MM-DD format.",
+            placeholder: "2025-02-16",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            description: "Cursor to paginate through results",
+            placeholder:
+              "AQHRYLVDkoMkvGv7yK1rcce-vJmKiKv330R4v3j9KHSOaYvmF1bq1QkotG0rgW8Fkrj-",
+          },
+        ],
+      },
+      {
+        name: "Search",
+        method: "POST",
+        description:
+          "This is the same endpoint as the GET endpoint above. It is a POST endpoint because the cursor at some point becomes too large for the GET request. So if you know you are trying to get 1,500+ ads, you will need this endpoint.",
+        path: "/v1/facebook/adLibrary/search/ads/post",
+        sampleResponse: {
+          searchResults: [
+            {
+              ad_archive_id: "615470338018648",
+              ad_id: null,
+              archive_types: [],
+              categories: ["UNKNOWN"],
+              collation_count: 1,
+              collation_id: "888075953335279",
+              contains_digital_created_media: false,
+              contains_sensitive_content: false,
+              currency: "",
+              end_date: 1740729600,
+              entity_type: "PERSON_PROFILE",
+              fev_info: null,
+              finserv_ad_data: {
+                is_deemed_finserv: false,
+                is_limited_delivery: false,
+              },
+              gated_type: "ELIGIBLE",
+              has_user_reported: false,
+              hidden_safety_data: false,
+              hide_data_status: "NONE",
+              impressions_with_index: {
+                impressions_text: null,
+                impressions_index: -1,
+              },
+              is_aaa_eligible: false,
+              is_active: true,
+              is_profile_page: false,
+              menu_items: [],
+              page_id: "115531458627129",
+              page_is_deleted: false,
+              page_name: "JNB Stables Labradoodles",
+              political_countries: [],
+              publisher_platform: ["FACEBOOK", "INSTAGRAM"],
+              reach_estimate: null,
+              regional_regulation_data: {
+                finserv: {
+                  is_deemed_finserv: false,
+                  is_limited_delivery: false,
+                },
+                tw_anti_scam: { is_limited_delivery: false },
+              },
+              report_count: null,
+              snapshot: {
+                body: {
+                  text: "Discover the unmatched joy of having Cedar in your life—a playful and intelligent labradoodle who’s eager to please and full of enthusiasm! Cedar boasts a confident demeanor and a moderate energy level, making him the perfect companion for any active household. His inquisitive nature and exceptional problem-solving skills will keep you entertained as he explores the world around him, ensuring that there’s never a dull moment.\n\nCedar’s independent spirit also presents a fantastic opportunity for bonding through obedience training. This experience not only strengthens your connection but also enhances his impressive skills—after all, with evaluation scores mostly in the 4's, Cedar shows remarkable potential for dog sports, hiking, running, and any stimulating activity you can think of!\n\nIdeal for an experienced dog family ready to embrace an active lifestyle, Cedar is more than just a pet; he’s a loyal companion waiting to share exciting adventures with you. Don’t let the chance to welcome this incredible pup into your home slip away. By choosing Cedar, you’re opening the door to a lifetime of joy, love, and unforgettable experiences. Make Cedar a cherished member of your family today!",
+                },
+                branded_content: null,
+                brazil_tax_id: null,
+                byline: null,
+                caption: null,
+                cards: [],
+                cta_text: "No button",
+                cta_type: "NO_BUTTON",
+                country_iso_code: null,
+                current_page_name: "JNB Stables Labradoodles",
+                disclaimer_label: null,
+                display_format: "MULTI_IMAGES",
+                event: null,
+                images: [
+                  {
+                    original_image_url:
+                      "https://scontent.ford4-1.fna.fbcdn.net/v/t39.35426-6/481661162_990940825757018_8913176685534608816_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_eui2=AeFh8i-Z5kuJ16lqUxcUXs-ZDyrJuz4iKPUPKsm7PiIo9dMNkqCaPt8liPPGabEi8-gibi-WZTylOSlQQNRnxjTT&_nc_ohc=J_6SeTivTasQ7kNvgGEJ5D5&_nc_oc=AdiVcqOuQdywnrpvb75866Udx7xPfkUDT6ikNbmuIxTvcXWDy5hLn81fSf4M1zJD54w&_nc_zt=14&_nc_ht=scontent.ford4-1.fna&_nc_gid=AZxpM4HubQsLPUC0gB46zAp&oh=00_AYD2APYZJejn4srpHfr9dWiivmYDVF3BBE4GZ39fhKpe_w&oe=67C83B69",
+                    resized_image_url:
+                      "https://scontent.ford4-1.fna.fbcdn.net/v/t39.35426-6/480837265_659371736650913_3605385323286208049_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_eui2=AeHtmv91qbrhP_gBGdhH1sIeg9xKoAkcVGWD3EqgCRxUZel-aAIRonjSGXPj6LnUtMqdlcaX06Jz1tg8m_xMxpYD&_nc_ohc=tlfzH5L3yjgQ7kNvgFePtMF&_nc_oc=AdgiUmZhlwcNdDCj2UOoaF5i-kcJMbSk27A3C50uA6moXJvGdAk5AWivF7jBFDan8PE&_nc_zt=14&_nc_ht=scontent.ford4-1.fna&_nc_gid=AZxpM4HubQsLPUC0gB46zAp&oh=00_AYB0_2vXVBDY6wjCOSCYm9xKKAIIzPW8lPuhHTUwpBCsXg&oe=67C84C71",
+                    watermarked_resized_image_url: "",
+                    image_crops: [],
+                  },
+                  {
+                    original_image_url:
+                      "https://scontent.ford4-1.fna.fbcdn.net/v/t39.35426-6/481038231_1533584647309311_8225992803054299716_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_eui2=AeEk48U-ggbJVecRRom9upWrbwPaFVVtxVJvA9oVVW3FUkZoTmosNIlqCws7ikIwxTLzWzuguBE-lGwUTA0wSQhv&_nc_ohc=Q4yuGm3oU_sQ7kNvgEs7U_8&_nc_oc=Adita4blTpdRVqMULeWXTutl0t48b9P7rQLYt-rEkODOUoI8tGrOx5SG_4Od8hl6gBE&_nc_zt=14&_nc_ht=scontent.ford4-1.fna&_nc_gid=AZxpM4HubQsLPUC0gB46zAp&oh=00_AYA2SZef7jhVsb0ftzLe8IslP8JXBaBWIz--B7mBAGUXXw&oe=67C8468F",
+                    resized_image_url:
+                      "https://scontent.ford4-1.fna.fbcdn.net/v/t39.35426-6/480984651_1901120184038676_3525416492527391090_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_eui2=AeF6cqWvjNfWWNYRnrnXRJ1jlw7pErdLc0qXDukSt0tzSuZIrJlUX9rpiLo4GbrlQt1ELeeMA-4V2-nX9spVJk0z&_nc_ohc=bJrX5LjtSX4Q7kNvgFFZe7h&_nc_oc=AdjlZHoW7ejFM_Q8wH2GVy4LXh2tC6M1p93Y0RcICzZmhA-ptrWxFoWha6sluCwcyDw&_nc_zt=14&_nc_ht=scontent.ford4-1.fna&_nc_gid=AZxpM4HubQsLPUC0gB46zAp&oh=00_AYBn9-TIlzBweSWTynunrOqusbSXVTnHpq_Q59emD_bRpg&oe=67C82ED3",
+                    watermarked_resized_image_url: "",
+                    image_crops: [],
+                  },
+                ],
+                is_reshared: false,
+                link_description: null,
+                link_url: null,
+                page_categories: ["Pet Service"],
+                page_entity_type: "PERSON_PROFILE",
+                page_id: "115531458627129",
+                page_is_deleted: false,
+                page_is_profile_page: false,
+                page_like_count: 3823,
+                page_name: "JNB Stables Labradoodles",
+                page_profile_picture_url:
+                  "https://scontent.ford4-1.fna.fbcdn.net/v/t39.35426-6/481168271_2343627956022656_4475842746106730961_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_eui2=AeE5xuNZ8fz9pPPsJ7v7aD7en3tT5Wuv_kWfe1Pla6_-RXLb66aiQh3AfhlYqBQFisu5C4F-3Qy-BGnOVz1LzY-y&_nc_ohc=GDBS2WaBig8Q7kNvgFfDxKG&_nc_oc=AdiQjedPz36I9ZxzwBa-EwmwZ-KsV2YjJQGq3LDBYAJCg4BIeweEFvOL6nb_LS8rhKo&_nc_zt=14&_nc_ht=scontent.ford4-1.fna&_nc_gid=AZxpM4HubQsLPUC0gB46zAp&oh=00_AYB_cfoKnM_tT8JJQpLyNCTlP0af4KDJlXp6_zJb88ZC_A&oe=67C83A50",
+                page_profile_uri: "https://www.facebook.com/JNBStables/",
+                root_reshared_post: null,
+                title: null,
+                videos: [],
+                additional_info: null,
+                ec_certificates: [],
+                extra_images: [],
+                extra_links: [],
+                extra_texts: [],
+                extra_videos: [],
+              },
+              spend: null,
+              start_date: 1740729600,
+              state_media_run_label: null,
+              targeted_or_reached_countries: [],
+              total_active_time: 5519,
+            },
+          ],
+          searchResultsCount: 50001,
+          cursor:
+            "AQHRYLVDkoMkvGv7yK1rcce-vJmKiKv330R4v3j9KHSOaYvmF1bq1QkotG0rgW8Fkrj-",
+        },
+        paginationField: "cursor",
+        responseFields: [
+          {
+            path: "is_active",
+            description: "Whether the ad is currently running",
+          },
+          {
+            path: "ad_archive_id",
+            description: "The *actual* ad id",
+          },
+        ],
+        params: [
+          {
+            name: "query",
+            type: "string",
+            required: true,
+            description: "Keyword to search for",
+            placeholder: "running",
+          },
+          {
+            name: "country",
+            type: "string",
+            required: false,
+            description:
+              "This can only be one country. It has to be the 2 letter code for the country. It defaults to ALL.",
+            placeholder: "ALL",
+          },
+          {
+            name: "status",
+            type: "select",
+            required: false,
+            description: "Status of the ad. Defaults to ACTIVE.",
+            placeholder: "ACTIVE",
+            options: ["ALL", "ACTIVE", "INACTIVE"],
+          },
+          {
+            name: "start_date",
+            type: "date",
+            required: false,
+            description:
+              "Impressions start date. Needs to be in YYYY-MM-DD format.",
+            placeholder: "2025-01-05",
+          },
+          {
+            name: "end_date",
+            type: "date",
+            required: false,
+            description:
+              "Impressions end date. Needs to be in YYYY-MM-DD format.",
+            placeholder: "2025-02-16",
           },
           {
             name: "cursor",

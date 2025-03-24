@@ -226,7 +226,11 @@ export default function EndpointDocs({
 
         {endpointData.params.length > 0 && (
           <ParameterSection
-            title="Query Parameters"
+            title={
+              endpointData?.method === "GET"
+                ? "Query Parameters"
+                : "Body Parameters"
+            }
             parameters={endpointData.params}
           />
         )}
