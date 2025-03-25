@@ -7792,8 +7792,16 @@ export const apis = [
           {
             name: "handle",
             type: "string",
-            required: true,
+            required: false,
             description: "TikTok handle",
+            placeholder: "stoolpresidente",
+          },
+          {
+            name: "user_id",
+            type: "string",
+            required: false,
+            description: "User id. Use this for faster response times.",
+            placeholder: "6659752019493208069",
           },
           {
             name: "min_time",
