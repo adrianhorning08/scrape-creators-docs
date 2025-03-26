@@ -124,7 +124,7 @@ export const apis = [
         name: "User's Audience Demographics",
         method: "GET",
         description:
-          "Get the audience demographics of a TikTok user. Right now you can only get the audience countries.",
+          "Get the audience demographics of a TikTok user. Right now you can only get the audience countries. 🚨 Costs 26 credits per request.",
         path: "/v1/tiktok/user/audience",
         params: [
           {
