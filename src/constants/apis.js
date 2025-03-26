@@ -121,6 +121,69 @@ export const apis = [
         },
       },
       {
+        name: "User's Audience Demographics",
+        method: "GET",
+        description:
+          "Get the audience demographics of a TikTok user. Right now you can only get the audience countries.",
+        path: "/v1/tiktok/user/audience",
+        params: [
+          {
+            name: "handle",
+            type: "string",
+            required: true,
+            placeholder: "shakira",
+            description: "TikTok handle",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          audienceLocations: [
+            {
+              country: "Mexico",
+              countryCode: "MX",
+              count: 83,
+              percentage: "15.96%",
+            },
+            {
+              country: "United States",
+              countryCode: "US",
+              count: 34,
+              percentage: "6.54%",
+            },
+            {
+              country: "Venezuela",
+              countryCode: "VE",
+              count: 24,
+              percentage: "4.62%",
+            },
+            {
+              country: "Colombia",
+              countryCode: "CO",
+              count: 21,
+              percentage: "4.04%",
+            },
+            {
+              country: "Argentina",
+              countryCode: "AR",
+              count: 20,
+              percentage: "3.85%",
+            },
+            {
+              country: "France",
+              countryCode: "FR",
+              count: 20,
+              percentage: "3.85%",
+            },
+            {
+              country: "Spain",
+              countryCode: "ES",
+              count: 15,
+              percentage: "2.88%",
+            },
+          ],
+        },
+      },
+      {
         name: "Profile Videos",
         method: "GET",
         description:
