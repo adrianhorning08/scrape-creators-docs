@@ -15182,6 +15182,139 @@ export const apis = [
     ],
   },
   {
+    id: "googleAdTransparency",
+    name: "Google Ad Transparency",
+    icon: SiGoogle,
+    description:
+      "Scrape the Google Ad Transparency Library. *This only gets the public ads. Some ads you need to log in for and sadly we can't get those. Also, since there are so many variations, the return types might not all be 100% the same. Email me for suggestions. Also this endpoint is pretty new, if you find any errors or irregularities, please email me: adrian@thewebscrapingguy.com",
+    endpoints: [
+      {
+        name: "Company Ads",
+        method: "GET",
+        description: "Get the ads for a company",
+        path: "/v1/google/company/ads",
+        sampleResponse: {
+          ads: [
+            {
+              advertiserId: "AR01614014350098432001",
+              creativeId: "CR10449491775734153217",
+              adUrl:
+                "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR10449491775734153217",
+              advertiserName: "Lululemon Athletica Canada Inc.",
+              domain: "lululemon.com",
+              firstShown: "2023-12-29T21:59:16.000Z",
+              lastShown: "2025-03-28T01:46:12.000Z",
+            },
+            {
+              advertiserId: "AR01614014350098432001",
+              creativeId: "CR08077733302133325825",
+              adUrl:
+                "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR08077733302133325825",
+              advertiserName: "Lululemon Athletica Canada Inc.",
+              domain: "lululemon.com",
+              firstShown: "2025-02-03T19:49:57.000Z",
+              lastShown: "2025-03-28T01:43:03.000Z",
+            },
+          ],
+          cursor:
+            "CgoAP7znOo9RPjf%2FEhD5utgx8m75NrTTbU0AAAAAGgn8%2BJyW%2BJQK40A%3D",
+          success: true,
+          statusCode: 200,
+        },
+        paginationField: "cursor",
+        params: [
+          {
+            name: "domain",
+            type: "string",
+            required: false,
+            description: "The domain of the company",
+            placeholder: "lululemon.com",
+          },
+          {
+            name: "advertiser_id",
+            type: "string",
+            required: false,
+            description: "The advertiser id of the company",
+            placeholder: "AR01614014350098432001",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            description: "Cursor to paginate through results",
+            placeholder:
+              "CgoAP7znOo9RPjf%2FEhD5utgx8m75NrTTbU0AAAAAGgn8%2BJyW%2BJQK40A%3D",
+          },
+        ],
+      },
+      {
+        name: "Ad Details",
+        method: "GET",
+        description: "Get the details for an ad",
+        path: "/v1/google/ad",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "The url of the ad",
+            placeholder:
+              "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR10449491775734153217",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          advertiserId: "AR01614014350098432001",
+          creativeId: "CR12386611206931087361",
+          firstShown: null,
+          lastShown: "2025-03-28T01:48:37.000Z",
+          format: "text",
+          overallImpressions: {
+            min: null,
+            max: null,
+          },
+          creativeRegions: [
+            {
+              regionCode: "US",
+              regionName: "United States",
+            },
+          ],
+          regionStats: [
+            {
+              regionCode: "US",
+              regionName: "United States",
+              firstShown: null,
+              lastShown: "2025-03-27T05:00:00.000Z",
+              impressions: {},
+              platformImpressions: [],
+            },
+          ],
+          variations: [
+            {
+              destinationUrl: "shop.lululemon.com/shop/steady-state",
+              headline: "Shop Steady State - lululemon® Steady State",
+              description:
+                "The Secret To Our Soft, Naturally Breathable Steady State Collection Is In The Stretch. You&#39;re This Close To Versatile...",
+            },
+            {
+              destinationUrl: "shop.lululemon.com/shop/steady-state",
+              headline:
+                "lululemon® Official Site - Move In Your Favourite Colour",
+              description:
+                "The Secret To Our Soft, Naturally Breathable Steady State Collection Is In The Stretch.",
+            },
+            {
+              destinationUrl: "shop.lululemon.com",
+              headline: "lululemon® Steady State",
+              description:
+                "The Secret To Our Soft, Naturally Breathable Steady State Collection Is In The Stretch.",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
     id: "twitter",
     name: "Twitter (X)",
     icon: SiX,
