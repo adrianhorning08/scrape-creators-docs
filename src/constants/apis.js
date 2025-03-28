@@ -1,6 +1,7 @@
 import {
   SiYoutube,
   SiTwitch,
+  SiGoogle,
   SiTiktok,
   SiInstagram,
   SiFacebook,
