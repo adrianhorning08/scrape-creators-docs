@@ -15200,6 +15200,7 @@ export const apis = [
             {
               advertiserId: "AR01614014350098432001",
               creativeId: "CR10449491775734153217",
+              format: "text",
               adUrl:
                 "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR10449491775734153217",
               advertiserName: "Lululemon Athletica Canada Inc.",
@@ -15210,6 +15211,7 @@ export const apis = [
             {
               advertiserId: "AR01614014350098432001",
               creativeId: "CR08077733302133325825",
+              format: "video",
               adUrl:
                 "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR08077733302133325825",
               advertiserName: "Lululemon Athletica Canada Inc.",
