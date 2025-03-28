@@ -15193,7 +15193,7 @@ export const apis = [
         name: "Company Ads",
         method: "GET",
         description:
-          "Scrape a company's ads. *This only gets the public ads. Some ads you need to log in for and sadly we can't get those. Also, since there are so many variations, the return types might not all be 100% the same. Email me for suggestions. Also this endpoint is pretty new, if you find any errors or irregularities, please email me: adrian@thewebscrapingguy.com",
+          "Get the ads for a company. *This only gets the public ads. Some ads you need to log in for and sadly we can't get those. ",
         path: "/v1/google/company/ads",
         sampleResponse: {
           ads: [
@@ -15252,7 +15252,8 @@ export const apis = [
       {
         name: "Ad Details",
         method: "GET",
-        description: "Get the details for an ad",
+        description:
+          "Get the details for an ad. Since there are so many variations, the return types might not all be 100% the same, email me for suggestions. Also this endpoint is pretty new, if you find any errors or irregularities, please email me: adrian@thewebscrapingguy.com",
         path: "/v1/google/ad",
         params: [
           {
