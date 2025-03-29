@@ -24828,7 +24828,7 @@ export const apis = [
         name: "Latest Tweets",
         method: "GET",
         description: "Get the latest tweets from a user",
-        path: "/twitter/user/tweets/latest",
+        path: "/v1/twitter/user/tweets/latest",
         paginationField: "continuation_token",
         sampleResponse: {
           success: true,
@@ -25115,7 +25115,7 @@ export const apis = [
         method: "GET",
         description:
           "Get the followers of a user. Can returns hundreds of thousands of results",
-        path: "/twitter/user/followers",
+        path: "/v1/twitter/user/followers",
         paginationField: "continuation_token",
         sampleResponse: {
           results: [
@@ -25173,7 +25173,7 @@ export const apis = [
         name: "Following",
         method: "GET",
         description: "Get the users a user is following",
-        path: "/twitter/user/following",
+        path: "/v1/twitter/user/following",
         paginationField: "continuation_token",
         sampleResponse: {
           success: true,
@@ -25232,7 +25232,7 @@ export const apis = [
         name: "Search",
         method: "GET",
         description: "The Twitter Search. Search for tweets.",
-        path: "/twitter/search",
+        path: "/v1/twitter/search",
         paginationField: "continuation_token",
         sampleResponse: {
           results: [
