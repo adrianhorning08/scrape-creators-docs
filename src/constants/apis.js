@@ -24440,7 +24440,7 @@ export const apis = [
     id: "twitter",
     name: "Twitter (X)",
     icon: SiX,
-    description: "Scrape Twitter profiles, tweets, and more",
+    description: "Get Twitter profiles, tweets, followers and more",
     endpoints: [
       {
         name: "Profile",
@@ -24590,7 +24590,7 @@ export const apis = [
         name: "User Tweets",
         method: "GET",
         description:
-          "Get recent tweets from a user including engagement metrics",
+          "Get tweets from a user's profile. Note that theses aren't the lastest tweets, use the latest tweets endpoint for that.",
         path: "/v1/twitter/user-tweets",
         sampleResponse: {
           tweets: [
@@ -24825,7 +24825,136 @@ export const apis = [
         ],
       },
       {
-        name: "Tweet",
+        name: "Latest Tweets",
+        method: "GET",
+        description: "Get the latest tweets from a user",
+        path: "/twitter/user/tweets/latest",
+        paginationField: "continuation_token",
+        sampleResponse: {
+          success: true,
+          tweets: [
+            {
+              __typename: "Tweet",
+              rest_id: "1905451248662577327",
+              core: {
+                user_results: {
+                  result: {
+                    __typename: "User",
+                    id: "VXNlcjo4520241209",
+                    rest_id: "4520241209",
+                    affiliates_highlighted_label: {},
+                    is_blue_verified: true,
+                    profile_image_shape: "Circle",
+                    legacy: {
+                      created_at: "Fri Dec 18 02:48:59 +0000 2015",
+                      default_profile: false,
+                      default_profile_image: false,
+                      description:
+                        "Social Media Scraping API's: https://t.co/eSvJcfOZwF\n\nWeb Scraping Course: https://t.co/aTGlgWnvD7",
+                      entities: {
+                        description: { urls: [] },
+                        url: { urls: [] },
+                      },
+                      fast_followers_count: 0,
+                      favourites_count: 90714,
+                      followers_count: 17483,
+                      friends_count: 1156,
+                      has_custom_timelines: true,
+                      is_translator: false,
+                      listed_count: 0,
+                      location: "Austin, TX",
+                      media_count: 0,
+                      name: "Adrian | The Web Scraping Guy",
+                      normal_followers_count: 17483,
+                      pinned_tweet_ids_str: [],
+                      possibly_sensitive: false,
+                      profile_banner_url:
+                        "https://pbs.twimg.com/profile_banners/4520241209/1710267319",
+                      profile_image_url_https:
+                        "https://pbs.twimg.com/profile_images/1413647704161275904/1tTdl4v9_normal.jpg",
+                      profile_interstitial_type: "",
+                      screen_name: "adrian_horning_",
+                      statuses_count: 18479,
+                      translator_type: "none",
+                      url: "https://t.co/gNUelkV9LA",
+                      verified: false,
+                      withheld_in_countries: [],
+                    },
+                    professional: {
+                      rest_id: null,
+                      professional_type: null,
+                      category: [],
+                    },
+                  },
+                },
+              },
+              unmention_data: {},
+              edit_control: {
+                edit_tweet_ids: ["1905451248662577327"],
+                editable_until_msecs: "1743133553000",
+                is_edit_eligible: false,
+                edits_remaining: "5",
+              },
+              is_translatable: false,
+              views: { count: "569", state: "EnabledWithCount" },
+              source: "",
+              legacy: {
+                bookmark_count: 1,
+                bookmarked: false,
+                created_at: "Fri Mar 28 02:45:53 +0000 2025",
+                conversation_id_str: "1905447452645491152",
+                display_text_range: [0, 280],
+                entities: {
+                  hashtags: [],
+                  media: [],
+                  symbols: [],
+                  timestamps: [],
+                  urls: [],
+                  user_mentions: [],
+                },
+                favorite_count: 0,
+                favorited: false,
+                full_text:
+                  'Ok this is fascinating: \n"Great question — I\'m not afraid of the word "scrape" at all. In fact, I help with web scraping projects all the time. The issue comes from content generation policies for images specifically. Some platforms interpret "scraping" — especially when combined',
+                is_quote_status: false,
+                lang: "en",
+                possibly_sensitive: false,
+                possibly_sensitive_editable: true,
+                quote_count: 0,
+                reply_count: 1,
+                retweet_count: 0,
+                retweeted: false,
+                user_id_str: "4520241209",
+                id_str: "1905451248662577327",
+              },
+              quick_promote_eligibility: {
+                eligibility: "IneligibleUserUnauthorized",
+              },
+            },
+          ],
+          continuationToken: "DAABCgABGnO-apa__-wKAAIaa-ADnVuQ7wgAAwAAAAIAAA",
+        },
+        params: [
+          {
+            name: "user_id",
+            type: "string",
+            required: true,
+            description:
+              "Twitter user ID. This is the rest_id from the twitter profile API response",
+            placeholder: "4520241209",
+          },
+          {
+            name: "continuation_token",
+            type: "string",
+            required: false,
+            description:
+              "The continuation token to get the next page of results. This is returned in the response payload",
+            placeholder: "DAABCgABGnO-apa__-wKAAIaa-ADnVuQ7wgAAwAAAAIAAA",
+          },
+        ],
+      },
+      {
+        name: "Tweet Details",
         method: "GET",
         description:
           "Get detailed information about a specific tweet including engagement",
@@ -24978,6 +25107,538 @@ export const apis = [
             type: "string",
             required: true,
             description: "Tweet URL",
+          },
+        ],
+      },
+      {
+        name: "Followers",
+        method: "GET",
+        description:
+          "Get the followers of a user. Can returns hundreds of thousands of results",
+        path: "/twitter/user/followers",
+        paginationField: "continuation_token",
+        sampleResponse: {
+          results: [
+            {
+              creation_date: "Mon Jul 08 09:31:59 +0000 2013",
+              user_id: "1577241403",
+              username: "levelsio",
+              name: "@levelsio",
+              follower_count: 645669,
+              following_count: 1819,
+              favourites_count: 132822,
+              is_private: false,
+              is_verified: false,
+              is_blue_verified: false,
+              location: "📕 My book $14K/m 👉",
+              profile_pic_url:
+                "https://pbs.twimg.com/profile_images/1589756412078555136/YlXMBzhp_normal.jpg",
+              profile_banner_url: null,
+              description:
+                "🇪🇺@euaccofficial\n✈️https://t.co/UVJczDtp9x $87K/m\n📸https://t.co/lAyoqmSBRX $123K/m\n🏡https://t.co/1oqUgfD6CZ $35K/m\n🌍https://t.co/UXK5AFqCaQ $24K/m\n🛰https://t.co/ZHSvI2wjyW $32K/m\n👙https://t.co/RyXpqGuFM3 $12K/m",
+              external_url: "http://fly.pieter.com",
+              number_of_tweets: 149819,
+              bot: false,
+              timestamp: 1373275919,
+              has_nft_avatar: false,
+              category: null,
+              default_profile: false,
+              default_profile_image: false,
+              listed_count: 6863,
+              verified_type: null,
+            },
+          ],
+          continuation_token: "1827496019882835853|1906078302464901048",
+        },
+        params: [
+          {
+            name: "user_id",
+            type: "string",
+            required: true,
+            description:
+              "Twitter user ID. This is the rest_id from the twitter profile API response",
+            placeholder: "4520241209",
+          },
+          {
+            name: "continuation_token",
+            type: "string",
+            required: false,
+            description:
+              "The continuation token to get the next page of results. This is returned in the response payload",
+            placeholder: "1234567890",
+          },
+        ],
+      },
+      {
+        name: "Following",
+        method: "GET",
+        description: "Get the users a user is following",
+        path: "/twitter/user/following",
+        paginationField: "continuation_token",
+        sampleResponse: {
+          success: true,
+          results: [
+            {
+              creation_date: "Mon Jul 08 09:31:59 +0000 2013",
+              user_id: "1577241403",
+              username: "levelsio",
+              name: "@levelsio",
+              follower_count: 645673,
+              following_count: 1819,
+              favourites_count: 132823,
+              is_private: false,
+              is_verified: false,
+              is_blue_verified: false,
+              location: "📕 My book $14K/m 👉",
+              profile_pic_url:
+                "https://pbs.twimg.com/profile_images/1589756412078555136/YlXMBzhp_normal.jpg",
+              profile_banner_url: null,
+              description:
+                "🇪🇺@euaccofficial\n✈️https://t.co/UVJczDtp9x $87K/m\n📸https://t.co/lAyoqmSBRX $123K/m\n🏡https://t.co/1oqUgfD6CZ $35K/m\n🌍https://t.co/UXK5AFqCaQ $24K/m\n🛰https://t.co/ZHSvI2wjyW $32K/m\n👙https://t.co/RyXpqGuFM3 $12K/m",
+              external_url: "http://fly.pieter.com",
+              number_of_tweets: 149819,
+              bot: false,
+              timestamp: 1373275919,
+              has_nft_avatar: false,
+              category: null,
+              default_profile: false,
+              default_profile_image: false,
+              listed_count: 6863,
+              verified_type: null,
+            },
+          ],
+          continuation_token: "1820249040420658394|1906080795936686008",
+        },
+        params: [
+          {
+            name: "user_id",
+            type: "string",
+            required: true,
+            description:
+              "Twitter user ID. This is the rest_id from the twitter profile API response",
+            placeholder: "4520241209",
+          },
+          {
+            name: "continuation_token",
+            type: "string",
+            required: false,
+            description:
+              "The continuation token to get the next page of results. This is returned in the response payload",
+            placeholder: "1827496019882835853|1906078302464901048",
+          },
+        ],
+      },
+      {
+        name: "Search",
+        method: "GET",
+        description: "The Twitter Search. Search for tweets.",
+        path: "/twitter/search",
+        paginationField: "continuation_token",
+        sampleResponse: {
+          results: [
+            {
+              url: "https://x.com/M1das_OW2/status/1905770797731663935",
+              tweet_id: "1905770797731663935",
+              creation_date: "Fri Mar 28 23:55:40 +0000 2025",
+              text: "“Elon musk has sold twitter-“ https://t.co/eTyq9y3t4b",
+              media_url: [
+                "https://pbs.twimg.com/tweet_video_thumb/GnKocAUboAA6qsv.jpg",
+              ],
+              video_url: [
+                {
+                  bitrate: 0,
+                  content_type: "video/mp4",
+                  url: "https://video.twimg.com/tweet_video/GnKocAUboAA6qsv.mp4",
+                },
+              ],
+              user: {
+                creation_date: "Tue Feb 22 08:01:45 +0000 2022",
+                user_id: "1496032390610751489",
+                username: "M1das_OW2",
+                name: "M1das",
+                follower_count: 124847,
+                following_count: 1354,
+                favourites_count: 266730,
+                is_private: null,
+                is_verified: false,
+                is_blue_verified: true,
+                location: "he/him",
+                profile_pic_url:
+                  "https://pbs.twimg.com/profile_images/1739355451857457152/30iOmuHm_normal.jpg",
+                profile_banner_url:
+                  "https://pbs.twimg.com/profile_banners/1496032390610751489/1701242943",
+                description: "twitters most hated Reply Guy | 2.9k peak tank",
+                external_url: "http://discord.gg/dumbchudcord",
+                number_of_tweets: 94538,
+                bot: false,
+                timestamp: 1645516905,
+                has_nft_avatar: false,
+                category: null,
+                default_profile: true,
+                default_profile_image: false,
+                listed_count: 221,
+                verified_type: null,
+              },
+              language: "en",
+              favorite_count: 109912,
+              retweet_count: 8012,
+              reply_count: 57,
+              quote_count: 21,
+              retweet: false,
+              views: 1150482,
+              timestamp: 1743206140,
+              video_view_count: null,
+              in_reply_to_status_id: null,
+              quoted_status_id: "1905742655176441970",
+              binding_values: null,
+              expanded_url:
+                "https://x.com/M1das_OW2/status/1905770797731663935/photo/1",
+              retweet_tweet_id: null,
+              extended_entities: {
+                media: [
+                  {
+                    display_url: "pic.x.com/3eQMnYDRFu",
+                    expanded_url:
+                      "https://x.com/PopBase/status/1905742655176441970/photo/1",
+                    id_str: "1905742650923524096",
+                    indices: [57, 80],
+                    media_key: "3_1905742650923524096",
+                    media_url_https:
+                      "https://pbs.twimg.com/media/GnKO2A2boAArexL.jpg",
+                    type: "photo",
+                    url: "https://t.co/3eQMnYDRFu",
+                    ext_media_availability: {
+                      status: "Available",
+                    },
+                    features: {
+                      large: {
+                        faces: [
+                          {
+                            x: 316,
+                            y: 74,
+                            h: 247,
+                            w: 247,
+                          },
+                        ],
+                      },
+                      medium: {
+                        faces: [
+                          {
+                            x: 316,
+                            y: 74,
+                            h: 247,
+                            w: 247,
+                          },
+                        ],
+                      },
+                      small: {
+                        faces: [
+                          {
+                            x: 256,
+                            y: 60,
+                            h: 200,
+                            w: 200,
+                          },
+                        ],
+                      },
+                      orig: {
+                        faces: [
+                          {
+                            x: 316,
+                            y: 74,
+                            h: 247,
+                            w: 247,
+                          },
+                        ],
+                      },
+                    },
+                    sizes: {
+                      large: {
+                        h: 837,
+                        w: 837,
+                        resize: "fit",
+                      },
+                      medium: {
+                        h: 837,
+                        w: 837,
+                        resize: "fit",
+                      },
+                      small: {
+                        h: 680,
+                        w: 680,
+                        resize: "fit",
+                      },
+                      thumb: {
+                        h: 150,
+                        w: 150,
+                        resize: "crop",
+                      },
+                    },
+                    original_info: {
+                      height: 837,
+                      width: 837,
+                      focus_rects: [
+                        {
+                          x: 0,
+                          y: 0,
+                          w: 837,
+                          h: 469,
+                        },
+                        {
+                          x: 0,
+                          y: 0,
+                          w: 837,
+                          h: 837,
+                        },
+                        {
+                          x: 72,
+                          y: 0,
+                          w: 734,
+                          h: 837,
+                        },
+                        {
+                          x: 230,
+                          y: 0,
+                          w: 419,
+                          h: 837,
+                        },
+                        {
+                          x: 0,
+                          y: 0,
+                          w: 837,
+                          h: 837,
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    display_url: "pic.x.com/3eQMnYDRFu",
+                    expanded_url:
+                      "https://x.com/PopBase/status/1905742655176441970/photo/1",
+                    id_str: "1905742650927632384",
+                    indices: [57, 80],
+                    media_key: "3_1905742650927632384",
+                    media_url_https:
+                      "https://pbs.twimg.com/media/GnKO2A3aUAA0gCj.jpg",
+                    type: "photo",
+                    url: "https://t.co/3eQMnYDRFu",
+                    ext_media_availability: {
+                      status: "Available",
+                    },
+                    features: {
+                      large: {
+                        faces: [],
+                      },
+                      medium: {
+                        faces: [],
+                      },
+                      small: {
+                        faces: [],
+                      },
+                      orig: {
+                        faces: [],
+                      },
+                    },
+                    sizes: {
+                      large: {
+                        h: 400,
+                        w: 400,
+                        resize: "fit",
+                      },
+                      medium: {
+                        h: 400,
+                        w: 400,
+                        resize: "fit",
+                      },
+                      small: {
+                        h: 400,
+                        w: 400,
+                        resize: "fit",
+                      },
+                      thumb: {
+                        h: 150,
+                        w: 150,
+                        resize: "crop",
+                      },
+                    },
+                    original_info: {
+                      height: 400,
+                      width: 400,
+                      focus_rects: [
+                        {
+                          x: 0,
+                          y: 176,
+                          w: 400,
+                          h: 224,
+                        },
+                        {
+                          x: 0,
+                          y: 0,
+                          w: 400,
+                          h: 400,
+                        },
+                        {
+                          x: 0,
+                          y: 0,
+                          w: 351,
+                          h: 400,
+                        },
+                        {
+                          x: 50,
+                          y: 0,
+                          w: 200,
+                          h: 400,
+                        },
+                        {
+                          x: 0,
+                          y: 0,
+                          w: 400,
+                          h: 400,
+                        },
+                      ],
+                    },
+                  },
+                ],
+              },
+              conversation_id: "1905770797731663935",
+              retweet_status: null,
+              quoted_status: {
+                tweet_id: "1905742655176441970",
+                creation_date: "Fri Mar 28 22:03:50 +0000 2025",
+                text: "Elon Musk has sold Twitter/X to his own AI company, xAI. https://t.co/3eQMnYDRFu",
+                media_url: null,
+                video_url: null,
+                user: {
+                  creation_date: "Tue Jun 11 14:49:15 +0000 2019",
+                  user_id: "1138458175663988738",
+                  username: "PopBase",
+                  name: "Pop Base",
+                  follower_count: 1960779,
+                  following_count: 2513,
+                  favourites_count: 3318,
+                  is_private: null,
+                  is_verified: false,
+                  is_blue_verified: true,
+                  location: "",
+                  profile_pic_url:
+                    "https://pbs.twimg.com/profile_images/1268086791443230737/BRGz4AiW_normal.jpg",
+                  profile_banner_url:
+                    "https://pbs.twimg.com/profile_banners/1138458175663988738/1585520513",
+                  description:
+                    "Pop Base is your best source for all pop culture related entertainment, news, award show coverage, chart updates, statistics and more. | email@popbase.tv",
+                  external_url: null,
+                  number_of_tweets: 71671,
+                  bot: false,
+                  timestamp: 1560264555,
+                  has_nft_avatar: false,
+                  category: null,
+                  default_profile: true,
+                  default_profile_image: false,
+                  listed_count: 3970,
+                  verified_type: null,
+                },
+                language: "en",
+                favorite_count: 21858,
+                retweet_count: 836,
+                reply_count: 858,
+                quote_count: 2916,
+                retweet: false,
+                views: null,
+                timestamp: 1743199430,
+                video_view_count: null,
+                in_reply_to_status_id: null,
+                quoted_status_id: null,
+                binding_values: null,
+                expanded_url: null,
+                retweet_tweet_id: null,
+                extended_entities: null,
+                conversation_id: "1905742655176441970",
+                retweet_status: null,
+                quoted_status: null,
+                bookmark_count: 1723,
+                source: null,
+                community_note: null,
+              },
+              bookmark_count: 1093,
+              source: "Twitter for iPhone",
+              community_note: null,
+            },
+          ],
+          continuation_token: "DAACCgACGnPC3wGAJxA....",
+        },
+        params: [
+          {
+            name: "query",
+            type: "string",
+            required: false,
+            description: "The query to search for",
+            placeholder: "elon musk",
+          },
+          {
+            name: "start_date",
+            type: "string",
+            required: false,
+            description: "The start date to search from. Format: YYYY-MM-DD",
+            placeholder: "2021-01-10",
+          },
+          {
+            name: "end_date",
+            type: "string",
+            required: false,
+            description: "The end date to search from. Format: YYYY-MM-DD",
+            placeholder: "2022-01-10",
+          },
+          {
+            name: "language",
+            type: "string",
+            required: false,
+            description:
+              "The language to search from. Format: en, es, fr, de, it, ja, pt, ru, zh",
+            placeholder: "en",
+          },
+          {
+            name: "sort",
+            type: "string",
+            required: false,
+            description: "The sort order. Format: top, latest",
+            placeholder: "top",
+          },
+          {
+            name: "from",
+            type: "string",
+            required: false,
+            description:
+              "Who tweeted it. So from levelsio means to search for tweets from levelsio",
+            placeholder: "levelsio",
+          },
+          {
+            name: "min_retweets",
+            type: "number",
+            required: false,
+            description: "The minimum number of retweets",
+            placeholder: "10",
+          },
+          {
+            name: "min_likes",
+            type: "number",
+            required: false,
+            description: "The minimum number of likes",
+            placeholder: "10",
+          },
+          {
+            name: "min_replies",
+            type: "number",
+            required: false,
+            description: "The minimum number of replies",
+            placeholder: "10",
+          },
+          {
+            name: "continuation_token",
+            type: "string",
+            required: false,
+            description:
+              "The continuation token to get the next page of results. This is returned in the response payload",
+            placeholder: "DAACCgACGnPC3....",
           },
         ],
       },
