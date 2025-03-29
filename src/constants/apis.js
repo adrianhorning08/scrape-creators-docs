@@ -24438,7 +24438,7 @@ export const apis = [
   },
   {
     id: "twitter",
-    name: "Twitter (X)",
+    name: "Twitter",
     icon: SiX,
     description: "Get Twitter profiles, tweets, followers and more",
     endpoints: [
