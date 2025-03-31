@@ -15928,16 +15928,21 @@ export const apis = [
           {
             name: "channelId",
             type: "string",
-            // required: true,
             description: "YouTube channel ID",
             placeholder: "UC-9-kyTW8ZkZNDHQJ6FgpwQ",
           },
           {
             name: "handle",
             type: "string",
-            // required: true,
             description: "YouTube channel handle",
             placeholder: "ThePatMcAfeeShow",
+          },
+          {
+            name: "sort",
+            type: "select",
+            description: "Sort by newest or popular",
+            placeholder: "newest",
+            options: ["newest", "popular"],
           },
           {
             name: "continuationToken",
@@ -15994,6 +15999,13 @@ export const apis = [
             type: "string",
             description: "Can pass channelId or handle",
             placeholder: "UC-9-kyTW8ZkZNDHQJ6FgpwQ",
+          },
+          {
+            name: "sort",
+            type: "select",
+            description: "Sort by newest or popular",
+            placeholder: "newest",
+            options: ["newest", "popular"],
           },
           {
             name: "continuationToken",
