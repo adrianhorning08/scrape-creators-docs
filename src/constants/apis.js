@@ -16313,14 +16313,6 @@ export const apis = [
             description: "Search query",
           },
           {
-            name: "continuationToken",
-            type: "string",
-            required: false,
-            description:
-              "Continuation token to get more videos. Get 'continuationToken' from previous response.",
-            placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
-          },
-          {
             name: "uploadDate",
             type: "select",
             required: false,
@@ -16340,6 +16332,22 @@ export const apis = [
             description: "Sort by",
             options: ["relevance", "upload_date"],
             placeholder: "relevance",
+          },
+          {
+            name: "filter",
+            type: "select",
+            required: false,
+            description: "Filter by these options:",
+            options: ["shorts"],
+            placeholder: "all",
+          },
+          {
+            name: "continuationToken",
+            type: "string",
+            required: false,
+            description:
+              "Continuation token to get more videos. Get 'continuationToken' from previous response.",
+            placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
           },
         ],
       },
