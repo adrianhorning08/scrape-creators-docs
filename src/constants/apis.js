@@ -17296,6 +17296,14 @@ export const apis = [
             placeholder: "running",
           },
           {
+            name: "ad_type",
+            type: "select",
+            required: false,
+            description: "Search for all ads or only political and issue ads",
+            placeholder: "all",
+            options: ["all", "political_and_issue_ads"],
+          },
+          {
             name: "country",
             type: "string",
             required: false,
