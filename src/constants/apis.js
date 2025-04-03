@@ -17625,6 +17625,22 @@ export const apis = [
             placeholder: "AR01614014350098432001",
           },
           {
+            name: "topic",
+            type: "select",
+            required: false,
+            description:
+              "The topic to search for. If you search for 'political', you will also need to pass a 'region', like 'US' or 'AU'",
+            options: ["all", "political"],
+            placeholder: "all",
+          },
+          {
+            name: "region",
+            type: "string",
+            required: false,
+            description: "The region to search for. Defaults to anywhere",
+            placeholder: "US",
+          },
+          {
             name: "cursor",
             type: "string",
             required: false,
