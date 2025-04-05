@@ -4,6 +4,7 @@ import {
   SiGoogle,
   SiTiktok,
   SiInstagram,
+  SiLinkedin,
   SiFacebook,
   SiX,
   SiReddit,
@@ -17712,6 +17713,159 @@ export const apis = [
               headline: "lululemon® Steady State",
               description:
                 "The Secret To Our Soft, Naturally Breathable Steady State Collection Is In The Stretch.",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    name: "LinkedIn Ad Library",
+    icon: SiLinkedin,
+    description: "Search the LinkedIn Ad Library",
+    paginationField: "paginationToken",
+    endpoints: [
+      {
+        name: "Search Ads",
+        method: "GET",
+        description: "Search the LinkedIn Ad Library",
+        path: "/v1/linkedin/ads/search",
+        sampleResponse: {
+          success: true,
+          ads: [
+            {
+              id: "666281156",
+              advertiser: "Microsoft Reactor",
+              adType: "Single Image Ad",
+              poster: "Microsoft Reactor",
+              url: "https://www.linkedin.com/ad-library/detail/666281156",
+              image:
+                "https://media.licdn.com/dms/image/v2/D5610AQEw0mrALKvtNg/image-shrink_1280/B56ZX9efPAGoAQ-/0/1743714383594?e=2147483647&v=beta&t=X73rbbDNcwdHp4xf9fc30elNbQH-auUlivt7HARfmhg",
+              headline:
+                "🤖 Unlock the power of AI Agents!\n\nGenerative AI is advancing fast, and AI agents are leading the way. Join our Learn Li…",
+              cta: "Get started building AI Agents!",
+              description: null,
+              date: null,
+            },
+            {
+              id: "666238406",
+              advertiser: "Microsoft Reactor",
+              adType: "Single Image Ad",
+              poster: "Microsoft Reactor",
+              url: "https://www.linkedin.com/ad-library/detail/666238406",
+              image:
+                "https://media.licdn.com/dms/image/v2/D5610AQFsYQl4CHrcng/image-shrink_1280/B56ZX9eksVGsAU-/0/1743714405953?e=2147483647&v=beta&t=GPRoGPx2BdT9nENeV-zC8VbLAM62jWx7TGMZJegCLIA",
+              headline:
+                "🚀 Discover how to build AI Agents!\n\nGenerative AI is evolving rapidly, and AI agents are at the forefront of this trans…",
+              cta: "Learn how to build your own AI Agent.",
+              description: null,
+              date: null,
+            },
+          ],
+          paginationToken: "640547184-1743616612000",
+          isLastPage: false,
+        },
+        params: [
+          {
+            name: "company",
+            type: "string",
+            required: false,
+            description: "The company to search for",
+            placeholder: "microsoft",
+          },
+          {
+            name: "keyword",
+            type: "string",
+            required: false,
+            description: "The keyword to search for",
+            placeholder: "scraping",
+          },
+          {
+            name: "countries",
+            type: "string",
+            required: false,
+            description: "Comma separated list of countries",
+            placeholder: "US,CA,MX",
+          },
+          {
+            name: "startDate",
+            type: "string",
+            required: false,
+            description: "Start date to search for. Format: YYYY-MM-DD",
+            placeholder: "2024-01-01",
+          },
+          {
+            name: "endDate",
+            type: "string",
+            required: false,
+            description: "End date to search for. Format: YYYY-MM-DD",
+            placeholder: "2024-01-10",
+          },
+          {
+            name: "paginationToken",
+            type: "string",
+            required: false,
+            description: "Pagination token to paginate through results",
+            placeholder: "640547184-1743616612000",
+          },
+        ],
+      },
+      {
+        name: "Ad Details",
+        method: "GET",
+        description: "Get the details for an ad",
+        path: "/v1/linkedin/ad",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "The url of the ad",
+            placeholder: "https://www.linkedin.com/ad-library/detail/666281156",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          id: "664291126",
+          description:
+            "Learn to start building an AI strategy that helps your small business automate routine tasks and keep teams focused on high-value activities.",
+          headline: "Read “The Guide to AI for Small Businesses”",
+          poster: "Salesforce",
+          posterTitle: "Promoted",
+          promotedBy: null,
+          targeting: {
+            language: "Targeting includes English",
+            location: "Targeting includes Portugal",
+            audience: "Inclusion and exclusion targeting applied",
+          },
+          image:
+            "https://media.licdn.com/dms/image/v2/D5610AQHEjQAydHWLaw/image-shrink_1280/image-shrink_1280/0/1736950502005/Ai-guide-for-smbs?e=2147483647&v=beta&t=dC-iPz1fr8piN6YutdDgKIOmRPJvFaj4Hr0g_raHZ70",
+          adType: "Single Image Ad",
+          advertiser: "Salesforce",
+          advertiserLinkedinPage: "https://www.linkedin.com/company/3185",
+          cta: null,
+          destinationUrl:
+            "https://www.salesforce.com/eu/form/small-business/ai-guide-for-smbs/?d=701ed00000CX0GfAAL&nc=701ed000007UYTMAA4&utm_source=linkedin&utm_medium=paid_social&utm_campaign=emea_pt_einsteinai_allindustries&utm_content=enterprisesmallbusiness_pp-dm-all-crx-multi-tal-linkedin-prospect-tals-esmb_701ed00000CX0GfAAL_english_ai-guide-for-smbs&trk=ad_library_ad_preview_headline_content",
+          adDuration: "Ran from Apr 1, 2025 to Apr 3, 2025",
+          startDate: "2025-04-01T00:00:00.000Z",
+          endDate: "2025-04-03T00:00:00.000Z",
+          totalImpressions: "5k-10k",
+          impressionsByCountry: [
+            {
+              country: "Portugal",
+              impressions: "100%",
+            },
+            {
+              country: "Angola",
+              impressions: "less than 1%",
+            },
+            {
+              country: "Latvia",
+              impressions: "less than 1%",
+            },
+            {
+              country: "Ukraine",
+              impressions: "less than 1%",
             },
           ],
         },
