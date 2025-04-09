@@ -14932,6 +14932,31 @@ export const apis = [
         ],
       },
       {
+        name: "Transcript",
+        method: "GET",
+        description:
+          "Get the transcript of an Instagram post or reel. This is a little slow since I run it through an AI. You should get results in 10-30 seconds. If no one is spreaking it should return null. Since some posts are carousel, it will return a transcript for each item in the carousel.",
+        path: "/v2/instagram/media/transcript",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Instagram post or reel URL",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          transcripts: [
+            {
+              id: "3597267389859272809",
+              shortcode: "DHsD6HGqJhp",
+              text: "Let's fry up the perfect bunzel. Beautiful.  Everybody, shh. The perfect bunzel. Let me show you my bunzel. When it comes down to bunzel, we make it the crispiest, get the crunch. Heaven.",
+            },
+          ],
+        },
+      },
+      {
         name: "User Reels",
         method: "GET",
         description: "Get all public reels from a user's profile",
