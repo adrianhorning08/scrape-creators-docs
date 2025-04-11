@@ -16112,6 +16112,7 @@ export const apis = [
         path: "/v1/youtube/video",
         sampleResponse: {
           id: "Y2Ah_DFr8cw",
+          thumbnail: "https://img.youtube.com/vi/G6VTenw0S7o/maxresdefault.jpg",
           type: "video",
           title:
             'Inside the NBA: Chuck Trolls Jussie Smollett "Do not commit crimes with checks, use cash!"',
