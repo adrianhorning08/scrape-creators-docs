@@ -1,0 +1,212 @@
+{
+  "success": true,
+  "post": {
+    "id": "3608775792320555711_63069450921",
+    "pk": "3608775792320555711",
+    "user": {
+      "friendship_status": null,
+      "pk": "63069450921",
+      "profile_pic_url": "https://scontent-sjc3-1.cdninstagram.com/v/t51.2885-19/358000025_988841669212235_3183384987691331022_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-sjc3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2QHENKKl6jQlD4P2ykD1kdjgJzgIifGHZXsUsCgsnHpH1p2-XeWT1cLGjrqVGxoPbnE&_nc_ohc=WkOBPuV5vCQQ7kNvwFgz1og&_nc_gid=szsnblWVDT9LOMmPYXt2zQ&edm=APs17CUBAAAA&ccb=7-5&oh=00_AfEaCFBnIBaZajCxvXpwUmetqErk-ja5mM8XavcDkiYudA&oe=67FFBF55&_nc_sid=10d13b",
+      "username": "trendspider",
+      "id": "63069450921",
+      "transparency_label": null,
+      "transparency_product": null,
+      "transparency_product_enabled": false,
+      "is_verified": false,
+      "text_post_app_is_private": false,
+      "has_onboarded_to_text_post_app": true
+    },
+    "text_post_app_info": {
+      "show_header_follow": false,
+      "is_markup": false,
+      "custom_feed_preview_info": null,
+      "link_preview_attachment": null,
+      "linked_inline_media": null,
+      "special_effects_enabled_str": "",
+      "text_fragments": {
+        "fragments": [
+          {
+            "fragment_type": "plaintext",
+            "link_fragment": null,
+            "mention_fragment": null,
+            "plaintext": "NVDA 🟢 = 36x P/E\n\nNvidia at $110 today carries the same premium as Nvidia at $15 in 2022.",
+            "tag_fragment": null,
+            "linkified_web_url": null
+          }
+        ]
+      },
+      "reshare_count": 1,
+      "direct_reply_count": 6,
+      "repost_count": 1,
+      "quote_count": 0,
+      "share_info": {
+        "quoted_attachment_author_attribution_allowed": true,
+        "quoted_attachment_post_unavailable": false,
+        "quoted_attachment_post": null,
+        "quoted_post": null,
+        "reposted_post": null
+      },
+      "reply_to_author": null,
+      "reply_control": "everyone",
+      "private_reply_partner": null,
+      "self_thread_count": null,
+      "tag_header": {
+        "display_name": "NVDA",
+        "id": "18402789505032695"
+      },
+      "root_post_author": null,
+      "pinned_post_info": {
+        "is_pinned_to_parent_post": false,
+        "is_pinned_to_profile": false
+      },
+      "related_trends_info": null,
+      "is_reply": false,
+      "is_post_unavailable": false,
+      "post_unavailable_reason": null,
+      "hush_info": null,
+      "can_private_reply": false,
+      "can_reply": false
+    },
+    "is_paid_partnership": null,
+    "audio": null,
+    "caption": {
+      "text": "NVDA 🟢 = 36x P/E\n\nNvidia at $110 today carries the same premium as Nvidia at $15 in 2022.",
+      "pk": "18109768954486098",
+      "has_translation": null
+    },
+    "caption_is_edited": false,
+    "transcription_data": null,
+    "carousel_media": null,
+    "code": "DIU8naHS6q_",
+    "image_versions2": {
+      "candidates": [
+        {
+          "height": 790,
+          "url": "https://scontent-sjc3-1.cdninstagram.com/v/t51.2885-15/489773269_18495263140062925_1435854593842334866_n.jpg?stp=dst-jpg_e15_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTA3OXg3OTAuc2RyLmY3NTc2MS5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-sjc3-1.cdninstagram.com&_nc_cat=101&_nc_oc=Q6cZ2QHENKKl6jQlD4P2ykD1kdjgJzgIifGHZXsUsCgsnHpH1p2-XeWT1cLGjrqVGxoPbnE&_nc_ohc=DWmq_LhK8ooQ7kNvwH3FuBe&_nc_gid=szsnblWVDT9LOMmPYXt2zQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzYwODc3NTc5MjMyMDU1NTcxMQ%3D%3D.3-ccb7-5&oh=00_AfGt93ejDNUbdHZMQ3yRJis7UnkYXfc4BQxHGvRH5flHEg&oe=67FFB4BA&_nc_sid=10d13b",
+          "width": 1079
+        }
+      ]
+    },
+    "original_height": 790,
+    "original_width": 1079,
+    "accessibility_caption": "May be an image of ‎text that says '‎TrendSpider Spider NVDA, Daily, Candles WVDA,Daily,Candleschart chart nVIDIA @ NVDADAILYCHART NVDA DAILY CHART 110.56 P/ERatio(Trailing),Daily Ratio Ratio(Trailing),Da (Trailing) Daily 153xP/E P/E 153x ب 96x 96xP/E P/E 91xP/E 79xP/E 71xP/E 67xP/E 57xP/E hwn ยุรันม-- سي 36P/E 36. 6.952 952‎'‎",
+    "video_versions": null,
+    "has_audio": null,
+    "media_type": 1,
+    "caption_add_on": null,
+    "giphy_media_info": null,
+    "media_overlay_info": null,
+    "sharing_friction_info": {
+      "should_have_sharing_friction": false,
+      "sharing_friction_payload": null
+    },
+    "like_count": 28,
+    "metaPlace": null,
+    "meta_place": null,
+    "gen_ai_detection_method": null,
+    "taken_at": 1744419624,
+    "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiZjg1MDQ3MWU2ZWQzNDgxMTg2M2ZiMmUyYTIyNzE0YTIzNjA4Nzc1NzkyMzIwNTU1NzExIn0sInNpZ25hdHVyZSI6IiJ9",
+    "logging_info_token": null,
+    "like_and_view_counts_disabled": false
+  },
+  "relatedPosts": [
+    {
+      "id": "3608818157045893190_63438622220",
+      "pk": "3608818157045893190",
+      "user": {
+        "friendship_status": null,
+        "pk": "63438622220",
+        "profile_pic_url": "https://scontent-sjc3-1.cdninstagram.com/v/t51.2885-19/90841686_1704287249714138_8421203722285088768_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-sjc3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2QGKmxHCQeEziyqUxwpwsUM42533onLy6ChINs5Zae8ofWiiSfVzZ8pxcN9tOv6C_Kw&_nc_ohc=T22RbvNM4mMQ7kNvwHskFAE&_nc_gid=szsnblWVDT9LOMmPYXt2zQ&edm=APs17CUBAAAA&ccb=7-5&oh=00_AfG9PqzPXDCvZ46dcLMI8NU6iFMaUrbt23yOEBSctT0XCQ&oe=67FF9BC0&_nc_sid=10d13b",
+        "username": "jim.chuong",
+        "id": "63438622220",
+        "transparency_label": null,
+        "transparency_product": null,
+        "transparency_product_enabled": false,
+        "is_verified": true,
+        "text_post_app_is_private": false,
+        "has_onboarded_to_text_post_app": true
+      },
+      "text_post_app_info": {
+        "show_header_follow": false,
+        "is_markup": false,
+        "custom_feed_preview_info": null,
+        "link_preview_attachment": null,
+        "linked_inline_media": null,
+        "special_effects_enabled_str": "",
+        "text_fragments": {
+          "fragments": [
+            {
+              "fragment_type": "plaintext",
+              "link_fragment": null,
+              "mention_fragment": null,
+              "plaintext": "There is no reason to fear a market collapse.\n\nIn the End nobody leaves with anything anyway.\n\nEnjoy the process.",
+              "tag_fragment": null,
+              "linkified_web_url": null
+            }
+          ]
+        },
+        "reshare_count": null,
+        "direct_reply_count": 0,
+        "repost_count": 0,
+        "quote_count": 0,
+        "share_info": {
+          "quoted_attachment_author_attribution_allowed": true,
+          "quoted_attachment_post_unavailable": false,
+          "quoted_attachment_post": null,
+          "quoted_post": null,
+          "reposted_post": null
+        },
+        "reply_to_author": null,
+        "reply_control": "everyone",
+        "private_reply_partner": null,
+        "self_thread_count": null,
+        "tag_header": null,
+        "root_post_author": null,
+        "pinned_post_info": {
+          "is_pinned_to_parent_post": false,
+          "is_pinned_to_profile": false
+        },
+        "related_trends_info": null,
+        "is_reply": false,
+        "is_post_unavailable": false,
+        "post_unavailable_reason": null,
+        "hush_info": null
+      },
+      "is_paid_partnership": null,
+      "audio": null,
+      "caption": {
+        "text": "There is no reason to fear a market collapse.\n\nIn the End nobody leaves with anything anyway.\n\nEnjoy the process.",
+        "pk": "18051538439260564",
+        "has_translation": null
+      },
+      "caption_is_edited": false,
+      "transcription_data": null,
+      "carousel_media": null,
+      "code": "DIVGP5Vs0hG",
+      "image_versions2": {
+        "candidates": []
+      },
+      "original_height": 612,
+      "original_width": 612,
+      "accessibility_caption": null,
+      "video_versions": null,
+      "has_audio": null,
+      "media_type": 19,
+      "caption_add_on": null,
+      "giphy_media_info": null,
+      "media_overlay_info": null,
+      "sharing_friction_info": {
+        "should_have_sharing_friction": false,
+        "sharing_friction_payload": null
+      },
+      "like_count": 3,
+      "metaPlace": null,
+      "meta_place": null,
+      "gen_ai_detection_method": null,
+      "taken_at": 1744424670,
+      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiMTE2OTU0YmU4MGI5NGU4NGJkYjg5N2RlNzBlMDI4NjUzNjA4ODE4MTU3MDQ1ODkzMTkwIn0sInNpZ25hdHVyZSI6IiJ9",
+      "logging_info_token": null,
+      "like_and_view_counts_disabled": false
+    }
+  ]
+}
