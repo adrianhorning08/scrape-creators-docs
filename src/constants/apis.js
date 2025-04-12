@@ -21492,7 +21492,7 @@ export const apis = [
       {
         name: "Post",
         method: "GET",
-        description: "Get a single post by ID",
+        description: "Get a single post by url",
         path: "/v1/threads/post",
         params: [
           {
