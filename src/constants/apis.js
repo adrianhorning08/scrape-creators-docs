@@ -21232,11 +21232,11 @@ export const apis = [
         path: "/v1/threads/profile",
         params: [
           {
-            name: "username",
+            name: "handle",
             type: "string",
             required: true,
             description: "Threads username",
-            placeholder: "sportsillustrated",
+            placeholder: "trendspider",
           },
         ],
         sampleResponse: {
