@@ -57,8 +57,8 @@ export default function Introduction() {
       <div className="prose prose-gray dark:prose-invert max-w-none pb-24">
         <p className="text-lg">
           Welcome to the Scrape Creators API documentation. Our API provides
-          powerful endpoints to extract data from various social media platforms
-          including TikTok, Instagram, YouTube, and more.
+          powerful endpoints to extract *public* data from various social media
+          platforms including TikTok, Instagram, YouTube, and more.
         </p>
 
         <h2 className="text-xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">
