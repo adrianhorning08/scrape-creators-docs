@@ -19251,6 +19251,20 @@ export const apis = [
             description: "Subreddit name",
           },
           {
+            name: "timeframe",
+            type: "select",
+            required: false,
+            description: "Timeframe to get posts from",
+            options: ["all", "day", "week", "month", "year"],
+          },
+          {
+            name: "sort",
+            type: "select",
+            required: false,
+            description: "Sort order",
+            options: ["best", "hot", "new", "top", "rising"],
+          },
+          {
             name: "after",
             type: "string",
             required: false,
