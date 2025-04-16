@@ -15951,6 +15951,9 @@ export const apis = [
           ],
           continuationToken: "4qmFsgLlFhIYV....",
         },
+        youtubeId: "NyOtXBBmjLY",
+        codeExample:
+          "https://github.com/adrianhorning08/scrape-creators-examples/blob/master/youtubeTranscripts.js",
         params: [
           {
             name: "channelId",
@@ -16181,6 +16184,9 @@ export const apis = [
           transcript_only_text:
             "it was a a lead of 13 for....play okay the Lakers will not make the playoffs the Kings will is the latest position go ahead Kenny I cannot leave you chuck here we caster do payable to answer a rattle check check never break America America let me just tell you something is that do not commit crimes with check come on man you cannot if you're gonna break the law I do not write a check because you write a check that what I never used ATM now you can only I heard you could only get $200 out of the holes oh stop America America you go hot write checks when you commit illegal activity I cannot believe that we completed we touch them all right there circle the bag he just said he punch every pillow I wasted all that damn town of money you know what you should have been was bad that's what I'm really amazing neighborhood Charles",
         },
+        youtubeId: "NyOtXBBmjLY",
+        codeExample:
+          "https://github.com/adrianhorning08/scrape-creators-examples/blob/master/youtubeTranscripts.js",
         params: [
           {
             name: "url",
