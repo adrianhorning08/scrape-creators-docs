@@ -17386,6 +17386,9 @@ export const apis = [
         paginationField: "cursor",
         description: "Get all the ads a company has running",
         path: "/v1/facebook/adLibrary/company/ads",
+        youtubeId: "M_wgqCtznjM",
+        codeExample:
+          "https://github.com/adrianhorning08/scrape-creators-examples/blob/master/fbAds.js",
         sampleResponse: {
           results: [
             {
@@ -17552,6 +17555,9 @@ export const apis = [
         description:
           "Search for companies by name and get their ad library page id",
         path: "/v1/facebook/adLibrary/search/companies",
+        youtubeId: "M_wgqCtznjM",
+        codeExample:
+          "https://github.com/adrianhorning08/scrape-creators-examples/blob/master/fbAds.js",
         sampleResponse: {
           searchResults: [
             {
