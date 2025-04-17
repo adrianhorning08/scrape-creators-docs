@@ -21270,7 +21270,7 @@ export const apis = [
             required: false,
             description: "Sort by",
             placeholder: "relevance",
-            options: ["relevance", "new", "top", "comments"],
+            options: ["relevance", "new", "top", "comment_count"],
           },
           {
             name: "timeframe",
