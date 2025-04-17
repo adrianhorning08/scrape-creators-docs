@@ -16993,11 +16993,41 @@ export const apis = [
           "Get the post details from Facebook. Not much on the response payload right now. Just let me know what you want to see added: adrian@thewebscrapinguy.com",
         path: "/v1/facebook/user/post",
         sampleResponse: {
-          post_id: "2365250707186040",
-          author: "Ouflah Loli",
+          post_id: "1081090083789267",
+          author: "Feel Good Foodie",
           description:
-            "Brown Butter Dubai Pistachio Chocolate Chip Cookie Bars 🍪\n \n Indulge in these luxurious cookie bars that blend rich flavors and textures, perfect for any occasion! \n \n INGREDIENTS: \n 🧈 1 cup salted butter \n 🍬 1 cup brown sugar (light or dark) \n 🍬 1/2 cup granulated sugar \n 🥚 1 large egg \n 🥛 1/4 cup heavy cream \n 🌿 1 tsp vanilla extract \n 🌾 2 cups all-purpose flour \n 🥄 1 tsp baking soda \n 🥄 1 tsp baking powder \n 🧂 1/2 tsp salt \n 🍫 1 cup semi-sweet chocolate chips \n 🥜 1 cup kataifi (shredded phyllo dough) \n 🥜 1/2 cup pistachio cream/butter \n 🥜 Chopped pistachios (optional, for garnishing) \n \n INSTRUCTIONS: \n 1. Preheat your oven to 350°F (175°C) and line a baking pan with parchment paper. \n 2. In a saucepan, melt the butter over medium heat until it turns golden brown and smells nutty. Let it cool slightly. \n 3. In a mixing bowl, combine the brown sugar, granulated sugar, and the cooled brown butter. Mix well. \n 4. Add the egg, heavy cream, and vanilla extract, stirring until smooth. \n 5. In another bowl, whisk together the flour, baking soda, baking powder, and salt. Gradually add this to the wet mixture until combined. \n 6. Fold in the chocolate chips. \n 7. Press half of the cookie dough into the bottom of the prepared pan. \n 8. In a separate pan, toast the kataifi with a bit of butter until golden brown. Mix with pistachio cream and spread over the cookie base. \n 9. Top with the remaining cookie dough, spreading it evenly. \n 10. Bake for 25-30 minutes or until golden. Let cool before slicing. \n \n PREP TIME & NUTRITION: \n Prep Time: 20 minutes \n Servings: 12 bars \n Calories: 320 per bar \n Net Carbs: 30g \n Fats: 18g \n Protein: 5g \n \n #BrownButterCookies #PistachioDelight #ChocolateChipBars #GourmetDesserts",
-          url: "https://www.facebook.com/groups/2147499542294492/permalink/2365250707186040/",
+            "Turn my popular chicken shawarma recipe into a sheet pan meal – so easy and so good!\nINGREDIENTS\n2 pounds boneless, skinless chicken thighs, thinly sliced\n2 tablespoons olive oil\n2 tablespoons lemon juice\n4 garlic cloves, minced\n1 teaspoon paprika\n¾ teaspoon salt\n½ teaspoon cardamom\n½ teaspoon cumin\n¼ teaspoon cinnamon\n¼ teaspoon crushed red pepper\n1 red onion, chopped\n4 carrots, chopped\n1 green pepper, chopped\nToum, for serving\nArabic-style pita, for serving\nINSTRUCTIONS\n1. Preheat the oven to 425°F and line a baking sheet with parchment paper.\n2. Pat the chicken dry with paper towels. In a large bowl, whisk the oil, lemon juice, garlic, paprika, salt, cardamom, cumin, cinnamon, and crushed red pepper. Add the chicken and gently toss to coat.\n3. Transfer the chicken to the prepared sheet pan spread out. Nestle the onions, tomatoes and green peppers around the chicken. \n4. Bake for 18 minutes, then broil on the top rack for 2 minutes on high.\n5. Serve with pita and garlic sauce, if desired.",
+          url: "https://www.facebook.com/feelgoodfoodie/videos/1081090083789267/",
+          video_url:
+            "https://video-mia3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQMChsYBLOFDvPLI2oPNV_bvvV26P8Fmu86xzsPKBLeBdYk0Hdj4FoGIFiHuM1YOKITm-iKqzB2iii9ICpMLSXMF.mp4?strext=1&_nc_cat=101&_nc_sid=8bf8fe&_nc_ht=video-mia3-1.xx.fbcdn.net&_nc_ohc=9l4rOWTDz0YQ7kNvwElPBRZ&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6Mjk2MDIyNTUwMDc5OTAyNCwidmlfdXNlY2FzZV9pZCI6MTAxMjIsImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_zt=28&oh=00_AfFlQcTI7az2nG16Tta-ZtVDzEAX4KlfLN6Vz7Xl7-3rUg&oe=68076F3D",
+          captions_url:
+            "https://scontent-mia3-3.xx.fbcdn.net/v/t39.2093-6/476643449_1081091467122462_3259078018386035387_n.srt?_nc_cat=108&ccb=1-7&_nc_sid=c211c2&_nc_ohc=FvSjN2j6Z0YQ7kNvwFvkDGO&_nc_oc=Adkg_7gotOjlVZg9yisD4AWIqT06VAql7vwIe24IWbm_vdtLrIzSh7fTxukAaNGK9Aw&_nc_zt=14&_nc_ht=scontent-mia3-3.xx&_nc_gid=ZiKbbLgh9jN23mxaKISbJA&oh=00_AfGE-uKTrFtJOgBxAuLvomuCfzH3gwD-v2KI9SJDU8Sk6g&oe=680742F6",
+          comments: [
+            {
+              author: {
+                __typename: "User",
+                id: "pfbid0tUFzYjyz18s68VX6efeZa1gKFw6JbBnAzwHRyRvw9ykmVAyx4mkDeLn5URu7zpXZl",
+                name: "Helene Cyr",
+                __isActor: "User",
+                profile_picture_depth_0: {
+                  uri: "https://scontent-mia3-2.xx.fbcdn.net/v/t39.30808-1/475276949_9550995771630714_4496313640018141065_n.jpg?stp=cp0_dst-jpg_s32x32_tt6&_nc_cat=103&ccb=1-7&_nc_sid=e99d92&_nc_ohc=Vq9hOOhsOHQQ7kNvwHD0peg&_nc_oc=AdlEf2T3apSethfrK-B3YvO86iog_AANLTrmP6DAs592lzRaIbhP2s4sqXIAKdzLuhw&_nc_zt=24&_nc_ht=scontent-mia3-2.xx&_nc_gid=ZiKbbLgh9jN23mxaKISbJA&oh=00_AfHMxIXTiYnwS2hWjB43g2OYyIGt-Y3HSYVfX86Sfoe1LA&oe=68076657",
+                },
+                profile_picture_depth_1: {
+                  uri: "https://scontent-mia3-2.xx.fbcdn.net/v/t39.30808-1/475276949_9550995771630714_4496313640018141065_n.jpg?stp=cp0_dst-jpg_s24x24_tt6&_nc_cat=103&ccb=1-7&_nc_sid=e99d92&_nc_ohc=Vq9hOOhsOHQQ7kNvwHD0peg&_nc_oc=AdlEf2T3apSethfrK-B3YvO86iog_AANLTrmP6DAs592lzRaIbhP2s4sqXIAKdzLuhw&_nc_zt=24&_nc_ht=scontent-mia3-2.xx&_nc_gid=ZiKbbLgh9jN23mxaKISbJA&oh=00_AfEdr2AvLtPdBrSak87kxJ7ZhcLymf_KY27URXmuLsqetw&oe=68076657",
+                },
+                gender: "FEMALE",
+                __isEntity: "User",
+                url: null,
+                work_info: null,
+                is_verified: false,
+                short_name: "Helene",
+                subscribe_status: "CANNOT_SUBSCRIBE",
+              },
+              text: "Recipe please",
+            },
+          ],
+          transcript:
+            "A few thinly sliced chicken\nthighs and combine them with a few spices, garlic, olive oil,\nand lemon juice you'll have a recipe for my popular chicken\nshawarma. To turn it into a sheet pan meal just add it to a\nsheet pan with onions, peppers and tomatoes and bake it for\njust 20 minutes. The chicken gets so tender and the veggies\nget all the flavor from the chicken marinade. You can eat\nit in a bowl by itself but I can't resist putting it on a\npita with some homemade garlic. So good.",
         },
         params: [
           {
