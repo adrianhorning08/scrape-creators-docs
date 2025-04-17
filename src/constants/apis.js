@@ -14938,7 +14938,7 @@ export const apis = [
         method: "GET",
         description:
           "Get the transcript of an Instagram post or reel. This is a little slow since I run it through an AI. You should get results in 10-30 seconds. If no one is spreaking it should return null. Since some posts are carousel, it will return a transcript for each item in the carousel.",
-        path: "/v2/instagram/media/transcript",
+        path: "/v1/instagram/media/transcript",
         params: [
           {
             name: "url",
