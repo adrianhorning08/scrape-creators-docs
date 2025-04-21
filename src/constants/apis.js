@@ -17855,7 +17855,7 @@ export const apis = [
             name: "countries",
             type: "string",
             required: false,
-            description: "Comma separated list of countries",
+            description: "Comma separated list of countries. Example: US,CA,MX",
             placeholder: "US,CA,MX",
           },
           {
