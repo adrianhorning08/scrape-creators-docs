@@ -18079,7 +18079,7 @@ export const apis = [
         name: "User Tweets",
         method: "GET",
         description:
-          "Get tweets from a user's profile. Note that theses aren't the lastest tweets, use the latest tweets endpoint for that.",
+          "Get tweets from a user's profile. *These aren't the users latest tweets. Sadly, Twitter publicly only returns 100 of the users most popular tweets.",
         path: "/v1/twitter/user-tweets",
         sampleResponse: {
           tweets: [
