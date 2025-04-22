@@ -19,24 +19,6 @@ import { TruthSocialIcon } from "../TruthSocialIcon.jsx";
 
 export const apis = [
   {
-    id: "scrape-creators",
-    name: "Scrape Creators",
-    icon: ScrapeCreatorsIcon,
-    description: "For Scrape Creators customers",
-    endpoints: [
-      {
-        name: "Get credit balance",
-        method: "GET",
-        description: "How many credits you have left",
-        path: "/v1/credit-balance",
-        params: [],
-        sampleResponse: {
-          creditCount: 333,
-        },
-      },
-    ],
-  },
-  {
     id: "tiktok",
     name: "TikTok",
     icon: SiTiktok,
@@ -22384,6 +22366,24 @@ export const apis = [
             placeholder: "https://twitter.com/levelsio",
           },
         ],
+      },
+    ],
+  },
+  {
+    id: "scrape-creators",
+    name: "Scrape Creators",
+    icon: ScrapeCreatorsIcon,
+    description: "For Scrape Creators customers",
+    endpoints: [
+      {
+        name: "Get credit balance",
+        method: "GET",
+        description: "How many credits you have left",
+        path: "/v1/credit-balance",
+        params: [],
+        sampleResponse: {
+          creditCount: 333,
+        },
       },
     ],
   },
