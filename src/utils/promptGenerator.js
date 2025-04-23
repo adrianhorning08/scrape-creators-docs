@@ -10,8 +10,6 @@ export function generateAIPrompt(endpoint, selectedLanguage = null) {
 
   Please help me write code to make this API call and handle the response appropriately. Include error handling and best practices.
 
-  Please write the code in ${selectedLanguage}.
-  
   Here are the details:
   
   Endpoint: ${endpoint.method} https://api.scrapecreators.com${endpoint.path}
