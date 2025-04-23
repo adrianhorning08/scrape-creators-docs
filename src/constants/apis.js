@@ -19866,7 +19866,7 @@ export const apis = [
       {
         name: "Search",
         method: "GET",
-        description: "Search posts, communities, comments, media, people",
+        description: "Search Reddit for posts",
         path: "/v1/reddit/search",
         paginationField: "after",
         params: [
@@ -19875,14 +19875,6 @@ export const apis = [
             type: "string",
             required: true,
             description: "Search query",
-          },
-          {
-            name: "type",
-            type: "select",
-            required: false,
-            description: "Posts, comments, communities, media, people",
-            placeholder: "posts",
-            options: ["posts", "comments", "communities", "media", "people"],
           },
           {
             name: "sort",
