@@ -2,6 +2,7 @@ import {
   SiYoutube,
   SiTwitch,
   SiThreads,
+  SiPinterest,
   SiGoogle,
   SiTiktok,
   SiInstagram,
@@ -20155,6 +20156,518 @@ export const apis = [
           bookmarked: false,
           poll: null,
           emojis: [],
+        },
+      },
+    ],
+  },
+  {
+    id: "pinterest",
+    name: "Pinterest",
+    icon: SiPinterest,
+    description: "Scrape Pinterest pins",
+    endpoints: [
+      {
+        name: "Pin",
+        method: "GET",
+        description: "Get Pinterest pin",
+        path: "/v1/pinterest/pin",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Pinterest pin URL",
+            placeholder: "https://www.pinterest.com/pin/1124351863225567517/",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          altText: null,
+          autoAltText:
+            "a white bowl filled with meat and tomato sauce on top of a wooden cutting board",
+          closeupUnifiedDescription: "Italian Pot Roast (Straccato)",
+          description: "Italian Pot Roast (Straccato)",
+          descriptionHtml: "Italian Pot Roast (Straccato)",
+          dominantColor: "#714426",
+          originPinner: {
+            entityId: "91268467356860596",
+            id: "VXNlcjo5MTI2ODQ2NzM1Njg2MDU5Ng==",
+            username: "ClosetCooking",
+            imageMediumUrl:
+              "https://i.pinimg.com/75x75_RS/71/1a/ce/711ace70f2f6f846692993a7ec3da426.jpg",
+            blockedByMe: false,
+            explicitlyFollowedByMe: false,
+            followerCount: 780870,
+            fullName: "Closet Cooking",
+            imageLargeUrl:
+              "https://i.pinimg.com/140x140_RS/71/1a/ce/711ace70f2f6f846692993a7ec3da426.jpg",
+            imageSmallUrl:
+              "https://i.pinimg.com/30x30_RS/71/1a/ce/711ace70f2f6f846692993a7ec3da426.jpg",
+            isVerifiedMerchant: false,
+            verifiedIdentity: {
+              verified: null,
+            },
+          },
+          embed: null,
+          gridTitle: "Italian Pot Roast (Straccato)",
+          imageSignature: "d9cbac6b643a03c096f7fd0566cecaf1",
+          isGoLinkless: false,
+          digitalMediaSourceType: null,
+          link: "https://www.closetcooking.com/italian-pot-roast-straccato/",
+          mobileLink: null,
+          pinner: {
+            blockedByMe: false,
+            id: "VXNlcjoyMDYxNTg0MzUxNTI=",
+            entityId: "206158435152",
+            __typename: "User",
+            fullName: "Adrienne James",
+            imageSmallUrl:
+              "https://i.pinimg.com/30x30_RS/00/60/87/0060871118d040a1ad20ace0148923da.jpg",
+            imageLargeUrl:
+              "https://i.pinimg.com/140x140_RS/00/60/87/0060871118d040a1ad20ace0148923da.jpg",
+            isVerifiedMerchant: false,
+            verifiedIdentity: {
+              verified: null,
+            },
+            username: "fluffduckie",
+            imageMediumUrl:
+              "https://i.pinimg.com/75x75_RS/00/60/87/0060871118d040a1ad20ace0148923da.jpg",
+            explicitlyFollowedByMe: false,
+            firstName: "Adrienne",
+            followerCount: 4756,
+          },
+          pinJoin: {
+            visualAnnotation: [
+              "Over The Top Recipes",
+              "Recipes Using Rump Roast",
+              "Italian Family Style Dinner",
+              "Homestyle Dinner Recipes",
+              "Italian Beef Stew Recipes",
+              "Pot Roast Meals Sides",
+              "Northern Italian Recipes Authentic",
+              "Entree Ideas Dinner",
+              "Best Meat Recipes",
+            ],
+            shoppingKlpUrls: [
+              "/shopping/adjustable-wide-brim-panama-hat-for-kentucky-derby/913981925800/",
+              "/shopping/elegant-striped-three-piece-suit-with-notch-lapel/902902772938/",
+              "/shopping/multicolor-chiffon-maxi-dress/897845141143/",
+              "/shopping/white-satin-mini-dress-with-ruffles/895422652344/",
+              "/shopping/eco-friendly-hobo-bag-for-everyday/949685205137/",
+            ],
+            annotationsWithLinksArray: [
+              {
+                name: "Over The Top Recipes",
+                url: "/ideas/over-the-top-recipes/917228502841/",
+              },
+              {
+                name: "Recipes Using Rump Roast",
+                url: "/ideas/recipes-using-rump-roast/955866965314/",
+              },
+              {
+                name: "Italian Family Style Dinner",
+                url: "/ideas/italian-family-style-dinner/955779003567/",
+              },
+              {
+                name: "Homestyle Dinner Recipes",
+                url: "/ideas/homestyle-dinner-recipes/945901661526/",
+              },
+              {
+                name: "Italian Beef Stew Recipes",
+                url: "/ideas/italian-beef-stew-recipes/961055923557/",
+              },
+              {
+                name: "Pot Roast Meals Sides",
+                url: "/ideas/pot-roast-meals-sides/930943813796/",
+              },
+              {
+                name: "Northern Italian Recipes Authentic",
+                url: "/ideas/northern-italian-recipes-authentic/895147656575/",
+              },
+              {
+                name: "Entree Ideas Dinner",
+                url: "/ideas/entree-ideas-dinner/940188623529/",
+              },
+              {
+                name: "Best Meat Recipes",
+                url: "/ideas/best-meat-recipes/906911513114/",
+              },
+            ],
+            seoCanonicalDomain: "www.pinterest.com",
+            seoCanonicalUrl:
+              "/pin/italian-pot-roast-stracotto--79657487154121436/",
+          },
+          title: "Italian Pot Roast (Straccato)",
+          trackedLink:
+            "https://www.closetcooking.com/italian-pot-roast-straccato/",
+          trackingParams:
+            "CwABAAAAEDYxMjQ3MjU5OTAwMjI0OTQLAAcAAAAPdW5rbm93bi91bmtub3duAA",
+          isViewedByOwnerOrEmployeeOrPartnerOfBusiness: null,
+          videos: null,
+          imageSpec_236x: {
+            height: 354,
+            width: 236,
+            url: "https://i.pinimg.com/236x/d9/cb/ac/d9cbac6b643a03c096f7fd0566cecaf1.jpg",
+          },
+          imageSpec_136x136: {
+            height: 136,
+            width: 136,
+            url: "https://i.pinimg.com/136x136/d9/cb/ac/d9cbac6b643a03c096f7fd0566cecaf1.jpg",
+          },
+          imageSpec_60x60: {
+            url: "https://i.pinimg.com/60x60/d9/cb/ac/d9cbac6b643a03c096f7fd0566cecaf1.jpg",
+          },
+          imageSpec_170x: {
+            url: "https://i.pinimg.com/236x/d9/cb/ac/d9cbac6b643a03c096f7fd0566cecaf1.jpg",
+          },
+          imageSpec_474x: {
+            url: "https://i.pinimg.com/474x/d9/cb/ac/d9cbac6b643a03c096f7fd0566cecaf1.jpg",
+            height: 711,
+            width: 474,
+          },
+          imageSpec_564x: {
+            url: "https://i.pinimg.com/564x/d9/cb/ac/d9cbac6b643a03c096f7fd0566cecaf1.jpg",
+            height: 846,
+            width: 564,
+          },
+          imageSpec_736x: {
+            url: "https://i.pinimg.com/736x/d9/cb/ac/d9cbac6b643a03c096f7fd0566cecaf1.jpg",
+            height: 1104,
+            width: 736,
+          },
+          imageSpec_600x315: {
+            url: "https://i.pinimg.com/600x315/d9/cb/ac/d9cbac6b643a03c096f7fd0566cecaf1.jpg",
+          },
+          imageSpec_orig: {
+            url: "https://i.pinimg.com/originals/d9/cb/ac/d9cbac6b643a03c096f7fd0566cecaf1.jpg",
+            height: 1200,
+            width: 800,
+          },
+          entityId: "68747564459",
+          isDownstreamPromotion: false,
+          category: "",
+          domain: "closetcooking.com",
+          isPromoted: false,
+          linkDomain: {
+            officialUser: {
+              imageMediumUrl:
+                "https://i.pinimg.com/75x75_RS/71/1a/ce/711ace70f2f6f846692993a7ec3da426.jpg",
+              id: "VXNlcjo5MTI2ODQ2NzM1Njg2MDU5Ng==",
+              entityId: "91268467356860596",
+              fullName: "Closet Cooking",
+              imageSmallUrl:
+                "https://i.pinimg.com/30x30_RS/71/1a/ce/711ace70f2f6f846692993a7ec3da426.jpg",
+              isPrimaryWebsiteVerified: true,
+              username: "ClosetCooking",
+              blockedByMe: false,
+              explicitlyFollowedByMe: false,
+              followerCount: 780870,
+              imageLargeUrl:
+                "https://i.pinimg.com/140x140_RS/71/1a/ce/711ace70f2f6f846692993a7ec3da426.jpg",
+              isVerifiedMerchant: false,
+              verifiedIdentity: {
+                verified: null,
+              },
+            },
+            id: "RG9tYWluOjMxMDk1OTgyNDExODQ4MTM1Ng==",
+          },
+          promoter: null,
+          isEligibleForPdp: false,
+          isOosProduct: false,
+          isStaleProduct: false,
+          shoppingFlags: [],
+          aggregatedPinData: {
+            entityId: "5359304635312036251",
+            id: "QWdncmVnYXRlZFBpbkRhdGE6NTM1OTMwNDYzNTMxMjAzNjI1MQ==",
+            aggregatedStats: {
+              saves: 49054,
+            },
+            commentCount: 55,
+            didItData: {
+              imagesCount: 3,
+            },
+          },
+          isEligibleForAggregatedComments: true,
+          richMetadata: {
+            recipe: {
+              name: "Italian Pot Roast (Stracotto)",
+              fromAggregatedData: false,
+              categorizedIngredients: [
+                {
+                  __typename: "CategorizedIngredientsMetadata",
+                  category: "Meat",
+                  ingredients: [
+                    {
+                      amt: "4 oz",
+                      name: "Bacon",
+                    },
+                    {
+                      amt: "3 lbs",
+                      name: "Beef",
+                    },
+                  ],
+                },
+                {
+                  __typename: "CategorizedIngredientsMetadata",
+                  category: "Produce",
+                  ingredients: [
+                    {
+                      amt: "2",
+                      name: "Bay leaves",
+                    },
+                    {
+                      amt: "1 cup",
+                      name: "Carrot",
+                    },
+                    {
+                      amt: "1 cup",
+                      name: "Celery",
+                    },
+                    {
+                      amt: "1 tbsp",
+                      name: "Garlic",
+                    },
+                    {
+                      amt: "1 cup",
+                      name: "Onion",
+                    },
+                    {
+                      amt: "1 tsp",
+                      name: "Rosemary",
+                    },
+                    {
+                      amt: "1 tsp",
+                      name: "Thyme",
+                    },
+                    {
+                      amt: "1 (14.5 ounce) can",
+                      name: "Tomatoes",
+                    },
+                  ],
+                },
+                {
+                  __typename: "CategorizedIngredientsMetadata",
+                  category: "Canned Goods",
+                  ingredients: [
+                    {
+                      amt: "2 cups",
+                      name: "Beef broth",
+                    },
+                  ],
+                },
+                {
+                  __typename: "CategorizedIngredientsMetadata",
+                  category: "Baking & Spices",
+                  ingredients: [
+                    {
+                      amt: "1 tsp",
+                      name: "Italian seasoning",
+                    },
+                    {
+                      amt: "1/2 tsp",
+                      name: "Red pepper flakes",
+                    },
+                    {
+                      amt: "2",
+                      name: "Salt and pepper",
+                    },
+                  ],
+                },
+              ],
+              displayCookTime: 13500,
+              servingsSummary: {
+                __typename: "ServingsSummary",
+                serves: "6",
+                summary: "Serves 6",
+              },
+              aggregateRating: null,
+              diets: ["Gluten free", "Paleo"],
+              cookTimes: {
+                total: {
+                  h: 3,
+                  m: 45,
+                },
+                cook: {
+                  h: 3,
+                  m: 30,
+                },
+                prep: {
+                  h: null,
+                  m: 15,
+                },
+              },
+            },
+            article: {
+              __typename: "ArticleMetadata",
+              datePublished: "Thu, 28 Mar 2024 00:00:00 +0000",
+            },
+            description:
+              "A slow braised Italian style pot roast in a tasty tomato sauce.",
+            title: "Italian Pot Roast (Stracotto)",
+            products: null,
+            aggregateRating: null,
+            tutorial: null,
+            siteName: "Closet Cooking",
+            url: "https://www.closetcooking.com/italian-pot-roast-straccato/",
+          },
+          totalReactionCount: 694,
+          board: {
+            privacy: "public",
+            url: "/fluffduckie/food-fun/",
+            name: "Food & Fun",
+            id: "Qm9hcmQ6MTM3NDM4OTk5MjE1",
+            entityId: "137438999215",
+            pinCount: 1880,
+            sectionCount: 18,
+            boardOrderModifiedAt: "Sun, 20 Apr 2025 06:32:24 +0000",
+            coverImageSpec_222x: {
+              url: "https://i.pinimg.com/222x/a2/23/15/a2231567335d0aa839f478c0d8934afd.jpg",
+            },
+            coverImageSpec_400x300: {
+              url: "https://i.pinimg.com/400x300/a2/23/15/a2231567335d0aa839f478c0d8934afd.jpg",
+            },
+            coverImageSpec_216x146: {
+              url: "https://i.pinimg.com/216x146/a2/23/15/a2231567335d0aa839f478c0d8934afd.jpg",
+            },
+            imageCoverHdUrl:
+              "https://i.pinimg.com/474x/a2/23/15/a2231567335d0aa839f478c0d8934afd.jpg",
+            imageCoverUrl:
+              "https://i.pinimg.com/200x150/a2/23/15/a2231567335d0aa839f478c0d8934afd.jpg",
+            imageThumbnailUrl:
+              "https://i.pinimg.com/upload/137438999215_board_thumbnail_2025-04-19-23-07-19_18756_60.jpg",
+            collaboratedByMe: false,
+            isCollaborative: false,
+            owner: {
+              entityId: "206158435152",
+              id: "VXNlcjoyMDYxNTg0MzUxNTI=",
+            },
+          },
+          richSummary: {
+            displayName: "Italian Pot Roast (Stracotto)",
+            products: [],
+          },
+          storyPinDataId: null,
+          storyPinData: null,
+          nativeCreator: {
+            isVerifiedMerchant: false,
+            verifiedIdentity: {
+              verified: null,
+            },
+            id: "VXNlcjo5MTI2ODQ2NzM1Njg2MDU5Ng==",
+            entityId: "91268467356860596",
+            fullName: "Closet Cooking",
+            imageMediumUrl:
+              "https://i.pinimg.com/75x75_RS/71/1a/ce/711ace70f2f6f846692993a7ec3da426.jpg",
+            imageSmallUrl:
+              "https://i.pinimg.com/30x30_RS/71/1a/ce/711ace70f2f6f846692993a7ec3da426.jpg",
+            username: "ClosetCooking",
+            blockedByMe: false,
+            explicitlyFollowedByMe: false,
+            followerCount: 780870,
+            imageLargeUrl:
+              "https://i.pinimg.com/140x140_RS/71/1a/ce/711ace70f2f6f846692993a7ec3da426.jpg",
+            profileUrl: "https://www.pinterest.com/ClosetCooking/",
+          },
+          shareCount: 162,
+          reactionCountsData: [
+            {
+              reactionCount: 690,
+              reactionType: 1,
+            },
+            {
+              reactionCount: 2,
+              reactionType: 13,
+            },
+          ],
+          sponsorship: null,
+          closeupDescription:
+            "A slow braised Italian style pot roast in a tasty tomato sauce.",
+          genAiTopics: null,
+          recommendationReason: null,
+          seeMoreUserFeedback: null,
+          adData: null,
+          adMatchReason: 0,
+          sourceInterest: null,
+          adTargetingAttribution: null,
+          promotedPartnershipAdvertiserName: null,
+          promotedPartnershipAttributionName: null,
+          isEligibleForPromotedPartnership: false,
+          isThirdPartyAd: false,
+          commentsDisabled: false,
+          doneByMe: false,
+          closeupAttribution: {
+            entityId: "91268467356860596",
+            username: "ClosetCooking",
+            id: "VXNlcjo5MTI2ODQ2NzM1Njg2MDU5Ng==",
+            __typename: "User",
+            imageMediumUrl:
+              "https://i.pinimg.com/75x75_RS/71/1a/ce/711ace70f2f6f846692993a7ec3da426.jpg",
+            followerCount: 780870,
+            followedByMe: false,
+            isAdsOnlyProfile: false,
+            adsOnlyProfileSite: null,
+            verifiedIdentity: {
+              verified: null,
+            },
+            isVerifiedMerchant: false,
+            fullName: "Closet Cooking",
+          },
+          isHidden: false,
+          isUnsafe: false,
+          carouselData: null,
+          image236x: {
+            height: 354,
+            url: "https://i.pinimg.com/236x/d9/cb/ac/d9cbac6b643a03c096f7fd0566cecaf1.jpg",
+            width: 236,
+          },
+          image474x: {
+            height: 711,
+            url: "https://i.pinimg.com/474x/d9/cb/ac/d9cbac6b643a03c096f7fd0566cecaf1.jpg",
+            width: 474,
+          },
+          image564x: {
+            height: 846,
+            url: "https://i.pinimg.com/564x/d9/cb/ac/d9cbac6b643a03c096f7fd0566cecaf1.jpg",
+            width: 564,
+          },
+          image736x: {
+            height: 1104,
+            url: "https://i.pinimg.com/736x/d9/cb/ac/d9cbac6b643a03c096f7fd0566cecaf1.jpg",
+            width: 736,
+          },
+          visualObjects: [
+            {
+              isStela: true,
+              h: 0.8126794695854187,
+              w: 1,
+              x: 0,
+              y: 0.09865649044513702,
+              label: "Decorative bowls",
+            },
+          ],
+          affiliateLink: null,
+          shipsToUserCountry: false,
+          relatedArticle: {
+            _id: null,
+            mainImageUrl: null,
+            title: null,
+            urlPath: null,
+          },
+          isRepin: true,
+          favoriteUserCount: 0,
+          favoritedByMe: false,
+          createdAt: "Thu, 06 Jun 2024 02:33:19 +0000",
+          attribution: null,
+          mediaAttribution: null,
+          seoDescription:
+            "Jun 12, 2024 - A slow braised Italian style pot roast in a tasty tomato sauce.",
+          seoNoindexReason: null,
+          seoTitle:
+            "Italian Pot Roast (Stracotto) | Recipe | Roast beef recipes, Italian pot roast, Beef recipes easy",
+          repinCount: 2208,
+          seoUrl: "/pin/68747564459/",
+          priceCurrency: "USD",
+          id: "UGluOjY4NzQ3NTY0NDU5",
         },
       },
     ],
