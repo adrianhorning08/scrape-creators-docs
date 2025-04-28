@@ -14963,7 +14963,8 @@ export const apis = [
       {
         name: "Reels",
         method: "GET",
-        description: "Get all public reels from a profile",
+        description:
+          "Get all public reels from a profile. Can provide a user_id or handle. This won't include pinned reels right now.",
         path: "/v1/instagram/user/reels",
         paginationField: "max_id",
         sampleResponse: {
@@ -15331,8 +15332,16 @@ export const apis = [
           {
             name: "user_id",
             type: "string",
-            required: true,
+            required: false,
             description: "Instagram user id",
+            placeholder: "2700692569",
+          },
+          {
+            name: "handle",
+            type: "string",
+            required: false,
+            description: "Instagram handle",
+            placeholder: "adrianhorning",
           },
           {
             name: "max_id",
