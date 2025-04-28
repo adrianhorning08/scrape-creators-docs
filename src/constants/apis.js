@@ -17793,6 +17793,7 @@ export const apis = [
     ],
   },
   {
+    id: "linkedinAdLibrary",
     name: "LinkedIn Ad Library",
     icon: SiLinkedin,
     description: "Search the LinkedIn Ad Library",
