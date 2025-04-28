@@ -14964,7 +14964,7 @@ export const apis = [
         name: "Reels",
         method: "GET",
         description:
-          "Get all public reels from a profile. Can provide a user_id or handle, but for faster response times, use user_id. This won't include pinned reels right now.",
+          "Get all public reels from a profile. Can provide a user_id or handle, but for faster response times, use user_id. This won't include pinned reels right now. And I'm not sure why, but it looks like IG doesn't return the description of the reel on this endpoint :( You'll have to use the post detail endpoint to get that.",
         path: "/v1/instagram/user/reels",
         paginationField: "max_id",
         sampleResponse: {
@@ -15356,7 +15356,8 @@ export const apis = [
       {
         name: "Reels (We handle pagination)",
         method: "GET",
-        description: "Get the public reels from a user's profile",
+        description:
+          "Get the public reels from a user's profile. Can provide a user_id or handle, but for faster response times, use user_id. This won't include pinned reels right now. And I'm not sure why, but it looks like IG doesn't return the description of the reel on this endpoint :( You'll have to use the post detail endpoint to get that.",
         path: "/v1/instagram/user/reels/simple",
         paginationField: "max_id",
         responseFields: [
@@ -15833,9 +15834,16 @@ export const apis = [
           {
             name: "user_id",
             type: "string",
-            required: true,
+            required: false,
             description: "Instagram user id",
             placeholder: "2700692569",
+          },
+          {
+            name: "handle",
+            type: "string",
+            required: false,
+            description: "Instagram handle",
+            placeholder: "adrianhorning",
           },
           {
             name: "amount",
