@@ -11417,27 +11417,6 @@ export const apis = [
           },
         ],
         sampleResponse: {
-          ai_recommend_music: null,
-          ai_recommend_video: null,
-          behind_the_song_exist: false,
-          extra: {
-            fatal_item_ids: [],
-            logid: "2025030310194437E063FE2D0F8AE568BB",
-            now: 1740968384000,
-          },
-          log_pb: {
-            impr_id: "2025030310194437E063FE2D0F8AE568BB",
-          },
-          msg: "success",
-          music_chart_rank: {
-            chart_music_info:
-              '{"currentTabId":0,"tabList":[{"tabId":0,"tabNameKey":"music_chart_top_50_title","tabName":"music_chart_top_50_title","currentMusicId":""},{"tabId":1,"tabNameKey":"music_chart_viral_50_title","tabName":"music_chart_viral_50_title","currentMusicId":""}]}',
-            desc: "Music Charts",
-            link_style: {
-              bg_end_color: 12881901,
-              bg_start_color: 9405693,
-            },
-          },
           music_info: {
             album: "Different",
             allow_offline_music_to_detail_page: false,
