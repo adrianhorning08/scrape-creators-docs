@@ -17233,6 +17233,14 @@ export const apis = [
             description: "Facebook Ad Id",
             placeholder: "1610035449650583",
           },
+          {
+            name: "get_transcript",
+            type: "boolean",
+            required: false,
+            description:
+              "Get the transcript of the ad. This is a new feature, so let me know if its not working how you expected.",
+            placeholder: "false",
+          },
         ],
         responseFields: [
           {
