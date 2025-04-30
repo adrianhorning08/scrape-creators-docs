@@ -16340,6 +16340,21 @@ export const apis = [
             options: ["ALL", "ACTIVE", "INACTIVE"],
           },
           {
+            name: "media_type",
+            type: "select",
+            required: false,
+            description: "Media type of the ad. Defaults to ALL.",
+            placeholder: "ALL",
+            options: [
+              "ALL",
+              "IMAGE",
+              "VIDEO",
+              "MEME",
+              "IMAGE_AND_MEME",
+              "NONE",
+            ],
+          },
+          {
             name: "start_date",
             type: "string",
             required: false,
@@ -16523,6 +16538,21 @@ export const apis = [
             description: "Status of the ad. Defaults to ACTIVE.",
             placeholder: "ACTIVE",
             options: ["ALL", "ACTIVE", "INACTIVE"],
+          },
+          {
+            name: "media_type",
+            type: "select",
+            required: false,
+            description: "Media type of the ad. Defaults to ALL.",
+            placeholder: "ALL",
+            options: [
+              "ALL",
+              "IMAGE",
+              "VIDEO",
+              "MEME",
+              "IMAGE_AND_MEME",
+              "NONE",
+            ],
           },
           {
             name: "cursor",
