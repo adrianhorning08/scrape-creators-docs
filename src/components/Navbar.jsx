@@ -45,21 +45,25 @@ export default function Navbar() {
             <div className="flex items-center lg:px-12 h-16 min-w-0 mx-4 lg:mx-0">
               <div className="h-full relative flex-1 flex items-center gap-x-4 min-w-0 border-b border-gray-500/5 dark:border-gray-300/[0.06]">
                 <div className="flex-1 flex items-center gap-x-4">
-                  <Link to="/" className="flex items-center">
-                    <span className="sr-only">
-                      Scrape Creators Documentation
-                    </span>
-                    <div className="flex items-center gap-3">
+                  <span className="sr-only">Scrape Creators Documentation</span>
+                  <div className="flex items-center gap-3">
+                    <Link
+                      to="https://scrapecreators.com"
+                      target="_blank"
+                      className="flex items-center"
+                    >
                       <img
                         className="w-auto h-7 relative object-contain"
                         src="https://scrapecreators.com/logo.png"
                         alt="Scrape Creators logo"
                       />
+                    </Link>
+                    <Link to="/" className="flex items-center">
                       <span className="text-lg font-semibold text-gray-900 dark:text-white">
                         Documentation
                       </span>
-                    </div>
-                  </Link>
+                    </Link>
+                  </div>
                 </div>
                 <div className="hidden lg:block mx-px relative flex-1 bg-white dark:bg-gray-900 pointer-events-auto rounded-xl min-w-0">
                   <button
