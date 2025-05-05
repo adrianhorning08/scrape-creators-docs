@@ -3693,6 +3693,36 @@ export const apis = [
         is_ad: false,
       },
       {
+        name: "Transcript",
+        method: "GET",
+        description: "Scrapes transcript from a TikTok video",
+        path: "/v1/tiktok/video/transcript",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "TikTok video URL",
+            placeholder:
+              "https://www.tiktok.com/@stoolpresidente/video/7499229683859426602",
+          },
+          {
+            name: "language",
+            type: "string",
+            required: false,
+            description:
+              "Language of the transcript. 2 letter language code, ie 'en', 'es', 'fr', 'de', 'it', 'ja', 'ko', 'zh' Default is 'en'",
+            placeholder: "en",
+          },
+        ],
+        sampleResponse: {
+          id: "7499229683859426602",
+          url: "https://www.tiktok.com/@stoolpresidente/video/7499229683859426602",
+          transcript:
+            "WEBVTT\n\n\n00:00:00.120 --> 00:00:01.840\nAlright, pizza review time.\n\n00:00:01.841 --> 00:00:03.761\nSal's Pizza Factory. Oh,\n\n00:00:03.762 --> 00:00:05.721\nit's Fucking Corn. We're in Charlotte.\n\n00:00:05.722 --> 00:00:07.861\nAlright man, any chance I can get a real quick picture?\n\n00:00:07.920 --> 00:00:10.040\nShaq or Dwight Howard? I gotta pick one.\\n",
+        },
+      },
+      {
         name: "Comments",
         method: "GET",
         description: "Scrapes comments from a TikTok video",
@@ -13867,7 +13897,7 @@ export const apis = [
         method: "GET",
         description:
           "Get the transcript of an Instagram post or reel. This is a little slow since I run it through an AI. You should get results in 10-30 seconds. If no one is spreaking it should return null. Since some posts are carousel, it will return a transcript for each item in the carousel.",
-        path: "/v1/instagram/media/transcript",
+        path: "/v2/instagram/media/transcript",
         params: [
           {
             name: "url",
@@ -15149,6 +15179,42 @@ export const apis = [
             placeholder: false,
           },
         ],
+      },
+      {
+        name: "Transcript",
+        method: "GET",
+        description: "Get transcript of a video or short",
+        path: "/v1/youtube/video/transcript",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "YouTube video or short URL",
+            placeholder: "https://www.youtube.com/watch?v=bjVIDXPP7Uk",
+          },
+        ],
+        sampleResponse: {
+          videoId: "bjVIDXPP7Uk",
+          type: "video",
+          url: "https://www.youtube.com/watch?v=bjVIDXPP7Uk",
+          transcript: [
+            {
+              text: "welcome back to the hell farm and the",
+              startMs: "160",
+              endMs: "1920",
+              startTimeText: "0:00",
+            },
+            {
+              text: "backyard trails we built these jumps two",
+              startMs: "1920",
+              endMs: "3919",
+              startTimeText: "0:01",
+            },
+          ],
+          transcript_only_text:
+            "welcome back to the hell farm and the backyard trails we built these jumps two years ago and last year we just kind of rebuilt them and this year......",
+        },
       },
       {
         name: "Search",
