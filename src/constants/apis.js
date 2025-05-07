@@ -12931,6 +12931,16 @@ export const apis = [
         description:
           "Gets public Instagram profile data, recent posts, and related accounts",
         path: "/v1/instagram/profile",
+        responseFields: [
+          {
+            path: "data.user.edge_followed_by.count",
+            description: "Followers count",
+          },
+          {
+            path: "data.user.edge_follow.count",
+            description: "Following count",
+          },
+        ],
         sampleResponse: {
           data: {
             user: {
@@ -13703,6 +13713,14 @@ export const apis = [
           {
             path: "data.xdt_shortcode_media.video_url",
             description: "If the post is video, this is the URL of the video",
+          },
+          {
+            path: "data.xdt_shortcode_media.video_play_count",
+            description: "Views (only for reels)",
+          },
+          {
+            path: "data.xdt_shortcode_media.edge_media_preview_like.count",
+            description: "Likes",
           },
         ],
         sampleResponse: {
