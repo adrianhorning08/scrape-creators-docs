@@ -17668,6 +17668,143 @@ export const apis = [
         ],
       },
       {
+        name: "User Latest Tweets",
+        method: "GET",
+        description: "Get the latest tweets from a user",
+        path: "/v1/twitter/user/tweets/latest",
+        paginationField: "continuation_token",
+        params: [
+          {
+            name: "user_id",
+            type: "string",
+            required: true,
+            description:
+              "Twitter user id. This is actually the rest_id from the profile response.",
+            placeholder: "1577241403",
+          },
+          {
+            name: "continuation_token",
+            type: "string",
+            required: false,
+            description:
+              "Continuation token for pagination. This is returned from the previous call to this endpoint.",
+            placeholder:
+              "DAAHCgABGqv-pX7__-sLAAIAAAATMTkyMTM2MzAyMDg3NTI4MDYyMggAAwAAAAIAAA",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          tweets: [
+            {
+              __typename: "Tweet",
+              rest_id: "1921805719986155742",
+              core: {
+                user_results: {
+                  result: {
+                    __typename: "User",
+                    id: "VXNlcjo1577241403",
+                    rest_id: "1577241403",
+                    affiliates_highlighted_label: {},
+                    is_blue_verified: true,
+                    profile_image_shape: "Circle",
+                    legacy: {
+                      created_at: "Mon Jul 08 09:31:59 +0000 2013",
+                      default_profile: false,
+                      default_profile_image: false,
+                      description:
+                        "🇪🇺@euaccofficial\n📸https://t.co/lAyoqmT9Hv $125K/m\n🛰https://t.co/ZHSvI2wRou $41K/m\n🏡https://t.co/1oqUgfDEsx $40K/m\n🌍https://t.co/UXK5AFra0o $22K/m\n👙https://t.co/RyXpqGvdBB $16K/m\n✈️https://t.co/UVJczDtWZ5 $15K/m",
+                      entities: {
+                        description: {
+                          urls: [],
+                        },
+                        url: {
+                          urls: [],
+                        },
+                      },
+                      fast_followers_count: 0,
+                      favourites_count: 137139,
+                      followers_count: 668069,
+                      friends_count: 1904,
+                      has_custom_timelines: true,
+                      is_translator: false,
+                      listed_count: 0,
+                      location: "📕 My book $10K/m 👉",
+                      media_count: 0,
+                      name: "@levelsio",
+                      normal_followers_count: 668069,
+                      pinned_tweet_ids_str: [],
+                      possibly_sensitive: false,
+                      profile_banner_url:
+                        "https://pbs.twimg.com/profile_banners/1577241403/1665964220",
+                      profile_image_url_https:
+                        "https://pbs.twimg.com/profile_images/1589756412078555136/YlXMBzhp_normal.jpg",
+                      profile_interstitial_type: "",
+                      screen_name: "levelsio",
+                      statuses_count: 152697,
+                      translator_type: "none",
+                      url: "https://t.co/IFRqZDKAB4",
+                      verified: false,
+                      withheld_in_countries: [],
+                    },
+                    professional: {
+                      rest_id: null,
+                      professional_type: null,
+                      category: [],
+                    },
+                  },
+                },
+              },
+              unmention_data: {},
+              edit_control: {
+                edit_tweet_ids: ["1921805719986155742"],
+                editable_until_msecs: "1747032763000",
+                is_edit_eligible: false,
+                edits_remaining: "5",
+              },
+              is_translatable: false,
+              views: {
+                count: "60013",
+                state: "EnabledWithCount",
+              },
+              source: "",
+              legacy: {
+                bookmark_count: 8,
+                bookmarked: false,
+                created_at: "Mon May 12 05:52:43 +0000 2025",
+                conversation_id_str: "1921805719986155742",
+                display_text_range: [0, 34],
+                entities: {
+                  hashtags: [],
+                  media: [],
+                  symbols: [],
+                  timestamps: [],
+                  urls: [],
+                  user_mentions: [],
+                },
+                favorite_count: 136,
+                favorited: false,
+                full_text: "ripped/acc https://t.co/Ig0gqCypQb",
+                is_quote_status: true,
+                lang: "en",
+                possibly_sensitive: false,
+                possibly_sensitive_editable: true,
+                quote_count: 3,
+                reply_count: 27,
+                retweet_count: 1,
+                retweeted: false,
+                user_id_str: "1577241403",
+                id_str: "1921805719986155742",
+              },
+              quick_promote_eligibility: {
+                eligibility: "IneligibleUserUnauthorized",
+              },
+            },
+          ],
+          continuation_token:
+            "DAAHCgABGqv-pX7__-sLAAIAAAATMTkyMTM2MzAyMDg3NTI4MDYyMggAAwAAAAIAAA",
+        },
+      },
+      {
         name: "Tweet Details",
         method: "GET",
         description:
