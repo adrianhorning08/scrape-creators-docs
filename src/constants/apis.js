@@ -15804,6 +15804,177 @@ export const apis = [
     ],
   },
   {
+    id: "linkedin",
+    name: "LinkedIn",
+    icon: SiLinkedin,
+    description: "Scrape LinkedIn",
+    endpoints: [
+      {
+        name: "Profile",
+        method: "GET",
+        description:
+          "This only returns what's publicly available, ie what you see in an incognito browser. So unfortunately LinkedIn doesn't return work history or job title publicly anymore :(",
+        path: "/v1/linkedin/profile",
+        sampleResponse: {
+          success: true,
+          name: "Sam Parr",
+          location: "Westport, Connecticut, United States",
+          followers: 64803,
+          connections: "",
+          about:
+            "I founded The Hustle, a business news media company with $12 when I was around 25 years…",
+          experience: [
+            {
+              "@type": "Organization",
+              name: "Hampton",
+              url: "https://www.linkedin.com/company/myhampton",
+              location: "Austin, Texas Metropolitan Area",
+              member: {
+                "@type": "OrganizationRole",
+                description:
+                  "******* ** * ****** ****** ********** ********* *** *************, ******** *** ****. <**><**>**'** ** * *** ****, *** ***...* *****.<**><**>*****://***.***********.***/",
+              },
+            },
+            {
+              "@type": "Organization",
+              name: "** ***** *******",
+              member: {
+                "@type": "OrganizationRole",
+                description:
+                  "** ***** ******* ** * ******* ***** ** *** ******. ***** **** *** * *** *** *****.<**><**>**** ***** **** ** **** *** ****** ** **** ****.<**><**>**'** *** *** ** *** **** ******** ** ******* ******** **** **** ** ******** ** *********.",
+              },
+            },
+          ],
+          articles: [
+            {
+              headline: "RANT: How to PROPERLY analyze risk",
+              author: "Sam Parr",
+              datePublished: "2017-09-17T13:08:55.000+00:00",
+              image:
+                "https://media.licdn.com/dms/image/v2/C5612AQG9YbLJodxr8g/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1520096757452?e=2147483647&v=beta&t=USPma8tkR65yot8_Ye0zDfH2llLpTrZdZGHtbzmPjQ0",
+              articleBody:
+                "I've been talking to a few people who want to leave....",
+            },
+          ],
+          activity: [
+            {
+              title:
+                "Othership is this cool suana place in NYC. The founder is hosting a bunch of Hampton members for a special session + a talk on how he built the…",
+              activityType: "Shared by Sam Parr",
+              link: "https://www.linkedin.com/posts/parrsam_exclusive-othership-session-qa-with-founder-activity-7328134812047704064-4NUL",
+              image:
+                "https://media.licdn.com/dms/image/sync/v2/D4D27AQGJaeiyu-gbrA/articleshare-shrink_1280_800/B4DZbLDrHUHsAU-/0/1747163460743?e=2147483647&v=beta&t=rZtGF2kjhFfLy-TZil0d_bakH4UfHnK-dcxEsrZSl5s",
+            },
+            {
+              title:
+                "If you live in SF, LA ...and want to lead a bunch of startup ceos/founders ...and want to have the best network ever then this is for you: I'm…",
+              activityType: "Shared by Sam Parr",
+              link: "https://www.linkedin.com/posts/parrsam_careers-activity-7328088180820193281-3j6g",
+              image:
+                "https://media.licdn.com/dms/image/sync/v2/D4E27AQFwp04bg9zFpg/articleshare-shrink_800/articleshare-shrink_800/0/1743914613899?e=2147483647&v=beta&t=PWPWBgbYTxLt6u53gLNzEO0laXD2AFd5LBPKId4Fm9Y",
+            },
+          ],
+          education: [
+            {
+              "@type": "EducationalOrganization",
+              name: "Belmont University",
+              url: "https://www.linkedin.com/school/belmont-university/",
+              member: {
+                "@type": "OrganizationRole",
+                startDate: 2008,
+                endDate: 2012,
+              },
+            },
+          ],
+          publications: [
+            {
+              name: "How my partner and I created a unique company in tough times",
+              url: "http://online.wsj.com/article/SB10001424127887324694904578602013087282582.html&urlhash=SvYD",
+            },
+            {
+              name: "Our infographic and app get a shout out in the Huffington Post",
+              url: "http://www.huffingtonpost.com/2013/08/09/roommates-app-la_n_3733587.html&urlhash=u66P",
+            },
+            {
+              name: "Shout from the LA Times",
+              url: "http://www.latimes.com/business/technology/la-fi-tn-roommate-finding-apps-20130816,0,595590.story&urlhash=yblh",
+            },
+          ],
+          projects: [
+            {
+              name: "Hustle Con 2015",
+              url: "https://www.linkedin.com/in/elizabethyin",
+              dateRange: "2015",
+              description: "",
+              contributors: [
+                {
+                  name: "Elizabeth Yin",
+                  link: "https://www.linkedin.com/in/elizabethyin",
+                  image:
+                    "https://media.licdn.com/dms/image/v2/C5603AQFFdhmfyyiZig/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1581292451105?e=2147483647&v=beta&t=IwghMTQZZjJzIGbN6e1IYfWVBDAkgLP_kSJJPOkzQDg",
+                },
+              ],
+            },
+            {
+              name: "The Roommates App",
+              url: "http://roommate.apartmentlist.com/",
+              dateRange: "Mar 2013 - Present",
+              description:
+                "Roommates is an easy and fun way to meet new potential roommates. It functions much like Tinder, in that you browse profiles one at a time and are only able to chat once you have mutual interest in each other.",
+              contributors: [
+                {
+                  name: "Jake Moffatt",
+                  link: "https://www.linkedin.com/in/jakeonrails",
+                  image:
+                    "https://media.licdn.com/dms/image/v2/D5603AQFi9y-GqH832w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1719008688472?e=2147483647&v=beta&t=lelf--Z_vVdOKUfXM_LTKRgUgUTkpmdKS4fyOFJeYLc",
+                },
+                {
+                  name: "John Havel",
+                  link: "https://www.linkedin.com/in/jhavel",
+                  image:
+                    "https://media.licdn.com/dms/image/v2/C5603AQEKBX3RdWYlSw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1588215318616?e=2147483647&v=beta&t=WiHWmfUczafX3mAYnS8ZBLGKFXISlV_FZkHW5oqyUJM",
+                },
+              ],
+            },
+          ],
+          recommendations: [
+            {
+              name: "Jackie M.",
+              link: "https://www.linkedin.com/in/jackiemooney",
+              image:
+                "https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2",
+              text: "“I got to know Sam over 2 years of working at The Hustle. We grew from a company of 4 to 15 in that time and there was never a dull moment- anyone who knows Sam knows that he adds tons of energy to the workplace. This guy figures out what he wants to accomplish and makes it happen. He remains wildly driven and goal-oriented while constantly focused on both his personal and professional growth.”",
+            },
+            {
+              name: "Michael Cheung",
+              link: "https://www.linkedin.com/in/themichaelcheung",
+              image:
+                "https://media.licdn.com/dms/image/v2/C5603AQGBj0wY-4ePhg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1586460717915?e=2147483647&v=beta&t=uGi9GocopqdNH3aUPCv5hEvmnq24YR8VBbzBAz_Pmbw",
+              text: '“Sam is a hustler that and serial entrepreneur. He just figures out how to get things done and "win". Mark my words, this kid is going places!”',
+            },
+          ],
+          similarProfiles: [
+            {
+              link: "https://ca.linkedin.com/in/stevemcody",
+              name: "Steve Cody",
+              image:
+                "https://media.licdn.com/dms/image/v2/D5603AQEl17hna0u1ew/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1673387873184?e=2147483647&v=beta&t=pN-Y2CS1AQ8AOKbTo_2_B0AXjof4nGLKBdhNZTfFYJA",
+            },
+          ],
+        },
+        params: [
+          {
+            name: "url",
+            type: "string",
+            description: "The URL of the LinkedIn profile to get",
+            required: true,
+            placeholder: "https://www.linkedin.com/in/parrsam/",
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: "facebook",
     name: "Facebook",
     icon: SiFacebook,
