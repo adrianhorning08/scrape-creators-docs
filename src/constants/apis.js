@@ -19862,9 +19862,17 @@ export const apis = [
           {
             name: "handle",
             type: "string",
-            required: true,
+            required: false,
             description: "Truth Social username",
             placeholder: "realDonaldTrump",
+          },
+          {
+            name: "user_id",
+            type: "string",
+            required: false,
+            description:
+              "Truth Social user id. Use this for faster response times. Trumps is 107780257626128497. It is the 'id' field in the profile endpoint.",
+            placeholder: "107780257626128497",
           },
           {
             name: "next_max_id",
