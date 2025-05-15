@@ -16517,7 +16517,8 @@ export const apis = [
       {
         name: "Ad Details",
         method: "GET",
-        description: "Pass the Ad ID and get back details about the ad",
+        description:
+          "Pass the Ad ID and get back details about the ad. Be careful that if an ad has multiple versions, you're actually going to want to get the title from the 'cards' object.",
         path: "/v1/facebook/adLibrary/ad",
         sampleResponse: {
           adid: 0,
