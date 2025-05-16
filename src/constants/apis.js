@@ -16506,6 +16506,25 @@ export const apis = [
           },
         ],
       },
+      {
+        name: "Transcript",
+        method: "GET",
+        description:
+          "Get the transcript of a Facebook post. Can be a post or reel.",
+        path: "/v1/facebook/post/transcript",
+        sampleResponse: {
+          success: true,
+          transcript: "Hello, world!",
+        },
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Facebook post URL",
+          },
+        ],
+      },
     ],
   },
   {
