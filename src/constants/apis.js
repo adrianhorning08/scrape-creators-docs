@@ -20729,6 +20729,417 @@ export const apis = [
     ],
   },
   {
+    id: "google",
+    name: "Google",
+    icon: SiGoogle,
+    description: "Scrape Google search results",
+    endpoints: [
+      {
+        name: "Search",
+        method: "GET",
+        description: "Search Google",
+        path: "/v1/google/search",
+        params: [
+          {
+            name: "query",
+            type: "string",
+            required: true,
+            description: "Search query",
+            placeholder: "austen allred",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          results: [
+            {
+              url: "https://x.com/Austen",
+              title: "Austen Allred ✓",
+              description:
+                "Among the dumbest assertions people make online is, “Remote work was better but companies brought everyone back in office to justify the rent they were paying and keep property values high.”  As if companies are incapable of subleasing or selling buildings.    22 hours ago",
+            },
+            {
+              url: "https://www.linkedin.com/in/austenallred",
+              title: "Austen Allred - Gauntlet AI - LinkedIn",
+              description:
+                "Austen is a visionary CEO that I jumped at the chance to work with. His tenacity, grit, empathy, and deep drive to unlock everyone's potential set him apart.",
+            },
+            {
+              url: "https://www.reddit.com/r/codingbootcamp/comments/1hie7h5/austen_allred_ceo_of_bloomtech_and_founder_of/",
+              title:
+                "Austen Allred (CEO of Bloomtech and founder of Gauntlet AI ... - Reddit",
+              description:
+                "Dec 20, 2024   �   Austen Allred is an absolute con artist and proven liar when it comes to outcomes but he's a promotion maestro as well. I have no doubt that�...",
+            },
+            {
+              url: "https://consumerfinance.gov/about-us/newsroom/cfpb-takes-action-against-coding-boot-camp-bloomtech-and-ceo-austen-allred-for-deceiving-students-and-hiding-loan-costs/",
+              title: "CFPB Takes Action Against Coding Boot Camp BloomTech",
+              description: "",
+            },
+            {
+              url: "https://www.safegraph.com/podcasts/austen-allred",
+              title:
+                "Austen Allred, CEO of BloomTech: Aligning Education Incentives",
+              description:
+                "Austen Allred is the founder and CEO of the Bloom Institute of Technology (formerly known as Lambda School), a coding bootcamp that's helped thousands of students get a job in tech.",
+            },
+            {
+              url: "https://www.sandofsky.com/lambda-school/",
+              title: "Fast Crimes at Lambda School - Sandofsky",
+              description:
+                "Jun 18, 2024   �   The Fall of Austen Allred. The journalist who exposed Lambda School wasn't a journalist by trade. Vincent Woo was a successful entrepreneur best�...",
+            },
+            {
+              url: "https://www.austenallred.com/",
+              title: "Austen Allred",
+              description:
+                "Feb 9, 2023   �   I'm the co-founder and CEO of Bloom Institute of Technology. I'm @austen on Twitter. I read a lot. I invest in early-stage tech startups out of�...",
+            },
+            {
+              url: "https://www.instagram.com/austenall/",
+              title: "Austen Allred (@austenall) • Instagram photos and videos",
+              description:
+                '30K Followers, 1828 Following, 60 Posts - Austen Allred (@austenall) on Instagram: "Co-founder and CEO of Bloom Institute of Technology"',
+            },
+            {
+              url: "https://venture.angellist.com/v/back/austen-access-fund",
+              title: "Austen Access Fund - AngelList",
+              description:
+                "I'm Austen Allred - the CEO of BloomTech (formerly Lambda School), a company backed by Y Combinator, Stripe, and other top-tier Silicon Valley venture firms�...",
+            },
+            {
+              url: "https://www.bloomtech.com/blog-topic/austen-allred",
+              title: "Austen Allred - Bloom Institute of Technology",
+              description:
+                "Graduates will be prepared with the skills necessary to land an entry-level software engineering role at companies of all sizes.",
+            },
+            {
+              url: "https://news.ycombinator.com/item",
+              title:
+                "CFPB Takes Action Against Coding Boot Camp BloomTech and ...",
+              description:
+                "Apr 17, 2024   �   Austen Allred quote-tweeted me to his gazillion followers and caused a big pile-on about how awful and wrong and anti-progress I was. Couldn�...",
+            },
+            {
+              url: "https://www.founderspledge.com/members/765",
+              title: "Co-Founder and CEO of LambdaSchool | Founders Pledge",
+              description:
+                "Austen Allred is the Co-Founder and CEO of Lambda School. A native of Springville, Utah, Austen's start-up journey began in 2017.",
+            },
+            {
+              url: "https://www.linkedin.com/today/author/austenallred",
+              title: "Austen Allred - LinkedIn",
+              description:
+                "Austen Allred. Founder @ Gauntlet AI. View articles by Austen Allred. Being a Father Has Made me a Better Leader, and Vice Versa. Being a Father�...",
+            },
+            {
+              url: "https://perell.com/podcast/austen-allred/",
+              title: "Austen Allred: The Future of Education - David Perell",
+              description:
+                "David Perell interviews Austen Allred, the founder of Lambda School. Listen now.",
+            },
+            {
+              url: "https://www.youtube.com/watch",
+              title:
+                "Austen Allred's SHOCKING Solution to Fix Higher Education Forever ...",
+              description:
+                "Sep 11, 2024   �   Austin Allred, founder of BloomTech, discusses the concept of income share agreements and how his company is revolutionizing education.",
+            },
+            {
+              url: "https://podcasts.apple.com/us/podcast/the-austen-allred-podcast/id1694396684",
+              title: "The Austen Allred Podcast",
+              description:
+                "#1: Sahil Lavingia of Gumroad (with Austen Allred). Sahil. Lavingia is the CEO of Gumroad. We talked about dividends at VC-backed startups, fractional hiring�...",
+            },
+            {
+              url: "https://www.austenallred.com/about/",
+              title: "About - Austen Allred",
+              description:
+                "I'm the co-founder and CEO of Bloom Institute of Technology. Email: austen@bloomtech.com. Twitter: @austen. Subscribe to Austen Allred.",
+            },
+            {
+              url: "https://thefutur.com/content/austen-allred",
+              title: "A New School - The Futur",
+              description:
+                "Our guest on the podcast today is Austen Allred, the man with a plan to make computer science education even more accessible. A software engineer himself,�...",
+            },
+            {
+              url: "https://www.businessinsider.com/bloomtech-lambda-school-austen-allred-deceived-students-cfbp-says-2024-4",
+              title:
+                "BloomTech and CEO Austen Allred Deceived Students, US Agency ...",
+              description:
+                "Apr 17, 2024   �   Coding bootcamp BloomTech and CEO Austen Allred misrepresented income-share agreements and inflated job placement statistics, CFPB says.",
+            },
+            {
+              url: "https://www.thetwentyminutevc.com/austenallred",
+              title: "Lambda School Founder, Austen Allred on Why ... - 20VC",
+              description:
+                "Austen Allred is the Founder & CEO @ Lambda School, a 9 month, immersive program that gives you the tools and training you need to launch your new career�...",
+            },
+            {
+              url: "https://www.crunchbase.com/person/austen-allred",
+              title:
+                "Austen Allred - Co-Founder & CEO @ Lambda School - Crunchbase",
+              description:
+                "Austen Allred has 2 current jobs as Co-Founder & CEO at BloomTech and Co-Founder & CEO at Lambda School . Additionally, Austen Allred has had 2 past jobs�...",
+            },
+            {
+              url: "https://www.workspaces.xyz/p/148-austen-allred",
+              title: "148 - Austen Allred - Workspaces.xyz",
+              description:
+                "Austen Allred is the co-founder and CEO of BloomTech (Bloom Institute of Technology), formerly known as Lambda School. BloomTech is an online coding school�...",
+            },
+            {
+              url: "https://bigthink.com/people/austen-allred/",
+              title: "Austen Allred - Big Think",
+              description:
+                "Austen Allred is the Co-Founder and CEO of Lambda School (now known as Bloom Institute of Technology). A native of Springville, Utah, Austen's start-up�...",
+            },
+            {
+              url: "https://foundercontent.com/founders/all/austen-allred",
+              title: "Austen Allred CEO @ Lambda School - Founder Content",
+              description:
+                "Austen Allred. Austen is CEO @ Lambda School. 2 resources from Austen. Companies founded: Lambda School. Austen's Founder Content.",
+            },
+            {
+              url: "https://theorg.com/org/bloomtech/org-chart/austen-allred",
+              title: "Austen Allred - Co-Founder & CEO at BloomTech - The Org",
+              description:
+                "Austen Allred is the co-founder and CEO of BloomTech. A native of Springville, Utah, Austen's start-up journey began in 2017.",
+            },
+            {
+              url: "https://www.sfgate.com/tech/article/bloomtech-coding-school-fined-cfpb-19410802.php",
+              title:
+                "SF school, founder fined $164,000 for allegedly tricking students",
+              description:
+                "Apr 18, 2024   �   Federal agency fines SF school, founder $164,000, alleging they tricked students. BloomTech CEO Austen Allred agreed to the order but admitted�...",
+            },
+            {
+              url: "https://mentorstudents.org/q/austenallred",
+              title: "Austen Allred's interview - Mentor Students",
+              description:
+                "Co-Founder & CEO, Lambda School. Career story & Training institute inspiration. Courses offered & duration. Course Creation & Updation.",
+            },
+            {
+              url: "https://homebase.ai/podcasts/pioneering-new-paths-for-higher-education-with-austen-allred/",
+              title:
+                "Pioneering New Paths for Higher Education with Austen Allred",
+              description:
+                "Allred is a prolific author, speaker, and YCombinator S17 alum. Prior to co-founding Lambda School he oversaw growth at LendUp, co-founded Grasswire, and lead�...",
+            },
+            {
+              url: "https://medium.com/@austenallred/about",
+              title: "About – Austen Allred - Medium",
+              description:
+                "Read writing from Austen Allred on Medium. Co-founder of Lambda School — a CS education that's free until you're hired https://lambdaschool.com.",
+            },
+            {
+              url: "https://soundcloud.com/vwoo/interview-with-austen-allred",
+              title: "Interview with Austen Allred - Vincent Woo - SoundCloud",
+              description:
+                "Feb 14, 2020   �   My interview with Austen Allred of Lambda School, which took place on January 22nd, 2020. Music by @listentoapril,",
+            },
+            {
+              url: "https://www.vitalize.vc/podcast/austen-allred-podcast/",
+              title:
+                "Austen Allred, Co-Founder & CEO at Lambda School | Episode #010",
+              description:
+                "Jul 8, 2021   �   Austen Allred is the Co-Founder & CEO of the Lambda School, an online coding school that invests in the students by offering free tuition.",
+            },
+            {
+              url: "https://www.tweet-rewind.com/AustenAllred.html",
+              title: "Austen Allred - Tweet Rewind (18)",
+              description:
+                "Austen Allred's top 50 tweets in 2018. I find it hard to believe people are using Siri and are still convinced AI will take away all of our jobs.",
+            },
+            {
+              url: "https://www.zayzoon.com/blog/the-iceberg-principle-4-blooming-in-tech-with-austen-allred",
+              title:
+                "The Iceberg Principle #4: Blooming in tech with Austen Allred",
+              description:
+                "Feb 16, 2024   �   From missionary work in the middle of the 2008 financial crisis to CEO of a thriving tech company, Austen was a perfect subject for our Iceberg Principle�...",
+            },
+            {
+              url: "https://jessli.medium.com/a-conversation-with-austen-allred-co-founder-and-ceo-of-lambda-school-ea91e5146163",
+              title:
+                "A conversation with Austen Allred, co-founder and CEO of Lambda ...",
+              description:
+                "Aug 31, 2020   �   Prior to founding Lambda School, Austen was a senior manager of growth at LendUp, co-founder of Grasswire, and social team lead at Stryde. At�...",
+            },
+            {
+              url: "https://breakingintostartups.com/austen-allred-lambda-school/",
+              title: "Austen Allred - CEO and Co-Founder of Lambda School",
+              description:
+                "Oct 10, 2018   �   Austen Allred is the CEO and Co-Founder of Lambda School. Recently coming out of Y Combinator, Lambda now has thousands of students.",
+            },
+            {
+              url: "https://www.zayzoon.com/the-iceberg-principle-austen-allred",
+              title: "The Iceberg Principle - Austen Allred - ZayZoon",
+              description:
+                "Austen Allred is the Co-founder and CEO of BloomTech, the company who is disrupting the future of the educational system. This all started from Austen moving to�...",
+            },
+            {
+              url: "https://www.instagram.com/reel/C8IvqebP_af/",
+              title:
+                "Austin Allred | Sharing our Family's #regenerativefarming story with ...",
+              description:
+                "Jun 12, 2024   �   154 likes, 4 comments - royalfamilyfarming on June 12, 2024: \"Sharing our Family's #regenerativefarming story with the @seahawks #royalranch�...",
+            },
+            {
+              url: "https://podcasts.apple.com/kh/podcast/e2-austen-allred-on-bloomtechs-saga-and/id1691530886",
+              title:
+                'E2: Austen Allred on BloomTech…–"In The Arena" - Apple Podcasts',
+              description:
+                "Jun 28, 2023   �   Austen is the CEO and founder of BloomTech, an education platform famous for pioneering income sharing agreements instead of charging�...",
+            },
+            {
+              url: "https://www.sothisismywhy.com/austen-allred-lambda-school-coding-developer-y-combinator-isa/",
+              title: "Ep 61: Austen Allred (Co-Founder & CEO, Lambda School)",
+              description:
+                "Oct 25, 2021   �   Austen grew up in Utah in a closeknit, Mormon family that greatly valued education. He shares how this experience shaped him as well as the�...",
+            },
+            {
+              url: "https://www.ycombinator.com/blog/a-cs-education-thats-free-until-you-get-a-job-austen-allred-of-lambda-school/",
+              title:
+                "A CS Education That's Free Until You Get a Job - Austen Allred of ...",
+              description:
+                "Apr 2, 2019   �   Austen Allred is the CEO and cofounder of Lambda School. Lambda School provides a CS education that's free until you get a job.",
+            },
+            {
+              url: "https://neo.com/investor/austen-allred",
+              title: "Austen Allred | endorsed at Neo",
+              description:
+                "Jan 18, 2024   �   Neo community members endorse Austen Allred as a startup investor.",
+            },
+            {
+              url: "https://alejandrocremades.com/austen-allred/",
+              title:
+                "Austen Allred On Raising $100 Million To Create A Proven Path To ...",
+              description:
+                "Austen Allred is the co-founder and CEO of BloomTech. A native of Springville, Utah, Austen's start-up journey began in 2017 with him living in his two-door�...",
+            },
+            {
+              url: "https://www.portfoliocareerpodcast.com/austen-allred",
+              title: "Austen Allred - Portfolio Career Podcast",
+              description:
+                "Sep 21, 2018   �   Austen Allred. Teaching Students to Code and Grow�...",
+            },
+            {
+              url: "https://www.instagram.com/reel/C-vC1jvCtiJ/",
+              title:
+                "Meet Austin Allred, the owner of Royal Family Dairy and a leader in ...",
+              description:
+                "Aug 16, 2024   �   We're excited to introduce our grass-fed beef tallow, made from our very own, raised 100% carbon neutral cattle. Get yours today.",
+            },
+            {
+              url: "http://www.modus73.com/learn/austen-allred-scalping-tickets-lambda-school/",
+              title:
+                "A crazy story of scalping tickets to keep his startup dream alive ...",
+              description:
+                "Jun 3, 2020   �   You may have heard of Austen Allred, the founder of Lambda School. But have you heard his story about scalping tickets so he could fix his�...",
+            },
+            {
+              url: "https://www.applieddivinitystudies.com/lambda-lies/",
+              title:
+                "Austen Allred is Consistently Deceptive | Applied Divinity Studies",
+              description:
+                "Nov 18, 2020   �   Founder/CEO Austen Allred frequently takes to Twitter, defending his bootcamp against allegations of fraud, and rebutting critics with case after case of�...",
+            },
+            {
+              url: "https://www.outskill.com/",
+              title: "Outskill: AI Upskilling for Modern Careers",
+              description:
+                "Austen Allred. Founder at Gauntlet AI. Shaan Puri. Sold his company to Twitch. Varun Mayya. Founder at Aeos of Largest AI�...",
+            },
+            {
+              url: "https://www.theinformation.com/briefings/coding-bootcamp-ceo-austen-allred-fined-by-federal-watchdog",
+              title:
+                "Coding Bootcamp CEO Austen Allred Fined by Federal Watchdog",
+              description:
+                "Apr 18, 2024   �   Coding Bootcamp CEO Austen Allred Fined by Federal Watchdog ... A federal agency that oversees consumer finance activities said Thursday it had�...",
+            },
+            {
+              url: "https://www.instagram.com/reel/DAcOrAgyKlx/",
+              title:
+                "Instagram video by Austin Allred • Sep 27, 2024 at 5:41 PM",
+              description:
+                "Sep 27, 2024   �   Farmers, Ranchers, & Dairy Farmers are environmentally friendly! more. View all 18 comments. April 21, 2021.",
+            },
+            {
+              url: "https://www.finra.org/rules-guidance/oversight-enforcement/individuals-barred-finra",
+              title: "Individuals Barred by FINRA | FINRA.org",
+              description:
+                "EMILY MAUREEN ALLRED. 5092387, BRANDON C ALLSUP. 3141791, LAURIE SUE ALMACK ... David Austin. 5803618, PHILLIP K AUSTIN. 5262341, TODD AUSTIN. 2089448, OPIE�...",
+            },
+            {
+              url: "https://www.ibtimes.com/profile/austen-allred",
+              title: "Austen Allred - International Business Times",
+              description:
+                "Austen Allred is the co-founder and CEO of Bloom Institute of Technology (BloomTech), formerly Lambda School. A native of Springville, Utah,�...",
+            },
+            {
+              url: "https://www.instagram.com/reel/DGXBCKTpL2P/",
+              title:
+                "Austin Allred | The American food system is broken. It's a ... - Instagram",
+              description:
+                "Feb 22, 2025   �   The American food system is broken. It's a system that favors large corporations over farmers, that prioritizes profit over people and the�...",
+            },
+            {
+              url: "https://blog.producthunt.com/product-hunt-radio-the-future-of-education-with-lambda-schools-austen-allred-832bd2faa1c4",
+              title:
+                "The future of education with Lambda School's Austen Allred",
+              description:
+                "Mar 13, 2019   �   In this episode, Abadesi talks to Austen Allred, co-founder and CEO of Lambda School. Lambda School is a pioneer in the income-sharing�...",
+            },
+            {
+              url: "https://www.2centdad.com/austen-allred/",
+              title:
+                "Higher Education Disruption with Austen Allred - 2 Cent Dad",
+              description:
+                "Aug 11, 2020   �   Austen Allred joins the podcast to talk about why school isn't a one size fits all and how you can be a dad in the ever changing education�...",
+            },
+            {
+              url: "https://www.uhsaa.org/btrack/BoysStateRecords.pdf",
+              title: "[PDF] UHSAA Track & Field State Records",
+              description:
+                "5 days ago   �   Lorin Allred. Sorenson. Landen Stice. Mark Higbee. Riley Stringham ... Austen Jorgensen. Bo Hickman. Austin Kafentzis. Ethan Ecker. Green River.",
+            },
+            {
+              url: "https://www.ibtimes.com/austen-allred-will-pay-you-hire-his-graduates-3184124",
+              title:
+                "Austen Allred Will Pay You To Hire His Graduates! | IBTimes",
+              description:
+                "Apr 22, 2021   �   The visionary founder and CEO of Lambda School wants to blow up conventional, restrictive hiring practices that he says just plain don't�...",
+            },
+            {
+              url: "https://www.tiktok.com/discover/little-mermaid-show-passholder-preview",
+              title: "Little Mermaid Show Passholder Preview | TikTok",
+              description:
+                "6 days ago   �   There are still a few weeks until Jane Austen's EMMA opens - but in the meanwhile... ... I must say    @Zack Allred",
+            },
+            {
+              url: "https://www.netizen.page/search",
+              title: "Wednesday, May 14, 2025 - Netizen",
+              description:
+                "... Austin connect robotics and software to construction equipment you get Terrafirma pic.twitter.com/dKuzLPg5nr. — Austen Allred (@Austen) May 13, 2025. And of�...",
+            },
+            {
+              url: "https://www.theguardian.com/index/contributors/a",
+              title: "A | Contributors | The Guardian",
+              description:
+                "Kat Austen � Daryl Austin � Ian Austin � Rod Austin � Sissy Eileen Austin � Bryan ... Ammon Allred � Amos Guiora � Amos Harel � Amos Oz � Amos Roberts � Amos Toh�...",
+            },
+            {
+              url: "https://www.tiktok.com/discover/landon-anderson-coach-utah",
+              title: "Landon Anderson Coach Utah | TikTok",
+              description:
+                "May 5, 2025   �   KSL NewsRadio's Aimee Cobabe has more. Listen more at KSLPodcasts.com Spenser Heaps, Jeffret D. Allred ... original sound - Austen Alexander.",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
     id: "twitch",
     name: "Twitch",
     icon: SiTwitch,
