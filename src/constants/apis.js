@@ -15813,7 +15813,7 @@ export const apis = [
         name: "Profile",
         method: "GET",
         description:
-          "This only returns what's publicly available, ie what you see in an incognito browser. So unfortunately LinkedIn doesn't return work history or job title publicly anymore :(",
+          "*This is for a persons public profile. This only returns what's publicly available, ie what you see in an incognito browser. So unfortunately LinkedIn doesn't return work history or job title publicly anymore :(",
         path: "/v1/linkedin/profile",
         sampleResponse: {
           success: true,
@@ -15971,6 +15971,58 @@ export const apis = [
             placeholder: "https://www.linkedin.com/in/parrsam/",
           },
         ],
+      },
+      {
+        name: "Post",
+        method: "GET",
+        description:
+          "Get a Linkedin post. This can be a post or an article. Thinking about separating posts and articles, let me know if you think I should do that: adrian@thewebscrapingguy.com",
+        path: "/v1/linkedin/post",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            description: "The URL of the LinkedIn post to get",
+            required: true,
+            placeholder:
+              "https://www.linkedin.com/pulse/being-father-has-made-me-better-leader-vice-versa-austen-allred/",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          url: "https://www.linkedin.com/pulse/being-father-has-made-me-better-leader-vice-versa-austen-allred",
+          name: "Being a Father Has Made me a Better Leader, and Vice Versa",
+          headline:
+            "It's not all that unique to be a 26-year-old founder in Silicon Valley. What was far more surprising to people in 2017 when I joined the S17 Y Combinator cohort is that I already had a family of my own.",
+          commentCount: 17,
+          likeCount: 210,
+          datePublished: "2020-06-21T14:35:59.000+00:00",
+          description:
+            "It's not all that unique to be a 26-year-old founder in Silicon Valley. What was far more surprising to people in 2017 when I joined the S17 Y Combinator cohort is that I already had a family of my own. ....",
+          author: {
+            name: "Austen Allred",
+            url: "https://www.linkedin.com/in/austenallred",
+            followers: 30863,
+          },
+          comments: [
+            {
+              author: "Jeremy M.",
+              text: "Austen, thanks for sharing!",
+              linkedinUrl: "https://uk.linkedin.com/in/jeremymurray",
+            },
+          ],
+          moreArticles: [
+            {
+              link: "https://www.linkedin.com/pulse/note-outcomes-data-lambda-school-austen-allred",
+              title: "A Note About Outcomes Data at Lambda School",
+              datePublished: "Feb 24, 2020",
+              description:
+                "Due to some recent online media, there’s been some confusion recently about student outcomes at Lambda School - which…",
+              reactionCount: 168,
+              commentCount: 15,
+            },
+          ],
+        },
       },
     ],
   },
