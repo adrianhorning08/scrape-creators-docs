@@ -1261,6 +1261,10 @@ export const apis = [
             description:
               "Whether the tiktok is an ad. Make sure you're looking at the is_ad field and not the is_ads field",
           },
+          {
+            path: "aweme_list[0].is_top",
+            description: "is_top: 1 means the tiktok is pinned",
+          },
         ],
       },
       {
