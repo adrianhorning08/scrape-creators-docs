@@ -15810,7 +15810,7 @@ export const apis = [
     description: "Scrape LinkedIn",
     endpoints: [
       {
-        name: "Profile",
+        name: "Person's Profile",
         method: "GET",
         description:
           "*This is for a persons public profile. This only returns what's publicly available, ie what you see in an incognito browser. So unfortunately LinkedIn doesn't return work history or job title publicly anymore :(",
@@ -15962,6 +15962,12 @@ export const apis = [
             },
           ],
         },
+        responseFields: [
+          {
+            path: "activity",
+            description: "Persons latest posts, shares, likes, etc.",
+          },
+        ],
         params: [
           {
             name: "url",
