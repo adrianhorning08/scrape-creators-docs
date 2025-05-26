@@ -16922,6 +16922,14 @@ export const apis = [
             placeholder: "running",
           },
           {
+            name: "search_type",
+            type: "select",
+            required: false,
+            description: "If you want to search by exact phrase or not",
+            options: ["keyword_unordered", "keyword_exact_phrase"],
+            placeholder: "keyword_unordered",
+          },
+          {
             name: "ad_type",
             type: "select",
             required: false,
