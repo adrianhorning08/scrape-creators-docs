@@ -15511,7 +15511,7 @@ export const apis = [
         name: "Search",
         method: "GET",
         description:
-          "Search YouTube and get matching videos, channels, and playlists. You can search for only shorts, but they will come back as 'videos'. But they are in fact shorts.",
+          "Search YouTube and get matching videos, channels, playlists, shorts, lives, etc.",
         path: "/v1/youtube/search",
         paginationField: "continuationToken",
         sampleResponse: {
