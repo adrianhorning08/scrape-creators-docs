@@ -18224,6 +18224,27 @@ export const apis = [
           },
         ],
       },
+      {
+        name: "Transcript",
+        method: "GET",
+        description:
+          "Get the transcript of a video tweet. Unfortunately this is a little slow because I'm using AI to get the transcript",
+        path: "/v1/twitter/tweet/transcript",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Tweet URL",
+            placeholder: "https://x.com/TheoVon/status/1916982720317821050",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          transcript:
+            "Since you're kind of like a leader in innovation and technology in our world, you know, um do you how do you know that what your convictions are, how do you gauge if what your convictions are are the best for everybody kind of? Like how do you kind of figure that out, you know? It seems like such a challenge. I mean, look at the end of the day, um there are still a lot of options of things that people can do. Just because I build something doesn't mean that people are going to use it. Actually a lot of the things that I build like some of some of them work, some of them don't. And like I think part of the reason why the company has been successful is because, you know, maybe we have a slightly higher hit rate of things working than others. But if we do something that doesn't work, then in general people aren't going to use it. And then the future doesn't go in that direction. So I see. So you're saying it's up to the user more. Yeah, I mean look, it's always served me well to generally have faith in people and believe that people are smart and can make good decisions for themselves. And whenever we try to like adopt some sort of like attitude of oh we must know better than them. It's like we're like we're the people building technology. That's when you lose. So I I I tend to just think that at the end of the day, yeah, I mean I think people are smarter than than a lot of people think and I think ultimately drive the direction that society goes in.",
+        },
+      },
     ],
   },
   {
