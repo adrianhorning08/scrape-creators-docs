@@ -15644,7 +15644,8 @@ export const apis = [
             name: "filter",
             type: "select",
             required: false,
-            description: "Filter by these options:",
+            description:
+              "Filter by these options. Note this doesn't work when you use either 'uploadDate' or 'sortBy'. It basically only works when you have a query.",
             options: ["shorts"],
             placeholder: "all",
           },
