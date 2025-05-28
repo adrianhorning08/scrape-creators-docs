@@ -15511,7 +15511,7 @@ export const apis = [
         name: "Search",
         method: "GET",
         description:
-          "Search YouTube and get matching videos, channels, playlists, shorts, lives, etc.",
+          "Search YouTube and get matching videos, channels, playlists, shorts, lives, etc. Video explaining the response format: https://www.tella.tv/video/explaining-youtube-search-results-payload-353a",
         path: "/v1/youtube/search",
         paginationField: "continuationToken",
         sampleResponse: {
