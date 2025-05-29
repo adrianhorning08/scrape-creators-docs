@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { apis } from "../constants/apis";
 
 export default function Sidebar() {
   const location = useLocation();
   const currentPath = location.pathname;
+  const activeEndpointRef = useRef(null);
+  const isUserClick = useRef(false);
+
+  useEffect(() => {
+    // Reset the user click flag after a short delay
+    const timeoutId = setTimeout(() => {
+      isUserClick.current = false;
+    }, 100);
+
+    return () => clearTimeout(timeoutId);
+  }, [currentPath]);
+
+  useEffect(() => {
+    if (!isUserClick.current && activeEndpointRef.current) {
+      activeEndpointRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, [currentPath]);
+
+  const handleLinkClick = () => {
+    isUserClick.current = true;
+  };
 
   return (
     <div className="z-20 hidden lg:block fixed bottom-0 right-auto w-[18rem] top-[7.1rem]">
@@ -85,6 +109,12 @@ export default function Sidebar() {
                       <li key={endpoint.path}>
                         <Link
                           to={endpoint.path}
+                          onClick={handleLinkClick}
+                          ref={
+                            currentPath === endpoint.path
+                              ? activeEndpointRef
+                              : null
+                          }
                           className={`group mt-2 lg:mt-0 flex items-center pr-3 py-1.5 cursor-pointer focus:outline-primary dark:focus:outline-primary-light rounded-xl relative ${
                             currentPath === endpoint.path
                               ? "bg-primary/10 text-primary font-semibold dark:text-primary-light dark:bg-primary-light/10"

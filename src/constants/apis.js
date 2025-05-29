@@ -13,6 +13,7 @@ import {
   SiKick, // closest match for Kick
   SiPersonio,
   SiSnapchat,
+  SiBluesky,
 } from "react-icons/si";
 import { MdPerson } from "react-icons/md";
 import ScrapeCreatorsIcon from "../components/ScrapeCreatorsIcon";
@@ -20182,6 +20183,313 @@ export const apis = [
               is_verified: true,
               has_onboarded_to_text_post_app: true,
               id: "5951152863",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "bluesky",
+    name: "Bluesky",
+    icon: SiBluesky,
+    description: "Get Bluesky posts and profile info",
+    endpoints: [
+      {
+        name: "Profile",
+        method: "GET",
+        description: "Get Bluesky profile info",
+        path: "/bluesky/profile",
+        params: [
+          {
+            name: "handle",
+            type: "string",
+            required: true,
+            description: "Bluesky handle",
+            placeholder: "espn.com",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          did: "did:plc:x7d6j54pm22ufehkes6jo4jf",
+          handle: "espn.com",
+          displayName: "ESPN",
+          avatar:
+            "https://cdn.bsky.app/img/avatar/plain/did:plc:x7d6j54pm22ufehkes6jo4jf/bafkreie4oxawqqsfzvk47ysr3unsnmviedzpylxmwxnpa534to2bzas4ie@jpeg",
+          associated: {
+            lists: 0,
+            feedgens: 0,
+            starterPacks: 0,
+            labeler: false,
+          },
+          labels: [],
+          createdAt: "2024-11-25T21:49:49.345Z",
+          verification: {
+            verifications: [
+              {
+                issuer: "did:plc:z72i7hdynmk6r22z27h6tvur",
+                uri: "at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.graph.verification/3lndppjqgb72f",
+                isValid: true,
+                createdAt: "2025-04-21T10:44:20.398Z",
+              },
+            ],
+            verifiedStatus: "valid",
+            trustedVerifierStatus: "none",
+          },
+          description: "Serving sports fans. Anytime. Anywhere.",
+          indexedAt: "2024-12-19T20:49:48.843Z",
+          followersCount: 198477,
+          followsCount: 32,
+          postsCount: 659,
+        },
+      },
+      {
+        name: "Posts",
+        method: "GET",
+        description:
+          "Get Bluesky user posts. Use user_id for faster response times.",
+        path: "/bluesky/user/posts",
+        paginationField: "cursor",
+        params: [
+          {
+            name: "handle",
+            type: "string",
+            required: false,
+            description: "Bluesky handle",
+            placeholder: "espn.com",
+          },
+          {
+            name: "user_id",
+            type: "string",
+            required: false,
+            description:
+              "Bluesky did. (For some reason Bluesky calls their user ids, did for whatever reason)",
+            placeholder: "did:plc:x7d6j54pm22ufehkes6jo4jf",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          feed: [
+            {
+              uri: "at://did:plc:x7d6j54pm22ufehkes6jo4jf/app.bsky.feed.post/3lqdfq7fkvm2g",
+              cid: "bafyreibams5wyqdpg2cmmks7lhf5ccxu7hbu24sfatgc53jmb2nun5k5dm",
+              author: {
+                did: "did:plc:x7d6j54pm22ufehkes6jo4jf",
+                handle: "espn.com",
+                displayName: "ESPN",
+                avatar:
+                  "https://cdn.bsky.app/img/avatar/plain/did:plc:x7d6j54pm22ufehkes6jo4jf/bafkreie4oxawqqsfzvk47ysr3unsnmviedzpylxmwxnpa534to2bzas4ie@jpeg",
+                labels: [],
+                createdAt: "2024-11-25T21:49:49.345Z",
+                verification: {
+                  verifications: [
+                    {
+                      issuer: "did:plc:z72i7hdynmk6r22z27h6tvur",
+                      uri: "at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.graph.verification/3lndppjqgb72f",
+                      isValid: true,
+                      createdAt: "2025-04-21T10:44:20.398Z",
+                    },
+                  ],
+                  verifiedStatus: "valid",
+                  trustedVerifierStatus: "none",
+                },
+              },
+              record: {
+                $type: "app.bsky.feed.post",
+                createdAt: "2025-05-29T19:01:20.743Z",
+                embed: {
+                  $type: "app.bsky.embed.external",
+                  card: {
+                    description:
+                      "The Oilers apparently will have defenseman Mattias Ekholm back in their lineup for Game 5 of the Western Conference finals against the Stars.",
+                    thumb: {
+                      $type: "blob",
+                      ref: {
+                        $link:
+                          "bafkreihhffgngv4thcnw7sh7o43qnwwyjvfemdlccwalu76r3vnhlbssle",
+                      },
+                      mimeType: "image/jpeg",
+                      size: 158648,
+                    },
+                    title: "Oilers' Ekholm set for return in Game 5 vs. Stars",
+                    uri: "http://spr.ly/63320N4OEy",
+                  },
+                  external: {
+                    description:
+                      "The Oilers apparently will have defenseman Mattias Ekholm back in their lineup for Game 5 of the Western Conference finals against the Stars.",
+                    thumb: {
+                      $type: "blob",
+                      ref: {
+                        $link:
+                          "bafkreihhffgngv4thcnw7sh7o43qnwwyjvfemdlccwalu76r3vnhlbssle",
+                      },
+                      mimeType: "image/jpeg",
+                      size: 158648,
+                    },
+                    title: "Oilers' Ekholm set for return in Game 5 vs. Stars",
+                    uri: "http://spr.ly/63320N4OEy",
+                  },
+                },
+                facets: [],
+                text: "Oilers' defenseman Mattias Ekholm is set to return to action Thursday for Game 5 of the Western Conference finals against the Stars.\n\nEkholm has been out of the Oilers' lineup since April 11 with an undisclosed injury.",
+              },
+              embed: {},
+              replyCount: 1,
+              repostCount: 0,
+              likeCount: 24,
+              quoteCount: 1,
+              indexedAt: "2025-05-29T19:01:21.645Z",
+              labels: [],
+            },
+          ],
+          cursor: "2025-05-22T17:02:02.847Z",
+        },
+      },
+      {
+        name: "Post",
+        method: "GET",
+        description: "Get Bluesky post",
+        path: "/bluesky/post",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Bluesky post URL",
+            placeholder: "https://bsky.app/profile/espn.com/post/3lqdfq7fkvm2g",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          post: {
+            uri: "at://did:plc:x7d6j54pm22ufehkes6jo4jf/app.bsky.feed.post/3lqdfq7fkvm2g",
+            cid: "bafyreibams5wyqdpg2cmmks7lhf5ccxu7hbu24sfatgc53jmb2nun5k5dm",
+            author: {
+              did: "did:plc:x7d6j54pm22ufehkes6jo4jf",
+              handle: "espn.com",
+              displayName: "ESPN",
+              avatar:
+                "https://cdn.bsky.app/img/avatar/plain/did:plc:x7d6j54pm22ufehkes6jo4jf/bafkreie4oxawqqsfzvk47ysr3unsnmviedzpylxmwxnpa534to2bzas4ie@jpeg",
+              labels: [],
+              createdAt: "2024-11-25T21:49:49.345Z",
+              verification: {
+                verifications: [
+                  {
+                    issuer: "did:plc:z72i7hdynmk6r22z27h6tvur",
+                    uri: "at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.graph.verification/3lndppjqgb72f",
+                    isValid: true,
+                    createdAt: "2025-04-21T10:44:20.398Z",
+                  },
+                ],
+                verifiedStatus: "valid",
+                trustedVerifierStatus: "none",
+              },
+            },
+            record: {
+              $type: "app.bsky.feed.post",
+              createdAt: "2025-05-29T19:01:20.743Z",
+              embed: {
+                $type: "app.bsky.embed.external",
+                card: {
+                  description:
+                    "The Oilers apparently will have defenseman Mattias Ekholm back in their lineup for Game 5 of the Western Conference finals against the Stars.",
+                  thumb: {
+                    $type: "blob",
+                    ref: {
+                      $link:
+                        "bafkreihhffgngv4thcnw7sh7o43qnwwyjvfemdlccwalu76r3vnhlbssle",
+                    },
+                    mimeType: "image/jpeg",
+                    size: 158648,
+                  },
+                  title: "Oilers' Ekholm set for return in Game 5 vs. Stars",
+                  uri: "http://spr.ly/63320N4OEy",
+                },
+                external: {
+                  description:
+                    "The Oilers apparently will have defenseman Mattias Ekholm back in their lineup for Game 5 of the Western Conference finals against the Stars.",
+                  thumb: {
+                    $type: "blob",
+                    ref: {
+                      $link:
+                        "bafkreihhffgngv4thcnw7sh7o43qnwwyjvfemdlccwalu76r3vnhlbssle",
+                    },
+                    mimeType: "image/jpeg",
+                    size: 158648,
+                  },
+                  title: "Oilers' Ekholm set for return in Game 5 vs. Stars",
+                  uri: "http://spr.ly/63320N4OEy",
+                },
+              },
+              facets: [],
+              text: "Oilers' defenseman Mattias Ekholm is set to return to action Thursday for Game 5 of the Western Conference finals against the Stars.\n\nEkholm has been out of the Oilers' lineup since April 11 with an undisclosed injury.",
+            },
+            embed: {
+              $type: "app.bsky.embed.external#view",
+              external: {
+                uri: "http://spr.ly/63320N4OEy",
+                title: "Oilers' Ekholm set for return in Game 5 vs. Stars",
+                description:
+                  "The Oilers apparently will have defenseman Mattias Ekholm back in their lineup for Game 5 of the Western Conference finals against the Stars.",
+                thumb:
+                  "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:x7d6j54pm22ufehkes6jo4jf/bafkreihhffgngv4thcnw7sh7o43qnwwyjvfemdlccwalu76r3vnhlbssle@jpeg",
+              },
+            },
+            replyCount: 1,
+            repostCount: 0,
+            likeCount: 24,
+            quoteCount: 1,
+            indexedAt: "2025-05-29T19:01:21.645Z",
+            labels: [],
+          },
+          replies: [
+            {
+              $type: "app.bsky.feed.defs#threadViewPost",
+              post: {
+                uri: "at://did:plc:dzsbhwnnvblrpyy2fpnmaih3/app.bsky.feed.post/3lqdii5jmmc2p",
+                cid: "bafyreicrfgr5rge655xy6wsgmdiexanr2vhwib7fkjbgu4kku3gzjzwowu",
+                author: {
+                  did: "did:plc:dzsbhwnnvblrpyy2fpnmaih3",
+                  handle: "thinkasaurus.bsky.social",
+                  displayName: "Doris the Thinkasaurus",
+                  avatar:
+                    "https://cdn.bsky.app/img/avatar/plain/did:plc:dzsbhwnnvblrpyy2fpnmaih3/bafkreielkwohfe37wdka5336fl2sxijxur242dhovdb2edkk56yuzl4fyu@jpeg",
+                  labels: [
+                    {
+                      src: "did:plc:dzsbhwnnvblrpyy2fpnmaih3",
+                      uri: "at://did:plc:dzsbhwnnvblrpyy2fpnmaih3/app.bsky.actor.profile/self",
+                      cid: "bafyreihy26aqt7z6pn7uhqhoyh6ge5novekumdcsd3cxxz72nkc5bnozam",
+                      val: "!no-unauthenticated",
+                      cts: "2024-10-21T17:22:26.564Z",
+                    },
+                  ],
+                  createdAt: "2024-10-21T17:22:27.408Z",
+                },
+                record: {
+                  $type: "app.bsky.feed.post",
+                  createdAt: "2025-05-29T19:50:31.613Z",
+                  langs: ["en"],
+                  reply: {
+                    parent: {
+                      cid: "bafyreibams5wyqdpg2cmmks7lhf5ccxu7hbu24sfatgc53jmb2nun5k5dm",
+                      uri: "at://did:plc:x7d6j54pm22ufehkes6jo4jf/app.bsky.feed.post/3lqdfq7fkvm2g",
+                    },
+                    root: {
+                      cid: "bafyreibams5wyqdpg2cmmks7lhf5ccxu7hbu24sfatgc53jmb2nun5k5dm",
+                      uri: "at://did:plc:x7d6j54pm22ufehkes6jo4jf/app.bsky.feed.post/3lqdfq7fkvm2g",
+                    },
+                  },
+                  text: "Alright! Now I have a reason to root for Edmonton aside from my burning hatred of Dallas!",
+                },
+                replyCount: 0,
+                repostCount: 0,
+                likeCount: 0,
+                quoteCount: 0,
+                indexedAt: "2025-05-29T19:50:32.451Z",
+                labels: [],
+              },
+              replies: [],
+              threadContext: {},
             },
           ],
         },
