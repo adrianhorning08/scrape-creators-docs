@@ -20263,7 +20263,7 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Bluesky did. (For some reason Bluesky calls their user ids, did for whatever reason)",
+              "Bluesky 'did'. (For some reason Bluesky calls their user ids, 'did' for whatever reason)",
             placeholder: "did:plc:x7d6j54pm22ufehkes6jo4jf",
           },
         ],
