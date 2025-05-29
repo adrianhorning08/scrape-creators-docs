@@ -16151,6 +16151,125 @@ export const apis = [
         ],
       },
       {
+        name: "Company Page",
+        method: "GET",
+        description: "Get a LinkedIn company page",
+        path: "/v1/linkedin/company",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            description: "The URL of the LinkedIn company page to get",
+            required: true,
+            placeholder: "https://linkedin.com/company/shopify",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          name: "Shopify",
+          description:
+            "Shopify is a leading global commerce company, providing trusted tools to start, grow, market, and manage a retail business of any size. Shopify makes commerce better for everyone with a platform and services that are engineered for reliability, while delivering a better shopping experience for consumers everywhere. Shopify powers millions of businesses in more than 175 countries and is trusted by brands such as Allbirds, Gymshark, PepsiCo, Staples, and many more.\n\nFind all our jobs here: www.shopify.com/careers",
+          location: {
+            city: "Ottawa",
+            state: "ON",
+            country: "CA",
+          },
+          employeeCount: 23591,
+          website: "https://www.shopify.com",
+          logo: "https://media.licdn.com/dms/image/v2/D560BAQG_KjTcNcrLVw/company-logo_200_200/B56ZZolTV.HUAU-/0/1745511331439/shopify_logo?e=2147483647&v=beta&t=D2saVg58cKnwEiDQgFgzvwL24mTRM_cPuU1ndv6kL2U",
+          slogan: "Make commerce better for everyone",
+          similarPages: [
+            {
+              link: "https://www.linkedin.com/company/airbnb",
+              name: "Airbnb",
+              image:
+                "https://media.licdn.com/dms/image/v2/C560BAQFhfl32crIGIw/company-logo_100_100/company-logo_100_100/0/1630637496980/airbnb_logo?e=2147483647&v=beta&t=idNQqoBZi6dZq6iG78J5GTOsNV_ltJf7ITo7zYZ6VWg",
+            },
+            {
+              link: "https://se.linkedin.com/company/spotify",
+              name: "Spotify",
+              image:
+                "https://media.licdn.com/dms/image/v2/C560BAQFkDzx_7dqq3A/company-logo_100_100/company-logo_100_100/0/1631377935713?e=2147483647&v=beta&t=AiRi3YW2R5kYKHbxsjkdQ_d1RuH6Yk98ePBwANPPDhc",
+            },
+          ],
+          industry: "Software Development",
+          size: "10,001+ employees",
+          founded: 2006,
+          headquarters: "Ottawa, ON",
+          type: "Public Company",
+          specialties: [
+            "ecommerce",
+            "API",
+            "applications",
+            "customer service",
+            "hardware",
+            "marketplace",
+            "AR/VR",
+            "marketing automation",
+            "User Experience",
+            "Design",
+            "Production Engineering",
+            "POS",
+            "Payments",
+            "Software Engineering",
+            "Finance",
+            "Retail",
+            "Mobile Apps",
+            "Instagram",
+            "Google Pay",
+            "Dropshipping",
+            "and Shipping",
+          ],
+          funding: {
+            numberOfRounds: 4,
+            lastRound: {
+              type: "Series C",
+              date: "2014-01-11T00:00:00.000Z",
+              amount: "US$ 100.0M",
+            },
+            investors: [
+              {
+                name: "OMERS Ventures",
+                crunchbaseUrl:
+                  "https://www.crunchbase.com/organization/omers-ventures",
+                image:
+                  "https://media.licdn.com/dms/image/sync/v2/D4E38AQEnDf6SgPOjAQ/crunchbase_investor_logo_100/crunchbase_investor_logo_100/0/1748147400909?e=1749146400&v=beta&t=V974RcVsrtQI1mZcqXPoKT8kutQoYneu8pjbjm5Un8E",
+              },
+              {
+                name: "Insight Partners",
+                crunchbaseUrl:
+                  "https://www.crunchbase.com/organization/insight-partners",
+                image:
+                  "https://media.licdn.com/dms/image/sync/v2/D4D38AQFO97oeFlJ74A/crunchbase_investor_logo_100/crunchbase_investor_logo_100/0/1748455429708?e=1749146400&v=beta&t=tRrAum9TLOKCquXN5bY65BaBsv_04RXSVKRzPt3BTcE",
+              },
+            ],
+          },
+          employees: [
+            {
+              name: "🇨🇦 Todd Jefferson",
+              title: "Staff Software Developer at Shopify",
+              link: "https://ca.linkedin.com/in/toddjefferson",
+              image:
+                "https://media.licdn.com/dms/image/v2/C4E03AQHg-rFtEf9qpw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1583259322606?e=2147483647&v=beta&t=uBFwlGCBbgFmwrP8f29P4nIDJCgZ1YEyyntBzpR9j30",
+            },
+            {
+              name: "Joseph Smarr",
+              title: "Principal Engineer @ Shopify",
+              link: "https://www.linkedin.com/in/jsmarr",
+              image:
+                "https://media.licdn.com/dms/image/v2/C5603AQG6JPHHDSVF_g/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1600306045236?e=2147483647&v=beta&t=SYwM63n268TcHjRQFbsz1EXXcGkXxKnYKNqNVUwDjA8",
+            },
+          ],
+          posts: [
+            {
+              url: "https://www.linkedin.com/posts/shopify_shopifys-design-vision-brings-horizon-into-activity-7331699854873620480-R_N8",
+              datePublished: "2025-05-23T15:17:41.770Z",
+              text: "In the era of AI, design matters more than ever. And we’re not just keeping pace—we’re leading the way.\n\nDesigners at Shopify take an unconventional approach to the design process: embracing imperfection, doing the unorthodox, and obsessing over every detail. Roles are fluid and leads stay close to the craft.\n\nThe Summer ’25 Edition is so tactile you can practically feel it. It’s packed with interactive elements, fluid animations, and, as usual, a lot of Easter eggs. Horizon Drive is an homage to old driving games, straight out of an arcade. \n\nBut nothing this Edition captures our design vision more than Horizon. \n\nHorizon blends beautiful visuals with practical features that streamline the design process. No more scrolling and guessing. Just quick design choices and built-in AI to code the rest. \n\nShopify design leaders Maggie Fost, Kevin Clark, and Katarina﻿﻿ Batina﻿﻿ share how our design philosophy shaped the Summer ’25 Edition: https://lnkd.in/e-Q-DmCR",
+            },
+          ],
+        },
+      },
+      {
         name: "Post",
         method: "GET",
         description:
