@@ -17019,9 +17019,7 @@ export const apis = [
             instagram_handle: "",
             is_reshared: false,
             version: 3,
-            body: {
-              __m: "__markup_c8cf307a_0_0_MP",
-            },
+            body: "",
             brazil_tax_id: null,
             branded_content: null,
             current_page_name: "Levi's",
