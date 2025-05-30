@@ -15986,7 +15986,7 @@ export const apis = [
         name: "Person's Profile",
         method: "GET",
         description:
-          "*This is for a persons public profile. This only returns what's publicly available, ie what you see in an incognito browser. So unfortunately LinkedIn doesn't return work history or job title publicly anymore :(",
+          "Get a person's public profile (including recent posts) *Note this is for a persons public profile. This only returns what's publicly available, ie what you see in an incognito browser. So unfortunately LinkedIn doesn't return work history or job title publicly anymore :(",
         path: "/v1/linkedin/profile",
         sampleResponse: {
           success: true,
@@ -15996,6 +15996,24 @@ export const apis = [
           connections: "",
           about:
             "I founded The Hustle, a business news media company with $12 when I was around 25 years…",
+          recentPosts: [
+            {
+              title:
+                "Super excited to watch the success of a company built by a Gauntlet AI grad: One missed contract renewal can cost your company $100k, $250k or more.…",
+              activityType: "Posted by Austen Allred",
+              link: "https://www.linkedin.com/posts/austenallred_super-excited-to-watch-the-success-of-a-company-activity-7333305862695919617-zTPI",
+              image:
+                "https://static.licdn.com/aero-v1/sc/h/53n89ecoxpr1qrki1do3alazb",
+            },
+            {
+              title:
+                "Imagine if software engineers declared that programming doesn't work if their program didn't compile on the first try. That's basically the level of…",
+              activityType: "Posted by Austen Allred",
+              link: "https://www.linkedin.com/posts/austenallred_imagine-if-software-engineers-declared-that-activity-7325898973485879296-jTB4",
+              image:
+                "https://static.licdn.com/aero-v1/sc/h/53n89ecoxpr1qrki1do3alazb",
+            },
+          ],
           experience: [
             {
               "@type": "Organization",
