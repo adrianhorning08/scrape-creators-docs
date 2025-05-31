@@ -16568,6 +16568,202 @@ export const apis = [
         },
       },
       {
+        name: "Facebook Group Posts",
+        method: "GET",
+        description:
+          "Get a public Facebook groups posts. Only can get 3 posts at a time :( (Facebook API limit)",
+        path: "/v1/facebook/group/posts",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            description: "The URL of the group",
+            required: false,
+            placeholder: "https://www.facebook.com/groups/homemakingtips/",
+          },
+          {
+            name: "group_id",
+            type: "string",
+            description: "The ID of the group",
+            required: false,
+            placeholder: "742354120555345",
+          },
+          {
+            name: "sort_by",
+            type: "select",
+            description: "How to sort the posts",
+            required: false,
+            placeholder: "TOP_POSTS",
+            options: [
+              "TOP_POSTS",
+              "RECENT_ACTIVITY",
+              "CHRONOLOGICAL",
+              "CHRONOLOGICAL_LISTINGS",
+            ],
+          },
+          {
+            name: "cursor",
+            type: "string",
+            description: "The cursor to paginate to the next page",
+            required: false,
+            placeholder: "AQHRBjJCelNvdGRjH8s2j-6...",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          posts: [
+            {
+              id: "1286289372828481",
+              text: null,
+              url: "https://www.facebook.com/groups/742354120555345/permalink/1286289372828481/",
+              permalink:
+                "https://www.facebook.com/sofiyati.942655/videos/996458202287759/?idorvanity=742354120555345",
+              author: {
+                __typename: "User",
+                name: "Sofiyati",
+                short_name: "Sofiyati",
+                id: "61552766652796",
+              },
+              reactionCount: 198,
+              commentCount: 100,
+              videoViewCount: null,
+              publishTime: 1748639389,
+              videoDetails: {
+                sdUrl:
+                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQO0_B24bEmILx4bmOfr_cQA5BgXwF9DMHJYAkUfQJAmuMGLV9PAc9-TrNen27lHJjr45pVm0ufFCcTJBCeFIr_s.mp4?strext=1&_nc_cat=111&_nc_sid=8bf8fe&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=paW12HBCn0EQ7kNvwFwJnXg&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjY0MC5zdmVfc2QiLCJ4cHZfYXNzZXRfaWQiOjEwNjkzNDUwMjg0MTg4MjYsInZpX3VzZWNhc2VfaWQiOjEwMTIxLCJkdXJhdGlvbl9zIjoxNSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_zt=28&oh=00_AfJNS34mvDAkIbtvP8o2nMuYrJ66ZeyCB1zQRlsD8sajow&oe=684150C7",
+                hdUrl:
+                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQM3UoTI5n6N2jVgKeUXSMPnqwAEQFHNGM9dejk3EV-MyBXNUcHlWtvYgUU2cD672EkWw5UAYZ3jJLXQiFdOvQh7.mp4?strext=1&_nc_cat=102&_nc_sid=5e9851&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=kSrgWXZVr9IQ7kNvwE16oSK&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjEyODAuZGFzaF9oMjY0LWJhc2ljLWdlbjJfNzIwcCIsInhwdl9hc3NldF9pZCI6MTA2OTM0NTAyODQxODgyNiwidmlfdXNlY2FzZV9pZCI6MTAxMjEsImR1cmF0aW9uX3MiOjE1LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=67dd4c5fe90b11c5&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HRUlZOHgwUVZ4azVjSHdIQUNGeU9XTzlQTzlXYm1kakFBQUYVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HQ1V3OFIySHNmZWZhbUVFQUNZbmdLUlBMSzU4YnJGcUFBQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmlLT9qImk5gMVAigDQzNlLBdALkQYk3S8ahgZZGFzaF9oMjY0LWJhc2ljLWdlbjJfNzIwcBEAdQJlkp4BAA&_nc_zt=28&oh=00_AfJKQedBwUVhnjLuJgGuJ7E1TXLk0vib17T3YkAmJUPb8w&oe=68414B6C",
+                thumbnailUrl:
+                  "https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/502130835_1399930867890626_4491393707187246303_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=100&ccb=1-7&_nc_sid=50ce42&_nc_ohc=l5JdWBSutswQ7kNvwFHAOSM&_nc_oc=Adm5GttPwjsWvVb_d8d7buJHGnqW6FNHHuRyi2n0UmFWsS7KDF2bg4bo_0uXYI8Uxh0&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=BIqW4GLH6GWa7rMa2JiKFA&oh=00_AfKO58NMsMKO_OXEVSw8A1BNbt0xSVognLfCBKxypc5etw&oe=684150FC",
+              },
+              topComments: [
+                {
+                  id: "Y29tbWVudDoxMjg2Mjg5MzcyODI4NDgxXzEyODY1MTY1MjYxMzkwOTk=",
+                  text: "I can find thousands of videos with the same exact trend. And we all know what I’m referring to 🤭",
+                  publishTime: 1748666375,
+                  author: {
+                    id: "pfbid0haqAQZCvs4cTVyfGwxCGPidvLYRNhFiboXkCH45LmPLAF1oQ7kJxaVig19KT8nZvl",
+                    name: "Trent Slushy",
+                    gender: "MALE",
+                    url: null,
+                  },
+                },
+                {
+                  id: "Y29tbWVudDoxMjg2Mjg5MzcyODI4NDgxXzEyODYzMTY4NDYxNTkwNjc=",
+                  text: "Nothing new when the brother gets knocked down another brother jumps in from behind.. very disrespectful",
+                  publishTime: 1748642672,
+                  author: {
+                    id: "pfbid02fRnV4WmvHpX7sx48W2dmfetXpZHCLF5NhE3G4odMC8BniyRA3p4cQ3QYa4fzo57Sl",
+                    name: "Paul Demeo",
+                    gender: "MALE",
+                    url: null,
+                  },
+                },
+              ],
+            },
+            {
+              id: "1280901910033894",
+              text: null,
+              url: "https://www.facebook.com/groups/742354120555345/permalink/1280901910033894/",
+              permalink:
+                "https://www.facebook.com/Eat.tohato/videos/1241112417643324/?idorvanity=742354120555345",
+              author: {
+                __typename: "User",
+                name: "Eat Tohato",
+                short_name: "Tohato",
+                id: "100023215682191",
+              },
+              reactionCount: 1671,
+              commentCount: 214,
+              videoViewCount: null,
+              publishTime: 1748056476,
+              videoDetails: {
+                sdUrl:
+                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQMaX1dJhB4b1CM618GRKCI2JX0hcLhvoAzXy0L1g3Clmfk9WwFpsHBoYzVohilg9hArNQm5TnGKKphyJIgnVPlY.mp4?strext=1&_nc_cat=101&_nc_sid=8bf8fe&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=LkrGcvJpPFoQ7kNvwFc9J3f&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjM2MC5zdmVfc2QiLCJ4cHZfYXNzZXRfaWQiOjcyNjk2NzI2Mjk5NTIyNSwidmlfdXNlY2FzZV9pZCI6MTAxMjEsImR1cmF0aW9uX3MiOjQwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_zt=28&oh=00_AfLXJziRWwLTk7rhEEcA2FTnVPILkvjZ66O3oJcZvltnqw&oe=68415A81",
+                hdUrl:
+                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQPvvRXTfaIhu1IVF1-FaQtfZ_y6ZR7R998HF_Jg9m0OPHWROV0gVezcwfj2Sr9m_RkdNiKg53gt2LIqY3yR3yrO.mp4?strext=1&_nc_cat=101&_nc_sid=5e9851&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=K6sAwYQ8h7gQ7kNvwE2q_jX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjcyMC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjo3MjY5NjcyNjI5OTUyMjUsInZpX3VzZWNhc2VfaWQiOjEwMTIxLCJkdXJhdGlvbl9zIjo0MCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=7f3ac1ad59381aa7&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HTTQxelIxcS0wZjBQb2dDQU9qOXVDODN4aGwyYm1kakFBQUYVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HSkxWMWgyOHJBaTRZd29DQUZTMWM2Yjd1Z2hSYnJGcUFBQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmsozLl4jLygIVAigDQzNlLBdAQ8bpeNT99BgZZGFzaF9oMjY0LWJhc2ljLWdlbjJfNzIwcBEAdQJlkp4BAA&_nc_zt=28&oh=00_AfJtKdCa7YflP7aWfCKIoLjvqelDtuzQR6ocEtzi-7bttQ&oe=684146E9",
+                thumbnailUrl:
+                  "https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/500892329_1215071943593619_2690255710088955217_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=104&ccb=1-7&_nc_sid=50ce42&_nc_ohc=QoHadvziHEEQ7kNvwE-PAX_&_nc_oc=Adn7q7inFPwItHI0N5_EwBcWRd7qi74ZyHC41ilu2xHNMujaVON5uWwStyC7yAGiEJU&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=BIqW4GLH6GWa7rMa2JiKFA&oh=00_AfJx4boMwltKuEqfKWHotxJIBcehG40n3TdIHSVj0JAwjg&oe=68412D7B",
+              },
+              topComments: [
+                {
+                  id: "Y29tbWVudDoxMjgwOTAxOTEwMDMzODk0XzEyODA5MDg1ODY2OTk4OTM=",
+                  text: "Did a powerbomb... stole a bat and he coulda ended that dude great self control",
+                  publishTime: 1748057315,
+                  author: {
+                    id: "pfbid0DheZGgjMQgRTz5MPPHnkxaEDerz1v7Eq6mNgac85wAShJdU6oHPXQ9feQSSLytiEl",
+                    name: "Marcos Mendoza",
+                    gender: "MALE",
+                    url: "https://www.facebook.com/marcos.mendoza.560854",
+                  },
+                },
+                {
+                  id: "Y29tbWVudDoxMjgwOTAxOTEwMDMzODk0XzEyODA5MjI2MzY2OTg0ODg=",
+                  text: "The ice cream truck jingle made this an instant classic.",
+                  publishTime: 1748058655,
+                  author: {
+                    id: "pfbid02woauK7hrKXtXwq7BCnj6hiCKfaNMUYu7TueHA6DhZS4EYYaKRMTTX5FgH4y1gYn3l",
+                    name: "Lewis Santana",
+                    gender: "MALE",
+                    url: "https://www.facebook.com/luissantana27",
+                  },
+                },
+              ],
+            },
+            {
+              id: "1286064029517682",
+              text: null,
+              url: "https://www.facebook.com/groups/742354120555345/permalink/1286064029517682/",
+              permalink:
+                "https://www.facebook.com/sofiyati.942655/videos/1390174998770652/?idorvanity=742354120555345",
+              author: {
+                __typename: "User",
+                name: "Sofiyati",
+                short_name: "Sofiyati",
+                id: "61552766652796",
+              },
+              reactionCount: 2064,
+              commentCount: 413,
+              videoViewCount: null,
+              publishTime: 1748615813,
+              videoDetails: {
+                sdUrl:
+                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQPNp462YmKD9gM-CvGhQ1-_eLCyuIW2VjmEwBwPB8tUPQsa_U4BUvJaBc349BjbepGeUvf_7cCVZ_vlJew3hpJe.mp4?strext=1&_nc_cat=109&_nc_sid=8bf8fe&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=ae0VsnoLQtAQ7kNvwHqh95e&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjM2MC5zdmVfc2QiLCJ4cHZfYXNzZXRfaWQiOjEwNjUwNzY5ODIxOTkzNzgsInZpX3VzZWNhc2VfaWQiOjEwMTIxLCJkdXJhdGlvbl9zIjoyMSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_zt=28&oh=00_AfIAHBuToUCT7sMnHhi0E_Jg1kXRmYGXvadcWq1fxD_agg&oe=684155D9",
+                hdUrl:
+                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQM9JaJSrDs7LdwNhv0V3RX-rqeSQMAcEKZHxK8r7fJCSfBfjeoicAq5LzZc3MjdpGX3U53iRWH5g9IAl-uyIEWW.mp4?strext=1&_nc_cat=101&_nc_sid=5e9851&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=kF7D9uVefoUQ7kNvwFzu9xR&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjcyMC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjoxMDY1MDc2OTgyMTk5Mzc4LCJ2aV91c2VjYXNlX2lkIjoxMDEyMSwiZHVyYXRpb25fcyI6MjEsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=31e1f90330ba51e1&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HQ2JpNGgyZEFQdDFTeFFGQUZXWUJwS0RTQlZnYm1kakFBQUYVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HRE90OVIwejA2T0Z2eU1HQUN2R1lfWlJLZjFpYnJGcUFBQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmpNH18tGr5AMVAigDQzNlLBdANTul41P3zxgZZGFzaF9oMjY0LWJhc2ljLWdlbjJfNzIwcBEAdQJlkp4BAA&_nc_zt=28&oh=00_AfLW0M3B3nGgopfnkM6OonAjdBwGrIgmwroV3H9P3hg8sA&oe=68415E79",
+                thumbnailUrl:
+                  "https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/502754732_2110163772821086_4373511123704867007_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=106&ccb=1-7&_nc_sid=50ce42&_nc_ohc=3jok6WCUqMcQ7kNvwFXeHG7&_nc_oc=Adkc4JwXklseK8HvROcz5T8GntPXCVjwA7GuYjtdu8nLY9wak-bHzCOqlQyDaY7aOng&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=BIqW4GLH6GWa7rMa2JiKFA&oh=00_AfJpq9CcAaqsZizy2ECTar1NdvELlq3LJ-WgXPgAZ8lmcw&oe=68413302",
+              },
+              topComments: [
+                {
+                  id: "Y29tbWVudDoxMjg2MDY0MDI5NTE3NjgyXzEyODYwOTMwMDI4NDgxMTg=",
+                  text: "No fight to see here, just a chump",
+                  publishTime: 1748618582,
+                  author: {
+                    id: "pfbid06cUKaQWnFynREjde2E8RDsiiwAN7aZxfNAzmM58wkyCGApd8wSaxRyPT7iBXrodal",
+                    name: "Sky Parker",
+                    gender: "MALE",
+                    url: "https://www.facebook.com/OfficerWubWub",
+                  },
+                },
+                {
+                  id: "Y29tbWVudDoxMjg2MDY0MDI5NTE3NjgyXzEyODY1MTYwNTk0NzI0Nzk=",
+                  text: "Idk how yall say that’s a sucker punch. Don’t get in another man’s face n not expect a punch",
+                  publishTime: 1748666313,
+                  author: {
+                    id: "pfbid0mu2nQsJbm7YPPmXvaDY7HXVZHzgEY7V8w5GcxJMrh7EkwTFcLzYRufSp8c2GzBVvl",
+                    name: "Joshua Griffith",
+                    gender: "MALE",
+                    url: "https://www.facebook.com/katakeepsit100",
+                  },
+                },
+              ],
+            },
+          ],
+          cursor: "AQHRBjJCelNvdGRjH8s2j-....",
+        },
+      },
+      {
         name: "Reel",
         method: "GET",
         description: "Get public reel details",
