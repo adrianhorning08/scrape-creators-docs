@@ -17709,7 +17709,8 @@ export const apis = [
             name: "media_type",
             type: "select",
             required: false,
-            description: "Media type of the ad. Defaults to ALL.",
+            description:
+              "Media type of the ad. Defaults to ALL. Meme refers to ads with image and text. Not sure why they call it meme.",
             placeholder: "ALL",
             options: [
               "ALL",
