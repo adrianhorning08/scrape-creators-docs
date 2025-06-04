@@ -1250,12 +1250,29 @@ export const apis = [
         responseFields: [
           {
             path: "aweme_list[0].video.dynamic_cover.url_list",
-            description: "This is the path to get the thumbnail of the tiktok.",
+            description: "Thumbnail",
+          },
+          {
+            path: "aweme_list[0].statistics",
+            description:
+              "All the counts for views, likes, comments, etc. will be in this key",
+          },
+          {
+            path: "aweme_list[0].statistics.play_count",
+            description: "Views",
+          },
+          {
+            path: "aweme_list[0].statistics.digg_count",
+            description: "Likes",
+          },
+          {
+            path: "aweme_list[0].aweme_id",
+            description:
+              "Id of the tiktok. No idea why they call it this, but aweme is a name you'll find everywhere in tiktok responses. ",
           },
           {
             path: "aweme_list[0].video.bit_rate[0].play_addr.url_list",
-            description:
-              "This is the path to get the video of the tiktok (without watermark)",
+            description: "Video without watermark",
           },
           {
             path: "aweme_list[0].is_ad",
@@ -2442,7 +2459,24 @@ export const apis = [
         responseFields: [
           {
             path: "video.bit_rate[1].play_addr.url_list[0]",
-            description: "The URL of the video",
+            description: "The video without watermark",
+          },
+          {
+            path: "statistics.play_count",
+            description: "Views",
+          },
+          {
+            path: "statistics.digg_count",
+            description: "Likes",
+          },
+          {
+            path: "statistics",
+            description:
+              "The statistics object is where you'll find all the counts for views, likes, comments, etc.",
+          },
+          {
+            path: "video.dynamic_cover.url_list",
+            description: "Thumbnail",
           },
           {
             path: "aweme_id",
