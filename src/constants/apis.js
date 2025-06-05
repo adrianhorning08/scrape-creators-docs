@@ -16025,6 +16025,8 @@ export const apis = [
         sampleResponse: {
           success: true,
           name: "Sam Parr",
+          image:
+            "https://media.licdn.com/dms/image/v2/C4E03AQH3Vz1qV_rNVQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1633389534107?e=2147483647&v=beta&t=8x4PIfTIYFOvpI1QRCDyAhNprZv0NY9kAp4EOdvUxLQ",
           location: "Westport, Connecticut, United States",
           followers: 64803,
           connections: "",
