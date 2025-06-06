@@ -1232,6 +1232,7 @@ export const apis = [
               with_promotional_music: false,
               without_watermark: false,
               is_ad: false,
+              is_eligible_for_commission: false,
             },
           ],
           extra: {
@@ -2454,6 +2455,7 @@ export const apis = [
             with_promotional_music: false,
             without_watermark: false,
             is_ad: false,
+            is_eligible_for_commission: false,
           },
         ],
         responseFields: [
