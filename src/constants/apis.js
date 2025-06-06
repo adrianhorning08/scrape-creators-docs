@@ -1272,7 +1272,7 @@ export const apis = [
               "Id of the tiktok. No idea why they call it this, but aweme is a name you'll find everywhere in tiktok responses. ",
           },
           {
-            path: "aweme_list[0].video.bit_rate[0].play_addr.url_list",
+            path: "aweme_list[0].video.play_addr.url_list",
             description: "Video without watermark",
           },
           {
@@ -2464,7 +2464,7 @@ export const apis = [
         ],
         responseFields: [
           {
-            path: "video.bit_rate[1].play_addr.url_list[0]",
+            path: "video.play_addr.url_list[0]",
             description: "The video without watermark",
           },
           {
