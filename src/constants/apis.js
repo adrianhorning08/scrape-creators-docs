@@ -3715,6 +3715,7 @@ export const apis = [
             with_promotional_music: false,
             without_watermark: false,
             is_ad: false,
+            is_eligible_for_commission: false,
           },
           extra: {
             fatal_item_ids: [],
@@ -3729,7 +3730,6 @@ export const apis = [
           transcript:
             "WEBVTT\n\n\n00:00:00.140 --> 00:00:04.020\nAll right. Pizza review time",
         },
-        is_ad: false,
       },
       {
         name: "Transcript",
