@@ -1284,6 +1284,10 @@ export const apis = [
             path: "aweme_list[0].is_top",
             description: "is_top: 1 means the tiktok is pinned",
           },
+          {
+            path: "aweme_list[0].is_eligible_for_commission",
+            description: "If video is promoting an item from tiktok shop",
+          },
         ],
       },
       {
@@ -2489,6 +2493,10 @@ export const apis = [
             path: "is_ad",
             description:
               "Whether the tiktok is an ad. Make sure you're looking at the is_ad field and not the is_ads field",
+          },
+          {
+            path: "is_eligible_for_commission",
+            description: "If video is promoting an item from tiktok shop",
           },
         ],
       },
