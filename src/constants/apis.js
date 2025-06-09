@@ -3760,7 +3760,7 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Language of the transcript. 2 letter language code, ie 'en', 'es', 'fr', 'de', 'it', 'ja', 'ko', 'zh' Default is 'en'",
+              "Language of the transcript. 2 letter language code, ie 'en', 'es', 'fr', 'de', 'it', 'ja', 'ko', 'zh'",
             placeholder: "en",
           },
         ],
