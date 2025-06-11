@@ -11238,6 +11238,14 @@ export const apis = [
             options: ["relevance", "most-liked", "date-posted"],
           },
           {
+            name: "region",
+            type: "string",
+            required: false,
+            description:
+              "Note, this doesn't filter the tiktoks only in a specfic region, it puts the proxy there. Use it in case you want to scrape posts only available for some country. Use 2 letter country codes like US, GB, FR, etc",
+            placeholder: null,
+          },
+          {
             name: "cursor",
             type: "number",
             required: false,
