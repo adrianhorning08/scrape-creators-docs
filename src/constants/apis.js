@@ -13779,6 +13779,10 @@ export const apis = [
             path: "data.xdt_shortcode_media.edge_media_preview_like.count",
             description: "Likes",
           },
+          {
+            path: "data.xdt_shortcode_media.edge_media_to_parent_comment",
+            description: "Comments",
+          },
         ],
         sampleResponse: {
           data: {
