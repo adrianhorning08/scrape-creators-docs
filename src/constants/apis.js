@@ -15313,7 +15313,7 @@ export const apis = [
         name: "Channel Shorts",
         method: "GET",
         description:
-          "Get the shorts from a channel. Can only get the latest shorts. If you'd like me to add support for 'Popular' or 'Oldest', email me: adrian@thewebscrapingguy.com. Also, unfortunately if you need more details about the short like description, publish date, etc, you'll need to use the 'Video/Short Details' endpoint.",
+          "Get the shorts from a channel. If you need more details about the short like description, publish date, etc, you'll need to use the 'Video/Short Details' endpoint.",
         path: "/v1/youtube/channel/shorts",
         paginationField: "continuationToken",
         sampleResponse: {
@@ -15376,7 +15376,7 @@ export const apis = [
         name: "Channel Shorts (we handle the pagination)",
         method: "GET",
         description:
-          "Convenience endpoint to get the latest shorts from a channel. We handle the pagination for you. This will cost you more credits because under the hood we're using the 'Channel Shorts' endpoint, just like you would. But making it easier for you.",
+          "Convenience endpoint to get the latest shorts from a channel. We handle the pagination for you. This will cost you more credits because under the hood we're using the 'Channel Shorts' endpoint, just like you would. But making it easier for you. If you need more details about the short like description, publish date, etc, you'll need to use the 'Video/Short Details' endpoint.",
         path: "/v1/youtube/channel/shorts/simple",
         sampleResponse: [
           {
