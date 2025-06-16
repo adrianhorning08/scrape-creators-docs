@@ -20367,7 +20367,7 @@ export const apis = [
         method: "GET",
         description:
           "Search for posts by keyword. Sadly Threads only returns 20-30 results at a time.",
-        path: "/v1/search/keyword",
+        path: "/v1/threads/search",
         params: [
           {
             name: "query",
