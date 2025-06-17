@@ -19043,8 +19043,7 @@ export const apis = [
             name: "cursor",
             type: "string",
             required: false,
-            description:
-              "Cursor to get more comments, or replies. There are many cursors returned, so feel free to use any of them.",
+            description: "Cursor to get more comments, or replies.",
             placeholder: "ed1lvsa,ed3fnpq,ed25l2w",
           },
         ],
