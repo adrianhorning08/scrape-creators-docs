@@ -17951,9 +17951,9 @@ export const apis = [
         sampleResponse: {
           success: true,
           advertiserId: "AR01614014350098432001",
-          creativeId: "CR12386611206931087361",
+          creativeId: "CR07443539616616939521",
           firstShown: null,
-          lastShown: "2025-03-28T01:48:37.000Z",
+          lastShown: "2025-06-18T18:09:00.000Z",
           format: "text",
           overallImpressions: {
             min: null,
@@ -17970,30 +17970,21 @@ export const apis = [
               regionCode: "US",
               regionName: "United States",
               firstShown: null,
-              lastShown: "2025-03-27T05:00:00.000Z",
+              lastShown: "2025-06-18T05:00:00.000Z",
               impressions: {},
               platformImpressions: [],
             },
           ],
           variations: [
             {
-              destinationUrl: "shop.lululemon.com/shop/steady-state",
-              headline: "Shop Steady State - lululemon® Steady State",
-              description:
-                "The Secret To Our Soft, Naturally Breathable Steady State Collection Is In The Stretch. You&#39;re This Close To Versatile...",
-            },
-            {
-              destinationUrl: "shop.lululemon.com/shop/steady-state",
-              headline:
-                "lululemon® Official Site - Move In Your Favourite Colour",
-              description:
-                "The Secret To Our Soft, Naturally Breathable Steady State Collection Is In The Stretch.",
+              imageUrl:
+                "https://tpc.googlesyndication.com/archive/simgad/5600403686370407078",
             },
             {
               destinationUrl: "shop.lululemon.com",
-              headline: "lululemon® Steady State",
+              headline: "Work Pants, But Stretchy",
               description:
-                "The Secret To Our Soft, Naturally Breathable Steady State Collection Is In The Stretch.",
+                "Move In Lightweight, Comfortable Work Pants That Take Your Day In New Directions.",
             },
           ],
         },
