@@ -24,3 +24,27 @@
 .border-standard {
   @apply border border-gray-200/5 dark:border-gray-800/40;
 }
+
+/* Move CodeMirror search panel to the top */
+.cm-panel.cm-search {
+  top: 0 !important;
+  bottom: auto !important;
+  position: absolute !important;
+  z-index: 10;
+  width: 100%;
+  border-bottom: 1px solid #222;
+  border-top: none;
+  background: #23272e;
+}
+.cm-editor .cm-panels {
+  top: 0 !important;
+  bottom: auto !important;
+  position: absolute !important;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Add padding to the top of the editor so content is not hidden under the panel */
+.cm-editor {
+  padding-top: 2.5em;
+}

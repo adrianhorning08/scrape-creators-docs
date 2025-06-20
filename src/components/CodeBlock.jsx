@@ -7,6 +7,7 @@ import LLMPromptGenerator from "./LLMPromptGenerator";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import { createRoot } from "react-dom/client";
+import CodeMirrorViewer from "./CodeMirrorViewer";
 
 export default function CodeBlock({
   code,
@@ -39,14 +40,56 @@ export default function CodeBlock({
 
   console.log("contextMenu", contextMenu);
 
+  // Reset selectedStatus when endpoint changes
+  useEffect(() => {
+    setSelectedStatus("200");
+  }, [endpoint]);
+
   // Get the response content based on the selected status code
   const getResponseContent = () => {
     if (code) return code;
-    if (!endpoint?.sampleResponse) return statusCodes[selectedStatus].content;
+    if (!endpoint?.sampleResponse)
+      return JSON.stringify(statusCodes[selectedStatus].content, null, 2);
+
+    switch (selectedStatus) {
+      case "200":
+        return JSON.stringify(endpoint.sampleResponse, null, 2);
+      case "200 (trimmed)":
+        if (!endpoint.trimmedResponse) return JSON.stringify({}, null, 2);
+        return JSON.stringify(endpoint.trimmedResponse, null, 2);
+      case "400":
+        return JSON.stringify(
+          {
+            message: "Invalid request parameters",
+          },
+          null,
+          2
+        );
+      case "500":
+        return JSON.stringify(
+          {
+            message: "Internal server error",
+          },
+          null,
+          2
+        );
+      default:
+        return JSON.stringify(statusCodes[selectedStatus].content, null, 2);
+    }
+  };
+
+  // Get formatted HTML content for inline view
+  const getFormattedResponseContent = () => {
+    if (code) return code;
+    if (!endpoint?.sampleResponse)
+      return formatJson(statusCodes[selectedStatus].content);
 
     switch (selectedStatus) {
       case "200":
         return formatJson(endpoint.sampleResponse);
+      case "200 (trimmed)":
+        if (!endpoint.trimmedResponse) return formatJson({});
+        return formatJson(endpoint.trimmedResponse);
       case "400":
         return formatJson({
           message: "Invalid request parameters",
@@ -56,7 +99,7 @@ export default function CodeBlock({
           message: "Internal server error",
         });
       default:
-        return statusCodes[selectedStatus].content;
+        return formatJson(statusCodes[selectedStatus].content);
     }
   };
 
@@ -103,7 +146,14 @@ export default function CodeBlock({
       return;
     }
 
-    const content = isResponseExample ? getResponseContent() : displayCode;
+    if (isFullscreen) {
+      // For CodeMirror, we'll let it handle search internally
+      return;
+    }
+
+    const content = isResponseExample
+      ? getFormattedResponseContent()
+      : displayCode;
     const text = content.replace(/<[^>]+>/g, "");
     const regex = new RegExp(escapeRegExp(query), "gi");
     const matches = Array.from(text.matchAll(regex), (match) => ({
@@ -153,6 +203,14 @@ export default function CodeBlock({
       code: "200",
       color: "text-[#2AB673]",
     },
+    ...(endpoint?.trimmedResponse
+      ? {
+          "200 (trimmed)": {
+            code: "200 (trimmed)",
+            color: "text-[#2AB673]",
+          },
+        }
+      : {}),
     400: {
       code: "400",
       color: "text-[#F59E0B]",
@@ -262,31 +320,35 @@ export default function CodeBlock({
             aria-orientation="horizontal"
           >
             {isResponseExample
-              ? Object.values(statusCodes).map((status) => (
-                  <button
-                    key={status.code}
-                    onClick={() => setSelectedStatus(status.code)}
-                    className={`group flex items-center relative px-2 pt-2.5 pb-2 outline-none whitespace-nowrap font-medium ${
-                      selectedStatus === status.code
-                        ? status.color
-                        : "text-gray-400"
-                    }`}
-                    role="tab"
-                    aria-selected={selectedStatus === status.code}
-                    tabIndex={selectedStatus === status.code ? 0 : -1}
-                  >
-                    <div
-                      className={`px-2 rounded-lg z-10 group-hover:bg-gray-700/60`}
+              ? Object.values(statusCodes)
+                  .sort((a, b) => {
+                    return a.code.localeCompare(b.code);
+                  })
+                  .map((status) => (
+                    <button
+                      key={status.code}
+                      onClick={() => setSelectedStatus(status.code)}
+                      className={`group flex items-center relative px-2 pt-2.5 pb-2 outline-none whitespace-nowrap font-medium ${
+                        selectedStatus === status.code
+                          ? status.color
+                          : "text-gray-400"
+                      }`}
+                      role="tab"
+                      aria-selected={selectedStatus === status.code}
+                      tabIndex={selectedStatus === status.code ? 0 : -1}
                     >
-                      {status.code}
-                    </div>
-                    {selectedStatus === status.code && (
                       <div
-                        className={`absolute inset-0 border-b pointer-events-none ${status.color}`}
-                      ></div>
-                    )}
-                  </button>
-                ))
+                        className={`px-2 rounded-lg z-10 group-hover:bg-gray-700/60`}
+                      >
+                        {status.code}
+                      </div>
+                      {selectedStatus === status.code && (
+                        <div
+                          className={`absolute inset-0 border-b pointer-events-none ${status.color}`}
+                        ></div>
+                      )}
+                    </button>
+                  ))
               : Object.keys(languageExamples).map((lang) => {
                   return (
                     <button
@@ -380,12 +442,12 @@ export default function CodeBlock({
                 dangerouslySetInnerHTML={{
                   __html: isResponseExample
                     ? searchQuery
-                      ? getResponseContent().replace(
+                      ? getFormattedResponseContent().replace(
                           new RegExp(searchQuery, "gi"),
                           (match) =>
                             `<mark class="bg-yellow-400/50 text-white">${match}</mark>`
                         )
-                      : getResponseContent()
+                      : getFormattedResponseContent()
                     : searchQuery
                     ? displayCode.replace(
                         new RegExp(searchQuery, "gi"),
@@ -413,19 +475,23 @@ export default function CodeBlock({
               <div className="flex items-center space-x-4">
                 {isResponseExample ? (
                   <div className="flex space-x-2">
-                    {Object.values(statusCodes).map((status) => (
-                      <button
-                        key={status.code}
-                        onClick={() => setSelectedStatus(status.code)}
-                        className={`px-3 py-1.5 rounded-md text-sm font-medium ${
-                          selectedStatus === status.code
-                            ? `${status.color} bg-gray-800`
-                            : "text-gray-400 hover:text-gray-300"
-                        }`}
-                      >
-                        {status.code}
-                      </button>
-                    ))}
+                    {Object.values(statusCodes)
+                      .sort((a, b) => {
+                        return a.code.localeCompare(b.code);
+                      })
+                      .map((status) => (
+                        <button
+                          key={status.code}
+                          onClick={() => setSelectedStatus(status.code)}
+                          className={`px-3 py-1.5 rounded-md text-sm font-medium ${
+                            selectedStatus === status.code
+                              ? `${status.color} bg-gray-800`
+                              : "text-gray-400 hover:text-gray-300"
+                          }`}
+                        >
+                          {status.code}
+                        </button>
+                      ))}
                   </div>
                 ) : (
                   <div className="flex space-x-2">
@@ -446,43 +512,8 @@ export default function CodeBlock({
                 )}
               </div>
               <div className="flex items-center space-x-4">
-                <div className="relative flex items-center">
-                  <Search className="absolute left-3 w-4 h-4 text-gray-400" />
-                  <input
-                    type="text"
-                    ref={searchInputRef}
-                    value={searchQuery}
-                    onChange={(e) => handleSearch(e.target.value)}
-                    placeholder="Search..."
-                    className="w-64 pl-9 pr-4 py-1.5 bg-gray-800 rounded-md text-sm text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-primary-light"
-                  />
-                  {searchQuery && (
-                    <span className="ml-2 text-xs text-gray-400 flex items-center">
-                      {searchResults.length > 0 ? (
-                        <>
-                          <span className="mr-2">
-                            {currentMatchIndex + 1} of {searchResults.length}
-                          </span>
-                          <button
-                            onClick={() => navigateMatches("prev")}
-                            className="p-1 hover:bg-gray-700 rounded mr-1"
-                            disabled={searchResults.length <= 1}
-                          >
-                            ↑
-                          </button>
-                          <button
-                            onClick={() => navigateMatches("next")}
-                            className="p-1 hover:bg-gray-700 rounded"
-                            disabled={searchResults.length <= 1}
-                          >
-                            ↓
-                          </button>
-                        </>
-                      ) : (
-                        "No matches"
-                      )}
-                    </span>
-                  )}
+                <div className="text-sm text-gray-400">
+                  Press Cmd+F to search
                 </div>
                 <button
                   className="p-1.5 text-gray-400 hover:text-gray-300 rounded-md hover:bg-gray-800 mr-12"
@@ -498,23 +529,19 @@ export default function CodeBlock({
             </div>
           </div>
           <div className="flex-1 overflow-auto p-6">
-            <pre
-              className="h-full text-gray-50"
-              ref={codeRef}
-              onMouseOver={handleMouseOver}
-            >
-              <code
-                dangerouslySetInnerHTML={{
-                  __html: isResponseExample
-                    ? searchQuery
-                      ? highlightMatches(getResponseContent(), searchQuery)
-                      : getResponseContent()
-                    : searchQuery
-                    ? highlightMatches(displayCode, searchQuery)
-                    : displayCode,
-                }}
+            {isResponseExample ? (
+              <CodeMirrorViewer
+                value={getResponseContent()}
+                height="100%"
+                className="h-full"
               />
-            </pre>
+            ) : (
+              <CodeMirrorViewer
+                value={displayCode}
+                height="100%"
+                className="h-full"
+              />
+            )}
           </div>
           {contextMenu.visible && (
             <div
