@@ -103,7 +103,7 @@ export default function TryEndpoint({
       // Build query string
       const queryString = Object.entries(formState.params)
         .filter(([_, value]) => value)
-        .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+        .map(([key, value]) => `${key}=${encodeURIComponent(value?.trim())}`)
         .join("&");
 
       const url = `https://api.scrapecreators.com${selectedEndpoint.path}${
