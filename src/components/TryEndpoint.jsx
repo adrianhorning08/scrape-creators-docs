@@ -113,6 +113,9 @@ export default function TryEndpoint({
       const response = await fetch(url, {
         method: selectedEndpoint.method,
         headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          "Access-Control-Allow-Origin": "*",
           "x-api-key": formState.apiKey,
         },
       });
