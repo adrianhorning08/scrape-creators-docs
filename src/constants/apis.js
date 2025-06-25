@@ -19328,6 +19328,25 @@ export const apis = [
           is_fit_green: true,
         },
       },
+      {
+        name: "Embed HTML",
+        method: "GET",
+        description: "Get the HTML embed for a user's profile",
+        path: "/v1/instagram/user/embed",
+        sampleResponse: {
+          success: true,
+          html: '<!DOCTYPE html>\n<html lang="en" id="facebook" class="no_js">\n<head><meta charset="utf-8.....',
+        },
+        params: [
+          {
+            name: "handle",
+            type: "string",
+            description: "Instagram handle",
+            placeholder: "jane",
+            required: true,
+          },
+        ],
+      },
     ],
   },
   {
