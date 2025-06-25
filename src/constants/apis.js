@@ -19359,7 +19359,7 @@ export const apis = [
         name: "Channel Details",
         method: "GET",
         description:
-          "Get comprehensive channel information including stats and metadata",
+          "Get comprehensive channel information including stats and metadata. Can pass channelId, handle, or url.",
         path: "/v1/youtube/channel",
         sampleResponse: {
           channelId: "UCxcTeAKWJca6XyJ37_ZoKIQ",
@@ -19420,16 +19420,20 @@ export const apis = [
           {
             name: "channelId",
             type: "string",
-            // required: true,
             description: "YouTube channel ID",
             placeholder: "UC-9-kyTW8ZkZNDHQJ6FgpwQ",
           },
           {
             name: "handle",
             type: "string",
-            // required: true,
             description: "YouTube channel handle",
             placeholder: "ThePatMcAfeeShow",
+          },
+          {
+            name: "url",
+            type: "string",
+            description: "YouTube channel URL",
+            placeholder: "https://www.youtube.com/@ThePatMcAfeeShow",
           },
         ],
       },
