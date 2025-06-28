@@ -19112,7 +19112,7 @@ export const apis = [
         name: "Highlights Details",
         method: "GET",
         description: "Get details about a specific highlight",
-        path: "/v1/instagram/highlight/detail",
+        path: "/v1/instagram/user/highlight/detail",
         params: [
           {
             name: "id",
