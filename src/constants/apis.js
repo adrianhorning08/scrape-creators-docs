@@ -1865,6 +1865,11 @@ export const apis = [
         },
         responseFields: [
           {
+            description:
+              "Slideshow images (you'll want all of the 'thumbnail' images",
+            path: "aweme_list[0].image_post_info.images",
+          },
+          {
             path: "aweme_list[0].video.dynamic_cover.url_list",
             description: "Thumbnail",
           },
@@ -3651,6 +3656,11 @@ export const apis = [
         ],
         responseFields: [
           {
+            description:
+              "Slideshow images (you'll want all of the 'thumbnail' images",
+            path: "image_post_info.images",
+          },
+          {
             path: "video.play_addr.url_list[0]",
             description: "The video without watermark",
           },
@@ -3717,6 +3727,11 @@ export const apis = [
           },
         ],
         responseFields: [
+          {
+            description:
+              "Slideshow images (you'll want all of the 'thumbnail' images",
+            path: "image_post_info.images",
+          },
           {
             path: "aweme_detail.video.download_no_watermark_addr.url_list[0]",
             description: "The URL of the video",
