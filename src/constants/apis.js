@@ -19686,6 +19686,7 @@ export const apis = [
               videoUrl: "https://www.youtube.com/watch?v=fRfkvQwf9Po",
             },
           ],
+          keywords: ["charles barkley", "inside the nba"],
           transcript: [
             {
               text: "it was a a lead of 13 for the Rockets up",
