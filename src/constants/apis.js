@@ -22243,10 +22243,18 @@ export const apis = [
           {
             name: "pageId",
             type: "string",
-            required: true,
+            required: false,
             description:
-              "The companies ad library page id. You can get this with my Search For Companies Endpoint. ",
+              "The companies ad library page id. You can get this with my Search For Companies Endpoint. Can either use this or companyName",
             placeholder: "367152833370567",
+          },
+          {
+            name: "companyName",
+            type: "string",
+            required: false,
+            description:
+              "The name of the company. Can either use this or pageId",
+            placeholder: "Lululemon",
           },
           {
             name: "country",
@@ -22551,7 +22559,8 @@ export const apis = [
             name: "company",
             type: "string",
             required: false,
-            description: "The company to search for",
+            description:
+              "The company name to search for. 'Microsoft' for example",
             placeholder: "microsoft",
           },
           {
