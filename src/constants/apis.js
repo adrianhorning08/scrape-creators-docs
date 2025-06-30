@@ -19435,19 +19435,22 @@ export const apis = [
           {
             name: "channelId",
             type: "string",
-            description: "YouTube channel ID",
+            description:
+              "YouTube channel ID. Can pass a channelId, handle or url",
             placeholder: "UC-9-kyTW8ZkZNDHQJ6FgpwQ",
           },
           {
             name: "handle",
             type: "string",
-            description: "YouTube channel handle",
+            description:
+              "YouTube channel handle. Can pass a channelId, handle or url",
             placeholder: "ThePatMcAfeeShow",
           },
           {
             name: "url",
             type: "string",
-            description: "YouTube channel URL",
+            description:
+              "YouTube channel URL. Can pass a channelId, handle or url",
             placeholder: "https://www.youtube.com/@ThePatMcAfeeShow",
           },
         ],
