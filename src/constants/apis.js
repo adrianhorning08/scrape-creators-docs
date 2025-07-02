@@ -1920,9 +1920,17 @@ export const apis = [
           {
             name: "handle",
             type: "string",
-            required: true,
+            required: false,
             placeholder: "stoolpresidente",
-            description: "TikTok username/handle",
+            description:
+              "TikTok username/handle. Can either use handle or user_id",
+          },
+          {
+            name: "user_id",
+            type: "string",
+            required: false,
+            placeholder: "6745191554350760966",
+            description: "TikTok user id. Use this for faster responses.",
           },
           {
             name: "amount",
