@@ -19505,9 +19505,9 @@ export const apis = [
           {
             name: "sort",
             type: "select",
-            description: "Sort by newest or popular",
-            placeholder: "newest",
-            options: ["newest", "popular"],
+            description: "Sort by latest or popular",
+            placeholder: "latest",
+            options: ["latest", "popular"],
           },
           {
             name: "continuationToken",
