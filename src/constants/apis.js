@@ -5458,7 +5458,7 @@ export const apis = [
       {
         name: "Is a TikTok Shop?",
         method: "GET",
-        description: "Checks if a TikTok user is a shop",
+        description: "Checks if a TikTok user has a shop",
         path: "/v1/tiktok/user/is-shop",
         params: [
           {
