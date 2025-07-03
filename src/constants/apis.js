@@ -5456,6 +5456,26 @@ export const apis = [
         },
       },
       {
+        name: "Is a TikTok Shop?",
+        method: "GET",
+        description: "Checks if a TikTok user is a shop",
+        path: "/v1/tiktok/user/is-shop",
+        params: [
+          {
+            name: "handle",
+            type: "string",
+            required: true,
+            description: "TikTok handle",
+            placeholder: "golinutrition",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          has_shop: true,
+          seller_id: "7495794203056835079",
+        },
+      },
+      {
         name: "Comments",
         method: "GET",
         description: "Scrapes comments from a TikTok video",
