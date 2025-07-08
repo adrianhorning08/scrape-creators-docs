@@ -26857,6 +26857,18 @@ export const apis = [
           },
         },
       },
+      {
+        name: "Test Webhook",
+        method: "GET",
+        description:
+          "Send this simple GET request to test your webhook. It will return a sample response to your webhook_url to verify your integration works as expected.",
+        path: "/v1/truthsocial/webhook/test",
+        params: [],
+        sampleResponse: {
+          success: true,
+          message: "Test webhook sent successfully",
+        },
+      },
     ],
   },
   {

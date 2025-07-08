@@ -206,7 +206,15 @@ export default function TryEndpoint({
                 >
                   <div className="flex items-center gap-x-2 border-standard rounded-xl p-1.5 pr-3 min-w-80 hover:bg-gray-50 dark:hover:bg-white/5">
                     <div
-                      className={`rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 dark:bg-green-400/20 dark:text-green-400 text-white bg-[#2AB673]`}
+                      className={`rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 ${
+                        selectedEndpoint.method === "GET"
+                          ? "dark:bg-green-400/20 dark:text-green-400 text-white bg-[#2AB673]"
+                          : selectedEndpoint.method === "POST"
+                          ? "dark:bg-blue-400/20 dark:text-blue-400 text-white bg-blue-700"
+                          : selectedEndpoint.method === "PUT"
+                          ? "dark:bg-yellow-400/20 dark:text-yellow-400 text-white bg-yellow-600"
+                          : "dark:bg-red-400/20 dark:text-red-400 text-white bg-red-700"
+                      }`}
                     >
                       {selectedEndpoint.method}
                     </div>
@@ -279,7 +287,15 @@ export default function TryEndpoint({
               {/* URL Display */}
               <div className="relative flex-1 flex gap-2 min-w-0 rounded-xl items-center cursor-pointer p-1.5 border-standard bg-gray-50 dark:bg-white/5">
                 <div
-                  className={`rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 bg-green-400/20 text-green-700 dark:bg-green-400/20 dark:text-green-400`}
+                  className={`rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 ${
+                    selectedEndpoint.method === "GET"
+                      ? "dark:bg-green-400/20 dark:text-green-400 text-white bg-[#2AB673]"
+                      : selectedEndpoint.method === "POST"
+                      ? "dark:bg-blue-400/20 dark:text-blue-400 text-white bg-blue-700"
+                      : selectedEndpoint.method === "PUT"
+                      ? "dark:bg-yellow-400/20 dark:text-yellow-400 text-white bg-yellow-600"
+                      : "dark:bg-red-400/20 dark:text-red-400 text-white bg-red-700"
+                  }`}
                 >
                   {selectedEndpoint.method}
                 </div>
