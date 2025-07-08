@@ -117,7 +117,9 @@ export default function Sidebar() {
                           }
                           className={`group mt-2 lg:mt-0 flex items-center pr-3 py-1.5 cursor-pointer focus:outline-primary dark:focus:outline-primary-light rounded-xl relative ${
                             currentPath === endpoint.path
-                              ? "bg-primary/10 text-primary font-semibold dark:text-primary-light dark:bg-primary-light/10"
+                              ? endpoint.method === "POST"
+                                ? "bg-blue-100/80 text-blue-700 font-semibold dark:bg-blue-400/10 dark:text-blue-400"
+                                : "bg-primary/10 text-primary font-semibold dark:text-primary-light dark:bg-primary-light/10"
                               : "hover:bg-gray-600/5 dark:hover:bg-gray-200/5 text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
                           }`}
                           style={{ paddingLeft: "1rem" }}
@@ -138,7 +140,16 @@ export default function Sidebar() {
                                 {endpoint.method}
                               </span>
                             </span>
-                            <div className="truncate">{endpoint.name}</div>
+                            <div
+                              className={`truncate ${
+                                currentPath === endpoint.path &&
+                                endpoint.method === "POST"
+                                  ? "text-blue-700 dark:text-blue-400"
+                                  : ""
+                              }`}
+                            >
+                              {endpoint.name}
+                            </div>
                           </div>
                           {endpoint.creditCost > 1 && (
                             <span className="absolute right-3 h-2 w-2 rounded-full bg-purple-800 dark:bg-purple-800" />

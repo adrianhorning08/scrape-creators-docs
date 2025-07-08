@@ -224,19 +224,22 @@ export default function EndpointDocs({
           ]}
         />
 
-        {endpointData.params.length > 0 && (
+        {endpointData?.params?.length > 0 && (
           <ParameterSection
-            title={
-              endpointData?.method === "GET"
-                ? "Query Parameters"
-                : "Body Parameters"
-            }
-            parameters={endpointData.params}
+            title="Query Parameters"
+            parameters={endpointData?.params}
           />
         )}
 
-        {endpointData.responseFields?.length > 0 && (
-          <ResponseFields fields={endpointData.responseFields} />
+        {endpointData?.bodyParams?.length > 0 && (
+          <ParameterSection
+            title="Body Parameters"
+            parameters={endpointData?.bodyParams}
+          />
+        )}
+
+        {endpointData?.responseFields?.length > 0 && (
+          <ResponseFields fields={endpointData?.responseFields} />
         )}
       </div>
 
