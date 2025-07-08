@@ -78,7 +78,8 @@ export default function TryEndpoint({
   const [expandedResponse, setExpandedResponse] = useState(false);
   const formRef = useRef(null);
 
-  const toggleSection = (section) => {
+  const toggleSection = (e, section) => {
+    e.preventDefault();
     setExpandedSections((prev) => ({
       ...prev,
       [section]: !prev[section],
@@ -192,7 +193,7 @@ export default function TryEndpoint({
       />
 
       {/* Modal */}
-      <div className="fixed inset-4 sm:inset-6 md:inset-8 bg-background-light dark:bg-background-dark rounded-xl shadow-2xl ring-1 ring-gray-200/5 dark:ring-gray-800/50 overflow-hidden flex items-center justify-center">
+      <div className="fixed inset-4 sm:inset-6 md:inset-8 bg-background-light dark:bg-background-dark rounded-xl shadow-2xl ring-1 ring-gray-200/5 dark:ring-gray-800/50 overflow-hidden">
         <div className="flex flex-col mx-auto max-w-screen-xl transform overflow-hidden max-h-[90vh] overflow-y-auto">
           <form ref={formRef} onKeyDown={handleKeyDown} className="p-4">
             <div className="flex items-center justify-between gap-x-2 mb-5">
@@ -328,11 +329,7 @@ export default function TryEndpoint({
                 <div className="space-y-2 mt-6">
                   <div>
                     <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleSection("authorization");
-                      }}
+                      onClick={(e) => toggleSection(e, "authorization")}
                       className="flex w-full px-4 py-2.5 items-center justify-between border-standard cursor-pointer hover:bg-gray-50 dark:hover:bg-white/5 !border-b-0 border-t border-x rounded-t-2xl relative"
                     >
                       <div className="flex items-center gap-x-2.5">
@@ -400,14 +397,10 @@ export default function TryEndpoint({
                 </div>
 
                 {/* Query Parameters Section */}
-                {selectedEndpoint.params?.length > 0 && (
+                <div className="space-y-2 mt-6">
                   <div>
                     <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleSection("query");
-                      }}
+                      onClick={(e) => toggleSection(e, "query")}
                       className="flex w-full px-4 py-2.5 items-center justify-between border-standard cursor-pointer hover:bg-gray-50 dark:hover:bg-white/5 !border-b-0 border-t border-x rounded-t-2xl relative"
                     >
                       <div className="flex items-center gap-x-2.5">
@@ -427,8 +420,8 @@ export default function TryEndpoint({
                       )}
                     </button>
                     {expandedSections.query && (
-                      <div className="mt-6 space-y-2 bg-background-light dark:bg-background-dark flex-1 px-4 rounded-b-xl border-standard !border-t-0 divide-y divide-gray-100 dark:divide-white/10">
-                        {selectedEndpoint.params.map((param) => (
+                      <div className="bg-background-light dark:bg-background-dark flex-1 px-4 rounded-b-xl border-standard !border-t-0 divide-y divide-gray-100 dark:divide-white/10">
+                        {selectedEndpoint.params?.map((param) => (
                           <div
                             key={param.name}
                             className="flex space-x-3 items-start py-5"
@@ -484,7 +477,7 @@ export default function TryEndpoint({
                       </div>
                     )}
                   </div>
-                )}
+                </div>
 
                 {/* Body Parameters Section */}
                 {selectedEndpoint.method === "POST" &&
