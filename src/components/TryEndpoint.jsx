@@ -53,10 +53,23 @@ export default function TryEndpoint({
         }),
         {}
       ) || {},
+    bodyParams:
+      selectedEndpoint?.bodyParams?.reduce(
+        (acc, param) => ({
+          ...acc,
+          [param.name]: "",
+        }),
+        {}
+      ) || {},
   });
   const [expandedSections, setExpandedSections] = useState({
     authorization: true,
     query: true,
+    body:
+      (endpoint.bodyParams && endpoint.bodyParams.length > 0) ||
+      (selectedEndpoint.bodyParams && selectedEndpoint.bodyParams.length > 0)
+        ? true
+        : false,
   });
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -84,6 +97,21 @@ export default function TryEndpoint({
           }),
           {}
         ) || {},
+      bodyParams:
+        selectedEndpoint?.bodyParams?.reduce(
+          (acc, param) => ({
+            ...acc,
+            [param.name]: "",
+          }),
+          {}
+        ) || {},
+    }));
+    setExpandedSections((prev) => ({
+      ...prev,
+      body:
+        selectedEndpoint.bodyParams && selectedEndpoint.bodyParams.length > 0
+          ? true
+          : false,
     }));
   }, [selectedEndpoint]);
 
@@ -110,7 +138,7 @@ export default function TryEndpoint({
         queryString ? `?${queryString}` : ""
       }`;
 
-      const response = await fetch(url, {
+      let fetchOptions = {
         method: selectedEndpoint.method,
         headers: {
           "Content-Type": "application/json",
@@ -118,8 +146,18 @@ export default function TryEndpoint({
           "Access-Control-Allow-Origin": "*",
           "x-api-key": formState.apiKey,
         },
-      });
+      };
 
+      // Only for the webhook endpoint, send bodyParams as JSON for POST
+      if (
+        selectedEndpoint.method === "POST" &&
+        selectedEndpoint.path === "/v1/truthsocial/webhook" &&
+        selectedEndpoint.bodyParams?.length > 0
+      ) {
+        fetchOptions.body = JSON.stringify(formState.bodyParams);
+      }
+
+      const response = await fetch(url, fetchOptions);
       const data = await response.json();
 
       if (!response.ok) {
@@ -154,8 +192,8 @@ export default function TryEndpoint({
       />
 
       {/* Modal */}
-      <div className="fixed inset-4 sm:inset-6 md:inset-8 bg-background-light dark:bg-background-dark rounded-xl shadow-2xl ring-1 ring-gray-200/5 dark:ring-gray-800/50 overflow-hidden">
-        <div className="flex flex-col mx-auto max-w-screen-xl transform overflow-hidden">
+      <div className="fixed inset-4 sm:inset-6 md:inset-8 bg-background-light dark:bg-background-dark rounded-xl shadow-2xl ring-1 ring-gray-200/5 dark:ring-gray-800/50 overflow-hidden flex items-center justify-center">
+        <div className="flex flex-col mx-auto max-w-screen-xl transform overflow-hidden max-h-[90vh] overflow-y-auto">
           <form ref={formRef} onKeyDown={handleKeyDown} className="p-4">
             <div className="flex items-center justify-between gap-x-2 mb-5">
               {/* Method Selector */}
@@ -290,7 +328,11 @@ export default function TryEndpoint({
                 <div className="space-y-2 mt-6">
                   <div>
                     <button
-                      onClick={() => toggleSection("authorization")}
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleSection("authorization");
+                      }}
                       className="flex w-full px-4 py-2.5 items-center justify-between border-standard cursor-pointer hover:bg-gray-50 dark:hover:bg-white/5 !border-b-0 border-t border-x rounded-t-2xl relative"
                     >
                       <div className="flex items-center gap-x-2.5">
@@ -358,10 +400,14 @@ export default function TryEndpoint({
                 </div>
 
                 {/* Query Parameters Section */}
-                <div className="space-y-2 mt-6">
+                {selectedEndpoint.params?.length > 0 && (
                   <div>
                     <button
-                      onClick={() => toggleSection("query")}
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleSection("query");
+                      }}
                       className="flex w-full px-4 py-2.5 items-center justify-between border-standard cursor-pointer hover:bg-gray-50 dark:hover:bg-white/5 !border-b-0 border-t border-x rounded-t-2xl relative"
                     >
                       <div className="flex items-center gap-x-2.5">
@@ -381,8 +427,8 @@ export default function TryEndpoint({
                       )}
                     </button>
                     {expandedSections.query && (
-                      <div className="bg-background-light dark:bg-background-dark flex-1 px-4 rounded-b-xl border-standard !border-t-0 divide-y divide-gray-100 dark:divide-white/10">
-                        {selectedEndpoint.params?.map((param) => (
+                      <div className="mt-6 space-y-2 bg-background-light dark:bg-background-dark flex-1 px-4 rounded-b-xl border-standard !border-t-0 divide-y divide-gray-100 dark:divide-white/10">
+                        {selectedEndpoint.params.map((param) => (
                           <div
                             key={param.name}
                             className="flex space-x-3 items-start py-5"
@@ -438,7 +484,89 @@ export default function TryEndpoint({
                       </div>
                     )}
                   </div>
-                </div>
+                )}
+
+                {/* Body Parameters Section */}
+                {selectedEndpoint.method === "POST" &&
+                  selectedEndpoint.path === "/v1/truthsocial/webhook" &&
+                  selectedEndpoint.bodyParams?.length > 0 && (
+                    <div
+                      className="space-y-2 mt-6"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <div>
+                        <div className="flex w-full px-4 py-2.5 items-center border-standard border-t border-x rounded-t-2xl relative bg-gray-50 dark:bg-white/5">
+                          <div className="flex items-center gap-x-2.5">
+                            <div className="flex-1 flex items-center space-x-2">
+                              <div className="text-sm font-medium text-gray-800 dark:text-gray-200 leading-6">
+                                Body Parameters
+                              </div>
+                            </div>
+                          </div>
+                          <div className="absolute bottom-0 left-0 w-full h-[1.5px] bg-primary dark:bg-primary-light"></div>
+                        </div>
+                        <div className="bg-background-light dark:bg-background-dark flex-1 px-4 rounded-b-xl border-standard !border-t-0 divide-y divide-gray-100 dark:divide-white/10">
+                          {selectedEndpoint.bodyParams.map((param) => (
+                            <div
+                              key={param.name}
+                              className="flex space-x-3 items-start py-5"
+                            >
+                              <div className="flex-1 grid lg:grid-cols-2 gap-x-12 gap-y-4 py-5">
+                                <div className="space-y-2">
+                                  <div className="flex items-center justify-between font-mono font-bold">
+                                    <div className="flex flex-wrap items-center gap-2 text-xs truncate">
+                                      <div className="text-sm truncate">
+                                        <span className="font-semibold text-gray-900 dark:text-gray-100">
+                                          {param.name}
+                                        </span>
+                                      </div>
+                                      <div className="relative flex items-center px-2 py-0.5 rounded-md bg-gray-100/50 dark:bg-white/5 text-gray-600 dark:text-gray-300 font-medium">
+                                        <div>{param.type}</div>
+                                      </div>
+                                      {param.required && (
+                                        <span className="px-2 py-0.5 rounded-md bg-red-100/50 dark:bg-red-400/10 text-red-600 dark:text-red-300 font-medium">
+                                          required
+                                        </span>
+                                      )}
+                                    </div>
+                                  </div>
+                                  <div className="prose prose-sm prose-gray dark:prose-invert text-gray-500 dark:text-gray-400">
+                                    <p className="whitespace-pre-line">
+                                      {param.description}
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="grid grid-cols-1 w-full items-start divide-y divide-gray-50 dark:divide-white/5">
+                                  <input
+                                    className="flex-1 min-w-0 bg-transparent outline-none text-gray-900 dark:text-white px-2 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 focus:border-primary dark:focus:border-primary-light"
+                                    placeholder={`enter ${param.name}`}
+                                    type={
+                                      param.type === "integer"
+                                        ? "number"
+                                        : "text"
+                                    }
+                                    value={
+                                      formState.bodyParams[param.name] || ""
+                                    }
+                                    onKeyDown={handleKeyDown}
+                                    onChange={(e) =>
+                                      setFormState((prev) => ({
+                                        ...prev,
+                                        bodyParams: {
+                                          ...prev.bodyParams,
+                                          [param.name]: e.target.value,
+                                        },
+                                      }))
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
               </div>
 
               {/* Right Column - Code Previews */}

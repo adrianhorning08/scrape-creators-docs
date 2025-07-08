@@ -26766,6 +26766,7 @@ export const apis = [
         description:
           "Webhook to immediately get notified when Trump posts something. Email me to get this setup: adrian@thewebscrapingguy.com. The sample response is the response we'll send to your webhook_url. Make sure your webhook accepts a POST request.",
         path: "/v1/truthsocial/webhook",
+        params: [],
         bodyParams: [
           {
             name: "webhook_url",
