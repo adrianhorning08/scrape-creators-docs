@@ -1,15 +1,15 @@
-import { getNodejsExample } from './examples/nodejs';
-import { getCurlExample } from './examples/curl';
-import { getPythonExample } from './examples/python';
-import { phpExample } from './examples/php';
-import { goExample } from './examples/go';
-import { javaExample } from './examples/java';
+import { getNodejsExample } from "./examples/nodejs";
+import { getCurlExample } from "./examples/curl";
+import { getPythonExample } from "./examples/python";
+import { getPhpExample } from "./examples/php";
+import { getGoExample } from "./examples/go";
+import { getJavaExample } from "./examples/java";
 
 export const getLanguageExamples = (endpoint, formState, inModal) => ({
   cURL: getCurlExample(endpoint, formState, inModal),
-  'Node.js': getNodejsExample(endpoint, formState, inModal),
+  "Node.js": getNodejsExample(endpoint, formState, inModal),
   Python: getPythonExample(endpoint, formState, inModal),
-  PHP: phpExample,
-  Go: goExample,
-  Java: javaExample
+  PHP: getPhpExample(endpoint, formState, inModal),
+  Go: getGoExample(endpoint, formState, inModal),
+  Java: getJavaExample(endpoint, formState, inModal),
 });

@@ -125,6 +125,13 @@ export default function CodeBlock({
 
   const isResponseExample = language === "200" || language === "400";
 
+  // Utility to decode HTML entities
+  function decodeHtmlEntities(str) {
+    const txt = document.createElement("textarea");
+    txt.innerHTML = str;
+    return txt.value;
+  }
+
   const handleCopy = async () => {
     let textToCopy;
     if (isResponseExample) {
@@ -132,7 +139,14 @@ export default function CodeBlock({
         endpoint?.sampleResponse || statusCodes[selectedStatus].content;
       textToCopy = JSON.stringify(responseData, null, 2);
     } else {
-      textToCopy = displayCode.replace(/<[^>]+>/g, "");
+      console.log("displayCode before processing:", displayCode); // DEBUG
+      // Use DOM to extract text content, preserving all inner text
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = displayCode;
+      textToCopy = tempDiv.textContent || tempDiv.innerText || "";
+      // textToCopy = displayCode.replace(/<[^>]+>/g, "");
+      // textToCopy = decodeHtmlEntities(textToCopy); // decode HTML entities
+      console.log("textToCopy after processing:", textToCopy); // DEBUG
     }
     await navigator.clipboard.writeText(textToCopy);
     setCopied(true);
