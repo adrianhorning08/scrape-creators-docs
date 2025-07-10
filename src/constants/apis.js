@@ -12217,6 +12217,14 @@ export const apis = [
             description: "Hashtag to search for (without #)",
           },
           {
+            name: "region",
+            type: "string",
+            required: false,
+            description:
+              "Region the proxy will be set to. Note: this isn't going to grab you all tiktoks from this region, you're just setting the proxy there.",
+            placeholder: "US",
+          },
+          {
             name: "cursor",
             type: "number",
             required: false,
