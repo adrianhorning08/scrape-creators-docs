@@ -26772,7 +26772,7 @@ export const apis = [
         name: "Webhook",
         method: "POST",
         description:
-          "Webhook to immediately get notified when Trump posts something. Email me to get this setup: adrian@thewebscrapingguy.com. The sample response is the response we'll send to your webhook_url. Make sure your webhook accepts a POST request.",
+          "Webhook to immediately get notified when Trump posts something. Costs $500/month. Email me to get this setup: adrian@thewebscrapingguy.com. The sample response is the response we'll send to your webhook_url. Make sure your webhook accepts a POST request.",
         path: "/v1/truthsocial/webhook",
         params: [],
         bodyParams: [
