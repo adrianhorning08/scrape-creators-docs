@@ -23268,7 +23268,7 @@ export const apis = [
         name: "Ad Details",
         method: "GET",
         description:
-          "Get the details for an ad. Since there are so many variations, the return types might not all be 100% the same, email me for suggestions. Also this endpoint is pretty new, if you find any errors or irregularities, please email me: adrian@thewebscrapingguy.com",
+          "Get the details for an ad. I'm using an OCR to get the text from the ad, so it might not be 100% accurate. If you find any errors or irregularities, please email me: adrian@thewebscrapingguy.com",
         path: "/v1/google/ad",
         params: [
           {
@@ -23309,8 +23309,14 @@ export const apis = [
           ],
           variations: [
             {
+              destinationUrl: "shop.lululemon.com/gifts-for-all",
+              headline: "lululemonⓇ Official Site - Best Birthday Gifts",
+              description:
+                "Find The Perfect Gifts At lululemon . We Have You Covered . Shop Online For Your Gifts . Birthday Gifts For Everyone ...",
+              allText:
+                "Sponsored Ω lululemon shop.lululemon.com/gifts-for-all lululemonⓇ Official Site - Best Birthday Gifts Find The Perfect Gifts At lululemon . We Have You Covered . Shop Online For Your Gifts . Birthday Gifts For Everyone ...",
               imageUrl:
-                "https://tpc.googlesyndication.com/archive/simgad/5600403686370407078",
+                "https://tpc.googlesyndication.com/archive/simgad/2201045439314643090",
             },
             {
               destinationUrl: "shop.lululemon.com",
