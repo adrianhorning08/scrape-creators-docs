@@ -29476,6 +29476,14 @@ export const apis = [
             description: "Search query",
             placeholder: "austen allred",
           },
+          {
+            name: "region",
+            type: "string",
+            required: false,
+            description:
+              "2 letter country code, ie US, UK, CA, etc This will show results from that country",
+            placeholder: "US",
+          },
         ],
         sampleResponse: {
           success: true,
