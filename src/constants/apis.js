@@ -5455,26 +5455,26 @@ export const apis = [
             "WEBVTT\n\n\n00:00:00.120 --> 00:00:01.840\nAlright, pizza review time.\n\n00:00:01.841 --> 00:00:03.761\nSal's Pizza Factory. Oh,\n\n00:00:03.762 --> 00:00:05.721\nit's Fucking Corn. We're in Charlotte.\n\n00:00:05.722 --> 00:00:07.861\nAlright man, any chance I can get a real quick picture?\n\n00:00:07.920 --> 00:00:10.040\nShaq or Dwight Howard? I gotta pick one.\\n",
         },
       },
-      {
-        name: "Is a TikTok Shop?",
-        method: "GET",
-        description: "Checks if a TikTok user has a shop",
-        path: "/v1/tiktok/user/is-shop",
-        params: [
-          {
-            name: "handle",
-            type: "string",
-            required: true,
-            description: "TikTok handle",
-            placeholder: "golinutrition",
-          },
-        ],
-        sampleResponse: {
-          success: true,
-          has_shop: true,
-          seller_id: "7495794203056835079",
-        },
-      },
+      // {
+      //   name: "Is a TikTok Shop?",
+      //   method: "GET",
+      //   description: "Checks if a TikTok user has a shop",
+      //   path: "/v1/tiktok/user/is-shop",
+      //   params: [
+      //     {
+      //       name: "handle",
+      //       type: "string",
+      //       required: true,
+      //       description: "TikTok handle",
+      //       placeholder: "golinutrition",
+      //     },
+      //   ],
+      //   sampleResponse: {
+      //     success: true,
+      //     has_shop: true,
+      //     seller_id: "7495794203056835079",
+      //   },
+      // },
       {
         name: "TikTok Live",
         method: "GET",
