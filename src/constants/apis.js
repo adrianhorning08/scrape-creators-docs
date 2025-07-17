@@ -17847,7 +17847,7 @@ export const apis = [
         },
       },
       {
-        name: "Comments",
+        name: "Comments (We handle pagination)",
         method: "GET",
         description:
           "Get comments from an Instagram post or reel. Note! that this costs more than 1 credit! This costs 1 credit per 15 comments. This won't return *all* the comments, but a good number of them.",
