@@ -17847,6 +17847,112 @@ export const apis = [
         },
       },
       {
+        name: "Comments",
+        method: "GET",
+        description:
+          "Get comments from an Instagram post or reel. Note! that this costs more than 1 credit! This costs 1 credit per 15 comments. This won't return *all* the comments, but a good number of them.",
+        path: "/v1/instagram/post/comments/simple",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            placeholder: "https://www.instagram.com/p/CgHwuFKF-Kg",
+            description: "Instagram post or reel URL",
+          },
+          {
+            name: "amount",
+            type: "number",
+            required: false,
+            description:
+              "The number of comments to return. Default is 15. Max is probably around 300, but its all up to IG and how much they will return publicly.",
+            placeholder: 15,
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          num_comments_grabbed: 343,
+          credit_cost: 24,
+          comments: [
+            {
+              id: "17916526530048829",
+              text: "😂😂😂😂😂😂😂",
+              created_at: "2025-01-17T14:07:40.000Z",
+              user: {
+                is_verified: false,
+                id: "64101106104",
+                pk: "64101106104",
+                is_unpublished: null,
+                profile_pic_url:
+                  "https://scontent-lga3-2.cdninstagram.com/v/t51.2885-19/515857435_17913060081138105_4433643099177509543_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2QF0RUclxaxRVDdjSMaair3xlIKXj6qV8ecAwZMvDqy1ACajqWexeI0G2B8VAxnW8eM&_nc_ohc=K0_G5Fx9CXEQ7kNvwE0Vfo4&_nc_gid=NBHJ0qb2fvHOgXrdfoebLw&edm=AKp6CbIBAAAA&ccb=7-5&oh=00_AfR73RRM2S6GVMq3yEEDZx1sKlx2HQBEu_332NHLm_ld7w&oe=687F1930&_nc_sid=d62176",
+                username: "hearts4_therealest",
+                fbid_v2: "17841464143122638",
+              },
+            },
+            {
+              id: "17931241376801152",
+              text: "😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂",
+              created_at: "2024-08-30T17:24:32.000Z",
+              user: {
+                is_verified: false,
+                id: "33778481496",
+                pk: "33778481496",
+                is_unpublished: null,
+                profile_pic_url:
+                  "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/464760996_1254146839119862_3605321457742435801_n.png?stp=dst-jpg_e0_s150x150_tt6&cb=8577c754-c2464923&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2QF1ncIXv-_c-Lhp0II64rOAdUJzBcaRSK2kukM4lb0Mmud0_K8Lch0QRLtEn1mKHo1O-db9dRnPxgzPjxLxLeyU&_nc_ohc=DaCttfv6CKgQ7kNvwGeynrm&_nc_gid=9Iv9lw1l_pjnbGj7YcuO7A&edm=AEsR1pMBAAAA&ccb=7-5&ig_cache_key=YW5vbnltb3VzX3Byb2ZpbGVfcGlj.3-ccb7-5-cb8577c754-c2464923&oh=00_AfSc4Bm7f6Jsv9qPJeZjsCXtZXISQMBKxLNBdEvFYlt3Ug&oe=687F3828&_nc_sid=e2f88a",
+                username: "fuckmswerv",
+                fbid_v2: "17841433644902310",
+              },
+            },
+            {
+              id: "18037210901506897",
+              text: "😂😂😂😂😂",
+              created_at: "2024-08-28T02:30:25.000Z",
+              user: {
+                is_verified: false,
+                id: "1959716030",
+                pk: "1959716030",
+                is_unpublished: null,
+                profile_pic_url:
+                  "https://scontent-lga3-3.cdninstagram.com/v/t51.2885-19/472195737_2670408769835552_6982359231760651705_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_cat=108&_nc_oc=Q6cZ2QF0RUclxaxRVDdjSMaair3xlIKXj6qV8ecAwZMvDqy1ACajqWexeI0G2B8VAxnW8eM&_nc_ohc=Vj5Md0OGYSEQ7kNvwHaT6iW&_nc_gid=NBHJ0qb2fvHOgXrdfoebLw&edm=AKp6CbIBAAAA&ccb=7-5&oh=00_AfSPkbhYnecidyP28MQCwAa_5NT8aYVN7qBUKPHoK2OikA&oe=687F2F89&_nc_sid=d62176",
+                username: "v.ibeswithmo",
+                fbid_v2: "17841402040904964",
+              },
+            },
+            {
+              id: "18356511118113286",
+              text: "@xxanaxdamage",
+              created_at: "2024-07-28T06:34:24.000Z",
+              user: {
+                is_verified: false,
+                id: "12556711876",
+                pk: "12556711876",
+                is_unpublished: null,
+                profile_pic_url:
+                  "https://scontent-lga3-2.cdninstagram.com/v/t51.2885-19/521407303_18135459274423877_1928332390050004414_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2QF0RUclxaxRVDdjSMaair3xlIKXj6qV8ecAwZMvDqy1ACajqWexeI0G2B8VAxnW8eM&_nc_ohc=PLj9PoDtTWEQ7kNvwHST_aq&_nc_gid=NBHJ0qb2fvHOgXrdfoebLw&edm=AKp6CbIBAAAA&ccb=7-5&oh=00_AfS2paK8NfIvsofgOVWmFlJd8rlY7hfj09TlNujSr5jNrw&oe=687F3D7F&_nc_sid=d62176",
+                username: "dirtydreadslol",
+                fbid_v2: "17841412716289588",
+              },
+            },
+            {
+              id: "18094964092430915",
+              text: "lol 😂",
+              created_at: "2024-07-01T08:07:04.000Z",
+              user: {
+                is_verified: false,
+                id: "5733134375",
+                pk: "5733134375",
+                is_unpublished: null,
+                profile_pic_url:
+                  "https://scontent-lga3-2.cdninstagram.com/v/t51.2885-19/474108436_484529044349887_1991397815099366609_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_cat=107&_nc_oc=Q6cZ2QF0RUclxaxRVDdjSMaair3xlIKXj6qV8ecAwZMvDqy1ACajqWexeI0G2B8VAxnW8eM&_nc_ohc=oRzXdFjS4OMQ7kNvwHAoDvx&_nc_gid=NBHJ0qb2fvHOgXrdfoebLw&edm=AKp6CbIBAAAA&ccb=7-5&oh=00_AfT0NUFRgX8gTTZQYePw89vAXO1PF3Mch508gaJbH6WuTA&oe=687F45C5&_nc_sid=d62176",
+                username: "officialrickrosa",
+                fbid_v2: "17841405711276641",
+              },
+            },
+          ],
+        },
+      },
+      {
         name: "Reels",
         method: "GET",
         description:
