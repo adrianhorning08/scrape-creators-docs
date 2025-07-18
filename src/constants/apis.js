@@ -24829,6 +24829,268 @@ export const apis = [
             "Since you're kind of like a leader in innovation and technology in our world, you know, um do you how do you know that what your convictions are, how do you gauge if what your convictions are are the best for everybody kind of? Like how do you kind of figure that out, you know? It seems like such a challenge. I mean, look at the end of the day, um there are still a lot of options of things that people can do. Just because I build something doesn't mean that people are going to use it. Actually a lot of the things that I build like some of some of them work, some of them don't. And like I think part of the reason why the company has been successful is because, you know, maybe we have a slightly higher hit rate of things working than others. But if we do something that doesn't work, then in general people aren't going to use it. And then the future doesn't go in that direction. So I see. So you're saying it's up to the user more. Yeah, I mean look, it's always served me well to generally have faith in people and believe that people are smart and can make good decisions for themselves. And whenever we try to like adopt some sort of like attitude of oh we must know better than them. It's like we're like we're the people building technology. That's when you lose. So I I I tend to just think that at the end of the day, yeah, I mean I think people are smarter than than a lot of people think and I think ultimately drive the direction that society goes in.",
         },
       },
+      {
+        name: "Community",
+        method: "GET",
+        description: "Get the details of a Twitter(X) Community",
+        path: "/v1/twitter/community",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Community URL",
+            placeholder: "https://x.com/i/communities/1926186499399139650",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          __typename: "Community",
+          is_member: false,
+          name: "The First Thousand",
+          role: "NonMember",
+          rest_id: "1926186499399139650",
+          actions: {
+            join_action_result: {
+              __typename: "CommunityJoinActionUnavailable",
+            },
+            id: "Q29tbXVuaXR5QWN0aW9uczoxOTI2MTg2NDk5Mzk5MTM5NjUw",
+          },
+          description:
+            "This community is for creators and builders who are growing to their first 1,000 followers. Give insights, build your brand, and grow a loyal audience.",
+          creator_results: {
+            result: {
+              __typename: "User",
+              id: "VXNlcjoxOTIxMzY4NDU0NDQ5MjAxMTUy",
+              is_blue_verified: true,
+              core: {
+                screen_name: "CanaCarson",
+              },
+              verification: {
+                verified: false,
+              },
+            },
+            id: "VXNlclJlc3VsdHM6MTkyMTM2ODQ1NDQ0OTIwMTE1Mg==",
+          },
+          join_policy: "Open",
+          created_at: 1748073622931,
+          rules: [
+            {
+              rest_id: "1926189963793609186",
+              description:
+                "This isn’t the space to drop ChatGPT engineered empty platitudes",
+              name: "No Empty Platitudes",
+              id: "Q29tbXVuaXR5UnVsZToxOTI2MTg5OTYzNzkzNjA5MTg2",
+            },
+            {
+              rest_id: "1926190339016048686",
+              description: "Show how you’re cracking the algorithm",
+              name: "Post What’s Working",
+              id: "Q29tbXVuaXR5UnVsZToxOTI2MTkwMzM5MDE2MDQ4Njg2",
+            },
+            {
+              rest_id: "1926190261610135711",
+              description:
+                "Post your analytics. Let’s compete to see who is going the hardest",
+              name: "Share Your Stats",
+              id: "Q29tbXVuaXR5UnVsZToxOTI2MTkwMjYxNjEwMTM1NzEx",
+            },
+            {
+              rest_id: "1941739813725467051",
+              description:
+                "That’s not the point of this community. It’s to share wins of how you grow, and growing the right audience. If someone interests you, follow them.",
+              name: "No F4F posts",
+              id: "Q29tbXVuaXR5UnVsZToxOTQxNzM5ODEzNzI1NDY3MDUx",
+            },
+            {
+              rest_id: "1941742414554603805",
+              name: "No fake accounts",
+              id: "Q29tbXVuaXR5UnVsZToxOTQxNzQyNDE0NTU0NjAzODA1",
+            },
+          ],
+          members_facepile_results: [
+            {
+              result: {
+                __typename: "User",
+                avatar: {
+                  image_url:
+                    "https://pbs.twimg.com/profile_images/1944871269775601664/Ho7tiGd2_normal.jpg",
+                },
+                id: "VXNlcjoxOTIxMzY4NDU0NDQ5MjAxMTUy",
+              },
+              id: "VXNlclJlc3VsdHM6MTkyMTM2ODQ1NDQ0OTIwMTE1Mg==",
+            },
+            {
+              result: {
+                __typename: "User",
+                avatar: {
+                  image_url:
+                    "https://pbs.twimg.com/profile_images/1905068543885864961/lsxmrv8l_normal.jpg",
+                },
+                id: "VXNlcjo0MDA2ODgyNzYx",
+              },
+              id: "VXNlclJlc3VsdHM6NDAwNjg4Mjc2MQ==",
+            },
+            {
+              result: {
+                __typename: "User",
+                avatar: {
+                  image_url:
+                    "https://pbs.twimg.com/profile_images/1932171291362279424/7z8KirkZ_normal.jpg",
+                },
+                id: "VXNlcjoxOTI0NTI2MDM1NTUyNjMyODMy",
+              },
+              id: "VXNlclJlc3VsdHM6MTkyNDUyNjAzNTU1MjYzMjgzMg==",
+            },
+            {
+              result: {
+                __typename: "User",
+                avatar: {
+                  image_url:
+                    "https://pbs.twimg.com/profile_images/1936175360355246080/ut_hvG-K_normal.jpg",
+                },
+                id: "VXNlcjoxMDExNjE5NTY4NTA5NTA5NjMy",
+              },
+              id: "VXNlclJlc3VsdHM6MTAxMTYxOTU2ODUwOTUwOTYzMg==",
+            },
+            {
+              result: {
+                __typename: "User",
+                avatar: {
+                  image_url:
+                    "https://pbs.twimg.com/profile_images/1790570742247043072/uyEKz7o__normal.jpg",
+                },
+                id: "VXNlcjoxMTkyNTYxNzY4NTc0NDcyMTky",
+              },
+              id: "VXNlclJlc3VsdHM6MTE5MjU2MTc2ODU3NDQ3MjE5Mg==",
+            },
+          ],
+          member_count: 1896,
+          id: "Q29tbXVuaXR5OjE5MjYxODY0OTkzOTkxMzk2NTA=",
+        },
+      },
+      {
+        name: "Community Tweets",
+        method: "GET",
+        description: "Get the tweets from a Twitter(X) Community",
+        path: "/v1/twitter/community/tweets",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Community URL",
+            placeholder: "https://x.com/i/communities/1926186499399139650",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          tweets: [
+            {
+              id: "1940874916771123735",
+              source:
+                '<a href="http://twitter.com/download/iphone" rel="nofollow">Twitter for iPhone</a>',
+              view_count: "8660",
+              bookmark_count: 10,
+              bookmarked: false,
+              created_at: "Thu Jul 03 20:46:54 +0000 2025",
+              conversation_id_str: "1940874916771123735",
+              display_text_range: [0, 27],
+              favorite_count: 173,
+              favorited: false,
+              full_text: "You just need 1 viral tweet https://t.co/Z4Q5jtsxAp",
+              is_quote_status: false,
+              lang: "en",
+              possibly_sensitive: false,
+              possibly_sensitive_editable: true,
+              quote_count: 2,
+              reply_count: 55,
+              retweet_count: 3,
+              retweeted: false,
+              user_id_str: "73647967",
+              id_str: "1940874916771123735",
+              user: {
+                __typename: "User",
+                id: "VXNlcjo3MzY0Nzk2Nw==",
+                rest_id: "73647967",
+                affiliates_highlighted_label: {},
+                avatar: {
+                  image_url:
+                    "https://pbs.twimg.com/profile_images/1590652776719286274/eeualJ2p_normal.jpg",
+                },
+                core: {
+                  created_at: "Sat Sep 12 14:00:05 +0000 2009",
+                  name: "Mike in’ Software",
+                  screen_name: "mikeinsoftware",
+                },
+                dm_permissions: {},
+                is_blue_verified: true,
+                legacy: {
+                  default_profile: true,
+                  default_profile_image: false,
+                  description:
+                    "Senior SWE👨‍💻 Indie hacking my way to financial freedom 👀 Follow for free early access to next project",
+                  entities: {
+                    description: {
+                      urls: [],
+                    },
+                  },
+                  fast_followers_count: 0,
+                  favourites_count: 7532,
+                  followers_count: 1173,
+                  friends_count: 990,
+                  has_custom_timelines: true,
+                  is_translator: false,
+                  listed_count: 8,
+                  media_count: 518,
+                  normal_followers_count: 1173,
+                  pinned_tweet_ids_str: ["1945599110876176561"],
+                  possibly_sensitive: false,
+                  profile_interstitial_type: "",
+                  statuses_count: 2931,
+                  translator_type: "none",
+                  withheld_in_countries: [],
+                },
+                location: {
+                  location: "",
+                },
+                media_permissions: {},
+                parody_commentary_fan_label: "None",
+                profile_image_shape: "Circle",
+                professional: {
+                  rest_id: "1928057904189559014",
+                  professional_type: "Creator",
+                  category: [
+                    {
+                      id: 1055,
+                      name: "Software developer/Programmer/Software engineer",
+                      icon_name: "IconBriefcaseStroke",
+                    },
+                  ],
+                },
+                privacy: {
+                  protected: false,
+                },
+                relationship_perspectives: {},
+                tipjar_settings: {
+                  is_enabled: false,
+                  bandcamp_handle: "",
+                  bitcoin_handle: "",
+                  cash_app_handle: "",
+                  ethereum_handle: "",
+                  gofundme_handle: "",
+                  patreon_handle: "",
+                  pay_pal_handle: "",
+                  venmo_handle: "",
+                },
+                verification: {
+                  verified: false,
+                },
+              },
+            },
+          ],
+        },
+      },
     ],
   },
   {
