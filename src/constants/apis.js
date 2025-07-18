@@ -26822,6 +26822,181 @@ export const apis = [
           after: "t3_1izmcgx",
         },
       },
+      {
+        name: "Search Ads",
+        method: "GET",
+        description:
+          "Search the Reddit Ad Library. Can only get a max of 30 ads.",
+        path: "/v1/reddit/ads/search",
+        params: [
+          {
+            name: "query",
+            type: "string",
+            required: true,
+            description: "Search query",
+            placeholder: "Trump",
+          },
+          {
+            name: "industries",
+            type: "select",
+            required: false,
+            description: "Industries to filter by",
+            options: [
+              "RETAIL_AND_ECOMMERCE",
+              "TECH_B2B",
+              "TECH_B2C",
+              "EDUCATION",
+              "ENTERTAINMENT",
+              "GAMING",
+              "FINANCIAL_SERVICES",
+              "HEALTH_AND_BEAUTY",
+              "CONSUMER_PACKAGED_GOODS",
+              "EMPLOYMENT",
+              "AUTO",
+              "TRAVEL",
+              "REAL_ESTATE",
+              "GAMBLING_AND_FANTASY_SPORTS",
+              "POLITICS_AND_GOVERNMENT",
+              "OTHER",
+            ],
+          },
+          {
+            name: "budgets",
+            type: "select",
+            required: false,
+            description: "Budgets to filter by",
+            options: ["LOW", "MEDIUM", "HIGH"],
+          },
+          {
+            name: "formats",
+            type: "select",
+            required: false,
+            description: "Formats to filter by",
+            options: ["IMAGE", "VIDEO", "CAROUSEL", "FREE_FORM"],
+          },
+          {
+            name: "placements",
+            type: "select",
+            required: false,
+            description: "Placements to filter by",
+            options: ["FEED", "COMMENTS_PAGE"],
+          },
+          {
+            name: "objectives",
+            type: "select",
+            required: false,
+            description: "Objectives to filter by",
+            options: [
+              "IMPRESSIONS",
+              "CLICKS",
+              "CONVERSIONS",
+              "VIDEO_VIEWABLE_IMPRESSIONS",
+              "APP_INSTALLS",
+            ],
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          ads: [
+            {
+              id: "79e005f1e09ec72245e904d87d2a0869",
+              budget_category: "HIGH",
+              industry: "OTHER",
+              placements: ["FEED", "COMMENTS_PAGE"],
+              objective: "CONVERSIONS",
+              creative: {
+                id: "t3_1cdt7o6",
+                type: "TEXT",
+                content: [
+                  {
+                    destination_url: null,
+                    display_url: "self.thepennyhoarder",
+                    call_to_action: null,
+                    media_url: null,
+                  },
+                ],
+                headline:
+                  "What is a rich person’s money tip you wish you knew sooner?",
+                body: "Life would be a whole lot easier if someone would just Venmo us $1 million, but unfortunately the chance of that happening is, well, probably zero. (Venmo doesn’t allow transactions that large anyway.)\n\nBut even though our chances of becoming a millionaire are slim, we can still manage our money like one. No, we’re not going to tell you how to buy hundreds of shares of Apple stock. Or how to pick out the perfect yacht.\n\nThese are simple money moves any normal, non-millionaire person can make *today*. Each tip can get you closer to achieving your big goals.\n\nTake a look:\n\n# 1. Cancel Your Car Insurance\n\nYou might not even realize it, but your car insurance company is probably overcharging you. In fact, they’re kind of counting on you not noticing. Luckily, this problem is easy to fix. \n\nDon’t waste your time browsing insurance sites for a better deal. A company called[ **Insurify**](https://t.thepennyhoarder.com/aff_ad?campaign_id=319&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit) shows you all your options at once — people who do this save up to $996 per year. \n\nIf you tell them a bit about yourself and your vehicle, they’ll send you personalized quotes so you can compare them and find the best one for you.\n\nTired of overpaying for car insurance? It takes just five minutes to compare your options with Insurify and[ **see how much you could save on car insurance.**](https://t.thepennyhoarder.com/aff_ad?campaign_id=319&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit)\n\n# 2. Stop Paying Your Credit Card Company\n\nIf you have credit card debt, *you know*. The anxiety, the interest rates, the fear you’re never going to escape…\n\nAnd the truth is, your credit card company doesn’t really care. It’s just getting rich by ripping you off with high interest rates — some up to 36%. But a website called[ **AmOne**](https://t.thepennyhoarder.com/aff_c?offer_id=6370&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit) wants to help.\n\nIf you owe your credit card companies $100,000 or less, AmOne will match you with a low-interest loan you can use to pay off every single one of your balances.\n\nThe benefit? You’ll be left with one bill to pay each month. And because personal loans have lower interest rates (AmOne rates start at 6.40% APR), you’ll get out of debt *that* much faster. Plus: No credit card payment this month.\n\nYou don’t need a perfect credit score to get a loan — and comparing your options won’t affect your score at all. Plus, AmOne keeps your information confidential and secure, which is probably why after 20 years in business, it still has an A+ rating with the Better Business Bureau.\n\nIt takes less than a minute and just 10 questions to[ **see what loans you qualify for**](https://t.thepennyhoarder.com/aff_c?offer_id=6370&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit) — you don’t even need to enter your Social Security number. You do need to give AmOne a real phone number in order to qualify, but don’t worry — they won’t spam you with phone calls.\n\n# 3. You Can Become a Real Estate Investor for as Little as $10\n\nTake a look at some of the world’s wealthiest people. What do they have in common? Many invest in large private real estate deals. And here’s the thing: There’s no reason you can’t, too — for as little as $10. \n\n[**An investment called the Fundrise Flagship Fund**](https://t.thepennyhoarder.com/aff_c?offer_id=7384&aff_id=152&source=millionaires-sdyn-prt&aff_sub3=money-secrets-reddit) lets you get started in the world of real estate by giving you access to a low-cost, diversified portfolio of private real estate. The best part? You don’t have to be the landlord. The Flagship Fund does all the heavy lifting.\n\nWith an initial investment as low as $10, your money will be invested in the Fund, which already owns more than $1 billion worth of real estate around the country, from apartment complexes to the thriving housing rental market to larger last-mile e-commerce logistics centers.\n\nWant to invest more? Many investors choose to invest $1,000 or more. This is a Fund that can fit any type of investor’s needs. Once invested, you can track your performance from your phone and watch as properties are acquired, improved, and operated. As properties generate cash flow, you could earn money through quarterly dividend payments. And over time, you could earn money off the potential appreciation of the properties. \n\nSo if you want to get started in the world of real-estate investing, it takes just a few minutes to [**sign up and create an account with the Fundrise Flagship Fund**](http://t.thepennyhoarder.com/aff_c?offer_id=7384&aff_id=152&source=millionaires-sdyn-prt&aff_sub3=money-secrets-reddit).\n\n# 4. Get One Month of Free High-Speed Internet (and Pay as Little as $40/Month After That)\n\nThere are some bills you just can’t avoid. For most of us, that includes our internet bill. Your provider knows it’s pretty hard to go without it these days — that’s why so many of us are overpaying. \n\nBut with[ Metro by T-Mobile](https://t.thepennyhoarder.com/aff_c?offer_id=7522&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit), you can get high-speed, 5G home internet for as little as \\*$40 a month. No credit check, no deposit, and they won’t lock you into a contract that hikes up your price after your first year, either. \n\nYou’re probably thinking there’s some catch, but they’ll let you try it out for 14 days to see if you like it. If not, you’ll get your money back. You don’t even have to worry about breaking up with your current provider — T-Mobile will pay up to $750 in termination fees.\n\nEven better? When you switch now, get one month free after the rebate and purchase your equipment for just $24.99 (usually $49.99).\n\nSwitch to Metro by T-Mobile and get 5G Home Internet from Metro for $40/mo with AutoPay. Just[ enter your address and phone number here](https://t.thepennyhoarder.com/aff_c?offer_id=7522&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit) to see if you qualify.\n\n# 5. Get Paid $225/Month While Watching Movie Previews\n\n# If we told you that you could get paid while watching videos on your computer, you’d probably laugh.\n\nIt’s too good to be true, right?\n\nBut we’re serious. By signing up for a free account with[ **InboxDollars**](https://t.thepennyhoarder.com/aff_c?offer_id=3421&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit), you could add up to $225 a month to your pocket. They’ll send you short surveys every day, which you can fill out while you watch someone bake brownies or catch up on the latest Kardashian drama.\n\nNo, InboxDollars won’t replace your full-time job, but it’s something easy you can do while you’re already on the couch tonight, wasting time on your phone.\n\nUnlike other sites, InboxDollars pays you in cash — no points or gift cards. It’s already paid its users more than $56 million.\n\nSigning up takes about one minute, and you’ll immediately receive[ **a $5 bonus**](https://t.thepennyhoarder.com/aff_c?offer_id=3421&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit) to get you started.\n\n# 6. Killing Time? Earn up to $107 Per Win Playing Solitaire on Your Phone\n\nThere’s nothing wrong with killing a little free time on your phone. A lot of us pull up a mobile game on our break, on the couch or on long drives. But we found a game that will actually pay you to do it.\n\n[**A free iPhone app called Solitaire Smash**](https://t.thepennyhoarder.com/aff_ad?campaign_id=304&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit) will pay you up to $107 per win just for playing Solitaire online. Right now, when you add $10 to your account, Solitaire Smash will give you a $5 bonus to use in cash tournaments plus 1,000 gems.\n\nIt works just like the card game you already know, but it adds a timer to mix, and you’ll play against other players at your same skill level. The top three players win a prize. You can play casually for gems or compete for real money prize pools — up to $107 per win. Plus, they have a 4.9 star rating on the App Store.\n\nWant to see if you can turn $10 to $107 in your free time? Just download Solitaire Smash to get [**start playing and see how much money you can win**](https://t.thepennyhoarder.com/aff_ad?campaign_id=304&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit).",
+                thumbnail_url:
+                  "https://b.thumbs.redditmedia.com/9gzdjvf9fDu1vN2zxxVrvGqOJizhLf80W701zzkml2k.jpg",
+                allow_comments: false,
+                created_at: "2024-04-26T18:47:57+00:00",
+                profile_id: "t2_3usby",
+                post_url:
+                  "https://www.reddit.com/r/u_thepennyhoarder/comments/1cdt7o6/what_is_a_rich_persons_money_tip_you_wish_you/",
+              },
+              profile_info: {
+                name: "u_thepennyhoarder",
+                snoovatar_icon_url:
+                  "https://www.redditstatic.com/avatars/defaults/v2/avatar_default_6.png",
+              },
+            },
+          ],
+        },
+      },
+      {
+        name: "Get Ad",
+        method: "GET",
+        description: "Get a specific ad by id",
+        path: "/v1/reddit/ads",
+        params: [
+          {
+            name: "id",
+            type: "string",
+            required: true,
+            description: "Ad id",
+            placeholder: "79e005f1e09ec72245e904d87d2a0869",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          data: {
+            analysis_summary: {
+              headline: [
+                "Direct Question/Engagement: The headline poses a direct question to the reader. This is highly effective on Reddit as it immediately invites user participation and sparks curiosity. It encourages users to think about the topic and potentially share their own experiences or insights in the comments, aligning with Reddit's interactive and discussion-focused nature. This direct engagement fosters a sense of community and encourages users to click to find out more or participate in the conversation.",
+                'Intrigue/Curiosity Gap: The headline uses the phrase "rich person’s money tip" creating a sense of mystery. This builds intrigue and taps into the user\'s desire to gain insider knowledge or learn something valuable. This resonates with Redditors who are often interested in learning new things, self-improvement, and financial literacy. The "wish you knew sooner" component further amplifies this curiosity, implying that the answer could save time or money.',
+                'Relatability/Aspiration: The headline addresses a common desire: financial success. The phrase "rich person’s money tip" is aspirational, appealing to the audience\'s aspirations and goals. This creates a relatable hook that makes the ad relevant to a broad range of users, especially in subreddits related to finance, personal development, or career advice. It speaks to a universal desire for financial security and knowledge, positioning the ad as potentially offering valuable information.',
+              ],
+              media: [],
+            },
+            inspiration_creative: {
+              id: "79e005f1e09ec72245e904d87d2a0869",
+              budget_category: "HIGH",
+              industry: "OTHER",
+              placements: ["FEED", "COMMENTS_PAGE"],
+              objective: "CONVERSIONS",
+              creative: {
+                id: "t3_1cdt7o6",
+                type: "TEXT",
+                content: [
+                  {
+                    destination_url: null,
+                    display_url: "self.thepennyhoarder",
+                    call_to_action: null,
+                    media_url: null,
+                  },
+                ],
+                headline:
+                  "What is a rich person’s money tip you wish you knew sooner?",
+                body: "Life would be a whole lot easier if someone would just Venmo us $1 million, but unfortunately the chance of that happening is, well, probably zero.",
+                thumbnail_url:
+                  "https://b.thumbs.redditmedia.com/9gzdjvf9fDu1vN2zxxVrvGqOJizhLf80W701zzkml2k.jpg",
+                allow_comments: false,
+                created_at: "2024-04-26T18:47:57+00:00",
+                profile_id: "t2_3usby",
+                post_url:
+                  "https://www.reddit.com/r/u_thepennyhoarder/comments/1cdt7o6/what_is_a_rich_persons_money_tip_you_wish_you/",
+              },
+              profile_info: {
+                name: "u_thepennyhoarder",
+                snoovatar_icon_url:
+                  "https://www.redditstatic.com/avatars/defaults/v2/avatar_default_6.png",
+              },
+            },
+          },
+        },
+      },
     ],
   },
   {
