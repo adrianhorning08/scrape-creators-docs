@@ -21118,6 +21118,8 @@ export const apis = [
             handle: "afroballer8906",
             title: "Afroballer",
           },
+          durationMs: 1670000,
+          durationFormatted: "00:27:50",
           watchNextVideos: [
             {
               id: "fRfkvQwf9Po",
