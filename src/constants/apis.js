@@ -20967,6 +20967,14 @@ export const apis = [
               "Continuation token to get more videos. Get 'continuationToken' from previous response.",
             placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
           },
+          {
+            name: "includeExtras",
+            type: "boolean",
+            required: false,
+            description:
+              "This will get you the like + comment count and the description. To get the full details of the video, use the /v1/youtube/video endpoint. This will slow down the response slightly.",
+            placeholder: "false",
+          },
         ],
       },
       {
