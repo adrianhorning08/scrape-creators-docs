@@ -14,6 +14,7 @@ import {
   SiPersonio,
   SiSnapchat,
   SiBluesky,
+  SiLinktree,
 } from "react-icons/si";
 import { MdPerson } from "react-icons/md";
 import ScrapeCreatorsIcon from "../components/ScrapeCreatorsIcon";
@@ -32583,6 +32584,99 @@ export const apis = [
             placeholder: "zane",
           },
         ],
+      },
+    ],
+  },
+  {
+    id: "linktree",
+    name: "Linktree",
+    icon: SiLinktree,
+    description: "Scrape Linktree pages",
+    endpoints: [
+      {
+        name: "Scrape Linktree",
+        method: "GET",
+        description: "Scrape Linktree page",
+        path: "/v1/linktree",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "URL to Linktree page",
+            placeholder: "https://linktr.ee/miguelangeles",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          id: 15278008,
+          username: "miguelangeles",
+          profilePictureUrl:
+            "https://ugc.production.linktr.ee/d3141538-f586-4f3f-bc9a-a82fbebab798_DEATHRATTLE-slowed-COVER.jpeg",
+          description: "☆☆☆☆ IRL ANGEL ☆☆☆☆\nψ EMBRACE CHAOS ψ",
+          verticals: ["music", "creative", "arts-entertainment"],
+          linkPlatforms: ["Instagram", "TikTok"],
+          timezone: "America/New_York",
+          links: [
+            {
+              id: 463416775,
+              type: "SPOTIFY_ALBUM",
+              title: 'new project "BEFORE THE SUN RISES & WINTERR ENDS"',
+              url: "https://open.spotify.com/album/0pgrg7phBbnwGJ2HBEl9EG?si=Zub7J4I3RySAaM9WVX3Okg",
+            },
+            {
+              id: 460281204,
+              type: "SPOTIFY_SONG",
+              title: 'stream "NOVEMBERR"',
+              url: "https://open.spotify.com/track/62HnBMEdZjeFCd2T8g37T8?si=7bd35dd0e9f24d65",
+            },
+            {
+              id: 460285424,
+              type: "YOUTUBE_VIDEO",
+              title: 'watch "INNOCENCE" video',
+              url: "https://www.youtube.com/watch?v=JINmh9O-sjU",
+            },
+            {
+              id: 460281376,
+              type: "SPOTIFY_SONG",
+              title: 'stream "OBSESSED"',
+              url: "https://open.spotify.com/track/0ipHYEQf07qoReAWhVC3zO?si=8fbaee843716443f",
+            },
+            {
+              id: 233892723,
+              type: "PRODUCT",
+              title: "MERCH",
+              url: "",
+            },
+            {
+              id: 233894119,
+              type: "CLASSIC",
+              title: "ALL STREAMING LINKS",
+              url: "https://songwhip.com/miguelangeles",
+            },
+            {
+              id: 80367589,
+              type: "CLASSIC",
+              title: "SPOTIFY PLAYLIST",
+              url: "https://open.spotify.com/playlist/1m0U7ud6CCPzMO8oLTMi3B?si=d7cb7f6e6bc94d3b",
+            },
+            {
+              id: 102824974,
+              type: "SOUNDCLOUD_PLAYLIST",
+              title: "SOUNDCLOUD PLAYLIST",
+              url: "https://soundcloud.com/miguelangeles/sets/irl-angel-vibes",
+            },
+          ],
+          instagram: "https://instagram.com/miguelangeles",
+          tiktok: "https://tiktok.com/@irlangel",
+          spotify:
+            "https://open.spotify.com/artist/14xRX3JR8H4RWh8R7V3fvZ?si=EgRxWIPiRcaEHtSnqk5PAQ",
+          youtube: "https://www.youtube.com/watch?v=xiFUzOJaiC4",
+          soundcloud: "https://soundcloud.com/miguelangeles",
+          apple_music:
+            "https://music.apple.com/ca/artist/miguel-angeles/1209423162",
+          email_address: "miguel@irlangel.com",
+        },
       },
     ],
   },
