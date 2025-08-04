@@ -77,7 +77,6 @@ export const apis = [
             roomId: "",
             uniqueIdModifyTime: 0,
             ttSeller: false,
-            region: "US",
             downloadSetting: 0,
             profileTab: {
               showMusicTab: false,
