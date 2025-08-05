@@ -18770,7 +18770,7 @@ export const apis = [
         method: "GET",
         description:
           "Get comments from an Instagram post or reel. Note! that this costs more than 1 credit! This costs 1 credit per 15 comments. This won't return *all* the comments, but a good number of them.",
-        path: "/v1/instagram/post/comments/simple",
+        path: "/v1/instagram/post/comments",
         params: [
           {
             name: "url",
@@ -21972,6 +21972,14 @@ export const apis = [
             description:
               "Continuation token to get more videos. Get 'continuationToken' from previous response.",
             placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
+          },
+          {
+            name: "includeExtras",
+            type: "boolean",
+            required: false,
+            description:
+              "This will get you the like + comment count and the description. To get the full details of the video, use the /v1/youtube/video endpoint. *This will slow down the response slightly.*",
+            placeholder: "false",
           },
         ],
       },
