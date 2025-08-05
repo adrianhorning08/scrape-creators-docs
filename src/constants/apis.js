@@ -16464,6 +16464,398 @@ export const apis = [
     ],
   },
   {
+    id: "tiktok-shop",
+    name: "TikTok Shop",
+    icon: SiTiktok,
+    description: "Everything about TikTok Shop",
+    endpoints: [
+      {
+        name: "Product Details",
+        method: "GET",
+        description:
+          "Get the details of a TikTok Shop Product! Get the exact amount of stock the product has, related tiktok videos promoting the product, and more!",
+        path: "/v1/tiktok/product",
+        params: [
+          {
+            name: "product_id",
+            required: false,
+            type: "string",
+            description:
+              "The ID of the product to get details for. You can provide this or the URL of the product.",
+            placeholder: "1729587769570529799",
+          },
+          {
+            name: "url",
+            required: false,
+            type: "string",
+            description:
+              "The URL of the product to get details for. You can provide this or the ID of the product.",
+            placeholder:
+              "https://www.tiktok.com/shop/pdp/goli-ashwagandha-gummies-with-vitamin-d-ksm-66-vegan-non-gmo/1729587769570529799",
+          },
+          {
+            name: "get_related_videos",
+            required: false,
+            type: "string",
+            description:
+              "Whether to get related videos for the product. These are affiliate videos promoting the product. *This will cost you an additional credit and will take a little longer to process.*",
+            placeholder: "false",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          categories: [
+            {
+              category_id: "601450",
+              level: 1,
+              is_leaf: false,
+              parent_id: "0",
+              category_name: "Beauty & Personal Care",
+              name_key: "magellan_601450",
+            },
+          ],
+          sale_region: "US",
+          error_code: 0,
+          error_message: "",
+          product_info: {
+            product_id: "1730383241618035288",
+            status: 1,
+            seller: {
+              seller_id: "7496021452055022168",
+              name: "Manspot",
+              avatar: {
+                height: 300,
+                width: 300,
+                uri: "tos-useast5-i-omjb5zjo8w-tx/c34696c75ae64397911e2e06193a12cc",
+                url_list: [
+                  "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/c34696c75ae64397911e2e06193a12cc~tplv-fhlh96nyum-resize-png:300:300.png?dr=0&from=2422056039&idc=useast8&ps=933b5bde&shcp=6ce186a1&shp=905da467&t=555f072d",
+                  "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/c34696c75ae64397911e2e06193a12cc~tplv-fhlh96nyum-resize-png:300:300.png?dr=0&from=2422056039&idc=useast8&ps=933b5bde&shcp=6ce186a1&shp=905da467&t=555f072d",
+                ],
+              },
+              product_count: 14,
+              seller_location: "United States of America",
+              tiktok_id: "7098283607022158891",
+              tiktok_url: "https://www.tiktok.com/@7098283607022158891",
+            },
+            product_base: {
+              title:
+                "【dealsforyoudays】Manspot Electric Body Hair Razor for Men - USB Rechargeable, Waterproof, Replaceable Ceramic Heads, Ultra-Smooth Shaving, Cordless Trimmer for Grooming Routine",
+              desc_video: {
+                id: "v12d52gd0030ctp3lknog65q8llkgcng",
+                duration: 45.12,
+                post_url:
+                  "https://p16-sign.tiktokcdn-us.com/tos-useast5-p-afa798-tx/o8ZA1q3RIWBxiuEE26yRtg6vSIOIwvi4uUM0S~tplv-noop.image?t=9276707c&x-expires=1754373510&x-signature=MsmTJcnrIme3jsFlNSt2inH%2FpJQ%3D",
+                media_type: "video",
+                video_infos: [
+                  {
+                    main_url:
+                      "https://v16m-default.tiktokcdn-us.com/01ffc8343c2e3127afb0726eff95ad96/68919d86/video/tos/useast5/tos-useast5-v-afa798-tx/owOtyWSdi4731vMSvI96iQRMUyvIwE0IgZBC6/?a=0&bti=PDM8QDI2M2A%3D&ch=0&cr=0&dr=0&er=0&lr=default&cd=0%7C0%7C0%7C0&br=832&bt=416&cs=0&ds=6&ft=GS-jnInz7Th6_-fKXq8Zmo&mime_type=video_mp4&qs=0&rc=ZTtnNTlkaDdkNTM6MzQ0M0BpamZub3Q5cm42dzMzZzVnNEAtYjRgNDY2Xi4xYl5eMWIwYSNrZGk1MmRraW1gMC1kMi9zcw%3D%3D&vvpl=1&l=202508042357441758B7D2E7DB9E01F44C&btag=e00088000",
+                    backup_url:
+                      "https://v16m-default.tiktokcdn-us.com/01ffc8343c2e3127afb0726eff95ad96/68919d86/video/tos/useast5/tos-useast5-v-afa798-tx/owOtyWSdi4731vMSvI96iQRMUyvIwE0IgZBC6/?a=0&bti=PDM8QDI2M2A%3D&ch=0&cr=0&dr=0&er=0&lr=default&cd=0%7C0%7C0%7C0&br=832&bt=416&cs=0&ds=6&ft=GS-jnInz7Th6_-fKXq8Zmo&mime_type=video_mp4&qs=0&rc=ZTtnNTlkaDdkNTM6MzQ0M0BpamZub3Q5cm42dzMzZzVnNEAtYjRgNDY2Xi4xYl5eMWIwYSNrZGk1MmRraW1gMC1kMi9zcw%3D%3D&vvpl=1&l=202508042357441758B7D2E7DB9E01F44C&btag=e00088000",
+                    url_expire: 1754373510,
+                    width: 1024,
+                    height: 576,
+                    file_hash: "19737dc9ddb53c96371d9bb7c79fd1fd",
+                    format: "mp4",
+                    size: 2408193,
+                    bitrate: 426984,
+                    video_quality: "normal",
+                  },
+                ],
+              },
+              images: [
+                {
+                  height: 800,
+                  width: 800,
+                  thumb_uri:
+                    "tos-useast5-i-omjb5zjo8w-tx/23a77319ea594151b3730747704a62bc",
+                  thumb_url_list: [
+                    "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/23a77319ea594151b3730747704a62bc~tplv-fhlh96nyum-resize-jpeg:200:200.jpeg?dr=0&t=555f072d&ps=933b5bde&shp=6ce186a1&shcp=607f11de&idc=useast8&from=1826719393",
+                    "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/23a77319ea594151b3730747704a62bc~tplv-fhlh96nyum-resize-jpeg:200:200.jpeg?dr=0&t=555f072d&ps=933b5bde&shp=6ce186a1&shcp=607f11de&idc=useast8&from=1826719393",
+                  ],
+                  uri: "tos-useast5-i-omjb5zjo8w-tx/23a77319ea594151b3730747704a62bc",
+                  url_list: [
+                    "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/23a77319ea594151b3730747704a62bc~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg?dr=0&t=555f072d&ps=933b5bde&shp=6ce186a1&shcp=607f11de&idc=useast8&from=1826719393",
+                    "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/23a77319ea594151b3730747704a62bc~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg?dr=0&t=555f072d&ps=933b5bde&shp=6ce186a1&shcp=607f11de&idc=useast8&from=1826719393",
+                  ],
+                },
+              ],
+              sold_count: 7160,
+              price: {
+                original_price: "$3?",
+                real_price: "$2?",
+                discount: "-47%",
+                need_icon: false,
+                is_interval_price: false,
+                show_hot_zone: false,
+                min_sku_price: "2?",
+                max_sku_price: "",
+                currency: "USD",
+                min_sku_original_price: "39.99",
+                panel_schema: "",
+                currency_symbol: "$",
+                symbol_position: 1,
+                da_info: '{"price_show_tag":"","discount_percentage":"47"}',
+              },
+            },
+            sale_props: [
+              {
+                prop_id: "100000",
+                prop_name: "Color",
+                has_image: true,
+                sale_prop_values: [
+                  {
+                    prop_value_id: "6926865445131749121",
+                    prop_value: "Black",
+                    image: {
+                      height: 800,
+                      width: 800,
+                      thumb_uri:
+                        "tos-useast5-i-omjb5zjo8w-tx/93a076a4750d48bdafea2ae357725093",
+                      thumb_url_list: [
+                        "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/93a076a4750d48bdafea2ae357725093~tplv-fhlh96nyum-resize-jpeg:200:200.jpeg?dr=0&t=555f072d&ps=933b5bde&shp=6ce186a1&shcp=607f11de&idc=useast8&from=1826719393",
+                        "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/93a076a4750d48bdafea2ae357725093~tplv-fhlh96nyum-resize-jpeg:200:200.jpeg?dr=0&t=555f072d&ps=933b5bde&shp=6ce186a1&shcp=607f11de&idc=useast8&from=1826719393",
+                      ],
+                      uri: "tos-useast5-i-omjb5zjo8w-tx/93a076a4750d48bdafea2ae357725093",
+                      url_list: [
+                        "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/93a076a4750d48bdafea2ae357725093~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg?dr=0&t=555f072d&ps=933b5bde&shp=6ce186a1&shcp=607f11de&idc=useast8&from=1826719393",
+                        "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/93a076a4750d48bdafea2ae357725093~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg?dr=0&t=555f072d&ps=933b5bde&shp=6ce186a1&shcp=607f11de&idc=useast8&from=1826719393",
+                      ],
+                    },
+                  },
+                ],
+              },
+            ],
+            skus: [
+              {
+                sku_id: "1730384306561520216",
+                sku_sale_props: [
+                  {
+                    prop_id: "100000",
+                    prop_name: "Color",
+                    prop_value_id: "6926865445131749121",
+                    prop_value: "Black",
+                  },
+                ],
+                sale_prop_value_ids: "6926865445131749121",
+                stock: 1824,
+                purchase_limit: 20,
+                price: {
+                  real_price: {
+                    price_str: "$2?",
+                    price_val: "2?",
+                    currency: "USD",
+                    original_price: "",
+                  },
+                  original_price: "$3?",
+                  discount: "-47%",
+                  original_price_value: "3?",
+                },
+                need_icon: false,
+                add_to_cart_button: {
+                  status: 2,
+                },
+                warehouse_id: "7348468937296889643",
+                quantity_property: {
+                  default_add_cart_quantity: 1,
+                  quantity_minus_support_edit: true,
+                },
+                buy_button: {
+                  desc: "Buy now",
+                  default_desc: "Buy now",
+                },
+                minimum_buy_quantity: 0,
+                promotion_limit_quantity: 0,
+                deduction_text: "",
+                status: 1,
+                pdp_button_area_id: "add_disable",
+                da_info:
+                  '{"delivery_flag_sku":"{\\"free_shipping_product_cnt\\":\\"-1\\"}"}',
+              },
+            ],
+            product_detail_review: {
+              product_rating: 4.3,
+              review_count: 595,
+              review_items: [
+                {
+                  review: {
+                    review_id: "7516224145770006315",
+                    rating: 5,
+                    display_text:
+                      "Great product. Good shipping. Exactly as described. Does not nick. Holds charge for a long time. Light weight. Waterproof even used in the shower.",
+                    review_timestamp: "1750007337100",
+                    has_origin_text: true,
+                    display_review_text: [
+                      {
+                        text_type: 1,
+                        plain_text:
+                          "Great product. Good shipping. Exactly as described. Does not nick. Holds charge for a long time. Light weight. Waterproof even used in the shower.",
+                      },
+                    ],
+                    review_timestamp_fmt: "June 15, 2025",
+                    main_review_title: "",
+                  },
+                  sku_id: "1730384306561651288",
+                  sku_specification: "Item: Blue",
+                  review_user: {
+                    name: "thedustinppeterson",
+                    avatar: {
+                      url_list: [
+                        "https://p16-pu-sign-useast8.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/98315574440f18f07c635207bb216368~tplv-tiktokx-cropcenter:100:100.jpg?dr=9640&refresh_token=45b1ac87&x-expires=1754521200&x-signature=Ur3y7f80YCwLVfIEmYaxTbAxuyE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=5f8d3399&idc=useast8",
+                        "https://p19-pu-sign-useast8.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/98315574440f18f07c635207bb216368~tplv-tiktokx-cropcenter:100:100.jpg?dr=9640&refresh_token=da4267ad&x-expires=1754521200&x-signature=aeSEa6RnH9mbbwCFD1JDa3bJsVQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=5f8d3399&idc=useast8",
+                        "https://p16-pu-sign-useast8.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/98315574440f18f07c635207bb216368~tplv-tiktokx-cropcenter:100:100.jpeg?dr=9640&refresh_token=0ec2c591&x-expires=1754521200&x-signature=YVsiflbyT%2Fy%2Bey01NXA%2FsF4Va3s%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=5f8d3399&idc=useast8",
+                      ],
+                    },
+                    link: "aweme://user/profile/7019811528040367109?sec_uid=MS4wLjABAAAA6l4bHgDxc3aZPlMYQvuq4K5rnUIIYWPfUjdsFlzKyCVBfKH-gczfRah5vKXjPbrj&from_scene=8",
+                  },
+                  is_owner: false,
+                  is_anonymous: false,
+                  review_source_type: 0,
+                  review_source_name: "Purchased on TikTok",
+                  link: "",
+                  is_updated: false,
+                  third_party_popup_title: "",
+                  third_party_popup_content: "",
+                  third_party_popup_button_text: "",
+                },
+              ],
+              review_count_str: "595",
+              review_count_str_v2: "595",
+            },
+            seller_id: "7496021452055022168",
+          },
+          shop_info: {
+            seller_id: "7496021452055022168",
+            sold_count: 50887,
+            on_sell_product_count: 14,
+            review_count: 4215,
+            global_seller_id: "7496021452055022168",
+            global_sold_count: "50887",
+            followers_count: "1796",
+            video_count: "100",
+            enable_follow: true,
+            shop_name: "Manspot",
+            shop_logo: {
+              height: 300,
+              width: 300,
+              uri: "tos-useast5-i-omjb5zjo8w-tx/c34696c75ae64397911e2e06193a12cc",
+              url_list: [
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/c34696c75ae64397911e2e06193a12cc~tplv-fhlh96nyum-resize-webp:300:300.webp?dr=0&from=2422056039&idc=useast8&ps=933b5bde&shcp=607f11de&shp=905da467&t=555f072d",
+                "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/c34696c75ae64397911e2e06193a12cc~tplv-fhlh96nyum-resize-webp:300:300.webp?dr=0&from=2422056039&idc=useast8&ps=933b5bde&shcp=607f11de&shp=905da467&t=555f072d",
+              ],
+            },
+            shop_rating: "4.4",
+            shop_link:
+              "https://www.tiktok.com/shop/store/manspot/7496021452055022168",
+            background: {
+              is_default: true,
+              image: {
+                height: 300,
+                width: 300,
+                uri: "tos-useast5-i-omjb5zjo8w-tx/c34696c75ae64397911e2e06193a12cc",
+                url_list: [
+                  "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/c34696c75ae64397911e2e06193a12cc~tplv-fhlh96nyum-resize-webp:300:300.webp?dr=0&from=2422056039&idc=useast8&ps=933b5bde&shcp=607f11de&shp=905da467&t=555f072d",
+                  "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/c34696c75ae64397911e2e06193a12cc~tplv-fhlh96nyum-resize-webp:300:300.webp?dr=0&from=2422056039&idc=useast8&ps=933b5bde&shcp=607f11de&shp=905da467&t=555f072d",
+                ],
+              },
+              shop_background_type: 3,
+            },
+            format_sold_count: "50.8K+",
+            region: "US",
+            display_on_sell_product_count: "14",
+            format_global_sold_count: "50.8K+",
+            format_followers_count: "1.7K+",
+            format_video_count: "100",
+            store_sub_score: [
+              {
+                score: 0.9787,
+                type: 1,
+                score_percentage: "98",
+                high_light_tag: 1,
+                platform_rate_type: 0,
+              },
+              {
+                score: 0.9745428973277075,
+                type: 2,
+                score_percentage: "97",
+                high_light_tag: 1,
+                platform_rate_type: 1,
+              },
+              {
+                score: 0.8378,
+                type: 3,
+                score_percentage: "84",
+                platform_rate_type: 0,
+              },
+            ],
+            worst_rating: "0",
+            best_rating: "5",
+            creator_name: "Manspot",
+            shop_identity_label: {
+              label_type: 2,
+              identity_label_text: "OFFICIAL SHOP",
+              identity_logo_light: {
+                height: 144,
+                width: 144,
+                ratio: 0,
+                minetype: "image/png",
+                uri: "tos-useast5-i-omjb5zjo8w-tx/e6ee5e25d8a049b39c897d02fe9d3fd4",
+                url_list: [
+                  "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/e6ee5e25d8a049b39c897d02fe9d3fd4~tplv-fhlh96nyum-origin-png.png?dr=0&from=2422056039&idc=useast8&ps=933b5bde&shcp=607f11de&shp=905da467&t=555f072d",
+                  "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/e6ee5e25d8a049b39c897d02fe9d3fd4~tplv-fhlh96nyum-origin-png.png?dr=0&from=2422056039&idc=useast8&ps=933b5bde&shcp=607f11de&shp=905da467&t=555f072d",
+                ],
+              },
+            },
+            desc: "Shop Manspot on TikTok Shop! 50.8K+ sold, 1.7K+ followers. 84+% positive feedback. 97+% Ships in 48h, 98+% replies in 24h. Join the trend!",
+          },
+          shop_performance: [
+            {
+              score_percentile: 98,
+              type: 1,
+            },
+            {
+              score_percentile: 97,
+              type: 2,
+            },
+            {
+              score_percentile: 84,
+              type: 3,
+            },
+            {
+              score_percentile: 94,
+              type: 10,
+            },
+          ],
+          related_videos: [
+            {
+              item_id: "7527142083258305822",
+              height: 1920,
+              width: 1080,
+              duration: 57900,
+              author_id: "6680168318781539334",
+              play_count: 324944,
+              like_count: 1812,
+              upload_time: "1752549352",
+              expiration_time: "1754373525",
+              title:
+                "#clippers #manspot #balltrimmerformen #cleanshave #intimatetrimmer ",
+              cover_image_url:
+                "https://p19-pu-sign-useast8.tiktokcdn-us.com/tos-useast8-p-0068-tx2/o8EuB9REQEAfeQLrDo7AjEqsVBFWXjdDckKa4u~tplv-tiktokx-360p.jpeg?dr=9616&refresh_token=1766d771&x-expires=1754434800&x-signature=lRWsCgvnwEp6UQqLhsH0PgRn88M%3D&t=4d5b0474&ps=13740610&shp=d05b14bd&shcp=34ff8df6&idc=useast8&s=TTEC_PDP_WEB&ftpl=1",
+              content_url:
+                "https://v16m-default.tiktokcdn-us.com/dd4ea5ea67c5f3bff2da44a43344e9d0/68919d95/video/tos/useast8/tos-useast8-ve-0068c001-tx2/o8IDodguOBacEBEqW4WEKsUAEjVfrXQQjAfFRj/?a=0&bti=MzV2KXVmcnZmd0BqOjo2QDI6bWJsK2IrYnFgIzE0M2A%3D&ch=0&cr=0&dr=0&er=0&lr=all&net=0&cd=0%7C0%7C0%7C0&cv=1&br=2308&bt=1154&cs=0&ds=6&ft=LlnQ7z4HhWH6Bbg7.FLo0PD1&mime_type=video_mp4&qs=0&rc=ZzM0PDtnaWQ8NTVpZmk2O0BpM2U2bnE5cjl2NDMzaTczNEA2YmMtLi00XmIxYzE1YGNfYSNlYGBeMmRrX25hLS1kMTJzcw%3D%3D&vvpl=1&l=202508042357476500B0C762E3A801E8F3&btag=e00088000",
+              author_name: "❤️ Brittney ❤️",
+              author_avatar_url:
+                "https://p16-pu-sign-useast8.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/9fbaf570003150d9888e44ed5b03b03c~tplv-tiktokx-cropcenter:100:100.webp?dr=9640&refresh_token=1d0acc0f&x-expires=1754434800&x-signature=BqNkRAZzwhzBPbXPm%2FzMqw5FKzQ%3D&t=4d5b0474&ps=13740610&shp=d05b14bd&shcp=34ff8df6&idc=useast8",
+              bc_ad_label_text: "Commission paid",
+              url: "https://www.tiktok.com/@6680168318781539334/video/7527142083258305822",
+              author_url: "https://www.tiktok.com/@6680168318781539334",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
     id: "instagram",
     name: "Instagram",
     icon: SiInstagram,
