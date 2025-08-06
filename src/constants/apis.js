@@ -23186,6 +23186,8 @@ export const apis = [
               text: "Recipe please",
             },
           ],
+          play_count: 33821,
+          reactions_count: 174,
           transcript:
             "A few thinly sliced chicken\nthighs and combine them with a few spices, garlic, olive oil,\nand lemon juice you'll have a recipe for my popular chicken\nshawarma. To turn it into a sheet pan meal just add it to a\nsheet pan with onions, peppers and tomatoes and bake it for\njust 20 minutes. The chicken gets so tender and the veggies\nget all the flavor from the chicken marinade. You can eat\nit in a bowl by itself but I can't resist putting it on a\npita with some homemade garlic. So good.",
         },
