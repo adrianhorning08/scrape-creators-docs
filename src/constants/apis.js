@@ -16470,6 +16470,157 @@ export const apis = [
     description: "Everything about TikTok Shop",
     endpoints: [
       {
+        name: "Shop Products",
+        method: "GET",
+        description:
+          "Get the products from a TikTok Shop. NOTE: This costs more than 1 credit! Since we are doing the paginating for you, it costs 1 credit per page (TikTok returns 30 products per page). Also this endpoint takes a while and is new, so please be patient. Email me if you have any issues with it: adrian@thewebscrapingguy.com",
+        path: "/v1/tiktok/shop/products",
+        params: [
+          {
+            name: "url",
+            required: true,
+            type: "string",
+            description: "The URL of the shop.",
+            placeholder: "https://www.tiktok.com/@goli-nutrition",
+          },
+          {
+            name: "amount",
+            required: false,
+            type: "string",
+            description: "The amount of products to get.",
+            placeholder: "30",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          shopInfo: {
+            seller_id: "7495794203056835079",
+            sold_count: 3767605,
+            on_sell_product_count: 36,
+            review_count: 284185,
+            global_seller_id: "7495794203056835079",
+            global_sold_count: "3767605",
+            followers_count: "237879",
+            video_count: "2413",
+            enable_follow: true,
+            shop_name: "Goli Nutrition",
+            shop_logo: {
+              height: 300,
+              width: 300,
+              uri: "tos-useast5-i-omjb5zjo8w-tx/e7478d3e93d4487a9e772fa74e10f506",
+              url_list: [
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/e7478d3e93d4487a9e772fa74e10f506~tplv-fhlh96nyum-resize-webp:300:300.webp?dr=12185&from=2422056039&idc=useast8&ps=933b5bde&shcp=a6e80448&shp=905da467&t=555f072d",
+                "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/e7478d3e93d4487a9e772fa74e10f506~tplv-fhlh96nyum-resize-webp:300:300.webp?dr=12185&from=2422056039&idc=useast8&ps=933b5bde&shcp=a6e80448&shp=905da467&t=555f072d",
+              ],
+            },
+            shop_rating: "4.6",
+            shop_link:
+              "https://www.tiktok.com/shop/store/goli-nutrition/7495794203056835079",
+            format_sold_count: "3.7M",
+            region: "US",
+            display_on_sell_product_count: "36",
+            format_global_sold_count: "3.7M",
+            shop_slogan: "Health Simple✨\nVegan. Gluten-Free. Non-GMO.",
+            format_followers_count: "237.8K+",
+            format_video_count: "2413",
+            store_sub_score: [
+              {
+                score: 0.9967,
+                type: 1,
+                score_percentage: "100",
+                high_light_tag: 1,
+                platform_rate_type: 1,
+              },
+              {
+                score: 0.5020439123674718,
+                type: 2,
+                score_percentage: "50",
+                high_light_tag: 0,
+                platform_rate_type: 0,
+              },
+              {
+                score: 0.888,
+                type: 3,
+                score_percentage: "89",
+                platform_rate_type: 0,
+              },
+            ],
+            worst_rating: "0",
+            best_rating: "5",
+            creator_name: "Goli® Nutrition",
+            desc: "Shop Goli Nutrition on TikTok Shop! 3.7M sold, 237.8K+ followers. 89+% positive feedback. 50+% Ships in 48h, 100% replies in 24h. Join the trend!",
+          },
+          products: [
+            {
+              product_id: "1729527313880355335",
+              title:
+                "Goli Ashwagandha & Vitamin D Gummy - Mixed Berry, KSM-66, Vegan, Plant Based, Non-GMO, Gluten-Free & Gelatin Free. America's #1 Ashwagandha Brand",
+              image: {
+                height: 1500,
+                width: 1500,
+                uri: "tos-useast5-i-omjb5zjo8w-tx/30fc1338a2bf474a9d252a790e4c119f",
+                url_list: [
+                  "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/30fc1338a2bf474a9d252a790e4c119f~tplv-fhlh96nyum-crop-webp:1500:1500.webp?dr=12190&from=2378011839&idc=useast8&ps=933b5bde&shcp=905da467&shp=8dbd94bf&t=555f072d",
+                  "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/30fc1338a2bf474a9d252a790e4c119f~tplv-fhlh96nyum-crop-webp:1500:1500.webp?dr=12190&from=2378011839&idc=useast8&ps=933b5bde&shcp=905da467&shp=8dbd94bf&t=555f072d",
+                ],
+              },
+              product_price_info: {
+                sku_id: "1729527298861535751",
+                symbol_position: 1,
+                show_currency_space: false,
+                currency_show_mode: 1,
+                currency_name: "USD",
+                currency_symbol: "$",
+                sale_price_decimal: "14.96",
+                origin_price_decimal: "24.99",
+                sale_price_format: "14.96",
+                origin_price_format: "24.99",
+                discount_format: "40%",
+                discount_decimal: "0.4",
+                reduce_price_format: "Saving $10.03",
+                single_product_price_format: "14.96",
+                single_product_price_decimal: "14.96",
+                sale_price_integer_part_format: "14",
+                sale_price_decimal_part_format: "96",
+                decimal_point_symbol: ".",
+                promotion_deduction_details: {
+                  seller_subtotal_deduction: "10.03",
+                  seller_subtotal_deduction_decimal: "10.03",
+                },
+              },
+              rate_info: {
+                score: 4.5,
+                review_count: "91316",
+              },
+              sold_info: {
+                sold_count: 1235089,
+              },
+              seller_info: {
+                seller_id: "7495794203056835079",
+                shop_name: "Goli Nutrition",
+                shop_logo: {
+                  height: 300,
+                  width: 300,
+                  uri: "tos-useast5-i-omjb5zjo8w-tx/e7478d3e93d4487a9e772fa74e10f506",
+                  url_list: [
+                    "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/e7478d3e93d4487a9e772fa74e10f506~tplv-fhlh96nyum-resize-png:300:300.png?dr=12184&from=2422056039&idc=useast8&ps=933b5bde&shcp=d9d491bf&shp=905da467&t=555f072d",
+                    "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/e7478d3e93d4487a9e772fa74e10f506~tplv-fhlh96nyum-resize-png:300:300.png?dr=12184&from=2422056039&idc=useast8&ps=933b5bde&shcp=d9d491bf&shp=905da467&t=555f072d",
+                  ],
+                },
+              },
+              seo_url: {
+                updated_at: "1754035613102",
+                canonical_url:
+                  "https://www.tiktok.com/shop/pdp/ashwagandha-gummies-by-goli-ksm-66-mixed-berry-vegan-non-gmo/1729527313880355335",
+                slug: "ashwagandha-gummies-by-goli-ksm-66-mixed-berry-vegan-non-gmo",
+                type: 2,
+                version: 2,
+              },
+            },
+          ],
+        },
+      },
+      {
         name: "Product Details",
         method: "GET",
         description:
