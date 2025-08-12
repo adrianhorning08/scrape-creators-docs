@@ -24391,30 +24391,78 @@ export const apis = [
         sampleResponse: {
           ads: [
             {
-              advertiserId: "AR01614014350098432001",
-              creativeId: "CR10449491775734153217",
+              advertiserId: "AR10397446976948928513",
+              creativeId: "CR00429437544950661121",
+              firstShown: "2025-06-28T00:00:00.000Z",
+              lastShown: "2025-08-11T23:46:18.000Z",
               format: "text",
-              adUrl:
-                "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR10449491775734153217",
-              advertiserName: "Lululemon Athletica Canada Inc.",
-              domain: "lululemon.com",
-              firstShown: "2023-12-29T21:59:16.000Z",
-              lastShown: "2025-03-28T01:46:12.000Z",
+              overallImpressions: {
+                min: null,
+                max: null,
+              },
+              creativeRegions: [
+                {
+                  regionCode: "FI",
+                  regionName: "Finland",
+                },
+              ],
+              regionStats: [
+                {
+                  regionCode: "FI",
+                  regionName: "Finland",
+                  firstShown: "2025-06-30T00:00:00.000Z",
+                  lastShown: "2025-08-11T00:00:00.000Z",
+                  impressions: {},
+                  platformImpressions: [],
+                },
+              ],
+              variations: [
+                {
+                  destinationUrl: "www.scrapingbee.com/",
+                  headline: "Switch to #1 Web Scraping API",
+                  description:
+                    "ScrapingBee API handles rotating proxies, headless browsers and CAPTCHAS.",
+                },
+              ],
             },
             {
-              advertiserId: "AR01614014350098432001",
-              creativeId: "CR08077733302133325825",
-              format: "video",
-              adUrl:
-                "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR08077733302133325825",
-              advertiserName: "Lululemon Athletica Canada Inc.",
-              domain: "lululemon.com",
-              firstShown: "2025-02-03T19:49:57.000Z",
-              lastShown: "2025-03-28T01:43:03.000Z",
+              advertiserId: "AR13852934980478435329",
+              creativeId: "CR08357687413744599041",
+              firstShown: "2025-07-13T00:00:00.000Z",
+              lastShown: "2025-08-11T21:31:07.000Z",
+              format: "text",
+              overallImpressions: {
+                min: null,
+                max: null,
+              },
+              creativeRegions: [
+                {
+                  regionCode: "FR",
+                  regionName: "France",
+                },
+              ],
+              regionStats: [
+                {
+                  regionCode: "FR",
+                  regionName: "France",
+                  firstShown: "2025-07-15T00:00:00.000Z",
+                  lastShown: "2025-08-11T00:00:00.000Z",
+                  impressions: {},
+                  platformImpressions: [],
+                },
+              ],
+              variations: [
+                {
+                  destinationUrl: "www.scrapingbee.com/",
+                  headline: "Scrapingbee - The Best Web Scraping API",
+                  description:
+                    "AI-powered data extraction for web pages, even single-page applications AI-powered data extraction...",
+                },
+              ],
             },
           ],
           cursor:
-            "CgoAP7znOo9RPjf%2FEhD5utgx8m75NrTTbU0AAAAAGgn8%2BJyW%2BJQK40A%3D",
+            "CgoAP7znHvOD%2BtxDEhCPtIenS6VuEst4VJkAAAAAGgn8%2BJRa%2BLT01FM%3D",
           success: true,
           statusCode: 200,
         },
