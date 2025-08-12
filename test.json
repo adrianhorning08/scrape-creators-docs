@@ -1,75 +1,125 @@
 {
-  "ads": [
+  "success": true,
+  "id": "19571641",
+  "handle": "ninja",
+  "displayName": "Ninja",
+  "description": "Just want to make people happy. Co-Founder @DrinkNutcase. ",
+  "followers": 19235206,
+  "instagram": "https://www.instagram.com/ninja",
+  "x": "https://x.com/ninja",
+  "tiktok": "https://www.tiktok.com/@ninja",
+  "bit": "http://bit.ly/SubscribeNinja",
+  "allVideos": [
     {
-      "advertiserId": "AR10397446976948928513",
-      "creativeId": "CR00429437544950661121",
-      "firstShown": "2025-06-28T00:00:00.000Z",
-      "lastShown": "2025-08-11T23:46:18.000Z",
-      "format": "text",
-      "overallImpressions": {
-        "min": null,
-        "max": null
+      "animatedPreviewURL": "https://d1m7jfoe9zdc1j.cloudfront.net/98b2604eb65520876fc3_ninja_331071920125_1754658335/storyboards/2534457664-strip-0.jpg",
+      "game": {
+        "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/33214-40x56.jpg",
+        "id": "33214",
+        "slug": "fortnite",
+        "displayName": "Fortnite",
+        "name": "Fortnite",
+        "__typename": "Game"
       },
-      "creativeRegions": [
-        {
-          "regionCode": "FI",
-          "regionName": "Finland"
-        }
-      ],
-      "regionStats": [
-        {
-          "regionCode": "FI",
-          "regionName": "Finland",
-          "firstShown": "2025-06-30T00:00:00.000Z",
-          "lastShown": "2025-08-11T00:00:00.000Z",
-          "impressions": {},
-          "platformImpressions": []
-        }
-      ],
-      "variations": [
-        {
-          "destinationUrl": "www.scrapingbee.com/",
-          "headline": "Switch to #1 Web Scraping API",
-          "description": "ScrapingBee API handles rotating proxies, headless browsers and CAPTCHAS."
-        }
-      ]
-    },
-    {
-      "advertiserId": "AR13852934980478435329",
-      "creativeId": "CR08357687413744599041",
-      "firstShown": "2025-07-13T00:00:00.000Z",
-      "lastShown": "2025-08-11T21:31:07.000Z",
-      "format": "text",
-      "overallImpressions": {
-        "min": null,
-        "max": null
+      "id": "2534457664",
+      "lengthSeconds": 35910,
+      "owner": {
+        "displayName": "Ninja",
+        "id": "19571641",
+        "login": "ninja",
+        "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/90d40495-f467-4911-9035-72d8d10a49c5-profile_image-50x50.png",
+        "primaryColorHex": "1F69FF",
+        "roles": {
+          "isPartner": true,
+          "__typename": "UserRoles"
+        },
+        "__typename": "User"
       },
-      "creativeRegions": [
-        {
-          "regionCode": "FR",
-          "regionName": "France"
-        }
-      ],
-      "regionStats": [
-        {
-          "regionCode": "FR",
-          "regionName": "France",
-          "firstShown": "2025-07-15T00:00:00.000Z",
-          "lastShown": "2025-08-11T00:00:00.000Z",
-          "impressions": {},
-          "platformImpressions": []
-        }
-      ],
-      "variations": [
-        {
-          "destinationUrl": "www.scrapingbee.com/",
-          "headline": "Scrapingbee - The Best Web Scraping API",
-          "description": "AI-powered data extraction for web pages, even single-page applications AI-powered data extraction..."
-        }
-      ]
+      "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/98b2604eb65520876fc3_ninja_331071920125_1754658335//thumb/thumb0-320x180.jpg",
+      "publishedAt": "2025-08-08T13:05:39Z",
+      "self": {
+        "isRestricted": false,
+        "viewingHistory": null,
+        "__typename": "VideoSelfEdge"
+      },
+      "title": "USE CODE NINJA #EPICPARTNER | DAY 2 OF NEW SEASON AND ITS A BLAST | God is good! | Marvel rivals later and SPORTS SHOW AT 2 CENTRAL AFC WEST",
+      "viewCount": 278659,
+      "resourceRestriction": null,
+      "contentTags": [],
+      "__typename": "Video"
     }
   ],
-  "cursor": "CgoAP7znHvOD%2BtxDEhCPtIenS6VuEst4VJkAAAAAGgn8%2BJRa%2BLT01FM%3D",
-  "success": true,
-  "statusCode": 200
+  "featuredClips": [
+    {
+      "id": "3724988753",
+      "slug": "AthleticKindJayEleGiggle-BcNDJkcggMoP5HCa",
+      "clipTitle": "andre the bus driver",
+      "clipViewCount": 1799,
+      "curator": {
+        "id": "407947222",
+        "login": "grumbaelive",
+        "displayName": "GrumbaeLIVE",
+        "__typename": "User"
+      },
+      "clipGame": {
+        "id": "33214",
+        "slug": "fortnite",
+        "name": "Fortnite",
+        "displayName": "Fortnite",
+        "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/33214-52x72.jpg",
+        "__typename": "Game"
+      },
+      "broadcaster": {
+        "id": "19571641",
+        "login": "ninja",
+        "displayName": "Ninja",
+        "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/90d40495-f467-4911-9035-72d8d10a49c5-profile_image-50x50.png",
+        "primaryColorHex": "1F69FF",
+        "roles": {
+          "isPartner": true,
+          "__typename": "UserRoles"
+        },
+        "__typename": "User"
+      },
+      "thumbnailURL": "https://static-cdn.jtvnw.net/twitch-clips-thumbnails-prod/AthleticKindJayEleGiggle-BcNDJkcggMoP5HCa/7eb7fa38-6e54-4aa1-a6d4-d65f46870161/preview.jpg",
+      "createdAt": "2025-08-08T16:08:23Z",
+      "durationSeconds": 30,
+      "isFeatured": true,
+      "guestStarParticipants": {
+        "host": {
+          "id": "19571641",
+          "login": "ninja",
+          "displayName": "Ninja",
+          "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/90d40495-f467-4911-9035-72d8d10a49c5-profile_image-300x300.png",
+          "primaryColorHex": "1F69FF",
+          "description": "Just want to make people happy. Co-Founder @DrinkNutcase. ",
+          "__typename": "User"
+        },
+        "guests": [
+          {
+            "id": "100462683",
+            "login": "beardedblevins",
+            "displayName": "BeardedBlevins",
+            "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/bb440d87-e3eb-4fc3-adb4-ad5b8500ee85-profile_image-300x300.png",
+            "primaryColorHex": "00C7FB",
+            "description": "Husband. Father. Catholic. Detroit Sports fan. Bearded. ",
+            "__typename": "User"
+          }
+        ],
+        "sessionIdentifier": "310dXNdDIbjlo9gQiPXJtZ6cdir",
+        "__typename": "GuestStarParticipants"
+      },
+      "__typename": "Clip"
+    }
+  ],
+  "similarStreamers": [
+    {
+      "id": "964426424",
+      "displayName": "ninjasologames",
+      "login": "ninjasologames",
+      "primaryColorHex": "1F69FF",
+      "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/020b2022-5276-4f1b-af73-6eaa6f9d847c-profile_image-300x300.png",
+      "stream": null,
+      "__typename": "User"
+    }
+  ]
 }
