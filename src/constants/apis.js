@@ -5447,6 +5447,14 @@ export const apis = [
               "Language of the transcript. 2 letter language code, ie 'en', 'es', 'fr', 'de', 'it', 'ja', 'ko', 'zh'",
             placeholder: "en",
           },
+          {
+            name: "use_ai_as_fallback",
+            type: "string",
+            required: false,
+            description:
+              "If true, the API will use AI to generate a transcript if the video does not have a transcript. If false, the API will return NULL if the video does not have a transcript",
+            placeholder: "false",
+          },
         ],
         sampleResponse: {
           id: "7499229683859426602",
