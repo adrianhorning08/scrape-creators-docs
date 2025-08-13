@@ -470,7 +470,8 @@ export default function TryEndpoint({
                               <div className="grid grid-cols-1 w-full items-start divide-y divide-gray-50 dark:divide-white/5">
                                 <input
                                   className="flex-1 min-w-0 bg-transparent outline-none text-gray-900 dark:text-white px-2 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 focus:border-primary dark:focus:border-primary-light"
-                                  placeholder={`enter ${param.name}`}
+                                  // placeholder={`enter ${param.name}`}
+                                  placeholder={param.placeholder}
                                   type={
                                     param.type === "integer" ? "number" : "text"
                                   }

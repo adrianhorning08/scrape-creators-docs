@@ -165,6 +165,12 @@ export default function Introduction() {
           </li>
           <li className="flex items-center gap-2">
             <span className="text-red-600 dark:text-red-400 font-mono">
+              402
+            </span>
+            <span>Payment Required - Gotta purchase more credits</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="text-red-600 dark:text-red-400 font-mono">
               500
             </span>
             <span>Server Error - Please try again later</span>

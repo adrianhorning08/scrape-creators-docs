@@ -21511,7 +21511,7 @@ export const apis = [
           },
           {
             name: "includeExtras",
-            type: "boolean",
+            type: "string",
             required: false,
             description:
               "This will get you the like + comment count and the description. To get the full details of the video, use the /v1/youtube/video endpoint. This will slow down the response slightly.",
@@ -22126,7 +22126,7 @@ export const apis = [
           },
           {
             name: "includeExtras",
-            type: "boolean",
+            type: "string",
             required: false,
             description:
               "This will get you the like + comment count and the description. To get the full details of the video, use the /v1/youtube/video endpoint. *This will slow down the response slightly.*",
