@@ -19,6 +19,8 @@ import {
 import { MdPerson } from "react-icons/md";
 import ScrapeCreatorsIcon from "../components/ScrapeCreatorsIcon";
 import { TruthSocialIcon } from "../TruthSocialIcon.jsx";
+import { KomiIcon } from "../KomiIcon.jsx";
+import { PillarIcon } from "../PillarIcon.jsx";
 
 export const apis = [
   {
@@ -33392,9 +33394,9 @@ export const apis = [
     description: "Scrape Linktree pages",
     endpoints: [
       {
-        name: "Scrape Linktree",
+        name: "Linktree page",
         method: "GET",
-        description: "Scrape Linktree page",
+        description: "Linktree page",
         path: "/v1/linktree",
         params: [
           {
@@ -33474,6 +33476,155 @@ export const apis = [
           apple_music:
             "https://music.apple.com/ca/artist/miguel-angeles/1209423162",
           email_address: "miguel@irlangel.com",
+        },
+      },
+    ],
+  },
+  {
+    id: "komi",
+    name: "Komi",
+    icon: KomiIcon,
+    description: "Scrape Komi pages",
+    endpoints: [
+      {
+        name: "Komi page",
+        method: "GET",
+        description: "Komi page",
+        path: "/v1/komi",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "URL to Komi page",
+            placeholder: "https://kimkardashian.komi.io/",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          id: "64d82830-59aa-4488-bfb0-93426971d139",
+          username: "kimkardashian",
+          avatar:
+            "https://komi-production-assets.s3.amazonaws.com/photos/4Nd69ODJHs61_iNYPlqos.jpg",
+          bio: "",
+          firstName: "Kim",
+          lastName: "Kardashian",
+          displayName: "Kim Kardashian",
+          displayNameImage: null,
+          instagram: "https://www.instagram.com/kimkardashian/",
+          tiktok: "https://www.tiktok.com/@kimkardashian",
+          youtube: "https://www.youtube.com/@KUWTK",
+          twitter: "https://twitter.com/KimKardashian",
+          facebook: "https://www.facebook.com/KimKardashian",
+          snapchat: "https://www.snapchat.com/add/kimkardashian?locale=en-GB",
+          website: null,
+          links: [
+            {
+              id: "6d7086df-ede4-4f8a-85e5-0fa410e60bc2",
+              url: "https://skims.social/shop-skims",
+              order: 0,
+              title: "Visit SKIMS",
+              visible: true,
+              moduleId: "e6ce39d2-e3df-4040-a5cc-ce016cacbc34",
+              thumbnail:
+                "https://komi-production-assets.s3-accelerate.amazonaws.com/photos/x_LQCBYzoWiel0-yrAnrF.jpg",
+              versionId: "944094bf-f124-4b13-866a-3498c492736d",
+              type: "LINK",
+            },
+            {
+              id: "f43e198b-2fd5-45f4-80d1-389906c5c840",
+              url: "https://skims.com/products/signature-swim-triangle-bikini-top-dune-crocodile-print",
+              order: 0,
+              price: 44,
+              title: " TRIANGLE BIKINI TOP | DUNE CROCODILE ",
+              visible: false,
+              currency: "USD",
+              moduleId: "5c8bc46c-2d6b-4731-baf3-2f40aec1465c",
+              thumbnail:
+                "https://komi-production-assets.s3-accelerate.amazonaws.com/photos/dzDiYZjZFXPE4E8-ZwnSn.png",
+              versionId: "944094bf-f124-4b13-866a-3498c492736d",
+              type: "PRODUCT",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "pillar",
+    name: "Pillar",
+    icon: PillarIcon,
+    description: "Scrape Pillar pages",
+    endpoints: [
+      {
+        name: "Pillar page",
+        method: "GET",
+        description: "Pillar page",
+        path: "/v1/pillar",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "URL to Pillar page",
+            placeholder: "https://pillar.io/angelstrife",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          id: "d8a5cbb4-a64d-44f2-830d-27a489bbc608",
+          first_name: "Angel",
+          last_name: "Blanco",
+          email_primary: "angelrafaelcovablanco@gmail.com",
+          location: "México",
+          email: "angelrafaelcovablanco@gmail.com",
+          amazon: "",
+          medium: "",
+          tiktok: "https://tiktok.com/@angelstrifeoficial",
+          twitch: "",
+          discord: "",
+          patreon: "",
+          spotify:
+            "https://open.spotify.com/artist/3Lse4fAlOchY8msotsYMA6?si=4nKqeTSRRsSDoNj1tfvNtA",
+          twitter: "https://twitter.com/SoyAngelStrife",
+          youtube: "https://www.youtube.com/channel/UCgZSHuBjHSFADbFQOCN1ifg",
+          facebook: "https://www.facebook.com/AngelStrifeOficial",
+          linkedin: "https://mx.linkedin.com/in/angelcovablanco",
+          snapchat: "",
+          instagram: "https://www.instagram.com/angelstrifeoficial",
+          soundcloud: "https://soundcloud.com/contienda-records",
+          apple_app_store: "",
+          google_app_store: "",
+          links: [
+            {
+              id: "66472110-1ba7-11ee-b33b-e5396daf72e9",
+              type: "twitter",
+              title: "twitter",
+              url: "https://twitter.com/SoyAngelStrife",
+              clicks: 2,
+              order: null,
+            },
+            {
+              id: "669fef70-1ba7-11ee-b33b-e5396daf72e9",
+              type: "30 mil pies de altura para morir de amor",
+              title: "30 mil pies de altura para morir de amor",
+              url: "https://open.spotify.com/album/14jqUYFbuBs0HcftvQ7jC3?si=bX_bInR7R9Wu-mC9_77Fvw&context=spotify%3Aalbum%3A14jqUYFbuBs0HcftvQ7jC3",
+              clicks: 0,
+              order: 2,
+            },
+          ],
+          products: [
+            {
+              id: "254c8681-1d52-11ee-b065-850167411bb1",
+              title: '"30 Mil Pies De Altura Para Morir de Amor" - LP',
+              price: 0,
+              url: "https://angel-strife.ueniweb.com/products/merchandise/30-mil-pies-de-altura-para-morir-de-amor-lp-especial-edition-vynil-deluxe-53106871",
+              name: '"30 Mil Pies De Altura Para Morir de Amor" - LP',
+              description: "Especial Edition Vynil Deluxe",
+              image:
+                "https://athlane-file-management-prod.s3.amazonaws.com/a925f7b5-77ba-4095-b755-27b2bc221baa",
+            },
+          ],
         },
       },
     ],
