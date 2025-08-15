@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import CodeBlock from "./components/CodeBlock";
 import EndpointDocs from "./components/EndpointDocs";
+import Breadcrumbs from "./components/Breadcrumbs";
 
 export default function App() {
   const [selectedLanguage, setSelectedLanguage] = React.useState("cURL");
@@ -32,9 +33,10 @@ export default function App() {
         />
         <meta
           property="og:image"
-          content="https://scrapecreators.com/logo.png"
+          content="https://docs.scrapecreators.com/logo.png"
         />
-        <meta name="twitter:card" content="summary" />
+        <meta property="og:url" content="https://docs.scrapecreators.com" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
           content="Scrape Creators API Documentation"
@@ -45,8 +47,48 @@ export default function App() {
         />
         <meta
           name="twitter:image"
-          content="https://scrapecreators.com/logo.png"
+          content="https://docs.scrapecreators.com/logo.png"
         />
+        <link rel="canonical" href="https://docs.scrapecreators.com" />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            name: "Scrape Creators API Documentation",
+            description:
+              "Comprehensive API documentation for extracting public data from social media platforms including TikTok, Instagram, YouTube, Twitter, LinkedIn, and more.",
+            url: "https://docs.scrapecreators.com",
+            author: {
+              "@type": "Organization",
+              name: "Scrape Creators",
+              url: "https://scrapecreators.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Scrape Creators",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://docs.scrapecreators.com/logo.png",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://docs.scrapecreators.com",
+            },
+            about: {
+              "@type": "SoftwareApplication",
+              name: "Scrape Creators API",
+              applicationCategory: "DeveloperApplication",
+              operatingSystem: "Web",
+              description:
+                "API for extracting public social media data from platforms like TikTok, Instagram, YouTube, Twitter, LinkedIn, Facebook, Reddit, and more.",
+            },
+            keywords:
+              "API documentation, social media scraping, TikTok API, Instagram API, YouTube API, Twitter API, LinkedIn API, data extraction, web scraping, social media data",
+          })}
+        </script>
       </Helmet>
       <span className="fixed inset-0 bg-background-light dark:bg-background-dark -z-10"></span>
       <div className="relative antialiased text-gray-500 dark:text-gray-400">
@@ -55,6 +97,7 @@ export default function App() {
           <div className="flex flex-row gap-12 box-border w-full pt-40 lg:pt-10">
             <Sidebar />
             <div className="relative grow box-border flex-col w-full mx-auto px-1 lg:pl-[23.7rem] lg:-ml-12 xl:w-[calc(100%-56rem)]">
+              <Breadcrumbs />
               <Routes>
                 <Route
                   path="*"

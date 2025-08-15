@@ -2,22 +2,34 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import { apis } from "../constants/apis";
 
 export default function Introduction() {
   return (
     <div className="pb-24">
       <Helmet>
         <title>
-          Scrape Creators API Documentation - Extract Data from Social Media
-          Platforms
+          Scrape Creators API Documentation - Extract Data from TikTok,
+          Instagram, YouTube & More
         </title>
         <meta
           name="description"
-          content="Comprehensive API documentation for Scrape Creators. Learn how to extract data from TikTok, Instagram, YouTube and other social media platforms with our powerful API endpoints."
+          content={`Complete API documentation for Scrape Creators. Extract public data from ${apis
+            .slice(0, 8)
+            .map((api) => api.name)
+            .join(
+              ", "
+            )}, and more. Get started with our powerful REST API endpoints supporting ${
+            apis.length
+          }+ social media platforms.`}
         />
         <meta
           name="keywords"
-          content="API documentation, Scrape Creators, social media data, TikTok API, Instagram API, YouTube API, data extraction"
+          content={`API documentation, Scrape Creators, social media data extraction, ${apis
+            .map((api) => `${api.name} API`)
+            .join(
+              ", "
+            )}, REST API, developer documentation, web scraping API, social media scraper, public data extraction`}
         />
         <link
           rel="canonical"
@@ -25,26 +37,112 @@ export default function Introduction() {
         />
         <meta
           property="og:title"
-          content="Scrape Creators API Documentation - Extract Data from Social Media Platforms"
+          content="Scrape Creators API Documentation - Extract Data from 10+ Social Media Platforms"
         />
         <meta
           property="og:description"
-          content="Comprehensive API documentation for Scrape Creators. Learn how to extract data from social media platforms."
+          content={`Complete API documentation for extracting public data from ${apis
+            .slice(0, 5)
+            .map((api) => api.name)
+            .join(", ")} and ${
+            apis.length - 5
+          } more platforms. Start building with our REST API today.`}
         />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
+        <meta property="og:section" content="Technology" />
         <meta
           property="og:url"
           content="https://docs.scrapecreators.com/introduction"
         />
-        <meta name="twitter:card" content="summary" />
+        <meta
+          property="og:image"
+          content="https://docs.scrapecreators.com/logo.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Scrape Creators API Documentation"
+          content="Scrape Creators API Documentation - Social Media Data Extraction"
         />
         <meta
           name="twitter:description"
-          content="Extract data from social media platforms with our comprehensive API documentation."
+          content={`Extract public data from ${apis
+            .slice(0, 5)
+            .map((api) => api.name)
+            .join(
+              ", "
+            )} and more with our comprehensive API documentation and code examples for ${
+            apis.length
+          }+ platforms.`}
         />
+        <meta
+          name="twitter:image"
+          content="https://docs.scrapecreators.com/logo.png"
+        />
+
+        {/* Article Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            headline:
+              "Scrape Creators API Documentation - Extract Data from Social Media Platforms",
+            description: `Complete API documentation for extracting public data from ${apis
+              .map((api) => api.name)
+              .join(", ")}.`,
+            url: "https://docs.scrapecreators.com/introduction",
+            datePublished: "2024-01-01",
+            dateModified: "2024-01-15",
+            author: {
+              "@type": "Organization",
+              name: "Scrape Creators",
+              url: "https://scrapecreators.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Scrape Creators",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://docs.scrapecreators.com/logo.png",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://docs.scrapecreators.com/introduction",
+            },
+            about: {
+              "@type": "SoftwareApplication",
+              name: "Scrape Creators API",
+              applicationCategory: "DeveloperApplication",
+              operatingSystem: "Web",
+              description: "API for extracting public social media data",
+            },
+            articleSection: "API Documentation",
+            keywords:
+              "API documentation, social media scraping, TikTok API, Instagram API, YouTube API, data extraction",
+          })}
+        </script>
+
+        {/* Breadcrumb Structured Data - Simple flat structure */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://docs.scrapecreators.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Introduction",
+                item: "https://docs.scrapecreators.com/introduction",
+              },
+            ],
+          })}
+        </script>
       </Helmet>
       <div className="eyebrow h-5 text-primary dark:text-primary-light text-sm font-semibold">
         API Documentation
@@ -55,19 +153,58 @@ export default function Introduction() {
         </h1>
       </div>
       <div className="prose prose-gray dark:prose-invert max-w-none pb-24">
-        <p className="text-lg">
-          Welcome to the Scrape Creators API documentation. Our API provides
-          powerful endpoints to extract *public* data from various social media
-          platforms including TikTok, Instagram, YouTube, and more.
+        <p className="text-lg leading-relaxed">
+          Welcome to the <strong>Scrape Creators API documentation</strong>. Our
+          comprehensive REST API provides powerful endpoints to extract{" "}
+          <em>public data</em> from {apis.length}+ social media platforms
+          including{" "}
+          <strong>
+            {apis
+              .slice(0, 5)
+              .map((api) => api.name)
+              .join(", ")}
+            , and more
+          </strong>
+          .
         </p>
 
-        <h2 className="text-xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">
-          Authentication
+        <div className="my-8 p-6 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+          <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-2">
+            🚀 Quick Start Guide
+          </h3>
+          <p className="text-blue-800 dark:text-blue-200">
+            Get started in minutes with our <strong>free API key</strong>.
+            Extract profile data, posts, videos, and more from any public social
+            media account.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">
+          Supported Platforms
         </h2>
-        <p>
-          All API requests require authentication using an API key. You'll need
-          to include your API key in the <code>x-api-key</code> header with
-          every request.
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+          {apis.map((api) => (
+            <div
+              key={api.id}
+              className="flex items-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg"
+            >
+              <span className="text-sm font-medium text-gray-900 dark:text-white">
+                {api.name}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-2xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">
+          API Authentication
+        </h2>
+        <p className="mb-4">
+          All API requests require authentication using an{" "}
+          <strong>API key</strong>. You'll need to include your API key in the{" "}
+          <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm">
+            x-api-key
+          </code>{" "}
+          header with every request to our REST API endpoints.
         </p>
         <div className="bg-primary/10 dark:bg-primary-light/10 border border-primary/20 dark:border-primary-light/20 rounded-lg p-4 my-4">
           <p className="m-0 flex items-center gap-2">
@@ -86,7 +223,49 @@ export default function Introduction() {
           </p>
         </div>
 
-        <h2 className="text-xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">
+        <h2 className="text-2xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">
+          Key Features of Our API
+        </h2>
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+            <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+              🚀 High Performance
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Fast, reliable API responses with 99.9% uptime and
+              enterprise-grade infrastructure.
+            </p>
+          </div>
+          <div className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+            <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+              📊 Real-time Data
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Extract the latest public data from social media platforms in
+              real-time.
+            </p>
+          </div>
+          <div className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+            <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+              🔧 Developer Friendly
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              RESTful API with comprehensive documentation and code examples in
+              6+ languages.
+            </p>
+          </div>
+          <div className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+            <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+              🔒 Secure & Compliant
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Only public data extraction with enterprise security and privacy
+              compliance.
+            </p>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">
           Using the Documentation
         </h2>
         {/* <p>

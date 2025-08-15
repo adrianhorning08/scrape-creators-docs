@@ -82,38 +82,110 @@ export default function EndpointDocs({
   return (
     <>
       <Helmet>
-        <title>{`${endpointData.name} API Endpoint - Scrape Creators Documentation`}</title>
+        <title>{`${api.name} ${endpointData.name} API - ${endpointData.description} | Scrape Creators`}</title>
         <meta
           name="description"
-          content={`${endpointData.description} - Complete API documentation with examples in multiple programming languages including JavaScript, Python, cURL, PHP, Go, and Java.`}
+          content={`${api.name} ${endpointData.name} API endpoint: ${
+            endpointData.description
+          }. Complete REST API documentation with code examples in JavaScript, Python, cURL, PHP, Go, and Java. Get your free API key and start extracting ${api.name.toLowerCase()} data today.`}
         />
         <meta
           name="keywords"
-          content={`${endpointData.name}, API endpoint, Scrape Creators, ${endpointData.method}, API documentation, ${endpointData.path}`}
+          content={`${api.name} API, ${
+            endpointData.name
+          }, ${api.name.toLowerCase()} ${endpointData.name.toLowerCase()}, social media API, ${api.name.toLowerCase()} scraping, ${
+            endpointData.method
+          } request, REST API, ${api.name.toLowerCase()} data extraction, API documentation, Scrape Creators`}
         />
         <link rel="canonical" href={`https://docs.scrapecreators.com${path}`} />
         <meta
           property="og:title"
-          content={`${endpointData.name} API Endpoint - Scrape Creators Documentation`}
+          content={`${api.name} ${endpointData.name} API - Extract ${api.name} Data | Scrape Creators`}
         />
         <meta
           property="og:description"
-          content={`${endpointData.description} - Complete API documentation with examples in multiple programming languages.`}
+          content={`${api.name} ${endpointData.name} API: ${endpointData.description}. Complete documentation with code examples in multiple languages.`}
         />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
+        <meta property="og:section" content="API Documentation" />
+        <meta
+          property="og:image"
+          content="https://docs.scrapecreators.com/logo.png"
+        />
         <meta
           property="og:url"
           content={`https://docs.scrapecreators.com${path}`}
         />
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content={`${endpointData.name} API Endpoint - Scrape Creators Documentation`}
+          content={`${api.name} ${endpointData.name} API - Scrape Creators`}
         />
         <meta
           name="twitter:description"
-          content={`${endpointData.description} - Complete API documentation with examples.`}
+          content={`Extract ${api.name.toLowerCase()} data with our ${endpointData.name.toLowerCase()} API endpoint. Complete documentation with code examples.`}
         />
+        <meta
+          name="twitter:image"
+          content="https://docs.scrapecreators.com/logo.png"
+        />
+
+        {/* API Endpoint Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "APIReference",
+            name: `${api.name} ${endpointData.name} API`,
+            description: `${endpointData.description} - Extract public data from ${api.name} using our REST API endpoint.`,
+            url: `https://docs.scrapecreators.com${path}`,
+            provider: {
+              "@type": "Organization",
+              name: "Scrape Creators",
+              url: "https://scrapecreators.com",
+            },
+            documentation: `https://docs.scrapecreators.com${path}`,
+            programmingModel: "REST",
+            applicationCategory: "DeveloperApplication",
+            operatingSystem: "Any",
+            serviceType: "API",
+            potentialAction: {
+              "@type": "ConsumeAction",
+              target: {
+                "@type": "EntryPoint",
+                urlTemplate: `https://api.scrapecreators.com${path}`,
+                httpMethod: endpointData.method,
+                contentType: "application/json",
+              },
+            },
+            about: {
+              "@type": "Thing",
+              name: api.name,
+              description: `${api.name} social media platform`,
+            },
+          })}
+        </script>
+
+        {/* Breadcrumb Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://docs.scrapecreators.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: `${api.name} ${endpointData.name} API`,
+                item: `https://docs.scrapecreators.com${path}`,
+              },
+            ],
+          })}
+        </script>
       </Helmet>
       <EndpointHeader
         title={endpointData.name}

@@ -1,4 +1,22 @@
 User-agent: *
 Allow: /
 
+# Block crawling of potentially dynamic endpoints
+Disallow: /v1/*test*
+Disallow: /v1/*demo*
+
+# Allow all important documentation paths
+Allow: /v1/
+Allow: /api/
+Allow: /introduction
+Allow: /
+
+# Crawl delay for better server performance
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://docs.scrapecreators.com/sitemap.xml
+
+# Additional sitemaps for better organization
+# Sitemap: https://docs.scrapecreators.com/sitemap-endpoints.xml
+# Sitemap: https://docs.scrapecreators.com/sitemap-guides.xml
