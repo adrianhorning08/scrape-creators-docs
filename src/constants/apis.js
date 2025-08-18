@@ -16630,19 +16630,10 @@ export const apis = [
         path: "/v1/tiktok/product",
         params: [
           {
-            name: "product_id",
-            required: false,
-            type: "string",
-            description:
-              "The ID of the product to get details for. You can provide this or the URL of the product.",
-            placeholder: "1729587769570529799",
-          },
-          {
             name: "url",
-            required: false,
+            required: true,
             type: "string",
-            description:
-              "The URL of the product to get details for. You can provide this or the ID of the product.",
+            description: "The URL of the product to get details for",
             placeholder:
               "https://www.tiktok.com/shop/pdp/goli-ashwagandha-gummies-with-vitamin-d-ksm-66-vegan-non-gmo/1729587769570529799",
           },
