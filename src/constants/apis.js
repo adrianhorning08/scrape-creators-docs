@@ -16633,7 +16633,7 @@ export const apis = [
             name: "url",
             required: true,
             type: "string",
-            description: "The URL of the product to get details for",
+            description: "The URL of the product to get details for.",
             placeholder:
               "https://www.tiktok.com/shop/pdp/goli-ashwagandha-gummies-with-vitamin-d-ksm-66-vegan-non-gmo/1729587769570529799",
           },
@@ -16642,7 +16642,7 @@ export const apis = [
             required: false,
             type: "string",
             description:
-              "Whether to get related videos for the product. These are affiliate videos promoting the product",
+              "Whether to get related videos for the product. These are affiliate videos promoting the product. *This will cost you an additional credit and will take a little longer to process.*",
             placeholder: "false",
           },
         ],
