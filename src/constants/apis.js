@@ -33776,7 +33776,7 @@ export const apis = [
         name: "Get Age and Gender",
         method: "GET",
         description:
-          "Get age and gender of creator. This just analyzed the profile image. In the future it will be more sophisticated.",
+          "Get age and gender of creator. This uses AI to analyze the profile image. *The profile photo must be clear to get an accurate result.*",
         path: "/v1/detect-age-gender",
         sampleResponse: {
           ageRange: { low: 23, high: 29 },
