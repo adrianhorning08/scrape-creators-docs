@@ -24533,7 +24533,7 @@ export const apis = [
         name: "Company Ads",
         method: "GET",
         description:
-          "Get the ads for a company. *This only gets the public ads. Some ads you need to log in for and sadly we can't get those. ",
+          "Get the ads for a company. *This only gets the public ads. Some ads you need to log in for and sadly we can't get those. This might be a bit slow since we are OCRing all the ads to get the text.",
         path: "/v1/google/company/ads",
         sampleResponse: {
           ads: [
