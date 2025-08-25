@@ -24646,6 +24646,20 @@ export const apis = [
             placeholder: "US",
           },
           {
+            name: "start_date",
+            type: "string",
+            required: false,
+            description: "Start date to search for. Format: YYYY-MM-DD",
+            placeholder: "2025-08-01",
+          },
+          {
+            name: "end_date",
+            type: "string",
+            required: false,
+            description: "End date to search for. Format: YYYY-MM-DD",
+            placeholder: "2025-08-11",
+          },
+          {
             name: "cursor",
             type: "string",
             required: false,
