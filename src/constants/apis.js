@@ -21922,6 +21922,7 @@ export const apis = [
           ],
           transcript_only_text:
             "welcome back to the hell farm and the backyard trails we built these jumps two years ago and last year we just kind of rebuilt them and this year......",
+          language: "English",
         },
       },
       {
