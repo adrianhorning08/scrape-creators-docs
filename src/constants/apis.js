@@ -28014,7 +28014,7 @@ export const apis = [
     name: "Truth Social",
     icon: TruthSocialIcon,
     description:
-      "Get Truth Social posts and profile info (aka basically only donald trump posts)",
+      "As of 8/27/2025, Truth Social is only letting you view the public profile/posts of prominent users (like Trump and Vance), but requiring auth for everyone else. So sadly most other accounts will not work :(",
     endpoints: [
       {
         name: "Profile",
@@ -28074,7 +28074,8 @@ export const apis = [
       {
         name: "User Posts",
         method: "GET",
-        description: "Get public Truth Social posts by user",
+        description:
+          "As of 8/27/2025, Truth Social is only letting you view the public profile/posts of prominent users (like Trump and Vance), but requiring auth for everyone else. So sadly most other accounts will not work :(",
         path: "/v1/truthsocial/user/posts",
         paginationField: "next_max_id",
         params: [
