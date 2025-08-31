@@ -16851,7 +16851,7 @@ export const apis = [
             required: false,
             type: "string",
             description:
-              "Whether to get related videos for the product. These are affiliate videos promoting the product. *This will cost you an additional credit and will take a little longer to process.*",
+              "Whether to get related videos for the product. These are affiliate videos promoting the product. *This will take a little longer to process.*",
             placeholder: "false",
           },
         ],
