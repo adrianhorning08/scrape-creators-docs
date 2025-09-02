@@ -29240,6 +29240,7 @@ export const apis = [
                 "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiNjY3YTNlMzgxN2QwNGMwNmEzMDEzZmZiMzhjMTE1M2UzNTM2NjY3MjIyMzcyMjY4ODgyIn0sInNpZ25hdHVyZSI6IiJ9",
               logging_info_token: null,
               like_and_view_counts_disabled: false,
+              url: "https://www.threads.com/@zuck/post/DNQtqzGRWA7",
             },
           ],
         },
