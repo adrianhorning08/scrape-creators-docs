@@ -22613,6 +22613,7 @@ export const apis = [
         method: "GET",
         description: "Get about 48 trending shorts",
         path: "/v1/youtube/shorts/trending",
+        params: [],
         sampleResponse: {
           success: true,
           shorts: [
