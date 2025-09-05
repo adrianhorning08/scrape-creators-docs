@@ -23885,6 +23885,186 @@ export const apis = [
           },
         ],
       },
+      {
+        name: "Comments",
+        method: "GET",
+        description: "Get the comments of a Facebook post (or reel)",
+        path: "/v1/facebook/post/comments",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Facebook post URL (or reel URL)",
+            placeholder: "https://www.facebook.com/reel/753347914167361",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            description:
+              "Cursor to get more comments. Get 'cursor' from previous response.",
+            placeholder: "MToxNzU3MTA2NzYyOgF1P1VkxpkA9Ds4...",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          comments: [
+            {
+              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzc4NzQ2NjY0NzI2NTk4Mw==",
+              text: "How are you not 300lbs?",
+              created_at: "2025-09-01T00:38:58.000Z",
+              reply_count: 16,
+              reaction_count: 76,
+              author: {
+                id: "pfbid0Ay28K5Lc7QpQLD8wZEHrq4ertocvWcZApjZjDoRqfkYQSzSxaPBS7qFt53v95rERl",
+                name: "George Bergerac",
+                gender: "MALE",
+                profile_picture:
+                  "https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-1/505842751_10236156984095460_2868572328330516064_n.jpg?stp=cp0_dst-jpg_p64x64_tt6&_nc_cat=111&ccb=1-7&_nc_sid=e99d92&_nc_ohc=g-I4H6KKM6MQ7kNvwFuygDF&_nc_oc=AdnwxxAwIfIChiaCwfglGjg0KQPGmQ1OGj63ApE0s61cGAfuYk3N_GRergiUg3NRJdE&_nc_zt=24&_nc_ht=scontent-iad3-2.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfZaDkoSLpJpbQieLDeGB_yykXQsr1Nv8hM_VfkUA1BcdA&oe=68C11D0D",
+                short_name: "George",
+              },
+            },
+            {
+              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzEzMjc3MzczMjIyMDEyOTg=",
+              text: "Do these bits have cheese in the middle?",
+              created_at: "2025-09-01T00:52:22.000Z",
+              reply_count: 21,
+              reaction_count: 32,
+              author: {
+                id: "1527964450",
+                name: "Jill Carney Strother",
+                gender: "FEMALE",
+                profile_picture:
+                  "https://scontent-iad3-2.xx.fbcdn.net/v/t1.6435-1/69940743_10220991568328747_1326971802987003904_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=106&ccb=1-7&_nc_sid=1d2534&_nc_ohc=Ex_xJaIlN60Q7kNvwH3XZuy&_nc_oc=AdlV8aBJ-0JD1br2NBT6_F6TEKnp3IEP2FivOZws94atyClBXTkQ1MLRzdcxwDvAwi0&_nc_zt=24&_nc_ht=scontent-iad3-2.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfaNoY1bJKBk5dSVEY5L8n65TthSPqdoQSa7aq3oKvYlTg&oe=68E2BBBF",
+                short_name: "Jill",
+              },
+            },
+            {
+              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzE0ODE0MTIwNTYzNTA1NDk=",
+              text: "I can’t even with some of you…this is not meant for dogs🤦🏻‍♀️",
+              created_at: "2025-09-01T01:46:44.000Z",
+              reply_count: 3,
+              reaction_count: 57,
+              author: {
+                id: "pfbid0R6rs2W8jPF2sCcAKvZZJmGxsi3yvf49YpXdfxumjuwapfuAYgEEHaW2A9NQDcvMvl",
+                name: "September Martinez",
+                gender: "FEMALE",
+                profile_picture:
+                  "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/538790834_4189629641268107_6434583406373058543_n.jpg?stp=cp6_dst-jpg_s64x64_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=Y3De0imXXHsQ7kNvwGizq6K&_nc_oc=AdmIxgyhswYXE3xoo3QLGrnLv7ekWDjT_LHvn4PWMehDk5Mf4xuilzaxZW6rOZ8jY_4&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfZLhxZ_XTPsABN6RzTw88FBfMHEQzO5tuLBD8MIlti2Uw&oe=68C12E18",
+                short_name: "September",
+              },
+            },
+            {
+              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzgwNjQwOTc4NTE0OTc4OQ==",
+              text: "I thought dogs weren’t supposed to have chocolate.",
+              created_at: "2025-08-31T23:54:14.000Z",
+              reply_count: 17,
+              reaction_count: 65,
+              author: {
+                id: "pfbid02s73v688AjeBDBkE9fZhHueosTBQcbBeVnXaCsdZkbtC3q6ZYUyutsjer8bWsR9P7l",
+                name: "Jerry Mickel",
+                gender: "FEMALE",
+                profile_picture:
+                  "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/406419031_217990624668899_9106419728628593815_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e99d92&_nc_ohc=o67dVhsiim0Q7kNvwEwaMOr&_nc_oc=Adm03sBUKi96OlsCVJgbAIYqsHY-5Ck2uJ_nNYbftqE9jdRx8A1KVEN0P43mcGcZETk&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfaRwhQ-hMmtEviACASXHbBEybQVpeGL-8u-IKx9I5PwKQ&oe=68C13D27",
+                short_name: "Jerry",
+              },
+            },
+            {
+              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzEzNTU1Mjc1NjI2MDYwNzk=",
+              text: "Peanut butter Ritz bitz?",
+              created_at: "2025-09-01T00:27:01.000Z",
+              reply_count: 10,
+              reaction_count: 35,
+              author: {
+                id: "pfbid0yr2MztyVjE36n2T2MSC1dxZNFN7kKHa2hQs8wrNAP81u2WdhRLFrzcGGbwuUALJzl",
+                name: "Julie Henry",
+                gender: "FEMALE",
+                profile_picture:
+                  "https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-1/539869738_25395292103393389_6583639586888007033_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=106&ccb=1-7&_nc_sid=e99d92&_nc_ohc=glF31K6uPakQ7kNvwHIFd7E&_nc_oc=AdmyA6pevUHcAPtFd3RYSoxYvi6_XO_UtM4lLVIV5MyKpymcfRcAd0cBd6LOmOcYPmw&_nc_zt=24&_nc_ht=scontent-iad3-2.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfbrSLnkULZeUo3oSOx_MMMzL4Hcs1d_940O2iR_cbnTXg&oe=68C11822",
+                short_name: "Julie",
+              },
+            },
+            {
+              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzEyODEyNTE3NjM3NTEwODM=",
+              text: "Sabrina Cox Jasmin Cox okay but hear me out, dark chocolate chips 👀",
+              created_at: "2025-09-01T01:31:04.000Z",
+              reply_count: 2,
+              reaction_count: 28,
+              author: {
+                id: "pfbid02RCvNxqoKAfwwveRr4TbntoTP5wAcMXNCR3PAtnmPsiW67ZwtVuRyA4KMLDc4xUrl",
+                name: "Brittani Crosby",
+                gender: "FEMALE",
+                profile_picture:
+                  "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/542759259_10163010487289709_8829316704747256796_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=102&ccb=1-7&_nc_sid=e99d92&_nc_ohc=tA57sz8ZmxoQ7kNvwEZLb1t&_nc_oc=AdnXhSmRCT-KZRj_ssbz9tGzvkSJ2CGogkQGE17MMsYzLqt6RNSrSTCOts6pWdLx3J8&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfZSI9nuRBpgI4u6jA5bTYE_lAMBQLKn8CPk8hvk4JxAJA&oe=68C11144",
+                short_name: "Brittani",
+              },
+            },
+            {
+              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzI1MDM5OTI2NjMzMTMxNzU=",
+              text: "Don’t call it puppy chow!",
+              created_at: "2025-09-01T17:23:19.000Z",
+              reply_count: 2,
+              reaction_count: 6,
+              author: {
+                id: "pfbid0366GoHvXmhVpW1Pmn1FqREnMdwM7drTzZDmKfBBJ4h9ZCwbqAayPWSwd9R3xsi68ql",
+                name: "Susan Chapluk",
+                gender: "FEMALE",
+                profile_picture:
+                  "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/465816038_10230475387701068_4549914005394301143_n.jpg?stp=cp6_dst-jpg_s64x64_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_ohc=WX1tylQLsXwQ7kNvwGPxsoF&_nc_oc=Adm5wgy1WCzd3Py2OAhE2cKbMNvfk5GJKsZ8QHi6lyXR3RUWjaB29IvKu8lNtGalm44&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfZPQaGi3i9CaaY6h6LhvHNaq2lFwmEJvI2TTnohLWbBgw&oe=68C13F88",
+                short_name: "Susan",
+              },
+            },
+            {
+              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzc3OTIzNDI4MTE0NjkzNQ==",
+              text: "Do 1/2 mini Oreos and 1/2 peanut butter ritz Bitz, otherwise the same recipe. It’s the BEST",
+              created_at: "2025-09-01T01:10:40.000Z",
+              reply_count: 0,
+              reaction_count: 65,
+              author: {
+                id: "pfbid02SVEnjgMo57xpqySrw7QsVRC7TAoYQTzMQ4XJtssQPqvEW9w1hhxAtDWVmsMfWjHbl",
+                name: "Robin Bergsagel",
+                gender: "FEMALE",
+                profile_picture:
+                  "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/541010933_10106323684125112_9066040164311826134_n.jpg?stp=cp6_dst-jpg_s64x64_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_ohc=3o6GoniJWEAQ7kNvwGDVvdr&_nc_oc=AdlY9HcfH2Zs3q7F6uvcQNNVuhaxsYnuVcICeJxcTAMGaoUXeSxcC0eOFS20I3DV0v0&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfZGcCUwIeJdH-TI6OaMILaUvssicIXMsiOMZCHPMAS3_A&oe=68C13C44",
+                short_name: "Robin",
+              },
+            },
+            {
+              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzE2OTIxMjYzNzgxNjQyMjc=",
+              text: "Can you swap the butter w coconut oil 🤔",
+              created_at: "2025-09-01T05:56:59.000Z",
+              reply_count: 1,
+              reaction_count: 9,
+              author: {
+                id: "pfbid0djswr3Z8SToef7Wj9Fzupd8rGYUe1xsx13erS8yhQFuJfBz8F6eEQCGCCyHcvuhvl",
+                name: "Brittany Roberts",
+                gender: "FEMALE",
+                profile_picture:
+                  "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/484048746_1481399372776555_7033620469332753416_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=101&ccb=1-7&_nc_sid=e99d92&_nc_ohc=tQZJudJs3sUQ7kNvwEI-yN7&_nc_oc=AdkQQvnVMQPRscT0MkO3Z-qG7X2RtIUFS0a6PPmh6b81fM1eUMHyRrrZyE5vYmXVW0Y&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_Afa8xGdV8OgCo8_fZe8_9hp1R5gjtX7rBdIKy-QPxULvHQ&oe=68C12BA7",
+                short_name: "Brittany",
+              },
+            },
+            {
+              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzc4NTg0MjQxMDQ3NDE5OQ==",
+              text: "That's some expensive puppy chow",
+              created_at: "2025-09-01T00:31:02.000Z",
+              reply_count: 8,
+              reaction_count: 11,
+              author: {
+                id: "552156286",
+                name: "Megan Schmid",
+                gender: "FEMALE",
+                profile_picture:
+                  "https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-1/541491024_10163240473996287_3428775103018790013_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=106&ccb=1-7&_nc_sid=1d2534&_nc_ohc=mvOBkfCxKYYQ7kNvwFaA8lw&_nc_oc=AdmdDWenldlwcV1MQrdBrzrzcrVATtsMEBuuCeOLNWHOpSy_3WGOI1BKOo8JU_uGIl8&_nc_zt=24&_nc_ht=scontent-iad3-2.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_Afa-20XWiaBHWN07x04cxx6eA3k3FNUuB8GBsNmZBFvbqw&oe=68C13C4E",
+                short_name: "Megan",
+              },
+            },
+          ],
+          cursor: "MToxNzU3MTA2NzYyOg....",
+          has_next_page: true,
+        },
+      },
     ],
   },
   {
