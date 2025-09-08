@@ -14293,11 +14293,11 @@ export const apis = [
           },
         ],
         responseFields: [
-          {
-            description:
-              "Slideshow images (you'll want all of the 'thumbnail' images",
-            path: "aweme_list[0].image_post_info.images",
-          },
+          // {
+          //   description:
+          //     "Slideshow images (you'll want all of the 'thumbnail' images",
+          //   path: "aweme_list[0].image_post_info.images",
+          // },
         ],
         sampleResponse: {
           success: true,
