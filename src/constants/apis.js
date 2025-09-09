@@ -16884,6 +16884,14 @@ export const apis = [
               "Whether to get related videos for the product. These are affiliate videos promoting the product. *This will take a little longer to process.*",
             placeholder: "false",
           },
+          {
+            name: "region",
+            required: false,
+            type: "string",
+            description:
+              "Region the proxy will be set to so you can access products from that country. Use 2 letter country codes like US, GB, FR, etc",
+            placeholder: "US",
+          },
         ],
         sampleResponse: {
           success: true,
