@@ -34500,7 +34500,7 @@ export const apis = [
   {
     id: "linkbio",
     name: "Linkbio",
-    icon: LinkbioIcon,
+    icon: null,
     description: "Scrape Linkbio (lnk.bio) pages",
     endpoints: [
       {
