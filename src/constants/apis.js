@@ -34498,6 +34498,91 @@ export const apis = [
     ],
   },
   {
+    id: "linkbio",
+    name: "Linkbio",
+    icon: LinkbioIcon,
+    description: "Scrape Linkbio (lnk.bio) pages",
+    endpoints: [
+      {
+        name: "Linkbio page",
+        method: "GET",
+        description: "Linkbio (lnk.bio) page",
+        path: "/v1/linkbio",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "URL to Linkbio (lnk.bio) page",
+            placeholder: "https://lnk.bio/msjennafischer",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          handle: "msjennafischer",
+          id: "-1154992",
+          instagram: null,
+          email: null,
+          tiktok: null,
+          youtube: null,
+          twitter: null,
+          whatsapp: null,
+          website: null,
+          links: [
+            {
+              url: "https://www.instagram.com/msjennafischer",
+              text: "@msjennafischer",
+            },
+            {
+              url: "https://www.GoodmanTheatre.org/Ashland ",
+              text: "Ashland Avenue at The Goodman Theater",
+            },
+            {
+              url: "https://www.futureofpersonalhealth.com/campaign/cancer-care/",
+              text: "From “The Office” to Cancer Survivor and Advocate",
+            },
+            {
+              url: "https://bit.ly/3STi9jN",
+              text: "Future of Cancer Care Website",
+            },
+            {
+              url: "https://workingwithcancerpledge.com",
+              text: "Screening Time Off Initiative",
+            },
+            {
+              url: "https://magview.com/ibis-risk-calculator/",
+              text: "Breast Cancer Risk Assessment",
+            },
+            {
+              url: "https://officeladies.com/episodes",
+              text: "Office Ladies Podcast",
+            },
+            {
+              url: "https://variety.com/2024/tv/news/jenna-fischer-angela-kinsey-office-podcast-office-ladies-6-0-second-drink-rewatch-1236207967/",
+              text: "Office Ladies Variety Article",
+            },
+            {
+              url: "https://www.podswag.com/collections/office-ladies?gad_source=1&gbraid=0AAAAAB7BH0Edcsw45RAt_38Qq4s4OW2zJ&gclid=CjwKCAiA9bq6BhAKEiwAH6bqoO-lU8QzjvqE1hPwJPDwSX4LL-bp_o1r6qxSgQBnl3CGSVwfLWZaZBoCb_YQAvD_BwE",
+              text: "Office Ladies Merch",
+            },
+            {
+              url: "https://bestfriends.org/adopt-and-foster/foster-kittens?utm_source=vanity&utm_medium=redirect&utm_campaign=kittens",
+              text: "Kitten Fostering",
+            },
+            {
+              url: "https://www.youtube.com/playlist?list=PLD7nPL1U-R5rmvJo2L49IK-vKu2qB-fvx",
+              text: "Office Ladies Animated",
+            },
+            {
+              url: "https://miryslist.org/lists",
+              text: "Miry's List Family Wishlists",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
     id: "age-and-gender",
     name: "Age and Gender",
     icon: MdPerson,
