@@ -21,6 +21,7 @@ import ScrapeCreatorsIcon from "../components/ScrapeCreatorsIcon";
 import { TruthSocialIcon } from "../TruthSocialIcon.jsx";
 import { KomiIcon } from "../KomiIcon.jsx";
 import { PillarIcon } from "../PillarIcon.jsx";
+import { LinkBioIcon } from "../LinkBioIcon.jsx";
 
 export const apis = [
   {
@@ -34500,7 +34501,7 @@ export const apis = [
   {
     id: "linkbio",
     name: "Linkbio",
-    icon: null,
+    icon: LinkBioIcon,
     description: "Scrape Linkbio (lnk.bio) pages",
     endpoints: [
       {
