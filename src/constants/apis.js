@@ -14,6 +14,7 @@ import {
   SiPersonio,
   SiSnapchat,
   SiBluesky,
+  SiAmazon,
   SiLinktree,
 } from "react-icons/si";
 import { MdPerson } from "react-icons/md";
@@ -34579,6 +34580,142 @@ export const apis = [
               text: "Miry's List Family Wishlists",
             },
           ],
+        },
+      },
+    ],
+  },
+  {
+    id: "amazon-shop",
+    name: "Amazon Shop",
+    icon: SiAmazon,
+    description: "Scrape Amazon Shop pages",
+    endpoints: [
+      {
+        name: "Amazon Shop page",
+        method: "GET",
+        description:
+          "Get products and other details from a creator's Amazon Shop page",
+        path: "/v1/amazon/shop",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "URL to Amazon Shop page",
+            placeholder: "https://www.amazon.com/shop/sydneydelrey",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          avatar:
+            "https://m.media-amazon.com/images/I/A1rW00V-tHL._CR0%2C0%2C2560%2C2560_._US500_SCLZZZZZZZ_.jpg",
+          name: "sydney del rey",
+          description:
+            "sharing all of my favorite Amazon finds ᥫ᭡ click the icons below to follow me on socials! all photo & video content is also shoppable x",
+          socials: [
+            "https://vm.tiktok.com/ZTFrowSpg/",
+            "https://www.youtube.com/channel/UCWvW1JOQ-nsAinO1jLFgrVA",
+          ],
+          lists: [
+            {
+              title: "fall transition fits",
+              itemCount: 72,
+              image:
+                "https://m.media-amazon.com/images/G/01/Influencer/full_bleed_pin_2x.png",
+              url: "https://www.amazon.com/shop/sydneydelrey/list/3QCPC18WETJFQ",
+            },
+            {
+              title: "fall shoes",
+              itemCount: 116,
+              image:
+                "https://m.media-amazon.com/images/G/01/Influencer/full_bleed_pin_2x.png",
+              url: "https://www.amazon.com/shop/sydneydelrey/list/1OX9UQ28GC2HG",
+            },
+            {
+              title: "fall fashion",
+              itemCount: 156,
+              image:
+                "https://m.media-amazon.com/images/G/01/Influencer/full_bleed_pin_2x.png",
+              url: "https://www.amazon.com/shop/sydneydelrey/list/3PDR5YVGLMWCO",
+            },
+          ],
+          trendingPicks: [
+            {
+              url: "https://www.amazon.com/shop/sydneydelrey/getProductDetails/B0DDJFFCB5?showRelatedPost=true",
+              image: "https://m.media-amazon.com/images/I/41xvQcQoEnL._AC_.jpg",
+              price: 9.99,
+              discount: 29,
+            },
+            {
+              url: "https://www.amazon.com/shop/sydneydelrey/getProductDetails/B0DK1K4ZWS?showRelatedPost=true",
+              image: "https://m.media-amazon.com/images/I/41IUfXRQSdL._AC_.jpg",
+              price: 12.74,
+              discount: 42,
+            },
+            {
+              url: "https://www.amazon.com/shop/sydneydelrey/getProductDetails/B0DJT3TRVY?showRelatedPost=true",
+              image: "https://m.media-amazon.com/images/I/31ZI2vGNq-L._AC_.jpg",
+              price: 23.98,
+              discount: 40,
+            },
+            {
+              url: "https://www.amazon.com/shop/sydneydelrey/getProductDetails/B0F7WYS82C?showRelatedPost=true",
+              image: "https://m.media-amazon.com/images/I/31EWj-NfVML._AC_.jpg",
+              price: 31.99,
+              discount: 20,
+            },
+            {
+              url: "https://www.amazon.com/shop/sydneydelrey/getProductDetails/B0DP5JNLQR?showRelatedPost=true",
+              image: "https://m.media-amazon.com/images/I/41JJiYz9kVL._AC_.jpg",
+              price: 139.99,
+              discount: 26,
+            },
+          ],
+          curations: [
+            {
+              title: "Fall fashion 🍂",
+              postCount: 93,
+              image:
+                "https://m.media-amazon.com/images/S/shoppable-media-external-prod-iad-us-east-1/039230ec-2e77-4287-beca-ecba4b03ca46/8cdde-e153-4e81-b404-a1ebd6c65._SX225_SCLZZZZZZZ_.jpeg",
+              url: "https://www.amazon.com/shop/sydneydelrey/curation/c7bb2f3d-07a2-42f5-85f8-02adbb937961",
+            },
+            {
+              title: "summer fits - AS SEEN ON SOCIALS",
+              postCount: 254,
+              image:
+                "https://m.media-amazon.com/images/S/shoppable-media-external-prod-iad-us-east-1/b97c7bda-c7b5-413c-a56b-eafa8af6178f/f2c70-8360-4f82-b9ac-e4fc43b66._SX225_SCLZZZZZZZ_.jpeg",
+              url: "https://www.amazon.com/shop/sydneydelrey/curation/94a14bea-11ab-49c9-b1eb-d14c8892ac4c",
+            },
+            {
+              title: "Gym outfits",
+              postCount: 100,
+              image:
+                "https://m.media-amazon.com/images/S/shoppable-media-external-prod-iad-us-east-1/047e02b7-0e8d-4c73-9a42-6d8adfd9cdf8/e6d57-8dfe-4d36-9eed-d376838e7._SX225_SCLZZZZZZZ_.jpeg",
+              url: "https://www.amazon.com/shop/sydneydelrey/curation/7d2a59d2-d2d5-459a-a664-90ae837c2fec",
+            },
+            {
+              title: "home goods",
+              postCount: 39,
+              image:
+                "https://m.media-amazon.com/images/S/shoppable-media-external-prod-iad-us-east-1/0f9f8616-7b9e-446e-8fb6-7163c03d4bbb/9a9c4-1bad-4ed3-b2e3-3c27f27f0._SX225_SCLZZZZZZZ_.jpeg",
+              url: "https://www.amazon.com/shop/sydneydelrey/curation/83cfdc54-e837-44c2-89ab-5eb9299828e9",
+            },
+            {
+              title: "My jewelry 💎",
+              postCount: 32,
+              image:
+                "https://m.media-amazon.com/images/S/shoppable-media-external-prod-iad-us-east-1/48f67417-062f-456b-a254-dbfa2f0e2da7/f314f-8c6a-4eae-9501-e3c284b23._SX225_SCLZZZZZZZ_.jpeg",
+              url: "https://www.amazon.com/shop/sydneydelrey/curation/1060e92a-7bbe-4581-8cf8-888a6a4ded70",
+            },
+            {
+              title: "Holiday outfits (xmas, nye, vday, st pats)",
+              postCount: 113,
+              image:
+                "https://m.media-amazon.com/images/S/shoppable-media-external-prod-iad-us-east-1/d90c0fad-8ba5-427c-8dd5-b14cc25eae30/9bd34-ca64-4477-993d-94598e4ea._SX225_SCLZZZZZZZ_.jpeg",
+              url: "https://www.amazon.com/shop/sydneydelrey/curation/b74328f3-11ce-4a55-a844-40f6aff6e467",
+            },
+          ],
+          pageToken: "amzn1.ideas.1S28M0V6I8FUU_0_2025-09-03T01:17:37.837Z",
         },
       },
     ],
