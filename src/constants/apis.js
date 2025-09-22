@@ -3738,6 +3738,14 @@ export const apis = [
             placeholder: false,
           },
           {
+            name: "region",
+            type: "string",
+            required: false,
+            description:
+              "Region of the proxy. Sometimes you'll need to specify the region if you're not getting a response. Commonly for videos from the Phillipines, in which case you'd use 'PH'. Use 2 letter country codes like US, GB, FR, etc",
+            placeholder: "US",
+          },
+          {
             name: "trim",
             type: "boolean",
             required: false,
