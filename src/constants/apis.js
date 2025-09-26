@@ -28537,7 +28537,7 @@ export const apis = [
         name: "Get Ad",
         method: "GET",
         description: "Get a specific ad by id",
-        path: "/v1/reddit/ads",
+        path: "/v1/reddit/ad",
         params: [
           {
             name: "id",
