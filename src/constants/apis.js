@@ -24873,6 +24873,15 @@ export const apis = [
         paginationField: "cursor",
         responseFields: [
           {
+            path: "collation_id",
+            description:
+              "This is Facebook's internal ID for related ads in a campaign",
+          },
+          {
+            path: "collation_count",
+            description: "The number of ads in the campaign",
+          },
+          {
             path: "is_active",
             description: "Whether the ad is currently running",
           },
@@ -25187,6 +25196,15 @@ export const apis = [
             "AQHR2LpCDWOZyAGp-ZKr8rUsapAXh8rWjYuNxVvuU7L0kte18hxkxnaXM3e5jEZNgdcU",
         },
         responseFields: [
+          {
+            path: "collation_id",
+            description:
+              "This is Facebook's internal ID for related ads in a campaign",
+          },
+          {
+            path: "collation_count",
+            description: "The number of ads in the campaign",
+          },
           {
             path: "is_active",
             description: "Whether the ad is currently running",
