@@ -16721,6 +16721,160 @@ export const apis = [
     description: "Everything about TikTok Shop",
     endpoints: [
       {
+        name: "Shop Search",
+        method: "GET",
+        description:
+          "Scrape TikTok Shop Products from a search! When I was testing it out, you can only get around 500 products at a time. NOTE: This costs more than 1 credit! Since we are doing the paginating for you, it costs 1 credit per page (TikTok returns 30 products per page). Also this endpoint takes a while and is new, so please be patient. Email me if you have any issues with it: adrian@thewebscrapingguy.com",
+        path: "/v1/tiktok/shop/search",
+        params: [
+          {
+            name: "query",
+            type: "string",
+            required: true,
+            description: "Term you want to search for",
+            placeholder: "shoes",
+          },
+          {
+            name: "amount",
+            type: "number",
+            required: false,
+            description:
+              "How many products to scrape. We are limited by how much TikTok will let us grab per search.",
+            placeholder: "30",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          query: "shoes",
+          total_products: 100,
+          products: [
+            {
+              product_id: "1730213444857467838",
+              title: "Crocs Adult Classic Clogs",
+              image: {
+                height: 1200,
+                width: 1200,
+                uri: "tos-useast5-i-omjb5zjo8w-tx/b16ea2605a0d4708af7cbc3a1dd03624",
+                url_list: [
+                  "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/b16ea2605a0d4708af7cbc3a1dd03624~tplv-fhlh96nyum-crop-webp:1200:1200.webp?dr=12190&from=2378011839&idc=useast5&ps=933b5bde&shcp=a6e80448&shp=8dbd94bf&t=555f072d",
+                  "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/b16ea2605a0d4708af7cbc3a1dd03624~tplv-fhlh96nyum-crop-webp:1200:1200.webp?dr=12190&from=2378011839&idc=useast5&ps=933b5bde&shcp=a6e80448&shp=8dbd94bf&t=555f072d",
+                ],
+              },
+              product_price_info: {
+                sku_id: "1730213454432146366",
+                symbol_position: 1,
+                show_currency_space: false,
+                currency_show_mode: 1,
+                currency_name: "USD",
+                currency_symbol: "$",
+                sale_price_decimal: "49.99",
+                sale_price_format: "49.99",
+                single_product_price_format: "49.99",
+                single_product_price_decimal: "49.99",
+                sale_price_integer_part_format: "49",
+                sale_price_decimal_part_format: "99",
+                decimal_point_symbol: ".",
+                promotion_deduction_details: {},
+              },
+              rate_info: {
+                score: 4.8,
+                review_count: "2493",
+              },
+              sold_info: {
+                sold_count: 24737,
+              },
+              seller_info: {
+                seller_id: "7495832567110863806",
+                shop_name: "Crocs",
+                shop_logo: {
+                  height: 300,
+                  width: 300,
+                  uri: "tos-useast5-i-omjb5zjo8w-tx/0e1e83bcdab948b9aa9e6474e87a8a80",
+                  url_list: [
+                    "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/0e1e83bcdab948b9aa9e6474e87a8a80~tplv-fhlh96nyum-resize-png:300:300.png?dr=12184&from=2422056039&idc=useast5&ps=933b5bde&shcp=d9d491bf&shp=905da467&t=555f072d",
+                    "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/0e1e83bcdab948b9aa9e6474e87a8a80~tplv-fhlh96nyum-resize-png:300:300.png?dr=12184&from=2422056039&idc=useast5&ps=933b5bde&shcp=d9d491bf&shp=905da467&t=555f072d",
+                  ],
+                },
+              },
+              seo_url: {
+                updated_at: "1754122673333",
+                canonical_url:
+                  "https://www.tiktok.com/shop/pdp/classic-clogs-by-crocs-lightweight-slip-on-shoes-with-ventilation/1730213444857467838",
+                slug: "classic-clogs-by-crocs-lightweight-slip-on-shoes-with-ventilation",
+                type: 2,
+                version: 2,
+              },
+            },
+            {
+              product_id: "1729416431099876154",
+              title:
+                "Men's Running Shoes Blade Tennis Walking Fashion Sneakers Breathable NonSlip Gym Sports Work Trainers, Perfectfor Students and Outdoor Sport Runner Closed Sports Shoes Walking Shoes Casual Training Footwear Athletic Outdoorfun",
+              image: {
+                height: 800,
+                width: 800,
+                uri: "tos-useast5-i-omjb5zjo8w-tx/6849eb2b077845f08fb846a49385bba7",
+                url_list: [
+                  "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/6849eb2b077845f08fb846a49385bba7~tplv-fhlh96nyum-crop-webp:800:800.webp?dr=12190&from=2378011839&idc=useast5&ps=933b5bde&shcp=a6e80448&shp=8dbd94bf&t=555f072d",
+                  "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/6849eb2b077845f08fb846a49385bba7~tplv-fhlh96nyum-crop-webp:800:800.webp?dr=12190&from=2378011839&idc=useast5&ps=933b5bde&shcp=a6e80448&shp=8dbd94bf&t=555f072d",
+                ],
+              },
+              product_price_info: {
+                sku_id: "1729416431099941690",
+                symbol_position: 1,
+                show_currency_space: false,
+                currency_show_mode: 1,
+                currency_name: "USD",
+                currency_symbol: "$",
+                sale_price_decimal: "19.99",
+                origin_price_decimal: "39.99",
+                sale_price_format: "19.99",
+                origin_price_format: "39.99",
+                discount_format: "50%",
+                discount_decimal: "0.5",
+                reduce_price_format: "Saving $20.00",
+                single_product_price_format: "19.99",
+                single_product_price_decimal: "19.99",
+                sale_price_integer_part_format: "19",
+                sale_price_decimal_part_format: "99",
+                decimal_point_symbol: ".",
+                promotion_deduction_details: {
+                  seller_subtotal_deduction: "20.00",
+                  seller_subtotal_deduction_decimal: "20",
+                },
+              },
+              rate_info: {
+                score: 4.2,
+                review_count: "5705",
+              },
+              sold_info: {
+                sold_count: 61277,
+              },
+              seller_info: {
+                seller_id: "7495432602243337018",
+                shop_name: "Mevlzz",
+                shop_logo: {
+                  height: 300,
+                  width: 300,
+                  uri: "tos-useast5-i-omjb5zjo8w-tx/90310f23f7ae40a4aa3c10b058612edd",
+                  url_list: [
+                    "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/90310f23f7ae40a4aa3c10b058612edd~tplv-fhlh96nyum-resize-png:300:300.png?dr=12184&from=2422056039&idc=useast5&ps=933b5bde&shcp=d9d491bf&shp=905da467&t=555f072d",
+                    "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/90310f23f7ae40a4aa3c10b058612edd~tplv-fhlh96nyum-resize-png:300:300.png?dr=12184&from=2422056039&idc=useast5&ps=933b5bde&shcp=d9d491bf&shp=905da467&t=555f072d",
+                  ],
+                },
+              },
+              seo_url: {
+                updated_at: "1746398123415",
+                canonical_url:
+                  "https://www.tiktok.com/shop/pdp/mens-running-shoes-mevlzz-breathable-lightweight-lace-up-trainers/1729416431099876154",
+                slug: "mens-running-shoes-mevlzz-breathable-lightweight-lace-up-trainers",
+                type: 2,
+                version: 2,
+              },
+            },
+          ],
+        },
+      },
+      {
         name: "Shop Products",
         method: "GET",
         description:
@@ -17250,160 +17404,6 @@ export const apis = [
               bc_ad_label_text: "Commission paid",
               url: "https://www.tiktok.com/@6680168318781539334/video/7527142083258305822",
               author_url: "https://www.tiktok.com/@6680168318781539334",
-            },
-          ],
-        },
-      },
-      {
-        name: "Shop Search",
-        method: "GET",
-        description:
-          "Scrape TikTok Shop Products from a search! When I was testing it out, you can only get around 500 products at a time. NOTE: This costs more than 1 credit! Since we are doing the paginating for you, it costs 1 credit per page (TikTok returns 30 products per page). Also this endpoint takes a while and is new, so please be patient. Email me if you have any issues with it: adrian@thewebscrapingguy.com",
-        path: "/v1/tiktok/shop/search",
-        params: [
-          {
-            name: "query",
-            type: "string",
-            required: true,
-            description: "Term you want to search for",
-            placeholder: "shoes",
-          },
-          {
-            name: "amount",
-            type: "number",
-            required: false,
-            description:
-              "How many products to scrape. We are limited by how much TikTok will let us grab per search.",
-            placeholder: "30",
-          },
-        ],
-        sampleResponse: {
-          success: true,
-          query: "shoes",
-          total_products: 100,
-          products: [
-            {
-              product_id: "1730213444857467838",
-              title: "Crocs Adult Classic Clogs",
-              image: {
-                height: 1200,
-                width: 1200,
-                uri: "tos-useast5-i-omjb5zjo8w-tx/b16ea2605a0d4708af7cbc3a1dd03624",
-                url_list: [
-                  "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/b16ea2605a0d4708af7cbc3a1dd03624~tplv-fhlh96nyum-crop-webp:1200:1200.webp?dr=12190&from=2378011839&idc=useast5&ps=933b5bde&shcp=a6e80448&shp=8dbd94bf&t=555f072d",
-                  "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/b16ea2605a0d4708af7cbc3a1dd03624~tplv-fhlh96nyum-crop-webp:1200:1200.webp?dr=12190&from=2378011839&idc=useast5&ps=933b5bde&shcp=a6e80448&shp=8dbd94bf&t=555f072d",
-                ],
-              },
-              product_price_info: {
-                sku_id: "1730213454432146366",
-                symbol_position: 1,
-                show_currency_space: false,
-                currency_show_mode: 1,
-                currency_name: "USD",
-                currency_symbol: "$",
-                sale_price_decimal: "49.99",
-                sale_price_format: "49.99",
-                single_product_price_format: "49.99",
-                single_product_price_decimal: "49.99",
-                sale_price_integer_part_format: "49",
-                sale_price_decimal_part_format: "99",
-                decimal_point_symbol: ".",
-                promotion_deduction_details: {},
-              },
-              rate_info: {
-                score: 4.8,
-                review_count: "2493",
-              },
-              sold_info: {
-                sold_count: 24737,
-              },
-              seller_info: {
-                seller_id: "7495832567110863806",
-                shop_name: "Crocs",
-                shop_logo: {
-                  height: 300,
-                  width: 300,
-                  uri: "tos-useast5-i-omjb5zjo8w-tx/0e1e83bcdab948b9aa9e6474e87a8a80",
-                  url_list: [
-                    "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/0e1e83bcdab948b9aa9e6474e87a8a80~tplv-fhlh96nyum-resize-png:300:300.png?dr=12184&from=2422056039&idc=useast5&ps=933b5bde&shcp=d9d491bf&shp=905da467&t=555f072d",
-                    "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/0e1e83bcdab948b9aa9e6474e87a8a80~tplv-fhlh96nyum-resize-png:300:300.png?dr=12184&from=2422056039&idc=useast5&ps=933b5bde&shcp=d9d491bf&shp=905da467&t=555f072d",
-                  ],
-                },
-              },
-              seo_url: {
-                updated_at: "1754122673333",
-                canonical_url:
-                  "https://www.tiktok.com/shop/pdp/classic-clogs-by-crocs-lightweight-slip-on-shoes-with-ventilation/1730213444857467838",
-                slug: "classic-clogs-by-crocs-lightweight-slip-on-shoes-with-ventilation",
-                type: 2,
-                version: 2,
-              },
-            },
-            {
-              product_id: "1729416431099876154",
-              title:
-                "Men's Running Shoes Blade Tennis Walking Fashion Sneakers Breathable NonSlip Gym Sports Work Trainers, Perfectfor Students and Outdoor Sport Runner Closed Sports Shoes Walking Shoes Casual Training Footwear Athletic Outdoorfun",
-              image: {
-                height: 800,
-                width: 800,
-                uri: "tos-useast5-i-omjb5zjo8w-tx/6849eb2b077845f08fb846a49385bba7",
-                url_list: [
-                  "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/6849eb2b077845f08fb846a49385bba7~tplv-fhlh96nyum-crop-webp:800:800.webp?dr=12190&from=2378011839&idc=useast5&ps=933b5bde&shcp=a6e80448&shp=8dbd94bf&t=555f072d",
-                  "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/6849eb2b077845f08fb846a49385bba7~tplv-fhlh96nyum-crop-webp:800:800.webp?dr=12190&from=2378011839&idc=useast5&ps=933b5bde&shcp=a6e80448&shp=8dbd94bf&t=555f072d",
-                ],
-              },
-              product_price_info: {
-                sku_id: "1729416431099941690",
-                symbol_position: 1,
-                show_currency_space: false,
-                currency_show_mode: 1,
-                currency_name: "USD",
-                currency_symbol: "$",
-                sale_price_decimal: "19.99",
-                origin_price_decimal: "39.99",
-                sale_price_format: "19.99",
-                origin_price_format: "39.99",
-                discount_format: "50%",
-                discount_decimal: "0.5",
-                reduce_price_format: "Saving $20.00",
-                single_product_price_format: "19.99",
-                single_product_price_decimal: "19.99",
-                sale_price_integer_part_format: "19",
-                sale_price_decimal_part_format: "99",
-                decimal_point_symbol: ".",
-                promotion_deduction_details: {
-                  seller_subtotal_deduction: "20.00",
-                  seller_subtotal_deduction_decimal: "20",
-                },
-              },
-              rate_info: {
-                score: 4.2,
-                review_count: "5705",
-              },
-              sold_info: {
-                sold_count: 61277,
-              },
-              seller_info: {
-                seller_id: "7495432602243337018",
-                shop_name: "Mevlzz",
-                shop_logo: {
-                  height: 300,
-                  width: 300,
-                  uri: "tos-useast5-i-omjb5zjo8w-tx/90310f23f7ae40a4aa3c10b058612edd",
-                  url_list: [
-                    "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/90310f23f7ae40a4aa3c10b058612edd~tplv-fhlh96nyum-resize-png:300:300.png?dr=12184&from=2422056039&idc=useast5&ps=933b5bde&shcp=d9d491bf&shp=905da467&t=555f072d",
-                    "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/90310f23f7ae40a4aa3c10b058612edd~tplv-fhlh96nyum-resize-png:300:300.png?dr=12184&from=2422056039&idc=useast5&ps=933b5bde&shcp=d9d491bf&shp=905da467&t=555f072d",
-                  ],
-                },
-              },
-              seo_url: {
-                updated_at: "1746398123415",
-                canonical_url:
-                  "https://www.tiktok.com/shop/pdp/mens-running-shoes-mevlzz-breathable-lightweight-lace-up-trainers/1729416431099876154",
-                slug: "mens-running-shoes-mevlzz-breathable-lightweight-lace-up-trainers",
-                type: 2,
-                version: 2,
-              },
             },
           ],
         },
