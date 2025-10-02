@@ -30545,7 +30545,7 @@ export const apis = [
         name: "Search Users",
         method: "GET",
         description: "Search for users by username",
-        path: "/v1/search/users",
+        path: "/v1/threads/search/users",
         params: [
           {
             name: "query",
