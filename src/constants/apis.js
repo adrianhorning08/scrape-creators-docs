@@ -18721,6 +18721,11 @@ export const apis = [
             path: "data.xdt_shortcode_media.edge_media_to_parent_comment",
             description: "Comments",
           },
+          {
+            path: "data.xdt_shortcode_media.edge_sidecar_to_children",
+            description:
+              "If there is an image carousel, these will be the images",
+          },
         ],
         sampleResponse: {
           data: {
