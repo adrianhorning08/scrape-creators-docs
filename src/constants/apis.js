@@ -16887,7 +16887,7 @@ export const apis = [
             type: "string",
             description: "The URL of the shop.",
             placeholder:
-              "https://www.tiktok.com/shop/store/goli-nutrition/7495794203056835079?source=product_detail&enter_from=product_detail&enter_method=product_info_right_shop",
+              "https://www.tiktok.com/shop/store/goli-nutrition/7495794203056835079",
           },
           {
             name: "amount",
