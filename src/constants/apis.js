@@ -19321,7 +19321,8 @@ export const apis = [
             {
               id: "3597267389859272809",
               shortcode: "DHsD6HGqJhp",
-              text: "Let's fry up the perfect bunzel. Beautiful.  Everybody, shh. The perfect bunzel. Let me show you my bunzel. When it comes down to bunzel, we make it the crispiest, get the crunch. Heaven.",
+              transcript:
+                "Let's fry up the perfect bunzel. Beautiful.  Everybody, shh. The perfect bunzel. Let me show you my bunzel. When it comes down to bunzel, we make it the crispiest, get the crunch. Heaven.",
             },
           ],
         },
