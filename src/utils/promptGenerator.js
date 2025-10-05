@@ -23,12 +23,18 @@ export function generateAIPrompt(endpoint, selectedLanguage = null) {
     endpoint.params.length > 0
       ? `Parameters:
   ${endpoint.params
-    .map(
-      (param) =>
-        `- ${param.name} (${param.type})${
-          param.required ? " (Required)" : ""
-        }: ${param.description}`
-    )
+    .map((param) => {
+      let paramInfo = `- ${param.name} ${
+        param.required ? " (Required)" : ""
+      }: ${param.description}`;
+
+      // If it's a select type, include the options
+      if (param.type === "select" && param.options) {
+        paramInfo += `\n  Options: ${param.options.join(", ")}`;
+      }
+
+      return paramInfo;
+    })
     .join("\n")}`
       : ""
   }
