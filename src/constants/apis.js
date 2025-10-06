@@ -24681,7 +24681,7 @@ export const apis = [
         name: "Search",
         method: "GET",
         description:
-          "Search the Facebook (Meta) Ad Library By Keyword. This endpoint will tap out around 1,500 results, beacuse the cursor becomes too big for a GET request. If you need more results, I can give you a POST endpoint.",
+          "Search the Facebook (Meta) Ad Library By Keyword. This endpoint will tap out around 1,500 results, beacuse the cursor becomes too big for a GET request. If you need more results, call this endpoint as a POST, and pass the query params in the body.",
         path: "/v1/facebook/adLibrary/search/ads",
         sampleResponse: {
           searchResults: [
