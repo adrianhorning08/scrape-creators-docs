@@ -25634,6 +25634,110 @@ export const apis = [
           ],
         },
       },
+      {
+        name: "Advertiser Search",
+        method: "GET",
+        description:
+          "Search the Google Ad Transparency Library for advertisers to get their advertiser id",
+        path: "/v1/google/adLibrary/advertisers/search",
+        params: [
+          {
+            name: "query",
+            type: "string",
+            required: true,
+            description: "The query to search for",
+            placeholder: "nike",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 9994695,
+          advertisers: [
+            {
+              name: "Nike Lee",
+              advertiser_id: "AR18100938063227125761",
+              region: "US",
+            },
+            {
+              name: "NIKE SRL",
+              advertiser_id: "AR17365672681860497409",
+              region: "IT",
+            },
+            {
+              name: "Nike Kola",
+              advertiser_id: "AR05316777725531258881",
+              region: "US",
+            },
+            {
+              name: "Nike, Inc.",
+              advertiser_id: "AR16735076323512287233",
+              region: "US",
+            },
+            {
+              name: "Nike Klara",
+              advertiser_id: "AR17567291692413878273",
+              region: "US",
+            },
+            {
+              name: "NIKE, Inc.",
+              advertiser_id: "AR00269480696421023745",
+              region: "US",
+            },
+            {
+              name: "Nikel Kola",
+              advertiser_id: "AR04767743191271079937",
+              region: "US",
+            },
+            {
+              name: "Nikeson AB",
+              advertiser_id: "AR00386048032979812353",
+              region: "SE",
+            },
+            {
+              name: "VIXEN NIKE",
+              advertiser_id: "AR10253711652960600065",
+              region: "TN",
+            },
+            {
+              name: "VIXEN NIKE",
+              advertiser_id: "AR04171037406243323905",
+              region: "TN",
+            },
+          ],
+          websites: [
+            {
+              domain: "nike.ae",
+            },
+            {
+              domain: "nike.cl",
+            },
+            {
+              domain: "nike.sa",
+            },
+            {
+              domain: "nike.com",
+            },
+            {
+              domain: "kannike.eu",
+            },
+            {
+              domain: "uniker.com",
+            },
+            {
+              domain: "nike.com.ar",
+            },
+            {
+              domain: "nike.com.br",
+            },
+            {
+              domain: "nike.com.kw",
+            },
+            {
+              domain: "nike.com.co",
+            },
+          ],
+        },
+      },
     ],
   },
   {
