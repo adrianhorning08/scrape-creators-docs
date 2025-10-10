@@ -23100,6 +23100,8 @@ export const apis = [
           employeeCount: 23591,
           website: "https://www.shopify.com",
           logo: "https://media.licdn.com/dms/image/v2/D560BAQG_KjTcNcrLVw/company-logo_200_200/B56ZZolTV.HUAU-/0/1745511331439/shopify_logo?e=2147483647&v=beta&t=D2saVg58cKnwEiDQgFgzvwL24mTRM_cPuU1ndv6kL2U",
+          coverImage:
+            "https://media.licdn.com/dms/image/v2/D563DAQGruQL8kvBvnw/image-scale_191_1128/B56ZanR4DSGoAs-/0/1746563203576/shopify_cover?e=2147483647&v=beta&t=rHubhVZZZSU_1V8tCeBpwL80OG3bNBjzBNEWFO24qa4",
           slogan: "Make commerce better for everyone",
           similarPages: [
             {
@@ -23314,6 +23316,50 @@ export const apis = [
             pageId: "851606664870954",
           },
           creationDate: "October 29, 2014",
+          businessHours: [
+            {
+              monday: {
+                open: "11:00",
+                close: "00:00",
+              },
+            },
+            {
+              tuesday: {
+                open: "11:00",
+                close: "21:00",
+              },
+            },
+            {
+              wednesday: {
+                open: "11:00",
+                close: "00:00",
+              },
+            },
+            {
+              thursday: {
+                open: "11:00",
+                close: "00:00",
+              },
+            },
+            {
+              friday: {
+                open: "11:00",
+                close: "01:30",
+              },
+            },
+            {
+              saturday: {
+                open: "11:00",
+                close: "01:30",
+              },
+            },
+            {
+              sunday: {
+                open: "11:00",
+                close: "00:00",
+              },
+            },
+          ],
         },
         params: [
           {
@@ -23321,6 +23367,14 @@ export const apis = [
             type: "string",
             required: true,
             description: "Facebook profile URL",
+            placeholder: "https://www.facebook.com/copperkettleyqr",
+          },
+          {
+            name: "get_business_hours",
+            type: "string",
+            required: false,
+            description: "Get the business's hours",
+            placeholder: "true",
           },
         ],
       },
