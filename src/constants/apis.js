@@ -190,6 +190,14 @@ export const apis = [
             description: "TikTok handle",
           },
           {
+            name: "sort_by",
+            type: "select",
+            required: false,
+            description: "What to sort by",
+            placeholder: "newest",
+            options: ["newest", "popular"],
+          },
+          {
             name: "max_cursor",
             type: "string",
             required: false,
@@ -1935,6 +1943,14 @@ export const apis = [
             placeholder: "stoolpresidente",
             description:
               "TikTok username/handle. Can either use handle or user_id",
+          },
+          {
+            name: "sort_by",
+            type: "select",
+            required: false,
+            description: "What to sort by",
+            placeholder: "newest",
+            options: ["newest", "popular"],
           },
           {
             name: "user_id",
