@@ -28,9 +28,9 @@ export default function EndpointMethod({
   };
 
   return (
-    <div className="flex w-full flex-col bg-background-light dark:bg-background-dark border-standard rounded-2xl p-1.5 overflow-hidden">
+    <div className="flex w-full flex-col bg-background-light dark:bg-background-dark rounded-2xl p-1.5 overflow-hidden border border-gray-200 dark:border-gray-800">
       <div className="flex items-center space-x-1.5">
-        <div className="relative flex-1 flex gap-2 min-w-0 rounded-xl items-center cursor-pointer p-1.5 border-standard whitespace-nowrap bg-background-light dark:bg-background-dark">
+        <div className="relative flex-1 flex gap-2 min-w-0 rounded-xl items-center cursor-pointer p-1.5 whitespace-nowrap bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800">
           <div
             className={`rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 ${methodColors[method]}`}
           >
