@@ -117,6 +117,7 @@ export const apis = [
         description:
           "Get the audience demographics of a TikTok user. Right now you can only get the audience countries. 🚨 Costs 26 credits per request.",
         path: "/v1/tiktok/user/audience",
+        credits: 26,
         params: [
           {
             name: "handle",
@@ -1975,6 +1976,11 @@ export const apis = [
               "Set to true for a trimmed down version of the response",
           },
         ],
+        credits: {
+          type: "per_item",
+          cost: 1,
+          per: 20,
+        },
         sampleResponse: [
           {
             added_sound_music_info: {
@@ -20142,6 +20148,11 @@ export const apis = [
         description:
           "Get comments from an Instagram post or reel. Note! that this costs more than 1 credit! This costs 1 credit per 15 comments. This won't return *all* the comments, but a good number of them.",
         path: "/v1/instagram/post/comments",
+        credits: {
+          type: "per_item",
+          cost: 1,
+          per: 15,
+        },
         params: [
           {
             name: "url",
@@ -20899,6 +20910,11 @@ export const apis = [
             description: "The URL of the video",
           },
         ],
+        credits: {
+          type: "per_item",
+          cost: 1,
+          per: 12,
+        },
         sampleResponse: [
           {
             media: {
@@ -22836,6 +22852,11 @@ export const apis = [
         description:
           "Convenience endpoint to get the latest shorts from a channel. We handle the pagination for you. This will cost you more credits because under the hood we're using the 'Channel Shorts' endpoint, just like you would. But making it easier for you. If you need more details about the short like description, publish date, etc, you'll need to use the 'Video/Short Details' endpoint.",
         path: "/v1/youtube/channel/shorts/simple",
+        credits: {
+          type: "per_item",
+          cost: 1,
+          per: 48,
+        },
         sampleResponse: [
           {
             type: "short",
@@ -29118,8 +29139,13 @@ export const apis = [
         name: "Simple Comments",
         method: "GET",
         description:
-          "Convenience API to get the number of comments you wantfrom a Reddit post.",
+          "Convenience API to get the number of comments you want from a Reddit post.",
         path: "/v1/reddit/post/comments/simple",
+        credits: {
+          type: "per_item",
+          cost: 1,
+          per: 48,
+        },
         sampleResponse: [
           {
             subreddit_id: "t5_2qh1i",

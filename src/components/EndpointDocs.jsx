@@ -8,7 +8,7 @@ import ResponseFields from "./api/ResponseFields";
 import CodeBlock from "./CodeBlock";
 import Introduction from "./Introduction";
 import { Helmet } from "react-helmet-async";
-import { Check, Sparkles } from "lucide-react";
+import { Check, Sparkles, Coins } from "lucide-react";
 import { generateAIPrompt } from "../utils/promptGenerator";
 
 export default function EndpointDocs({
@@ -64,6 +64,22 @@ export default function EndpointDocs({
     return `${endpoint.name} API endpoint documentation - ${endpoint.description}`;
   };
 
+  // Get credit cost information from endpoint
+  const getCreditCost = (endpoint) => {
+    // First check if there's a structured credits field
+    if (endpoint?.credits) {
+      if (typeof endpoint.credits === "number") {
+        return { type: "fixed", cost: endpoint.credits };
+      }
+      if (typeof endpoint.credits === "object") {
+        return endpoint.credits; // e.g., { type: "per_item", cost: 1, per: 10 }
+      }
+    }
+
+    // Default to 1 credit if not specified
+    return { type: "fixed", cost: 1 };
+  };
+
   // Show introduction for root path or /introduction
   if (path === "/" || path === "/introduction") {
     return <Introduction />;
@@ -78,6 +94,7 @@ export default function EndpointDocs({
   }
 
   const { prev, next } = getNavigation();
+  const creditCost = getCreditCost(endpointData);
 
   return (
     <>
@@ -191,6 +208,31 @@ export default function EndpointDocs({
         title={endpointData.name}
         description={endpointData.description}
       />
+
+      {/* Credit Cost Display */}
+      <div className="mt-4 flex items-center gap-2">
+        <div className="flex items-center gap-2 px-4 py-2 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+          <Coins className="w-4 h-4 text-yellow-600 dark:text-yellow-400" />
+          <span className="text-sm font-medium text-yellow-900 dark:text-yellow-100">
+            <span className="font-semibold">
+              {creditCost.type === "fixed"
+                ? `${creditCost.cost} credit${creditCost.cost !== 1 ? "s" : ""}`
+                : creditCost.type === "per_item"
+                ? `1 credit per ${creditCost.per} item${
+                    creditCost.per !== 1 ? "s" : ""
+                  } returned`
+                : `${creditCost.cost} credit${
+                    creditCost.cost !== 1 ? "s" : ""
+                  }`}
+            </span>
+            {creditCost.type !== "per_item" && (
+              <span className="text-yellow-700 dark:text-yellow-300 ml-1">
+                per request
+              </span>
+            )}
+          </span>
+        </div>
+      </div>
 
       <div className="mt-6 flex w-full flex-col space-y-4">
         <EndpointMethod
