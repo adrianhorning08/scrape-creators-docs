@@ -26283,7 +26283,7 @@ export const apis = [
         name: "Company Ads",
         method: "GET",
         description:
-          "Get the ads for a company. *This only gets the public ads. Some ads you need to log in for and sadly we can't get those. This might be a bit slow since we are OCRing all the ads to get the text.",
+          "Get the ads for a company. *This only gets the public ads. Some ads you need to log in for and sadly we can't get those. Starting November 10th 2025, you will need to add get_ad_details=true to get the ad details (and will cost 25 credits). If you don't add that, only the advertiserId and creativeId from each ad will be returned (and will continue to cost just 1 credit)",
         path: "/v1/google/company/ads",
         sampleResponse: {
           ads: [
