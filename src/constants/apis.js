@@ -23656,6 +23656,63 @@ export const apis = [
           ],
         },
       },
+      {
+        name: "Playlist",
+        method: "GET",
+        description: "Get the videos of a YouTube playlist",
+        path: "/v1/youtube/playlist",
+        params: [
+          {
+            name: "playlist_id",
+            type: "string",
+            description:
+              "The ID of the YouTube playlist. In the YouTube URL it will be the 'list' parameter.",
+            required: true,
+            placeholder: "PLP32wGpgzmIlInfgKVFfCwVsxgGqZNIiS",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 99404,
+          title:
+            "Songs with Lyrics 2025 - New Songs 2025 - Music 2025 New Songs",
+          owner: {
+            id: "UC0-wiBH12UgtWqLjo-EvpOw",
+            name: "Lovely Tunes",
+            url: "https://www.youtube.com/@lovelytunes7622",
+            handle: "lovelytunes7622",
+          },
+          totalVideos: 98,
+          videos: [
+            {
+              id: "AdBzzpq3xV4",
+              title: "Lady Gaga, Bruno Mars - Die With A Smile",
+              thumbnail:
+                "https://i.ytimg.com/vi/AdBzzpq3xV4/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLABnTkQJmfW0s1BMl_qa0FGqIGGqw",
+              url: "https://www.youtube.com/watch?v=AdBzzpq3xV4",
+              lengthText: "4:15",
+              lengthSeconds: 255,
+              channel: {
+                title: "LatinHype",
+                url: "https://www.youtube.com/@LatinHype.",
+              },
+            },
+            {
+              id: "htk6MRjmcnQ",
+              title: "Huntrix - Golden (Lyrics) KPop Demon Hunters",
+              thumbnail:
+                "https://i.ytimg.com/vi/htk6MRjmcnQ/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCqLkrfMRzelIfhUBhy4UBbOgGI4g",
+              url: "https://www.youtube.com/watch?v=htk6MRjmcnQ",
+              lengthText: "3:13",
+              lengthSeconds: 193,
+              channel: {
+                title: "7clouds",
+                url: "https://www.youtube.com/@7clouds",
+              },
+            },
+          ],
+        },
+      },
     ],
   },
   {
