@@ -23713,6 +23713,41 @@ export const apis = [
           ],
         },
       },
+      {
+        name: "Community Post Details",
+        method: "GET",
+        description: "Get the details of a community post",
+        path: "/v1/youtube/community-post",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            description: "The URL of the YouTube community post to get",
+            required: true,
+            placeholder:
+              "https://www.youtube.com/post/UgkxWifcQwnaMQpZ749XvzcfPFXysD-begGT",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 9931806,
+          id: "UgkxWifcQwnaMQpZ749XvzcfPFXysD-begGT",
+          channel: {
+            id: "UChhw6DlKKTQ9mYSpTfXUYqA",
+            title: "Starter Story",
+            url: "https://www.youtube.com/@starterstory",
+            handle: "starterstory",
+          },
+          content:
+            "THE GREATEST HABIT OF ALL TIME\n\nI’ve sat down and wrote a lil code almost every morning for 10 years.\n\nYes, most of that code has become vaporware.\n\nBut a small % of it is used by millions, and made me millions.\n\nsomething there...\n\nStart building today: https://build.starterstory.com/?utm_s...",
+          image:
+            "https://yt3.ggpht.com/DNjKBOD7cxgvih54hD3j5DaiBnMvomOOgjEzAKAXrNFVcHPqwIHSYUc7r1lFqrKOdjCUm6Y4Uto2=s640-rw-nd-v1",
+          likeCount: 689,
+          publishedTimeText: "2 weeks ago",
+          publishedTime: "2025-10-24T18:33:13.514Z",
+          video: null,
+        },
+      },
     ],
   },
   {
