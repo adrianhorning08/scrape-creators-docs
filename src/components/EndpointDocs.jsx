@@ -67,7 +67,7 @@ export default function EndpointDocs({
   // Get credit cost information from endpoint
   const getCreditCost = (endpoint) => {
     // First check if there's a structured credits field
-    if (endpoint?.credits) {
+    if (endpoint?.credits !== undefined) {
       if (typeof endpoint.credits === "number") {
         return { type: "fixed", cost: endpoint.credits };
       }
