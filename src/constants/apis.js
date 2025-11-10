@@ -24069,8 +24069,7 @@ export const apis = [
       {
         name: "Post",
         method: "GET",
-        description:
-          "Get a Linkedin post. This can be a post or an article. Thinking about separating posts and articles, let me know if you think I should do that: adrian@thewebscrapingguy.com",
+        description: "Get a Linkedin post. This can be a post or an article.",
         path: "/v1/linkedin/post",
         params: [
           {
