@@ -218,7 +218,9 @@ export default function EndpointDocs({
               {creditCost.type === "fixed"
                 ? `${creditCost.cost} credit${creditCost.cost !== 1 ? "s" : ""}`
                 : creditCost.type === "per_item"
-                ? `1 credit per ${creditCost.per} item${
+                ? `${creditCost.cost} credit${
+                    creditCost.cost !== 1 ? "s" : ""
+                  } per ${creditCost.per} item${
                     creditCost.per !== 1 ? "s" : ""
                   } returned`
                 : `${creditCost.cost} credit${

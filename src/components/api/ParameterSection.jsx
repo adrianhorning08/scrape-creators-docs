@@ -1,4 +1,47 @@
 import React, { useState } from "react";
+import { Coins } from "lucide-react";
+
+const pluralize = (value, singular, plural) =>
+  value === 1 ? singular : plural || `${singular}s`;
+
+const formatCreditInfo = (credits) => {
+  if (credits === null || credits === undefined) {
+    return null;
+  }
+
+  if (typeof credits === "number") {
+    if (credits <= 0) {
+      return null;
+    }
+    return `Adds ${credits} ${pluralize(credits, "credit")} when used`;
+  }
+
+  if (typeof credits === "object") {
+    const { type, cost, per, note } = credits;
+
+    if (type === "per_item" && cost !== undefined && per !== undefined) {
+      const base = `Adds ${cost} ${pluralize(
+        cost,
+        "credit"
+      )} per ${per} ${pluralize(per, "item")}`;
+      return note ? `${base} ${note}` : base;
+    }
+
+    if (type === "fixed" && cost !== undefined) {
+      const base = `Adds ${cost} ${pluralize(cost, "credit")} when used`;
+      return note ? `${base} ${note}` : base;
+    }
+
+    if (cost !== undefined) {
+      const base = `Adds ${cost} ${pluralize(cost, "credit")}`;
+      return note ? `${base} ${note}` : base;
+    }
+
+    return note || null;
+  }
+
+  return null;
+};
 
 function Parameter({
   name,
@@ -7,6 +50,7 @@ function Parameter({
   description,
   options,
   placeholder,
+  credits,
 }) {
   const [copied, setCopied] = useState(false);
 
@@ -57,6 +101,14 @@ function Parameter({
         <div className="prose prose-sm prose-gray dark:prose-invert">
           <p className="whitespace-pre-line">{description}</p>
         </div>
+        {formatCreditInfo(credits) && (
+          <div className="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-md bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800">
+            <Coins className="w-3.5 h-3.5 text-yellow-600 dark:text-yellow-400" />
+            <span className="text-xs font-medium text-yellow-900 dark:text-yellow-100">
+              {formatCreditInfo(credits)}
+            </span>
+          </div>
+        )}
         {placeholder !== undefined &&
           placeholder !== null &&
           placeholder !== "" && (

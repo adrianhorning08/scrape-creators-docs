@@ -26377,84 +26377,6 @@ export const apis = [
         description:
           "Get the ads for a company. *This only gets the public ads. Some ads you need to log in for and sadly we can't get those. Starting November 10th 2025, you will need to add get_ad_details=true to get the ad details (and will cost 25 credits). If you don't add that, only the advertiserId and creativeId from each ad will be returned (and will continue to cost just 1 credit)",
         path: "/v1/google/company/ads",
-        sampleResponse: {
-          ads: [
-            {
-              advertiserId: "AR10397446976948928513",
-              creativeId: "CR00429437544950661121",
-              firstShown: "2025-06-28T00:00:00.000Z",
-              lastShown: "2025-08-11T23:46:18.000Z",
-              format: "text",
-              overallImpressions: {
-                min: null,
-                max: null,
-              },
-              creativeRegions: [
-                {
-                  regionCode: "FI",
-                  regionName: "Finland",
-                },
-              ],
-              regionStats: [
-                {
-                  regionCode: "FI",
-                  regionName: "Finland",
-                  firstShown: "2025-06-30T00:00:00.000Z",
-                  lastShown: "2025-08-11T00:00:00.000Z",
-                  impressions: {},
-                  platformImpressions: [],
-                },
-              ],
-              variations: [
-                {
-                  destinationUrl: "www.scrapingbee.com/",
-                  headline: "Switch to #1 Web Scraping API",
-                  description:
-                    "ScrapingBee API handles rotating proxies, headless browsers and CAPTCHAS.",
-                },
-              ],
-            },
-            {
-              advertiserId: "AR13852934980478435329",
-              creativeId: "CR08357687413744599041",
-              firstShown: "2025-07-13T00:00:00.000Z",
-              lastShown: "2025-08-11T21:31:07.000Z",
-              format: "text",
-              overallImpressions: {
-                min: null,
-                max: null,
-              },
-              creativeRegions: [
-                {
-                  regionCode: "FR",
-                  regionName: "France",
-                },
-              ],
-              regionStats: [
-                {
-                  regionCode: "FR",
-                  regionName: "France",
-                  firstShown: "2025-07-15T00:00:00.000Z",
-                  lastShown: "2025-08-11T00:00:00.000Z",
-                  impressions: {},
-                  platformImpressions: [],
-                },
-              ],
-              variations: [
-                {
-                  destinationUrl: "www.scrapingbee.com/",
-                  headline: "Scrapingbee - The Best Web Scraping API",
-                  description:
-                    "AI-powered data extraction for web pages, even single-page applications AI-powered data extraction...",
-                },
-              ],
-            },
-          ],
-          cursor:
-            "CgoAP7znHvOD%2BtxDEhCPtIenS6VuEst4VJkAAAAAGgn8%2BJRa%2BLT01FM%3D",
-          success: true,
-          statusCode: 200,
-        },
         paginationField: "cursor",
         params: [
           {
@@ -26502,6 +26424,15 @@ export const apis = [
             placeholder: "2025-08-11",
           },
           {
+            name: "get_ad_details",
+            type: "string",
+            required: false,
+            description:
+              "Set to true to get the ad details. Will cost 25 credits.",
+            placeholder: "false",
+            credits: 25,
+          },
+          {
             name: "cursor",
             type: "string",
             required: false,
@@ -26510,6 +26441,74 @@ export const apis = [
               "CgoAP7znOo9RPjf%2FEhD5utgx8m75NrTTbU0AAAAAGgn8%2BJyW%2BJQK40A%3D",
           },
         ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 9926561,
+          ads: [
+            {
+              advertiserId: "AR09628680369637163009",
+              creativeId: "CR15036700036807262209",
+              format: "text",
+              adUrl:
+                "https://adstransparency.google.com/advertiser/AR09628680369637163009/creative/CR15036700036807262209",
+              advertiserName: "Foreplay Ventures Inc",
+              domain: "foreplay.co",
+              imageUrl: null,
+              firstShown: "2024-08-02T12:33:35.000Z",
+              lastShown: "2025-11-10T19:31:13.000Z",
+            },
+            {
+              advertiserId: "AR09628680369637163009",
+              creativeId: "CR04077090219323555841",
+              format: "video",
+              adUrl:
+                "https://adstransparency.google.com/advertiser/AR09628680369637163009/creative/CR04077090219323555841",
+              advertiserName: "Foreplay Ventures Inc",
+              domain: "foreplay.co",
+              imageUrl: null,
+              firstShown: "2024-06-22T06:45:18.000Z",
+              lastShown: "2025-11-10T17:56:32.000Z",
+            },
+            {
+              advertiserId: "AR09628680369637163009",
+              creativeId: "CR09593715710895325185",
+              format: "video",
+              adUrl:
+                "https://adstransparency.google.com/advertiser/AR09628680369637163009/creative/CR09593715710895325185",
+              advertiserName: "Foreplay Ventures Inc",
+              domain: "foreplay.co",
+              imageUrl: null,
+              firstShown: "2025-08-27T14:17:12.000Z",
+              lastShown: "2025-11-10T17:17:46.000Z",
+            },
+            {
+              advertiserId: "AR09628680369637163009",
+              creativeId: "CR10027703979854528513",
+              format: "text",
+              adUrl:
+                "https://adstransparency.google.com/advertiser/AR09628680369637163009/creative/CR10027703979854528513",
+              advertiserName: "Foreplay Ventures Inc",
+              domain: "foreplay.co",
+              imageUrl: null,
+              firstShown: "2025-01-12T03:38:24.000Z",
+              lastShown: "2025-11-10T16:36:38.000Z",
+            },
+            {
+              advertiserId: "AR09628680369637163009",
+              creativeId: "CR15742167484830056449",
+              format: "image",
+              adUrl:
+                "https://adstransparency.google.com/advertiser/AR09628680369637163009/creative/CR15742167484830056449",
+              advertiserName: "Foreplay Ventures Inc",
+              domain: "foreplay.co",
+              imageUrl: null,
+              firstShown: "2025-08-09T14:24:28.000Z",
+              lastShown: "2025-11-10T06:47:43.000Z",
+            },
+          ],
+          cursor:
+            "CgoAP7zm82Y5sMRjEhBwPifBwIMxRttsqvUAAAAAGgn8%2BIdd%2BDICr8g%3D",
+        },
       },
       {
         name: "Ad Details",
