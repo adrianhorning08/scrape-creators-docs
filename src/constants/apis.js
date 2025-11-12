@@ -195,8 +195,8 @@ export const apis = [
             type: "select",
             required: false,
             description: "What to sort by",
-            placeholder: "newest",
-            options: ["newest", "popular"],
+            placeholder: "latest",
+            options: ["latest", "popular"],
           },
           {
             name: "max_cursor",
@@ -1950,8 +1950,8 @@ export const apis = [
             type: "select",
             required: false,
             description: "What to sort by",
-            placeholder: "newest",
-            options: ["newest", "popular"],
+            placeholder: "latest",
+            options: ["latest", "popular"],
           },
           {
             name: "user_id",
