@@ -23726,13 +23726,13 @@ export const apis = [
             description: "The URL of the YouTube community post to get",
             required: true,
             placeholder:
-              "https://www.youtube.com/post/UgkxWifcQwnaMQpZ749XvzcfPFXysD-begGT",
+              "https://www.youtube.com/post/Ugkxvj2KoApYAXoqLWnKVr6zZe5JjeHrQeP8",
           },
         ],
         sampleResponse: {
           success: true,
-          credits_remaining: 9931806,
-          id: "UgkxWifcQwnaMQpZ749XvzcfPFXysD-begGT",
+          credits_remaining: 9922899,
+          id: "Ugkxvj2KoApYAXoqLWnKVr6zZe5JjeHrQeP8",
           channel: {
             id: "UChhw6DlKKTQ9mYSpTfXUYqA",
             title: "Starter Story",
@@ -23740,12 +23740,16 @@ export const apis = [
             handle: "starterstory",
           },
           content:
-            "THE GREATEST HABIT OF ALL TIME\n\nI’ve sat down and wrote a lil code almost every morning for 10 years.\n\nYes, most of that code has become vaporware.\n\nBut a small % of it is used by millions, and made me millions.\n\nsomething there...\n\nStart building today: https://build.starterstory.com/?utm_s...",
-          image:
-            "https://yt3.ggpht.com/DNjKBOD7cxgvih54hD3j5DaiBnMvomOOgjEzAKAXrNFVcHPqwIHSYUc7r1lFqrKOdjCUm6Y4Uto2=s640-rw-nd-v1",
-          likeCount: 689,
-          publishedTimeText: "2 weeks ago",
-          publishedTime: "2025-10-24T18:33:13.514Z",
+            "How to build something meaningful\n\n1. sit down\n2. set a timer for 2 hours\n3. work\n4. do that over and over and over\n\nNOTHING meaningful was built in a day, a week, or even a month\n\nyou should launch quickly, but the work can't end there\n\nsuccessful products have YEARS of craft behind them\n\nstart building yours today: http://starterstory.com/bsm",
+          images: [
+            "https://yt3.ggpht.com/uer4ij-RqnTqudtdT5VZNvEjzVXA3PGLHwNpjMfraB7mfbX_Bm0-fSpaFXkfw3EA4uZ7BY8YPa1gU08=s640-c-fcrop64=1,20000000dfffffff-rw-nd-v1",
+            "https://yt3.ggpht.com/va-8_8IWK7qI85YZLI66Z6hynbM1V8P2FnoC9piDh1YxdUW0Df5o-XPb0RGp9ePTIpdn7rxK_jrg7-0=s640-c-fcrop64=1,20000000dfffffff-rw-nd-v1",
+            "https://yt3.ggpht.com/s9KPa9gKfenu_CvipeYKAPV5ZyhpzwfS2YDoPv9QB3sZR_Z6RdSFpKecAkX5LElHzpcgujB5aKgJSQ=s640-c-fcrop64=1,20000000dfffffff-rw-nd-v1",
+            "https://yt3.ggpht.com/QGeo4ddYFARxBEL69nLGoafe_TAlfQ7aZlPSo0oY8Qbj9sx85Nh3YdzbfPdoofFrpHw4GTDEhmQs2w=s640-c-fcrop64=1,20000000dfffffff-rw-nd-v1",
+          ],
+          likeCount: 759,
+          publishedTimeText: "5 days ago",
+          publishedTime: "2025-11-07T18:49:57.492Z",
           video: null,
         },
       },
