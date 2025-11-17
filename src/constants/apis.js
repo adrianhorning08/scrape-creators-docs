@@ -191,6 +191,13 @@ export const apis = [
             description: "TikTok handle",
           },
           {
+            name: "user_id",
+            type: "string",
+            required: false,
+            placeholder: "6659752019493208069",
+            description: "TikTok user id. Use this for faster responses.",
+          },
+          {
             name: "sort_by",
             type: "select",
             required: false,
