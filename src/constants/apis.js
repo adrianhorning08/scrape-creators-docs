@@ -26022,7 +26022,8 @@ export const apis = [
         name: "Company Ads",
         method: "GET",
         paginationField: "cursor",
-        description: "Get all the ads a company has running",
+        description:
+          "Get all the ads a company has running. If params become too large, make this a POST request and pass the params in the body.",
         path: "/v1/facebook/adLibrary/company/ads",
         youtubeId: "M_wgqCtznjM",
         codeExample:
