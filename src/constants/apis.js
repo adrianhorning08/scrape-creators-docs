@@ -18811,7 +18811,7 @@ export const apis = [
         name: "Post/Reel Info",
         method: "GET",
         description:
-          "Get the public detailed information about a specific post or reel",
+          "Retrieve public post/reel details. We only use publicly available Instagram data, so metrics reflect what their public API returns, and those counts can occasionally be inaccurate.",
         path: "/v1/instagram/post",
         responseFields: [
           {
