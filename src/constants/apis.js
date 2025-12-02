@@ -26372,6 +26372,28 @@ export const apis = [
             ],
           },
           {
+            name: "language",
+            type: "string",
+            required: false,
+            description:
+              "Language to filter ads on. Needs to be 2 letter language code, ie EN, ES, FR, etc",
+            placeholder: "EN",
+          },
+          {
+            name: "start_date",
+            type: "string",
+            required: false,
+            description: "Start date to search for. Format: YYYY-MM-DD",
+            placeholder: "2025-01-01",
+          },
+          {
+            name: "end_date",
+            type: "string",
+            required: false,
+            description: "End date to search for. Format: YYYY-MM-DD",
+            placeholder: "2025-12-31",
+          },
+          {
             name: "cursor",
             type: "string",
             required: false,
