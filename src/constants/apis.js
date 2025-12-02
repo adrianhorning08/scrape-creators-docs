@@ -25740,9 +25740,17 @@ export const apis = [
           {
             name: "id",
             type: "string",
-            required: true,
+            required: false,
             description: "Facebook Ad Id",
             placeholder: "702369045530963",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "Facebook Ad URL",
+            placeholder:
+              "https://www.facebook.com/ads/library?id=1185617869915074",
           },
           {
             name: "get_transcript",
