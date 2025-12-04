@@ -5506,7 +5506,7 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Use AI as a fallback to get the transcript if the transcript is not found. Costs 10 credits to use this feature.",
+              "Set to 'true' to use AI as a fallback to get the transcript if the transcript is not found. Costs 10 credits to use this feature.",
             placeholder: "false",
             credits: 10,
           },
