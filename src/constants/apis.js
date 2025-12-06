@@ -17919,8 +17919,7 @@ export const apis = [
       {
         name: "Basic Profile",
         method: "GET",
-        description:
-          "Get a basic profile by user id. This endpoint is actually free right now also.",
+        description: "Get a basic profile by user id.",
         path: "/v1/instagram/basic-profile",
         credits: 0,
         params: [
