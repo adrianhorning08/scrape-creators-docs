@@ -24485,7 +24485,7 @@ export const apis = [
             type: "string",
             description: "The URL of the group",
             required: false,
-            placeholder: "https://www.facebook.com/groups/homemakingtips/",
+            placeholder: "https://www.facebook.com/groups/1270525996445602/",
           },
           {
             name: "group_id",
