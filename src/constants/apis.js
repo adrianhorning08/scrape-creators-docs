@@ -23521,7 +23521,8 @@ export const apis = [
       {
         name: "Trending Shorts",
         method: "GET",
-        description: "Get about 48 trending shorts",
+        description:
+          "Get about 48 trending shorts. Continue hitting this to get more shorts (get new ones with each call)",
         path: "/v1/youtube/shorts/trending",
         params: [],
         sampleResponse: {
