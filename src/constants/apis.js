@@ -17904,7 +17904,7 @@ export const apis = [
             name: "handle",
             type: "string",
             required: true,
-            placeholder: "adrianhorning",
+            placeholder: "jane",
             description: "Instagram handle",
           },
           {
@@ -20873,7 +20873,7 @@ export const apis = [
             required: false,
             description:
               "Instagram handle. Use user_id for faster response times.",
-            placeholder: "adrianhorning",
+            placeholder: "jane",
           },
           {
             name: "max_id",
@@ -21621,7 +21621,7 @@ export const apis = [
             type: "string",
             required: false,
             description: "Instagram handle",
-            placeholder: "adrianhorning",
+            placeholder: "jane",
           },
           {
             name: "amount",
