@@ -18799,7 +18799,7 @@ export const apis = [
         name: "Post/Reel Info",
         method: "GET",
         description:
-          "Retrieve public post/reel details. We only use publicly available Instagram data, so metrics reflect what their public API returns, and those counts can occasionally be inaccurate.",
+          "Retrieve public post/reel details. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views.",
         path: "/v1/instagram/post",
         responseFields: [
           {
