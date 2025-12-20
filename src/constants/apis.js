@@ -27939,6 +27939,49 @@ export const apis = [
     description: "Scrape Reddit posts and comments",
     endpoints: [
       {
+        name: "Subreddit Details",
+        method: "GET",
+        description:
+          "Get details about a subreddit. Pass a subreddit name or URL to the subreddit.",
+        path: "/v1/reddit/subreddit/details",
+        params: [
+          {
+            name: "subreddit",
+            type: "string",
+            required: false,
+            description:
+              "Subreddit name. MUST be case sensitive. So 'AskReddit' not 'askreddit'.",
+            placeholder: "AskReddit",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "Subreddit URL",
+            placeholder: "https://www.reddit.com/r/AbsoluteUnits/",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 33950256,
+          subreddit_id: "t5_a7wuv",
+          display_name: "AbsoluteUnits",
+          weekly_active_users: 1428398,
+          weekly_contributions: 8923,
+          rules:
+            "#ABSOLUTE UNITS\n\n---\n\n    Be in awe at the size of these lads\n\n---\n\n###[Check out our deep, well-reflected definitions of an absolute unit.](https://www.reddit.com/r/AbsoluteUnits/wiki/index)  ",
+          description:
+            "Absolute Unit : an Animal or Public Figure, who is larger than we should normally expect.",
+          header_img: null,
+          icon_img:
+            "https://styles.redditmedia.com/t5_a7wuv/styles/communityIcon_t3cspt08bl681.png?width=128&frame=1&auto=webp&s=6f7e59ccf1724bd6c8b3e0d2840c9b21297102c3",
+          subscribers: 1923642,
+          advertiser_category: "",
+          created_at: "2018-01-05T10:35:24.000Z",
+          submit_text: "",
+        },
+      },
+      {
         name: "Subreddit Posts",
         method: "GET",
         description:
