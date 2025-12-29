@@ -24329,6 +24329,127 @@ export const apis = [
         ],
       },
       {
+        name: "Profile Reels",
+        method: "GET",
+        description:
+          "Get a public Facebook page's reels. Returns 10 reels at a time. Need 'next_page_id' and 'cursor' to paginate.",
+        path: "/v1/facebook/profile/reels",
+        paginationField: "cursor",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            description: "Facebook page URL",
+            required: true,
+            placeholder: "https://www.facebook.com/pacemorby",
+          },
+          {
+            name: "next_page_id",
+            type: "string",
+            required: false,
+            placeholder: "YXBwX2NvbGxlY3Rpb2......",
+            description: "To paginate through to the next page",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            placeholder: "AQHSFZtzkBauSDHgy8y......",
+            description: "To paginate through to the next page",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 3393,
+          reels: [
+            {
+              id: "UzpfSTEwMDA2NDAyNzI0Mjg0OTpWSzoxMTE0MjM1OTIwNjY0NDA4",
+              post_id: "1203161005161463",
+              creation_time: "2025-09-13T20:51:28.000Z",
+              url: "https://www.facebook.com/reel/1114235920664408",
+              view_count: 900,
+              feedback_id: "ZmVlZGJhY2s6MTIwMzE2MTAwNTE2MTQ2Mw==",
+              description:
+                "#globetheatreregina #GrandOpeningGlobeTheatre #yqrfood",
+              video_id: "1114235920664408",
+              thumbnail:
+                "https://scontent.fsjc1-3.fna.fbcdn.net/v/t15.5256-10/548161090_781902490913426_4425148471361535737_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=104&ccb=1-7&_nc_sid=b5ba86&_nc_ohc=OSOOGTqjWBUQ7kNvwEELU_j&_nc_oc=AdlV3gLGZQ7yP7WZ71P40YFpkKZzQKTsoOwpia78XWC-552nlv0PaCzqp4JEN_eM8nw&_nc_zt=23&_nc_ht=scontent.fsjc1-3.fna&_nc_gid=RAC9UOMHIFPQvFPA49SzFw&oh=00_Afmww8iYxDtSamLiv7CnMMk5qN54iKlWRh3KGaQ9raX8sg&oe=6958CB0A",
+              play_time_in_ms: 22035,
+              video_url:
+                "https://video.fsjc1-3.fna.fbcdn.net/o1/v/t2/f2/m366/AQOiS3S8KcKF2LNoPO0zOfAI3fDrZ4uUOgoNDGn6c7r8ABcujOm_egeBIp1UGt2C3T7bjmweRUAe6zZv183Qj3dpOTyUglIVsXGSEDb37A.mp4?_nc_cat=110&_nc_oc=AdlNlblWiTsxDyG87HyqrOExbMhSN5lMWCw0IbpBOlJvrHUyYOW84jgZapFBnh9ErN8&_nc_sid=8bf8fe&_nc_ht=video.fsjc1-3.fna.fbcdn.net&_nc_ohc=o6c-GAEZqSAQ7kNvwEDTAM6&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTE3MDg1MjU4ODIxOTYzMywiYXNzZXRfYWdlX2RheXMiOjEwNywidmlfdXNlY2FzZV9pZCI6MTAxMjAsImR1cmF0aW9uX3MiOjIyLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=RAC9UOMHIFPQvFPA49SzFw&_nc_zt=28&oh=00_AfnqnDcmg0X9m2W775vmpbH2-IrJvzz6gKDg-nHx1bUNwA&oe=6958DB58&bitrate=379965&tag=sve_sd",
+              music: {
+                id: "1491450028648565",
+                track_title: "The Copper Kettle Restaurant · Original audio",
+              },
+              author: {
+                id: "100064027242849",
+                name: "The Copper Kettle Restaurant",
+                is_verified: false,
+                url: "https://www.facebook.com/copperkettleyqr",
+                image:
+                  "https://scontent.fsjc1-3.fna.fbcdn.net/v/t39.30808-1/298528699_436705561807015_4191178501684731329_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&_nc_cat=101&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=GrqhlAtcX98Q7kNvwFcfQYJ&_nc_oc=AdkVhSbfC7VUfqrXTTBHm1mAzqonpy9gE0aRcOV9-ddVxPsL4Nm-fnzbu7pTwhxuCuQ&_nc_zt=24&_nc_ht=scontent.fsjc1-3.fna&_nc_gid=RAC9UOMHIFPQvFPA49SzFw&oh=00_Aflr4kBQgljqP3wqJypUlzhoGQVCx4OyyBZW28kx1UDabw&oe=6958E99C",
+              },
+            },
+            {
+              id: "UzpfSTEwMDA2NDAyNzI0Mjg0OTpWSzoxMzM0ODczOTA4MjU2Nzgz",
+              post_id: "1201508031993427",
+              creation_time: "2025-09-11T21:21:58.000Z",
+              url: "https://www.facebook.com/reel/1334873908256783",
+              view_count: 576,
+              feedback_id: "ZmVlZGJhY2s6MTIwMTUwODAzMTk5MzQyNw==",
+              video_id: "1334873908256783",
+              thumbnail:
+                "https://scontent.fsjc1-3.fna.fbcdn.net/v/t15.5256-10/545577573_1526393572051504_6624822632487689661_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=106&ccb=1-7&_nc_sid=b5ba86&_nc_ohc=u0irauX9fhUQ7kNvwG1AX56&_nc_oc=AdkfJ3nQbAk4i0VxKXMU07hCnX3__pCp9aELNkECOkA1Jt3a22O3rFye13jVl4bTXUo&_nc_zt=23&_nc_ht=scontent.fsjc1-3.fna&_nc_gid=RAC9UOMHIFPQvFPA49SzFw&oh=00_AfklLOZnLEo6vB61DfUH7zQC8ad2mg15TYQ3oeacloEJCQ&oe=6958F3E8",
+              play_time_in_ms: 16192,
+              video_url:
+                "https://video.fsjc1-3.fna.fbcdn.net/o1/v/t2/f2/m366/AQOIf3b_2lwmNH0ux86fwOwQylIb3rPGoK_V5y7o96tAW-vmkssKj8oQ6NTAixJNdIq52fb0xwteK4uxSYTzziTzHKnGpi0I6GLA8CP9ig.mp4?_nc_cat=104&_nc_oc=Adm1wTNlSojXi2vHkATKJ8r-e_3zqb0C5weKGoJHycTXUG_vNbABV6UQcmxnPy8TW4c&_nc_sid=8bf8fe&_nc_ht=video.fsjc1-3.fna.fbcdn.net&_nc_ohc=UTmdgjAoXTgQ7kNvwFUCY8I&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTA0MDU3MDg4ODAxNzIxMywiYXNzZXRfYWdlX2RheXMiOjEwOSwidmlfdXNlY2FzZV9pZCI6MTAxMjAsImR1cmF0aW9uX3MiOjE2LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=RAC9UOMHIFPQvFPA49SzFw&_nc_zt=28&oh=00_AfnrvUgRtJBxE8by28ebU7eEVJU7H089nxT0KvP0iEwtzw&oe=6958C3DA&bitrate=743839&tag=sve_sd",
+              music: {
+                id: "1370343134704314",
+                track_title: "The Copper Kettle Restaurant · Original audio",
+              },
+              author: {
+                id: "100064027242849",
+                name: "The Copper Kettle Restaurant",
+                is_verified: false,
+                url: "https://www.facebook.com/copperkettleyqr",
+                image:
+                  "https://scontent.fsjc1-3.fna.fbcdn.net/v/t39.30808-1/298528699_436705561807015_4191178501684731329_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&_nc_cat=101&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=GrqhlAtcX98Q7kNvwFcfQYJ&_nc_oc=AdkVhSbfC7VUfqrXTTBHm1mAzqonpy9gE0aRcOV9-ddVxPsL4Nm-fnzbu7pTwhxuCuQ&_nc_zt=24&_nc_ht=scontent.fsjc1-3.fna&_nc_gid=RAC9UOMHIFPQvFPA49SzFw&oh=00_Aflr4kBQgljqP3wqJypUlzhoGQVCx4OyyBZW28kx1UDabw&oe=6958E99C",
+              },
+            },
+            {
+              id: "UzpfSTEwMDA2NDAyNzI0Mjg0OTpWSzoxMTU4OTM1MzAyODY3ODc0",
+              post_id: "1201500718660825",
+              creation_time: "2025-09-11T21:07:08.000Z",
+              url: "https://www.facebook.com/reel/1158935302867874",
+              view_count: 326,
+              feedback_id: "ZmVlZGJhY2s6MTIwMTUwMDcxODY2MDgyNQ==",
+              description:
+                "Colliers Cup 2025 Semi final Casino Regina vs MNP great vibes for great cause - Cdn Mental Health Assoc 3rd year running!",
+              video_id: "1158935302867874",
+              thumbnail:
+                "https://scontent.fsjc1-3.fna.fbcdn.net/v/t15.5256-10/546107371_24533898936221206_3050564936251167933_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=108&ccb=1-7&_nc_sid=b5ba86&_nc_ohc=5Dclq4Fi-HwQ7kNvwE1Kb2o&_nc_oc=AdnAh-kIIYpxAvJldrDyjik5HSZq_T2JmPRQ9vxqJJqHNa7TQamH2QNlT5YKUkgqDP0&_nc_zt=23&_nc_ht=scontent.fsjc1-3.fna&_nc_gid=RAC9UOMHIFPQvFPA49SzFw&oh=00_AflkZ4g75Sm5NMvnmoWz36XzKw6UO0ZIargojhKS3fTo3Q&oe=6958D020",
+              play_time_in_ms: 42376,
+              video_url:
+                "https://video.fsjc1-3.fna.fbcdn.net/o1/v/t2/f2/m366/AQP5D5iRB9aucItkvlB05pJWrshvxg9BBPYKH9HbKFQ658Kt-_kUJkFwHmLRLzdF5OKf4H29Hsp7x_Ypb2eArEycBIJjoJyplYFXKoBPeQ.mp4?_nc_cat=101&_nc_oc=AdkCyxKtEpQUovYLGQ5Unu_wc4zIua94ywKyfEhIVdz3dKvlC4wpxkvWsOSq63lumVU&_nc_sid=8bf8fe&_nc_ht=video.fsjc1-3.fna.fbcdn.net&_nc_ohc=xtHEL6UJChoQ7kNvwHSN4VB&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6ODAxNTY1MDEyMzI0NDE5LCJhc3NldF9hZ2VfZGF5cyI6MTA5LCJ2aV91c2VjYXNlX2lkIjoxMDEyMCwiZHVyYXRpb25fcyI6NDIsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=RAC9UOMHIFPQvFPA49SzFw&_nc_zt=28&oh=00_AfkoBV9g0y_caZUPPX_w2qduZ69ujbT7DbZ4o4DG9pt2sA&oe=6958EC2D&bitrate=745265&tag=sve_sd",
+              music: {
+                id: "1106073647808749",
+                track_title: "The Copper Kettle Restaurant · Original audio",
+              },
+              author: {
+                id: "100064027242849",
+                name: "The Copper Kettle Restaurant",
+                is_verified: false,
+                url: "https://www.facebook.com/copperkettleyqr",
+                image:
+                  "https://scontent.fsjc1-3.fna.fbcdn.net/v/t39.30808-1/298528699_436705561807015_4191178501684731329_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&_nc_cat=101&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=GrqhlAtcX98Q7kNvwFcfQYJ&_nc_oc=AdkVhSbfC7VUfqrXTTBHm1mAzqonpy9gE0aRcOV9-ddVxPsL4Nm-fnzbu7pTwhxuCuQ&_nc_zt=24&_nc_ht=scontent.fsjc1-3.fna&_nc_gid=RAC9UOMHIFPQvFPA49SzFw&oh=00_Aflr4kBQgljqP3wqJypUlzhoGQVCx4OyyBZW28kx1UDabw&oe=6958E99C",
+              },
+            },
+          ],
+          cursor: "AQHSiBn76EsmuU....",
+          next_page_id: "YXBwX2NvbGxlY....",
+        },
+      },
+      {
         name: "Profile Posts",
         method: "GET",
         description:
