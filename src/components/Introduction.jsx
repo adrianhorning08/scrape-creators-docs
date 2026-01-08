@@ -363,10 +363,10 @@ export default function Introduction() {
           If you encounter any issues, have feature requests, or find bugs in
           the API or documentation, please email me at{" "}
           <a
-            href="mailto:adrian@thewebscrapingguy.com"
+            href="mailto:support@scrapecreators.com"
             className="text-primary dark:text-primary-light font-medium"
           >
-            adrian@thewebscrapingguy.com
+            support@scrapecreators.com
           </a>
         </p>
 

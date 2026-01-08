@@ -16742,7 +16742,7 @@ export const apis = [
         name: "Shop Search",
         method: "GET",
         description:
-          "Scrape TikTok Shop Products from a search! When I was testing it out, you can only get around 500 products at a time. NOTE: This costs more than 1 credit! Since we are doing the paginating for you, it costs 1 credit per page (TikTok returns 30 products per page). Also this endpoint takes a while and is new, so please be patient. Email me if you have any issues with it: adrian@thewebscrapingguy.com",
+          "Scrape TikTok Shop Products from a search! When I was testing it out, you can only get around 500 products at a time. NOTE: This costs more than 1 credit! Since we are doing the paginating for you, it costs 1 credit per page (TikTok returns 30 products per page). Also this endpoint takes a while and is new, so please be patient. Email me if you have any issues with it: support@scrapecreators.com",
         path: "/v1/tiktok/shop/search",
         params: [
           {
@@ -16896,7 +16896,7 @@ export const apis = [
         name: "Shop Products",
         method: "GET",
         description:
-          "Get the products from a TikTok Shop. NOTE: This costs more than 1 credit! Since we are doing the paginating for you, it costs 1 credit per page (TikTok returns 30 products per page). Also this endpoint takes a while and is new, so please be patient. Email me if you have any issues with it: adrian@thewebscrapingguy.com",
+          "Get the products from a TikTok Shop. NOTE: This costs more than 1 credit! Since we are doing the paginating for you, it costs 1 credit per page (TikTok returns 30 products per page). Also this endpoint takes a while and is new, so please be patient. Email me if you have any issues with it: support@scrapecreators.com",
         path: "/v1/tiktok/shop/products",
         params: [
           {
@@ -17064,7 +17064,7 @@ export const apis = [
             required: false,
             type: "string",
             description:
-              "Whether to get related videos for the product. These are affiliate videos promoting the product.",
+              "Whether to get related videos for the product. These are affiliate videos promoting the product. *This will take a little longer to process.*",
             placeholder: "false",
           },
           {
@@ -27142,7 +27142,7 @@ export const apis = [
     name: "Google Ad Library",
     icon: SiGoogle,
     description:
-      "Scrape the Google Ad Transparency Library. *This only gets the public ads. Some ads you need to log in for and sadly we can't get those. Also, since there are so many variations, the return types might not all be 100% the same. Email me for suggestions. Also this endpoint is pretty new, if you find any errors or irregularities, please email me: adrian@thewebscrapingguy.com",
+      "Scrape the Google Ad Transparency Library. *This only gets the public ads. Some ads you need to log in for and sadly we can't get those. Also, since there are so many variations, the return types might not all be 100% the same. Email me for suggestions. Also this endpoint is pretty new, if you find any errors or irregularities, please email me: support@scrapecreators.com",
     endpoints: [
       {
         name: "Company Ads",
@@ -27287,7 +27287,7 @@ export const apis = [
         name: "Ad Details",
         method: "GET",
         description:
-          "Get the details for an ad. I'm using an OCR to get the text from the ad, so it might not be 100% accurate. If you find any errors or irregularities, please email me: adrian@thewebscrapingguy.com",
+          "Get the details for an ad. I'm using an OCR to get the text from the ad, so it might not be 100% accurate. If you find any errors or irregularities, please email me: support@scrapecreators.com",
         path: "/v1/google/ad",
         params: [
           {
@@ -31415,7 +31415,7 @@ export const apis = [
       //   name: "Webhook",
       //   method: "POST",
       //   description:
-      //     "Webhook to immediately get notified when Trump posts something. Costs $500/month. Email me to get this setup: adrian@thewebscrapingguy.com. The sample response is the response we'll send to your webhook_url. Make sure your webhook accepts a POST request.",
+      //     "Webhook to immediately get notified when Trump posts something. Costs $500/month. Email me to get this setup: support@scrapecreators.com. The sample response is the response we'll send to your webhook_url. Make sure your webhook accepts a POST request.",
       //   path: "/v1/truthsocial/webhook",
       //   params: [],
       //   bodyParams: [
