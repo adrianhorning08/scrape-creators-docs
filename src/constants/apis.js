@@ -17160,7 +17160,7 @@ export const apis = [
         name: "Shop Search",
         method: "GET",
         description:
-          "Scrape TikTok Shop Products from a search! When I was testing it out, you can only get around 500 products at a time. NOTE: This costs more than 1 credit! Since we are doing the paginating for you, it costs 1 credit per page (TikTok returns 30 products per page). Also this endpoint takes a while and is new, so please be patient. Email me if you have any issues with it: support@scrapecreators.com",
+          "Scrape TikTok Shop Products from a search! Use the page parameter to paginate through results. NOTE: This costs 1 credit per page (TikTok returns 30 products per page). Email me if you have any issues with it: support@scrapecreators.com",
         path: "/v1/tiktok/shop/search",
         params: [
           {
@@ -17171,12 +17171,12 @@ export const apis = [
             placeholder: "shoes",
           },
           {
-            name: "amount",
+            name: "page",
             type: "number",
             required: false,
             description:
-              "How many products to scrape. We are limited by how much TikTok will let us grab per search.",
-            placeholder: "30",
+              "Page number to retrieve. Defaults to 1. TikTok returns 30 products per page.",
+            placeholder: "1",
           },
         ],
         sampleResponse: {
