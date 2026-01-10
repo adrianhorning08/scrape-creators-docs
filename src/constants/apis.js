@@ -17160,7 +17160,7 @@ export const apis = [
         name: "Shop Search",
         method: "GET",
         description:
-          "Scrape TikTok Shop Products from a search! Use the page parameter to paginate through results. NOTE: This costs 1 credit per page (TikTok returns 30 products per page). Email me if you have any issues with it: support@scrapecreators.com",
+          "Scrape TikTok Shop Products from a search!",
         path: "/v1/tiktok/shop/search",
         params: [
           {
@@ -17175,7 +17175,7 @@ export const apis = [
             type: "number",
             required: false,
             description:
-              "Page number to retrieve. Defaults to 1. TikTok returns 30 products per page.",
+              "Page number to retrieve",
             placeholder: "1",
           },
         ],
