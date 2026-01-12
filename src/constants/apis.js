@@ -17314,7 +17314,7 @@ export const apis = [
         name: "Shop Products",
         method: "GET",
         description:
-          "Get the products from a TikTok Shop. This endpoint costs 1 credit per request. This endpoint retrieves 10 items per page. Email me if you have any issues with it: adrian@thewebscrapingguy.com",
+          "Get the products from a TikTok Shop. This endpoint costs 1 credit per request. Use the next_scroll_param from the response to paginate through results. Email me if you have any issues with it: adrian@thewebscrapingguy.com",
         path: "/v1/tiktok/shop/products",
         params: [
           {
@@ -17325,11 +17325,11 @@ export const apis = [
             placeholder: "7495794203056835079",
           },
           {
-            name: "page",
-            type: "number",
+            name: "next_scroll_param",
+            type: "string",
             required: false,
-            description: "Page number to retrieve (defaults to 1)",
-            placeholder: "1",
+            description: "Scroll parameter from the previous response to retrieve the next page of products. Omit for the first page.",
+            placeholder: "",
           },
           {
             name: "region",
@@ -17484,6 +17484,7 @@ export const apis = [
             },
           ],
           hasMore: true,
+          nextScrollParam: "WzExMzg1LCIxNzMxMDMxNzc2NDk3MDc4NzkxIl0="
         },
       },
       {
