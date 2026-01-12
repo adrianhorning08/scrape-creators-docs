@@ -17482,7 +17482,7 @@ export const apis = [
             required: false,
             type: "string",
             description:
-              "Whether to get related videos for the product. These are affiliate videos promoting the product. *This will take a little longer to process.*",
+              "Whether to get related videos for the product. These are affiliate videos promoting the product.",
             placeholder: "false",
           },
           {
@@ -17490,7 +17490,7 @@ export const apis = [
             required: false,
             type: "string",
             description:
-              "Region the proxy will be set to so you can access products from that country. Use 2 letter country codes like US, GB, FR, etc",
+              "Region the proxy will be set to so you can access products from that country. Use 2 letter country codes like US, GB, FR, etc. For England, don't use UK, use GB.",
             placeholder: "US",
           },
         ],
