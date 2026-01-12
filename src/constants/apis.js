@@ -14817,7 +14817,7 @@ export const apis = [
             description: "Page number",
           },
           {
-            name: "timePeriod", 
+            name: "timePeriod",
             type: "select",
             options: [7, 30, 130],
             placeholder: 7,
@@ -15046,7 +15046,8 @@ export const apis = [
             type: "select",
             options: ["engagement", "follower", "avg_views"],
             placeholder: "engagement",
-            description: "Sort creators by engagement, follower count, or average views",
+            description:
+              "Sort creators by engagement, follower count, or average views",
           },
           {
             name: "followerCount",
@@ -15156,7 +15157,7 @@ export const apis = [
                   vv: 5537679,
                   liked_cnt: 576288,
                   create_time: 1702403085,
-                }
+                },
               ],
             },
             {
@@ -15191,7 +15192,7 @@ export const apis = [
                   vv: 368129,
                   liked_cnt: 47442,
                   create_time: 1719579652,
-                }
+                },
               ],
             },
           ],
@@ -15228,7 +15229,8 @@ export const apis = [
             type: "select",
             options: ["like", "hot", "comment", "repost"],
             placeholder: "hot",
-            description: "Sort videos by likes, views (hot), comments, or reposts",
+            description:
+              "Sort videos by likes, views (hot), comments, or reposts",
           },
           {
             name: "countryCode",
@@ -17159,8 +17161,7 @@ export const apis = [
       {
         name: "Shop Search",
         method: "GET",
-        description:
-          "Scrape TikTok Shop Products from a search!",
+        description: "Scrape TikTok Shop Products from a search!",
         path: "/v1/tiktok/shop/search",
         params: [
           {
@@ -17174,8 +17175,7 @@ export const apis = [
             name: "page",
             type: "number",
             required: false,
-            description:
-              "Page number to retrieve",
+            description: "Page number to retrieve",
             placeholder: "1",
           },
         ],
@@ -18339,7 +18339,6 @@ export const apis = [
         method: "GET",
         description: "Get a basic profile by user id.",
         path: "/v1/instagram/basic-profile",
-        credits: 0,
         params: [
           {
             name: "userId",
