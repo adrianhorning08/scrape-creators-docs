@@ -17314,21 +17314,21 @@ export const apis = [
         name: "Shop Products",
         method: "GET",
         description:
-          "Get the products from a TikTok Shop. This endpoint costs 1 credit per request. Use the next_scroll_param from the response to paginate through results. Email me if you have any issues with it: adrian@thewebscrapingguy.com",
+          "Get the products from a TikTok Shop. This endpoint costs 1 credit per request. Use the cursor from the response to paginate through results.",
         path: "/v1/tiktok/shop/products",
         params: [
           {
-            name: "seller_id",
+            name: "url",
             required: true,
             type: "string",
-            description: "The seller ID of the shop.",
-            placeholder: "7495794203056835079",
+            description: "The TikTok Shop store URL.",
+            placeholder: "https://www.tiktok.com/shop/store/goli-nutrition/7495794203056835079",
           },
           {
-            name: "next_scroll_param",
+            name: "cursor",
             type: "string",
             required: false,
-            description: "Scroll parameter from the previous response to retrieve the next page of products. Omit for the first page.",
+            description: "Cursor parameter from the previous response to retrieve the next page of products. Omit for the first page.",
             placeholder: "",
           },
           {
@@ -17483,8 +17483,8 @@ export const apis = [
               },
             },
           ],
-          hasMore: true,
-          nextScrollParam: "WzExMzg1LCIxNzMxMDMxNzc2NDk3MDc4NzkxIl0="
+          has_more: true,
+          cursor: "WzExMzg1LCIxNzMxMDMxNzc2NDk3MDc4NzkxIl0="
         },
       },
       {
