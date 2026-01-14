@@ -17314,23 +17314,46 @@ export const apis = [
         name: "Shop Products",
         method: "GET",
         description:
-          "Get the products from a TikTok Shop. NOTE: This costs more than 1 credit! Since we are doing the paginating for you, it costs 1 credit per page (TikTok returns 30 products per page). Also this endpoint takes a while and is new, so please be patient. Email me if you have any issues with it: support@scrapecreators.com",
+          "Get the products from a TikTok Shop. This endpoint costs 1 credit per request. Use the cursor from the response to paginate through results.",
         path: "/v1/tiktok/shop/products",
         params: [
           {
             name: "url",
             required: true,
             type: "string",
-            description: "The URL of the shop.",
-            placeholder:
-              "https://www.tiktok.com/shop/store/goli-nutrition/7495794203056835079",
+            description: "The TikTok Shop store URL.",
+            placeholder: "https://www.tiktok.com/shop/store/goli-nutrition/7495794203056835079",
           },
           {
-            name: "amount",
-            required: false,
+            name: "cursor",
             type: "string",
-            description: "The amount of products to get.",
-            placeholder: "30",
+            required: false,
+            description: "Cursor parameter from the previous response to retrieve the next page of products. Omit for the first page.",
+            placeholder: "",
+          },
+          {
+            name: "region",
+            type: "select",
+            options: [
+              "US",
+              "GB",
+              "DE",
+              "FR",
+              "IT",
+              "ID",
+              "MY",
+              "MX",
+              "PH",
+              "SG",
+              "ES",
+              "TH",
+              "VN",
+              "BR",
+              "JP",
+              "IE"
+            ],
+            placeholder: "US",
+            description: "Region to get shop products from. Defaults to US if not provided.",
           },
         ],
         sampleResponse: {
@@ -17460,6 +17483,8 @@ export const apis = [
               },
             },
           ],
+          has_more: true,
+          cursor: "WzExMzg1LCIxNzMxMDMxNzc2NDk3MDc4NzkxIl0="
         },
       },
       {
