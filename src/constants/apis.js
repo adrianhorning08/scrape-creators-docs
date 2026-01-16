@@ -24041,6 +24041,14 @@ export const apis = [
             description: "YouTube video or short URL",
             placeholder: "https://www.youtube.com/watch?v=bjVIDXPP7Uk",
           },
+          {
+            name: "language",
+            type: "string",
+            required: false,
+            description:
+              "2 letter language code, ie 'en', 'es', 'fr' etc. If the transcript is not available in the language you specify, the transcript will be null.",
+            placeholder: "en",
+          },
         ],
         sampleResponse: {
           videoId: "bjVIDXPP7Uk",
