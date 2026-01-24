@@ -20587,7 +20587,7 @@ export const apis = [
         name: "Search Reels",
         method: "GET",
         description:
-          "Search for reels by keyword. Uses Google Search to find reels. This is because IG puts seach behind the login, and we only scrape public data",
+          "Search for reels by keyword. Uses Google Search to find reels. This is because IG puts search behind the login, and we only scrape public data",
         path: "/v2/instagram/reels/search",
         params: [
           {
