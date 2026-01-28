@@ -32345,7 +32345,7 @@ export const apis = [
             required: true,
             description: "The URL of the post to get",
             placeholder:
-              "https://www.threads.net/@trendspider/post/DIU8naHS6q_",
+              "https://www.threads.com/@trendspider/post/DIU8naHS6q_",
           },
           {
             name: "trim",
@@ -32470,6 +32470,7 @@ export const apis = [
               "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiZjg1MDQ3MWU2ZWQzNDgxMTg2M2ZiMmUyYTIyNzE0YTIzNjA4Nzc1NzkyMzIwNTU1NzExIn0sInNpZ25hdHVyZSI6IiJ9",
             logging_info_token: null,
             like_and_view_counts_disabled: false,
+            view_counts: 52438
           },
           comments: [
             {
