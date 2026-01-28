@@ -24019,13 +24019,6 @@ export const apis = [
             description: "YouTube video or short URL",
             placeholder: "https://www.youtube.com/watch?v=Y2Ah_DFr8cw",
           },
-          {
-            name: "get_transcript",
-            type: "boolean",
-            required: false,
-            description: "Get transcript of the video",
-            placeholder: false,
-          },
         ],
       },
       {
