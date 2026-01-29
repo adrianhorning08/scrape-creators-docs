@@ -30931,7 +30931,7 @@ export const apis = [
         },
       },
       {
-        name: "Search Subreddit",
+        name: "Search Subreddits",
         method: "GET",
         description: "Search Reddit for subreddits",
         path: "/v1/reddit/search/subreddits",
