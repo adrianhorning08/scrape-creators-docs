@@ -25472,6 +25472,76 @@ export const apis = [
         },
       },
       {
+        name: "Profile Photos",
+        method: "GET",
+        description:
+          "Get a public Facebook page's photos. Need 'next_page_id' and 'cursor' to paginate.",
+        path: "/v1/facebook/profile/photos",
+        paginationField: "cursor",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            description: "Facebook page URL",
+            required: true,
+            placeholder: "https://www.facebook.com/Spurs",
+          },
+          {
+            name: "next_page_id",
+            type: "string",
+            required: false,
+            placeholder: "YXBwX2NvbGxlY3Rpb2......",
+            description: "To paginate through to the next page",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            placeholder: "AQHSRM68MZ-AJKGSgRb0......",
+            description: "To paginate through to the next page",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 1000,
+          photos: [
+            {
+              id: "YXBwX2l0ZW06MTAwMDQ0NjM0NDUwMjA4OjIzMDUyNzI3MzI6NTo6MTQyODEwNjQwMjAyMDQ5NQ==",
+              photo_id: "1428106402020495",
+              accessibility_caption: "May be an image of basketball and text",
+              immersive_photo_encodings: [],
+              viewer_image: {
+                uri: "https://scontent-sea5-1.xx.fbcdn.net/v/t51.82787-15/622604539_18555344569004556_8789920462640292891_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=YhJA3Uo9mQwQ7kNvwF-U78r&_nc_oc=Adm4IWUCvbO4XHlgboz-L3jH_eVz1YgGx2VzBA43PLBLHQabFu5ZQY1pPHbHaDxTVXE&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&_nc_gid=PY1yocAkrH2nITkFquluVw&oh=00_Afp4G33teGwLcRX96N3ulxHe9t0JgFHgnqW7JC-uGyHbtw&oe=69808C5B",
+                height: 1800,
+                width: 1440,
+              },
+              photo_cix_screen: null,
+              thumbnail:
+                "https://scontent-sea5-1.xx.fbcdn.net/v/t51.82787-15/622604539_18555344569004556_8789920462640292891_n.jpg?stp=c0.119.1440.1440a_dst-jpg_s206x206_tt6&_nc_cat=105&ccb=1-7&_nc_sid=714c7a&_nc_ohc=YhJA3Uo9mQwQ7kNvwF-U78r&_nc_oc=Adm4IWUCvbO4XHlgboz-L3jH_eVz1YgGx2VzBA43PLBLHQabFu5ZQY1pPHbHaDxTVXE&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&_nc_gid=PY1yocAkrH2nITkFquluVw&oh=00_AfrRI7jPhILPra-iRKDUh-R3lQV3fbc1507ZhmDlZU0b6Q&oe=69808C5B",
+              url: "https://www.facebook.com/photo.php?fbid=1428106402020495&set=pb.100044634450208.-2207520000&type=3",
+            },
+            {
+              id: "YXBwX2l0ZW06MTAwMDQ0NjM0NDUwMjA4OjIzMDUyNzI3MzI6NTo6MTQyODEwNjM5ODY4NzE2Mg==",
+              photo_id: "1428106398687162",
+              accessibility_caption:
+                "May be an image of basketball, volleyball and text",
+              immersive_photo_encodings: [],
+              viewer_image: {
+                uri: "https://scontent-sea1-1.xx.fbcdn.net/v/t51.82787-15/623476997_18555344551004556_3123630837701506482_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Bhvj8L67w6kQ7kNvwEnkz1K&_nc_oc=AdlbZCptRBQI8rODZBTujtgozYE7rDvHDfnHHpu0WbaP6fS6zouaI3rFo3r8SItpuPI&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=PY1yocAkrH2nITkFquluVw&oh=00_AfptrM3kDTdqRyk878DBPBBa_gCR3fUchw1txCtfD3_Vxg&oe=698095B7",
+                height: 1800,
+                width: 1440,
+              },
+              photo_cix_screen: null,
+              thumbnail:
+                "https://scontent-sea1-1.xx.fbcdn.net/v/t51.82787-15/623476997_18555344551004556_3123630837701506482_n.jpg?stp=c0.119.1440.1440a_dst-jpg_s206x206_tt6&_nc_cat=1&ccb=1-7&_nc_sid=714c7a&_nc_ohc=Bhvj8L67w6kQ7kNvwEnkz1K&_nc_oc=AdlbZCptRBQI8rODZBTujtgozYE7rDvHDfnHHpu0WbaP6fS6zouaI3rFo3r8SItpuPI&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=PY1yocAkrH2nITkFquluVw&oh=00_AfoskP7ozc8zKI1KzOHyhKL4nwSTD0c9xAqvzCt0wWAyoQ&oe=698095B7",
+              url: "https://www.facebook.com/photo.php?fbid=1428106398687162&set=pb.100044634450208.-2207520000&type=3",
+            },
+          ],
+          cursor: "AQHSRM68MZ-AJKGSgRb0....",
+          next_page_id: "YXBwX2NvbGxlY3Rpb24....",
+        },
+      },
+      {
         name: "Profile Posts",
         method: "GET",
         description:
