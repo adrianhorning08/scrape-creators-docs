@@ -215,6 +215,13 @@ export const apis = [
               "Cursor to get more videos. Get 'max_cursor' from previous response.",
           },
           {
+            name: "region",
+            type: "string",
+            required: false,
+            placeholder: "US",
+            description: "Region (Country) you want the proxy in. Defaults to US.",
+          },
+          {
             name: "trim",
             type: "boolean",
             required: false,
