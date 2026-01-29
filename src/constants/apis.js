@@ -25503,7 +25503,7 @@ export const apis = [
         ],
         sampleResponse: {
           success: true,
-          credits_remaining: 9998150,
+          credits_remaining: 1000,
           photos: [
             {
               id: "YXBwX2l0ZW06MTAwMDQ0NjM0NDUwMjA4OjIzMDUyNzI3MzI6NTo6MTQyODEwNjQwMjAyMDQ5NQ==",
