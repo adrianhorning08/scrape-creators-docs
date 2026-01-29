@@ -23,6 +23,7 @@ import { TruthSocialIcon } from "../TruthSocialIcon.jsx";
 import { KomiIcon } from "../KomiIcon.jsx";
 import { PillarIcon } from "../PillarIcon.jsx";
 import { LinkBioIcon } from "../LinkBioIcon.jsx";
+import { LinkmeIcon } from "../LinkmeIcon.jsx";
 
 export const apis = [
   {
@@ -37355,6 +37356,391 @@ export const apis = [
         params: [],
         sampleResponse: {
           creditCount: 333,
+        },
+      },
+    ],
+  },
+  {
+    id: "linkme",
+    name: "Linkme",
+    icon: LinkmeIcon,
+    description: "Get Linkme profile info",
+    endpoints: [
+      {
+        name: "Profile",
+        method: "GET",
+        description: "Get Linkme profile info by URL",
+        path: "/v1/linkme",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Linkme profile URL",
+            placeholder: "https://link.me/danucd",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 1000,
+          profile: {
+            id: "1bf3efbf94cc4f55d3650ddc61094ac3",
+            firstName: "Dana",
+            lastName: "",
+            username: "danucd",
+            verifiedAccount: 0,
+            bio: "ALL MY LINKS👇",
+            isAmbassador: 1,
+            friendStatus: 0,
+            profileVisitCount: "15.9k",
+            isDefaultProfilePicture: false,
+            profileImage: "user-profile/1169288/tmp-2541-1763300314455.png",
+            profileImageWebp:
+              "webp-images/user-profile/1169288/tmp-2541-1763300314455.webp",
+            isPrivate: 0,
+            referralLink: "https://meglobalapp.page.link/TFZgPYaJGeqm3mXt5",
+            deeplink: "https://meglobalapp.page.link/14GsZs1EQ2KMqxjH7",
+            logo: "",
+            logoMetaData: "",
+            QRCode: "qrCode/v2/danucd",
+            webTheme: "",
+            linkmeCustomIcon: "style/icons/v5.1/LinkMe-1.png",
+            cover: "",
+            createdAt: "2024-11-01 12:37:51",
+            updatedAt: "2025-11-16 13:43:17",
+            stripeStatus: {
+              tipsEnabled: 0,
+              stripeAccountId: "",
+              stripeEnabled: false,
+            },
+            killer: 0,
+            hideBottomButtons: 0,
+            customMailForm: 0,
+            hideAddToContacts: 0,
+            subscriptionFeature: "",
+            showForm: false,
+            subscriptionType: 0,
+            displayNameOption: "user_name",
+            trackingPixels: [],
+            isMuteEnable: 0,
+            totalLinks: 7,
+            chatID: "LinkMe-1169288",
+            infoLinks: [
+              {
+                title: "Email",
+                linkId: 1,
+                isCustom: false,
+                links: [
+                  {
+                    webLinkId: 1450947,
+                    linkImage: "",
+                    linkValue: "dana.danucd@gmail.com",
+                    faceValue: "dana.danucdgmail.com",
+                    isCustom: false,
+                    isAdult: false,
+                  },
+                ],
+              },
+            ],
+            businessInfo: null,
+            webLinks: [
+              {
+                title: "Apple-music",
+                linkId: 9,
+                isCustom: false,
+                links: [
+                  {
+                    webLinkId: 1450958,
+                    linkImage: "style/icons/v5.0/Apple-Music-1.png",
+                    linkValue:
+                      "https://music.apple.com/ng/artist/danucd/1562315189",
+                    faceValue: "1562315189",
+                    baseUrl: "https://music.apple.com/profile/",
+                    isCustom: false,
+                    isAdult: false,
+                  },
+                ],
+              },
+              {
+                title: "Spotify",
+                linkId: 10,
+                isCustom: false,
+                links: [
+                  {
+                    webLinkId: 1450956,
+                    linkImage: "style/icons/v5.0/Spotify-1.png",
+                    linkValue:
+                      "https://open.spotify.com/artist/0A8XmfCL2yangEtvot3peD?autoplay=true&source_application=google_assistant",
+                    faceValue: "0A8XmfCL2yangEtvot3peD",
+                    baseUrl: "https://open.spotify.com/user/",
+                    isCustom: false,
+                    isAdult: false,
+                  },
+                ],
+              },
+              {
+                title: "Instagram",
+                linkId: 4,
+                isCustom: false,
+                links: [
+                  {
+                    webLinkId: 1450950,
+                    linkImage: "style/icons/v5.0/Instagram-1.png",
+                    linkValue: "https://www.instagram.com/danucd/",
+                    faceValue: "danucd",
+                    baseUrl: "https://www.instagram.com/",
+                    isCustom: false,
+                    isAdult: false,
+                  },
+                ],
+              },
+              {
+                title: "Facebook",
+                linkId: 6,
+                isCustom: false,
+                links: [
+                  {
+                    webLinkId: 1450955,
+                    linkImage: "style/icons/v5.0/Facebook-1.png",
+                    linkValue: "https://www.facebook.com/Danucd",
+                    faceValue: "Danucd",
+                    baseUrl: "https://www.facebook.com/",
+                    isCustom: false,
+                    isAdult: false,
+                  },
+                ],
+              },
+              {
+                title: "Twitter",
+                linkId: 7,
+                isCustom: false,
+                links: [
+                  {
+                    webLinkId: 1450952,
+                    linkImage: "static/icons/v5.1/twitter-light-1-2-dark-1.png",
+                    linkValue: "https://www.twitter.com/Danucd1",
+                    faceValue: "Danucd1",
+                    baseUrl: "https://www.twitter.com/",
+                    isCustom: false,
+                    isAdult: false,
+                  },
+                ],
+              },
+              {
+                title: "Youtube",
+                linkId: 12,
+                isCustom: false,
+                links: [
+                  {
+                    webLinkId: 2049085,
+                    linkImage: "style/icons/v5.0/YouTube-1.png",
+                    linkValue: "https://www.youtube.com/@DanucD2",
+                    faceValue: "DanucD2",
+                    baseUrl: "https://youtube.com/user/",
+                    isCustom: false,
+                    isAdult: false,
+                  },
+                  {
+                    webLinkId: 2049084,
+                    linkImage: "style/icons/v5.0/YouTube-1.png",
+                    linkValue: "https://www.youtube.com/@DanucD2",
+                    faceValue: "DanucD2",
+                    baseUrl: "https://youtube.com/user/",
+                    isCustom: false,
+                    isAdult: false,
+                  },
+                  {
+                    webLinkId: 1450949,
+                    linkImage: "style/icons/v5.0/YouTube-1.png",
+                    linkValue: "https://www.youtube.com/danucd",
+                    faceValue: "danucd",
+                    baseUrl: "https://youtube.com/user/",
+                    isCustom: false,
+                    isAdult: false,
+                  },
+                ],
+              },
+              {
+                title: "Youtube-music",
+                linkId: 41,
+                isCustom: false,
+                links: [
+                  {
+                    webLinkId: 1450957,
+                    linkImage: "style/icons/v5.0/Youtube-Music-1.png",
+                    linkValue:
+                      "https://music.youtube.com/channel/UCANQ8GbiyqTgL_YMwqVgSjg?feature=gws_kp_artist&feature=gws_kp_artist",
+                    faceValue: "UCANQ8GbiyqTgL_YMwqVgSjg",
+                    baseUrl: "https://music.youtube.com/",
+                    isCustom: false,
+                    isAdult: false,
+                  },
+                ],
+              },
+              {
+                title: "Deezer",
+                linkId: 46,
+                isCustom: false,
+                links: [
+                  {
+                    webLinkId: 1450959,
+                    linkImage: "style/icons/v5.1/Deezer-1.png",
+                    linkValue:
+                      "https://www.deezer.com/artist/129733822/radio?autoplay=true",
+                    faceValue: "radio",
+                    baseUrl: "https://deezer.page.link/",
+                    isCustom: false,
+                    isAdult: false,
+                  },
+                ],
+              },
+              {
+                title: "Tiktok",
+                linkId: 21,
+                isCustom: false,
+                links: [
+                  {
+                    webLinkId: 1450951,
+                    linkImage: "style/icons/v5.0/TikTok-1.png",
+                    linkValue: "https://www.tiktok.com/@danucd_",
+                    faceValue: "danucd_",
+                    baseUrl: "https://www.tiktok.com/",
+                    isCustom: false,
+                    isAdult: false,
+                  },
+                ],
+              },
+              {
+                title: "Twitch",
+                linkId: 22,
+                isCustom: false,
+                links: [
+                  {
+                    webLinkId: 1450948,
+                    linkImage: "style/icons/v5.0/Twitch-1.png",
+                    linkValue:
+                      "https://m.twitch.tv/danucd?fbclid=PAZXh0bgNhZW0CMTEAAaaw5KxeIr47f2JnvCWttLnzIFG35Q8vQ6dK_H4Pv7bQKefUMmqYXvRPm90_aem_qRBQ5McX7dnSwaw8aHxqaA&desktop-redirect=true",
+                    faceValue: "danucd",
+                    baseUrl: "https://www.twitch.tv/",
+                    isCustom: false,
+                    isAdult: false,
+                  },
+                ],
+              },
+              {
+                title: "Threads",
+                linkId: 57,
+                isCustom: false,
+                links: [
+                  {
+                    webLinkId: 1450960,
+                    linkImage: "style/icons/v5.0/Threads-1.png",
+                    linkValue: "https://www.threads.net/@danucd?hl=en",
+                    faceValue: "danucd",
+                    baseUrl: "https://www.threads.net/",
+                    isCustom: false,
+                    isAdult: false,
+                  },
+                ],
+              },
+            ],
+            customisedTheme: {
+              verifiedIcon: "blue",
+              backgroundColor: "",
+              backgroundImage: "",
+              mainTextColor: "",
+              level1TextColor: "",
+              level2TextColor: "",
+              featuredLinkTitles: null,
+              bioBackground: "",
+              profilePicture: "",
+              customFont: "",
+            },
+            totalFollowers: null,
+            sectionSettings: {
+              shouts: {
+                enabled: true,
+                position: null,
+              },
+            },
+            sectionVisibility: [
+              {
+                section: "bio",
+                order: 1,
+                enabled: 1,
+              },
+              {
+                section: "featured_links",
+                order: 2,
+                enabled: 1,
+              },
+              {
+                section: "email_form",
+                order: 3,
+                enabled: 0,
+              },
+              {
+                section: "forms",
+                order: 4,
+                enabled: 0,
+              },
+              {
+                section: "gallery",
+                order: 4,
+                enabled: 1,
+              },
+              {
+                section: "fbl_products",
+                order: 5,
+                enabled: 1,
+              },
+              {
+                section: "contact_info",
+                order: 5,
+                enabled: 1,
+              },
+              {
+                section: "business_info",
+                order: 6,
+                enabled: 1,
+              },
+              {
+                section: "shop",
+                order: 7,
+                enabled: 1,
+              },
+              {
+                section: "bandsintown",
+                order: 7,
+                enabled: 0,
+              },
+              {
+                section: "custom_events",
+                order: 8,
+                enabled: 0,
+              },
+              {
+                section: "instagram_videos",
+                order: 12,
+                enabled: 0,
+              },
+              {
+                section: "tiktok_videos",
+                order: 13,
+                enabled: 0,
+              },
+              {
+                section: "google_reviews",
+                order: 14,
+                enabled: 0,
+              },
+              {
+                section: "shouts",
+                order: 15,
+                enabled: 1,
+              },
+            ],
+          },
         },
       },
     ],
