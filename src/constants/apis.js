@@ -29437,6 +29437,177 @@ export const apis = [
         ],
       },
       {
+        name: "Subreddit Search",
+        method: "GET",
+        description:
+          "Search within a subreddit for posts, comments, or media matching a query",
+        path: "/v1/reddit/subreddit/search",
+        paginationField: "cursor",
+        params: [
+          {
+            name: "subreddit",
+            type: "string",
+            required: true,
+            description: "Subreddit name (e.g. 'Fitness', not 'r/Fitness' or a full URL)",
+          },
+          {
+            name: "query",
+            type: "string",
+            required: false,
+            description: "Search query to find matching content",
+            placeholder: "push ups",
+          },
+          {
+            name: "filter",
+            type: "select",
+            required: false,
+            description:
+              "Type of content to search for (default: posts). Response will only include the matching key (e.g. filter=posts returns only 'posts', not 'comments' or 'media')",
+            options: ["posts", "comments", "media"],
+          },
+          {
+            name: "sort",
+            type: "select",
+            required: false,
+            description:
+              "Sort order. For posts/media: relevance, hot, top, new, comments. For comments: relevance, top, new",
+            options: ["relevance", "hot", "top", "new", "comments"],
+          },
+          {
+            name: "timeframe",
+            type: "select",
+            required: false,
+            description: "Timeframe to filter results",
+            options: ["all", "year", "month", "week", "day", "hour"],
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            description:
+              "Cursor to get more results. Get 'cursor' from previous response.",
+            placeholder: "eyJjYW5kaWRhdGVzX3JldHVybmVkIjoi...",
+          },
+        ],
+        sampleResponse: {
+          posts: [
+            {
+              id: "t3_8gmjrb",
+              post_id: "t3_8gmjrb",
+              title: "Is doing 50-100 pushups a day doing anything?",
+              url: "https://www.reddit.com/r/Fitness/comments/8gmjrb/is_doing_50100_pushups_a_day_doing_anything/",
+              permalink:
+                "/r/Fitness/comments/8gmjrb/is_doing_50100_pushups_a_day_doing_anything/",
+              nsfw: false,
+              spoiler: false,
+              is_crosspost: false,
+              subreddit: {
+                id: "t5_2qhx4",
+                name: "Fitness",
+                nsfw: false,
+                quarantined: false,
+                icon: "https://b.thumbs.redditmedia.com/Ted4KOMuRbaCYlDS55cTqjpVVZ2ENHKtYFbBFjI1i2o.png",
+                banner: null,
+                description:
+                  "A place for the pursuit of physical fitness goals.\n\nPlease see the r/Fitness Wiki and FAQ at https://thefitness.wiki for help with common questions.",
+                weekly_visitors: 898726,
+                weekly_contributions: 1827,
+              },
+              votes: 1414,
+              num_comments: 582,
+              created_at: "2018-05-03T01:09:17.620000+0000",
+              created_at_iso: "2018-05-03T01:09:17.620Z",
+              thumbnail: null,
+              thumbnail_blurred: false,
+              position: 0,
+              relative_position: 0,
+            },
+          ],
+          comments: [
+            {
+              id: "t1_nxf7p27",
+              post_id: "t3_1q2p898",
+              parent_comment_id: null,
+              is_reply_to_comment: false,
+              author: "Philser23",
+              author_avatar: null,
+              author_nsfw: false,
+              body: "On the 30th my girlfriend out of the blue decided her new year's resolution would be to start going to the gym. I was so excited since none of my partners ever shared the fitness hobby with me.",
+              body_html:
+                '<p>On the 30th my girlfriend out of the blue decided her new year\'s resolution would be to start going to the gym...</p>',
+              images: [],
+              votes: 123,
+              url: "https://www.reddit.com/r/Fitness/comments/1q2p898/gym_story_saturday/nxf7p27/",
+              permalink: "/r/Fitness/comments/1q2p898/gym_story_saturday/nxf7p27/",
+              created_at: "2026-01-03T11:26:02.434000+0000",
+              created_at_iso: "2026-01-03T11:26:02.434Z",
+              post: {
+                id: "t3_1q2p898",
+                title: "Gym Story Saturday",
+                url: "https://www.reddit.com/r/Fitness/comments/1q2p898/gym_story_saturday/",
+                permalink: "/r/Fitness/comments/1q2p898/gym_story_saturday/",
+                nsfw: false,
+                spoiler: false,
+                votes: 67,
+                num_comments: 80,
+                created_at: "2026-01-03T08:15:49.709000+0000",
+                created_at_iso: "2026-01-03T08:15:49.709Z",
+              },
+              subreddit: {
+                id: "t5_2qhx4",
+                name: "Fitness",
+                nsfw: false,
+                quarantined: false,
+                icon: "https://b.thumbs.redditmedia.com/Ted4KOMuRbaCYlDS55cTqjpVVZ2ENHKtYFbBFjI1i2o.png",
+              },
+              position: 0,
+            },
+          ],
+          media: [
+            {
+              id: "t3_geo4x",
+              title:
+                "Bodyweight training for really strong people. See on you're own what I mean with strong. (Not me)",
+              url: "https://www.reddit.com/r/Fitness/comments/geo4x/bodyweight_training_for_really_strong_people_see/",
+              permalink:
+                "/r/Fitness/comments/geo4x/bodyweight_training_for_really_strong_people_see/",
+              media_type: "image",
+              video: null,
+              image: {
+                src: "https://external-preview.redd.it/X6lz5yGIzqVA5LcI9w-FsQJJHhXoCugDhsXgWW3I404.jpg?format=pjpg&auto=webp&s=46814b0a707a532e39e6c20851ddc1fefb0a111f",
+                width: 480,
+                height: 360,
+                resolutions: [
+                  {
+                    url: "https://external-preview.redd.it/X6lz5yGIzqVA5LcI9w-FsQJJHhXoCugDhsXgWW3I404.jpg?width=320&crop=smart&format=pjpg&auto=webp&s=144ac4171a1862e5d91d8dd90d44271e22a8273d",
+                    width: 320,
+                  },
+                  {
+                    url: "https://external-preview.redd.it/X6lz5yGIzqVA5LcI9w-FsQJJHhXoCugDhsXgWW3I404.jpg?format=pjpg&auto=webp&s=46814b0a707a532e39e6c20851ddc1fefb0a111f",
+                    width: 480,
+                  },
+                ],
+              },
+              gallery_count: null,
+              aspect_ratio: 1.3333333333333333,
+              nsfw: false,
+              spoiler: false,
+              is_blurred: false,
+              subreddit: {
+                id: "t5_2qhx4",
+                name: "Fitness",
+                nsfw: false,
+                quarantined: false,
+              },
+              position: 0,
+              safe_search: "UNAVAILABLE",
+            },
+          ],
+          cursor:
+            "eyJjYW5kaWRhdGVzX3JldHVybmVkIjoie1wic2VjdGlvbl8xX3BpcGVsaW5lXzBfZ2xvYmFsX21vZGlmaWVyc1wiOlwiM1wiLFwic2VjdGlvbl8xX3BpcGVsaW5lXzFfbG9jYWxfbW9kaWZpZXJzXCI6XCIzXCIsXCJzZWN0aW9uXzJfcGlwZWxpbmVfNl9zY29wZV9zd2l0Y2hlclwiOlwiMFwiLFwic2VjdGlvbl8yX3BpcGVsaW5lXzdfcG9zdF9zZWFyY2hcIjpcIjdcIn0ifQ==",
+        },
+      },
+      {
         name: "Post Comments",
         method: "GET",
         description: "Get comments + post information from a Reddit post",
