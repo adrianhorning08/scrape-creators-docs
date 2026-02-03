@@ -26478,9 +26478,16 @@ export const apis = [
           {
             name: "url",
             type: "string",
-            required: true,
+            required: false,
             description: "Facebook post URL (or reel URL)",
             placeholder: "https://www.facebook.com/reel/753347914167361",
+          },
+          {
+            name: "feedback_id",
+            type: "string",
+            required: false,
+            description: "Using feedback_id (instead of url) will *really* speed up the request. You can get the feedback_id when you make a request to /v1/facebook/post.",
+            placeholder: "ZmVlZGJhY2s6MTQ0NzY1NjMyMzM4Mzg0OA==",
           },
           {
             name: "cursor",
