@@ -24414,7 +24414,6 @@ export const apis = [
             required: false,
             description: "Upload date",
             options: [
-              "last_hour",
               "today",
               "this_week",
               "this_month",
@@ -24426,7 +24425,7 @@ export const apis = [
             type: "select",
             required: false,
             description: "Sort by",
-            options: ["relevance", "upload_date"],
+            options: ["relevance", "popular"],
             placeholder: "relevance",
           },
           {
