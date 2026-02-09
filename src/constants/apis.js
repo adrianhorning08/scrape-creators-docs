@@ -18476,7 +18476,7 @@ export const apis = [
       {
         name: "Posts",
         method: "GET",
-        description: "Get a public profile's public posts.",
+        description: "Get a persons public posts. Note: the video_view_count field for reels views is unreliable. For accurate reels views, please use the /instagram/user/reels endpoint.",
         path: "/v2/instagram/user/posts",
         paginationField: "next_max_id",
         responseFields: [
@@ -21889,6 +21889,10 @@ export const apis = [
             "QVFEWFlDdGNOamdwbVdNM2pLY1NJRndSZ2tCbWp6WDV0TWxaYl9WNVktZU1BTUxWMlg1c2JFenNDanJVZ2NudWFjR28zRG93a3ByTExXaHJMbTA0aVJBZg==",
         },
         responseFields: [
+          {
+            path: "items[0].media.play_count",
+            description: "This is views for the reel.",
+          },
           {
             path: "items[0].media.video_versions[0].url",
             description: "The URL of the video",
