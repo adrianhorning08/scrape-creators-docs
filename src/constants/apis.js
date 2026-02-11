@@ -17906,6 +17906,165 @@ export const apis = [
           ],
         },
       },
+      {
+        name: "Product Reviews",
+        method: "GET",
+        description: "Gets product reviews (100 at a time)",
+        path: "/v1/tiktok/shop/product/reviews",
+        params: [
+          {
+            name: "url",
+            description: "The URL of the product (required if product_id is not provided)",
+            type: "string",
+            required: false,
+            placeholder: "https://www.tiktok.com/shop/pdp/cat-nail-clipper-by-potaroma-adjustable-sizes-built-in-file-safe-for-kittens-cats/1731578642912612516",
+          },
+          {
+            name: "product_id",
+            description: "The ID of the product (required if url is not provided)",
+            type: "string",
+            required: false,
+            placeholder: "1731578642912612516",
+          },
+          {
+            name: "page",
+            description: "The page number of the reviews",
+            type: "number",
+            required: false,
+            placeholder: "1",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 33701168,
+          "has_more": true,
+          "total_reviews": "5967",
+          "product_reviews": [
+            {
+              "review_id": "7449648277383333678",
+              "product_id": "1729412793274503379",
+              "sku_id": "1729480195115684051",
+              "reviewer_id": "7118466497416561707",
+              "review_rating": 4,
+              "review_time": "1734506431877",
+              "is_verified_purchase": true,
+              "is_incentivized_review": false,
+              "product_name": "OLOV Beard/Hair Shaver for Men - All-in-One Mens Grooming Kit with Trimmer for Beard, Nose, face, Cordless Hair Clippers Electric Razor, Black Comfort",
+              "reviewer_name": "W**n",
+              "reviewer_avatar_url": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/8a5ef54ee47fd27614d4d576879cd630~tplv-tiktokx-cropcenter:100:100.jpg?dr=9640&refresh_token=6e5d3b6e&x-expires=1771009200&x-signature=1HE0d6u3ZL2NY%2FWG88r8zUltKS4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=5f8d3399&idc=useast5",
+              "review_text": "Product arrived intact no issues. Love all the attachments. Cuts very very well. Charges quick and efficiently. The only reason I gave a 4 was listening to the reels it’s supposed to be nip free. That was a lie, I nipped my balls and that’s not fun. I took pics other than that great product.",
+              "display_image_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/c9460bee85df472a8455f33df693cb8d~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+              "review_images": [
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/c9460bee85df472a8455f33df693cb8d~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/86ca79beec2744f2b24944320dc54183~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/c23968b8ce354373811d9f583798d7dc~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/114d32cfff304a16b77c42de6b38bbc8~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/f75adcbf5f3a48df966d5c4b709b1b1f~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839"
+              ],
+              "sku_specification": "Black",
+              "review_country": "US"
+            },
+            {
+              "review_id": "7449933365429487403",
+              "product_id": "1729412793274503379",
+              "sku_id": "1729480195115684051",
+              "reviewer_id": "7069790017161298986",
+              "review_rating": 5,
+              "review_time": "1734572786348",
+              "is_verified_purchase": true,
+              "is_incentivized_review": false,
+              "product_name": "OLOV Beard/Hair Shaver for Men - All-in-One Mens Grooming Kit with Trimmer for Beard, Nose, face, Cordless Hair Clippers Electric Razor, Black Comfort",
+              "reviewer_name": "N**n",
+              "reviewer_avatar_url": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/455d12c1591e41a482bfd31866fc3df5~tplv-tiktokx-cropcenter:100:100.jpg?dr=9640&refresh_token=1859a901&x-expires=1771009200&x-signature=R7rbh3FBfRaj14VxWhPdQ2J1v10%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=5f8d3399&idc=useast5",
+              "review_text": "Amazing product very high quality and looks very good One problem is my first time using it below the belt I nicked my self most likely bc I never used it B4 n wasn't careful other than that amazing product would recommend received all items shown all work good imo worth the buy (No I'm not sum ai)",
+              "display_image_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/b528a2f1272f4b24af497ae44a44f441~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+              "review_images": [
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/b528a2f1272f4b24af497ae44a44f441~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/83443ff950ed42eaab0c3ede4736445b~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/71d4abb17dcb4c5aa59092db383a87d8~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839"
+              ],
+              "sku_specification": "Black",
+              "review_country": "US"
+            },
+            {
+              "review_id": "7535169519766095629",
+              "product_id": "1729412793274503379",
+              "sku_id": "1729553962947023059",
+              "review_rating": 5,
+              "review_time": "1754418389294",
+              "is_verified_purchase": true,
+              "is_incentivized_review": false,
+              "product_name": "OLOV Beard/Hair Shaver for Men - All-in-One Mens Grooming Kit with Trimmer for Beard, Nose, face, Cordless Hair Clippers Electric Razor, Black Comfort",
+              "reviewer_name": "b**n",
+              "review_text": "its a good home kit for men, it got all necessary needs and for a good price, ( recommended🧼 )",
+              "display_image_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/2ee9ed056bf94dbc8951eb6db0d6a2a6~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+              "review_images": [
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/2ee9ed056bf94dbc8951eb6db0d6a2a6~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/7c419f87e4804f5c8721db3c9833e264~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/2809968e7cb247ffb5f01ad3e4de5c9f~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/51632cbc1433444788fb85beaa6fc019~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839"
+              ],
+              "sku_specification": "Gold",
+              "review_country": "US"
+            },
+            {
+              "review_id": "7514713260093114154",
+              "product_id": "1729412793274503379",
+              "sku_id": "1729480195115684051",
+              "review_rating": 1,
+              "review_time": "1749655549764",
+              "is_verified_purchase": true,
+              "is_incentivized_review": false,
+              "product_name": "OLOV Beard/Hair Shaver for Men - All-in-One Mens Grooming Kit with Trimmer for Beard, Nose, face, Cordless Hair Clippers Electric Razor, Black Comfort",
+              "reviewer_name": "D**🃏",
+              "review_text": "These are not actual size hair clippers... They are smaller trimmers... Cheap product... Clipper head was broken, out of box... there was some tiny pieces of hair on them as if they were used... the lil oil bottle had a hole in it, all the oil drained out & got on everything. Would not recommend...",
+              "display_image_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/24fec74a43ac4280b728a9834c40d8b2~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+              "review_images": [
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/24fec74a43ac4280b728a9834c40d8b2~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/51e75c89e22e4f298f01a22a1b923c5f~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/fac8e67cb1c54af0ae09a15fa15252d2~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/4cdc642892f647c4aa53616259c76b2f~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839"
+              ],
+              "sku_specification": "Black",
+              "review_country": "US"
+            },
+            {
+              "review_id": "7488447318287697707",
+              "product_id": "1729412793274503379",
+              "sku_id": "1729480195115684051",
+              "reviewer_id": "7402437626568377386",
+              "review_rating": 5,
+              "review_time": "1743540026729",
+              "is_verified_purchase": true,
+              "is_incentivized_review": false,
+              "product_name": "OLOV Beard/Hair Shaver for Men - All-in-One Mens Grooming Kit with Trimmer for Beard, Nose, face, Cordless Hair Clippers Electric Razor, Black Comfort",
+              "reviewer_name": "H**n H**y",
+              "reviewer_avatar_url": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/17bfcaa335206f3cd543c65d5b1c299f~tplv-tiktokx-cropcenter:100:100.jpg?dr=9640&refresh_token=b404adc3&x-expires=1771009200&x-signature=J7gh%2F0ae7q52rAIPPXd22DojumA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=5f8d3399&idc=useast5",
+              "review_text": "Arrived sooner than I thought! Very excited to use this, not damaged at all, perfectly boxed, everything is in the box, it is amazing",
+              "display_image_url": "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/58bddee9a90b4f07b08199d211213b0a~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+              "review_images": [
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/58bddee9a90b4f07b08199d211213b0a~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/4a00f2191d26451b997a1c5b1ceae1e3~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/f4547fe0014f41c08fad7e4317e9029a~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839",
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/140196376e2e4928bb6529c8731b4ac1~tplv-fhlh96nyum-crop-webp:300:300.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=useast5&from=2378011839"
+              ],
+              "sku_specification": "Black",
+              "review_country": "US"
+            }
+          ],
+          "review_ratings": {
+            "review_count": "5967",
+            "overall_score": 4.4,
+            "rating_result": {
+              "1": "475",
+              "2": "161",
+              "3": "289",
+              "4": "740",
+              "5": "4302"
+            }
+          }
+        }
+      }
     ],
   },
   {
