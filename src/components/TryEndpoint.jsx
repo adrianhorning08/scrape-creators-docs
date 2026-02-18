@@ -23,10 +23,10 @@ export default function TryEndpoint({
 }) {
   const [selectedEndpoint, setSelectedEndpoint] = useState(() => {
     const api = apis.find((api) =>
-      api.endpoints.some((ep) => ep.path === endpoint.path)
+      api.endpoints.some((ep) => ep.path === endpoint.path),
     );
     const foundEndpoint = api?.endpoints.find(
-      (ep) => ep.path === endpoint.path
+      (ep) => ep.path === endpoint.path,
     );
     return foundEndpoint || endpoint;
   });
@@ -34,10 +34,10 @@ export default function TryEndpoint({
   // Update selectedEndpoint when endpoint prop changes
   useEffect(() => {
     const api = apis.find((api) =>
-      api.endpoints.some((ep) => ep.path === endpoint.path)
+      api.endpoints.some((ep) => ep.path === endpoint.path),
     );
     const foundEndpoint = api?.endpoints.find(
-      (ep) => ep.path === endpoint.path
+      (ep) => ep.path === endpoint.path,
     );
     setSelectedEndpoint(foundEndpoint || endpoint);
   }, [endpoint]);
@@ -51,7 +51,7 @@ export default function TryEndpoint({
           ...acc,
           [param.name]: "",
         }),
-        {}
+        {},
       ) || {},
     bodyParams:
       selectedEndpoint?.bodyParams?.reduce(
@@ -59,7 +59,7 @@ export default function TryEndpoint({
           ...acc,
           [param.name]: "",
         }),
-        {}
+        {},
       ) || {},
   });
   const [expandedSections, setExpandedSections] = useState({
@@ -96,7 +96,7 @@ export default function TryEndpoint({
             ...acc,
             [param.name]: "",
           }),
-          {}
+          {},
         ) || {},
       bodyParams:
         selectedEndpoint?.bodyParams?.reduce(
@@ -104,7 +104,7 @@ export default function TryEndpoint({
             ...acc,
             [param.name]: "",
           }),
-          {}
+          {},
         ) || {},
     }));
     setExpandedSections((prev) => ({
@@ -142,9 +142,9 @@ export default function TryEndpoint({
       let fetchOptions = {
         method: selectedEndpoint.method,
         headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          "Access-Control-Allow-Origin": "*",
+          // "Content-Type": "application/json",
+          // Accept: "application/json",
+          // "Access-Control-Allow-Origin": "*",
           "x-api-key": formState.apiKey,
         },
       };
@@ -210,10 +210,10 @@ export default function TryEndpoint({
                         selectedEndpoint.method === "GET"
                           ? "dark:bg-green-400/20 dark:text-green-400 text-white bg-[#2AB673]"
                           : selectedEndpoint.method === "POST"
-                          ? "dark:bg-blue-400/20 dark:text-blue-400 text-white bg-blue-700"
-                          : selectedEndpoint.method === "PUT"
-                          ? "dark:bg-yellow-400/20 dark:text-yellow-400 text-white bg-yellow-600"
-                          : "dark:bg-red-400/20 dark:text-red-400 text-white bg-red-700"
+                            ? "dark:bg-blue-400/20 dark:text-blue-400 text-white bg-blue-700"
+                            : selectedEndpoint.method === "PUT"
+                              ? "dark:bg-yellow-400/20 dark:text-yellow-400 text-white bg-yellow-600"
+                              : "dark:bg-red-400/20 dark:text-red-400 text-white bg-red-700"
                       }`}
                     >
                       {selectedEndpoint.method}
@@ -222,8 +222,8 @@ export default function TryEndpoint({
                       {(() => {
                         const api = apis.find((api) =>
                           api.endpoints.some(
-                            (ep) => ep.path === selectedEndpoint.path
-                          )
+                            (ep) => ep.path === selectedEndpoint.path,
+                          ),
                         );
                         if (api?.icon) {
                           const Icon = api.icon;
@@ -264,10 +264,10 @@ export default function TryEndpoint({
                                   ep.method === "GET"
                                     ? "bg-green-400/20 text-green-700 dark:bg-green-400/20 dark:text-green-400"
                                     : ep.method === "POST"
-                                    ? "bg-blue-400/20 text-blue-700 dark:bg-blue-400/20 dark:text-blue-400"
-                                    : ep.method === "PUT"
-                                    ? "bg-yellow-400/20 text-yellow-700 dark:bg-yellow-400/20 dark:text-yellow-400"
-                                    : "bg-red-400/20 text-red-700 dark:bg-red-400/20 dark:text-red-400"
+                                      ? "bg-blue-400/20 text-blue-700 dark:bg-blue-400/20 dark:text-blue-400"
+                                      : ep.method === "PUT"
+                                        ? "bg-yellow-400/20 text-yellow-700 dark:bg-yellow-400/20 dark:text-yellow-400"
+                                        : "bg-red-400/20 text-red-700 dark:bg-red-400/20 dark:text-red-400"
                                 } mr-2`}
                               >
                                 {ep.method}
@@ -291,10 +291,10 @@ export default function TryEndpoint({
                     selectedEndpoint.method === "GET"
                       ? "dark:bg-green-400/20 dark:text-green-400 text-white bg-[#2AB673]"
                       : selectedEndpoint.method === "POST"
-                      ? "dark:bg-blue-400/20 dark:text-blue-400 text-white bg-blue-700"
-                      : selectedEndpoint.method === "PUT"
-                      ? "dark:bg-yellow-400/20 dark:text-yellow-400 text-white bg-yellow-600"
-                      : "dark:bg-red-400/20 dark:text-red-400 text-white bg-red-700"
+                        ? "dark:bg-blue-400/20 dark:text-blue-400 text-white bg-blue-700"
+                        : selectedEndpoint.method === "PUT"
+                          ? "dark:bg-yellow-400/20 dark:text-yellow-400 text-white bg-yellow-600"
+                          : "dark:bg-red-400/20 dark:text-red-400 text-white bg-red-700"
                   }`}
                 >
                   {selectedEndpoint.method}
@@ -624,7 +624,7 @@ export default function TryEndpoint({
                             e.preventDefault();
                             e.stopPropagation();
                             navigator.clipboard.writeText(
-                              JSON.stringify(responseData, null, 2)
+                              JSON.stringify(responseData, null, 2),
                             );
                             setCopied(true);
                             setTimeout(() => setCopied(false), 2000);
@@ -679,6 +679,6 @@ export default function TryEndpoint({
         </div>
       </div>
     </div>,
-    document.getElementById("modal-root")
+    document.getElementById("modal-root"),
   );
 }
