@@ -15370,6 +15370,32 @@ export const apis = [
             placeholder: false,
             description: "Show only newly trending hashtags",
           },
+          {
+            name: "industry",
+            type: "select",
+            options: [
+              "apparel-and-accessories",
+              "baby-kids-and-maternity",
+              "beauty-and-personal-care",
+              "business-services",
+              "education",
+              "financial-services",
+              "food-and-beverage",
+              "games",
+              "health",
+              "home-improvement",
+              "household-products",
+              "life-services",
+              "news-and-entertainment",
+              "pets",
+              "sports-and-outdoor",
+              "tech-and-electronics",
+              "travel",
+              "vehicle-and-transportation"
+            ],
+            placeholder: null,
+            description: "Industry to get popular hashtags from.",
+          }
         ],
         sampleResponse: {
           success: true,
