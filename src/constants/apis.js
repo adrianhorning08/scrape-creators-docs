@@ -23131,9 +23131,9 @@ export const apis = [
         },
       },
       {
-        name: "Reels using Song",
+        name: "Reels using Song (Deprecated)",
         method: "GET",
-        description: "Get reels using a song",
+        description: "Instagram removed the public pages for this, so now we can't scrape it anymore :(",
         path: "/v1/instagram/song/reels",
         params: [
           {
