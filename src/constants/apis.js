@@ -25313,6 +25313,82 @@ export const apis = [
         },
       },
       {
+        name: "Company Posts",
+        method: "GET",
+        description: "Get a LinkedIn company posts. Can only get 7 pages total (LinkedIn limitation)",
+        path: "/v1/linkedin/company/posts",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            description: "The URL of the LinkedIn company page to get",
+            required: true,
+            placeholder: "https://linkedin.com/company/shopify",
+          },
+          {
+            name: "page",
+            type: "number",
+            description: "The page number to get",
+            required: false,
+            placeholder: "1",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49999951019,
+          "posts": [
+            {
+              "url": "https://www.linkedin.com/posts/shopify_merchants-can-now-use-sidekick-voice-mode-activity-7429579034096726016-uX1e",
+              "id": "7429579034096726016",
+              "datePublished": "2026-02-17T17:34:36.617Z",
+              "text": "Merchants can now use Sidekick voice mode in the Shopify mobile app.\n\nOne of the first to try it out: Jimmy Donaldson, aka MrBeast.\n\nVoice mode makes it even easier to tackle tasks and get business insights on the go. It’s like having an AI-powered Shopify expert right in your pocket."
+            },
+            {
+              "url": "https://www.linkedin.com/posts/shopify_last-year-we-asked-female-founded-wellness-activity-7426638899281600512-ipCA",
+              "id": "7426638899281600512",
+              "datePublished": "2026-02-09T14:51:33.849Z",
+              "text": "Last year, we asked female-founded wellness brands to pitch us their businesses. 1,000 answered the call.\n\nThe idea started with Sonsie Skin Inc., and a shared belief: brands grow faster when founders support founders.\n\nThat’s why we co-created the Mindful Beauty Award, putting $100,000 in resources and mentorship behind entrepreneurs ready to take their next step.\n\nFrom the pitches, we selected 3 top prize winners: Yasmin I., founder of Daea, Marina Furstoss Winfield, founder of Embrace the Heat, and Michaela Phillips, founder of Iris Eyecare.\n\nThank you to every founder who shared their story. The future of wellness is here because of you."
+            },
+            {
+              "url": "https://www.linkedin.com/posts/shopify_last-month-more-people-started-businesses-activity-7425191925722275840-eUO6",
+              "id": "7425191925722275840",
+              "datePublished": "2026-02-05T15:01:48.470Z",
+              "text": "Last month, more people started businesses than ever before. The driver? Uncertainty.\n\nThe record surge in people becoming entrepreneurs isn’t a fluke. It’s a rejection of the myth of stability.\n\nEntrepreneurship offers something rare: agency. The ability to build from your own vision instead of someone else’s.\n\nIn 2026, bet on yourself."
+            },
+            {
+              "url": "https://www.linkedin.com/posts/shopify_from-photography-and-baseball-accessories-activity-7424844208579969024-BrYC",
+              "id": "7424844208579969024",
+              "datePublished": "2026-02-04T16:00:06.243Z",
+              "text": "From photography and baseball accessories to produce, January shopping was all over the place.\n\nWe analyzed month-over-month sales from thousands of Shopify merchants in the U.S. to identify what was trending in January. Here's what stood out:\n\n→ Sales for photography equipment increased, with lens caps up 203%, followed by film developers (+99%) and photographic chemicals (+84%).\n\n→ As spring training approaches, baseball gear is trending upward, led by batting helmets (+68%) and pitching mounds (+63%).\n\n→ Door push plates (+92%), bolt cutters (+91%), and door closers (+90%) all saw over 90% growth, indicating a surge in home hardware.\n\n→ Shoppers purchased fresh produce, including sweet potatoes (+118%), tomatoes (+73%), potatoes (+68%), and garlic (+59%).\n\nEntrepreneurs, what products drove your January sales?"
+            },
+            {
+              "url": "https://www.linkedin.com/posts/shopify_partners-dot-dev-is-back-for-2026-and-activity-7424478964783628290-Q034",
+              "id": "7424478964783628290",
+              "datePublished": "2026-02-03T15:48:45.336Z",
+              "text": "Partners, dot dev is back for 2026.\n\nAnd this year, we’re doubling the fun. Our annual event for developers and builders is expanding to two full days.\n\nSave the date: July 21–22 in Toronto.\n\nThat’s twice the time to get hands-on with the latest Shopify tools, meet the product teams behind them, and connect with partners across the ecosystem.\n\nStay tuned for registration details → https://lnkd.in/gQnzdmiw"
+            },
+            {
+              "url": "https://www.linkedin.com/posts/shopify_creatively-blocked-spark-fresh-ideas-with-activity-7417233988022411264-X40N",
+              "id": "7417233988022411264",
+              "datePublished": "2026-01-14T15:59:48.269Z",
+              "text": "Creatively blocked? Spark fresh ideas with our first-ever soap exclusive, Shower Thoughts.\n\nWe partnered with soap brand Wary Meyers, founded by Linda and John Meyers—a husband-and-wife team known for breaking the mold with vibrant, imaginative, retro-inspired design.\n\nTheir approach is refreshingly original, turning soap into usable art.\n\nThat’s why we teamed up to create Shower Thoughts—a soap that celebrates the ideas that surface when you unplug and reset, and a reminder that inspiration can strike anywhere, even in the shower.\n\nHere’s to bold ideas, wherever they bubble up.\n\nWhat brand should we partner with next? Let us know in the comments."
+            },
+            {
+              "url": "https://www.linkedin.com/posts/shopify_building-the-universal-commerce-protocol-activity-7416498015839911936-eEUA",
+              "id": "7416498015839911936",
+              "datePublished": "2026-01-12T15:15:18.823Z",
+              "text": "Universal Commerce Protocol is the infrastructure agentic commerce runs on. It answers every question about the complexities of commerce:\n\nHow do agents discover what merchants offer? How do they negotiate payment methods, fulfillment options, loyalty programs? How do they hand off when a transaction needs human input?\n\nWe’ve been solving these problems at scale—and with UCP, we're opening the playbook.\n\nIlya Grigorik deep dives on how we built UCP, and how you can build it with us → https://lnkd.in/euu7FEas"
+            },
+            {
+              "url": "https://www.linkedin.com/posts/shopify_shopify-merchants-youll-soon-be-able-to-activity-7416138877129990144-gAJ6",
+              "id": "7416138877129990144",
+              "datePublished": "2026-01-11T15:28:13.487Z",
+              "text": "Shopify merchants, you’ll soon be able to sell directly in Google AI Mode and the Gemini app.\n\nAgentic commerce is the future. Today, we’re launching the Universal Commerce Protocol to accelerate that future.\n\nUCP is a new standard for bringing commerce into AI agents. It’s designed for all types of transactions and checkout flows, allowing customers to add discount codes, loyalty credentials, or subscription cadences right in the chat.\n\nWe built the protocol with Google, and it’ll power native shopping on Google surfaces. The best part? It’s an open standard, so as new AI platforms enable commerce, they can adopt UCP too.\n\nFor more: https://lnkd.in/eEJT4qXt"
+            }
+          ]
+        },
+      },
+      {
         name: "Post",
         method: "GET",
         description: "Get a Linkedin post. This can be a post or an article.",
