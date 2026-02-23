@@ -27895,6 +27895,14 @@ export const apis = [
             placeholder: "EN",
           },
           {
+            name: "sort_by",
+            type: "select",
+            required: false,
+            description: "Sort by impressions (high to low), or Most Recent (relevancy_monthly_grouped). Defaults to impressions.",
+            placeholder: "total_impressions",
+            options: ["total_impressions", "relevancy_monthly_grouped"],
+          },
+          {
             name: "start_date",
             type: "string",
             required: false,
