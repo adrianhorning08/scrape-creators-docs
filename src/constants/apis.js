@@ -5514,7 +5514,7 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Set to 'true' to use AI as a fallback to get the transcript if the transcript is not found. Costs 10 credits to use this feature.",
+              "Set to 'true' to use AI as a fallback to get the transcript if the transcript is not found. Costs 10 credits to use this feature. And only if the video is under 2 minutes.",
             placeholder: "false",
             credits: 10,
           },
@@ -20065,7 +20065,7 @@ export const apis = [
         name: "Transcript",
         method: "GET",
         description:
-          "Get the transcript of an Instagram post or reel. This is a little slow since I run it through an AI. You should get results in 10-30 seconds. If no one is spreaking it should return null. Since some posts are carousel, it will return a transcript for each item in the carousel.",
+          "Get the transcript of an Instagram post or reel. This is a little slow since I run it through an AI. You can only get a transcript if the video is under 2 minutes. You should get results in 10-30 seconds. If no one is spreaking it should return null. Since some posts are carousel, it will return a transcript for each item in the carousel.",
         path: "/v2/instagram/media/transcript",
         params: [
           {
@@ -26719,12 +26719,14 @@ export const apis = [
         name: "Transcript",
         method: "GET",
         description:
-          "Get the transcript of a Facebook post. Can be a post or reel.",
+          "Get the transcript of a Facebook post. Can be a post or reel. You can only get a transcript if the video is under 2 minutes.",
         path: "/v1/facebook/post/transcript",
         sampleResponse: {
-          success: true,
-          transcript: "Hello, world!",
+          "success": true,
+          "credits_remaining": 49999939403,
+          "transcript": "We're fishing\nbite x2\nBest bait\non this pole\nsomething else\nThere's a chance\ncan get a\nmythic pistol\nYou have to\nall game\nstill won't\nNuh uh\nliterally\nthe spawn\non it\n1 in 1000\nlike that\nWell watch\nright here\nGonna do it\nstream\nto finding\npistol\nto still lose with it\nThat was very\nvery much\nhoney\nthank you very much"
         },
+        placeholder: "https://www.facebook.com/reel/810660362052380q",
         params: [
           {
             name: "url",
@@ -26933,7 +26935,7 @@ export const apis = [
         name: "Ad Details",
         method: "GET",
         description:
-          "Pass the Ad ID and get back details about the ad. Be careful that if an ad has multiple versions, you're actually going to want to get the title from the 'cards' object.",
+          "Pass the Ad ID and get back details about the ad. Be careful that if an ad has multiple versions, you're actually going to want to get the title from the 'cards' object. If you ask for the transcipt, we will only transcribe the video if it's under 2 minutes.",
         path: "/v1/facebook/adLibrary/ad",
         sampleResponse: {
           adid: 0,
@@ -27264,7 +27266,7 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Get the transcript of the ad. This is a new feature, so let me know if its not working how you expected.",
+              "Get the transcript of the ad. Only works if the video is under 2 minutes.",
             placeholder: "false",
           },
           {
