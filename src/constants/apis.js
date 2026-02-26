@@ -29739,14 +29739,6 @@ export const apis = [
             placeholder: "push ups",
           },
           {
-            name: "filter",
-            type: "select",
-            required: false,
-            description:
-              "Type of content to search for (default: posts). Response will only include the matching key (e.g. filter=posts returns only 'posts', not 'comments' or 'media')",
-            options: ["posts", "comments", "media"],
-          },
-          {
             name: "sort",
             type: "select",
             required: false,
