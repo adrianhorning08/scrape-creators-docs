@@ -5,14 +5,16 @@ export const getCurlExample = (endpoint, formState, inModal) => {
   const queryString =
     Object.keys(params).length > 0
       ? "?" +
-        Object.entries(params)
-          .filter(([_, value]) => value)
-          .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
-          .join("&")
+      Object.entries(params)
+        .filter(([_, value]) => value)
+        .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+        .join("&")
       : "";
 
-  return `<span class="token function">curl</span> <span class="token string">"https://api.scrapecreators.com${
-    endpoint?.path || ""
-  }${queryString}"</span> <span class="token punctuation">\\</span>
+  // Escape & for HTML so &region= doesn't render as ®ion= (® is &reg; entity)
+  const queryStringForHtml = queryString.replace(/&/g, "&amp;");
+
+  return `<span class="token function">curl</span> <span class="token string">"https://api.scrapecreators.com${endpoint?.path || ""
+    }${queryStringForHtml}"</span> <span class="token punctuation">\\</span>
   <span class="token parameter">-H</span> <span class="token string">"x-api-key: ${apiKey}"</span>`;
 };
