@@ -28401,6 +28401,13 @@ export const apis = [
             placeholder: "scraping",
           },
           {
+            name: "companyId",
+            type: "string",
+            required: false,
+            description: "The company id to search for",
+            placeholder: "157238",
+          },
+          {
             name: "countries",
             type: "string",
             required: false,
