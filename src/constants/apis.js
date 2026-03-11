@@ -17935,7 +17935,7 @@ export const apis = [
       {
         name: "Product Reviews",
         method: "GET",
-        description: "Get a product's reviews (100 reviews per page)",
+        description: "Get a product's reviews",
         path: "/v1/tiktok/shop/product/reviews",
         params: [
           {
