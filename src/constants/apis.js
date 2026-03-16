@@ -26682,6 +26682,7 @@ export const apis = [
           view_count: 133000,
           description:
             "Air Fryer Chocolate Cake \n\n100% f*cks, super simple and comes out gooey in the middle. 🍆 \n\n👨‍🍳 Ingredients:\n✅ 1 large banana – 100 g (3.5 oz)\n✅ 80 g vanilla YoPro yogurt (2.8 oz / ⅓ cup)\n✅ 15 g Cadbury Bournville cocoa (0.5 oz / 1 tbsp)\n✅ 80 ml egg whites (2.7 fl oz / ⅓ cup)\n✅ 50 g oat flour (1.75 oz / ½ cup)\n✅ 1 tsp vanilla extract (5 ml)\n✅ ½ tsp baking powder (2.5 g)\n👉 Optional: 1 square dark chocolate (10 g / 0.35 oz, ~55 cals)\n\n🔥 Method:\n 1. Mix banana, egg whites, yogurt, cocoa and vanilla until smooth\n 2. Stir in oat flour and baking powder\n 3. Pour into a ramekin or muffin tin\n 4. Add chocolate square to the centre if using\n 5. Air fry at 160°C / 320°F for 20 minutes\n\n📊 Macros (whole recipe):\nWithout choc: 378 cals | 27 g protein | 61.9 g carbs | 6 g fat\nWith choc: 433 cals | 27 g protein | 61.9 g carbs | 11.5 g fat\n\n📊 Macros (per serve — 2 serves):\nWithout choc: 189 cals | 13.5g protein | 31 g carbs | 3 g fat\nWith choc: 217 cals | 13.5 g protein | 31 g carbs | 5.8 g fat\n\nI also added low-calorie Peters ice cream and a small drizzle of Biscoff, but it honestly doesn’t need it. Tastes great on its own!\n\nIf you would like to make changes to this recipe yourself please do, but I like this EXACTLY the way it is. 🤝🫡",
+          creation_time: "2025-09-18T06:30:18.000Z",
           feedback_id: "ZmVlZGJhY2s6MjUxMDIxMDY3OTkzNzUxODI=",
           url: "https://www.facebook.com/reel/1535656380759655",
           image_url: null,
