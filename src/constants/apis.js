@@ -18661,7 +18661,7 @@ export const apis = [
       {
         name: "Posts",
         method: "GET",
-        description: "Get a persons public posts. Note: the video_view_count field for reels views is unreliable. For accurate reels views, please use the /instagram/user/reels endpoint.",
+        description: "Get a persons public posts. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views.",
         path: "/v2/instagram/user/posts",
         paginationField: "next_max_id",
         responseFields: [
@@ -21474,7 +21474,7 @@ export const apis = [
         name: "Reels",
         method: "GET",
         description:
-          "Get all public reels from a profile. Can provide a user_id or handle, but for faster response times, use user_id. This won't include pinned reels right now. And I'm not sure why, but it looks like IG doesn't return the description of the reel on this endpoint :( You'll have to use the post detail endpoint to get that.",
+          "Get all public reels from a profile. Can provide a user_id or handle, but for faster response times, use user_id. This won't include pinned reels right now. And I'm not sure why, but it looks like IG doesn't return the description of the reel on this endpoint :( You'll have to use the post detail endpoint to get that. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views.",
         path: "/v1/instagram/user/reels",
         paginationField: "max_id",
         sampleResponse: {
