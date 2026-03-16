@@ -1,0 +1,183 @@
+# Scrape Creators API Documentation
+
+> Official API documentation for Scrape Creators - the easiest way to scrape public social media data at scale. Extract profiles, posts, videos, comments, and more from TikTok, Instagram, YouTube, Twitter, LinkedIn, Facebook, Reddit, and 15+ other platforms.
+
+> **Important:** Each endpoint link below points to its full documentation page with parameters, response schemas, and code examples. Always visit the endpoint's documentation page before writing any integration code.
+
+## Getting Started
+
+- [Introduction](https://docs.scrapecreators.com/introduction): Overview of the Scrape Creators API, authentication, and quickstart guide.
+- **Base URL:** `https://api.scrapecreators.com`
+- **Authentication:** Pass your API key via the `x-api-key` header.
+
+## TikTok API
+
+- [Profile](https://docs.scrapecreators.com/v1/tiktok/profile): Scrapes a public TikTok profile.
+- [User's Audience Demographics](https://docs.scrapecreators.com/v1/tiktok/user/audience): Get the audience demographics of a TikTok user including audience countries.
+- [Profile Videos](https://docs.scrapecreators.com/v3/tiktok/profile/videos): Scrapes videos from a TikTok profile with cursor-based pagination.
+- [Video Info](https://docs.scrapecreators.com/v2/tiktok/video): Scrapes data from a TikTok video.
+- [Transcript](https://docs.scrapecreators.com/v1/tiktok/video/transcript): Scrapes transcript from a TikTok video.
+- [TikTok Live](https://docs.scrapecreators.com/v1/tiktok/user/live): Scrapes a TikTok user's live stream.
+- [Comments](https://docs.scrapecreators.com/v1/tiktok/video/comments): Scrapes comments from a TikTok video.
+- [Following](https://docs.scrapecreators.com/v1/tiktok/user/following): Scrapes accounts that a TikTok user follows.
+- [Followers](https://docs.scrapecreators.com/v1/tiktok/user/followers): Scrapes followers of a TikTok account.
+- [Search Users](https://docs.scrapecreators.com/v1/tiktok/search/users): Scrapes TikTok users matching a search query.
+- [Search by Hashtag](https://docs.scrapecreators.com/v1/tiktok/search/hashtag): Scrapes TikTok videos by hashtag.
+- [Search by Keyword](https://docs.scrapecreators.com/v1/tiktok/search/keyword): Scrapes TikTok videos matching a keyword.
+- [Top Search](https://docs.scrapecreators.com/v1/tiktok/search/top): Search TikTok's 'Top' tab for photo carousels and videos.
+- [Get Popular Songs](https://docs.scrapecreators.com/v1/tiktok/songs/popular): Get popular songs from TikTok.
+- [Get Popular Creators](https://docs.scrapecreators.com/v1/tiktok/creators/popular): Get popular creators from TikTok with filtering by follower count and country.
+- [Get Popular Videos](https://docs.scrapecreators.com/v1/tiktok/videos/popular): Get popular videos from TikTok with filtering by time period and country.
+- [Get Popular Hashtags](https://docs.scrapecreators.com/v1/tiktok/hashtags/popular): Get popular hashtags from TikTok with filtering by time period and country.
+- [Get Song Details](https://docs.scrapecreators.com/v1/tiktok/song): Get details about a TikTok song.
+- [TikToks Using Song](https://docs.scrapecreators.com/v1/tiktok/song/videos): Get the TikToks using a song.
+- [Trending Feed](https://docs.scrapecreators.com/v1/tiktok/get-trending-feed): Get the trending feed from TikTok.
+
+## TikTok Shop API
+
+- [Shop Search](https://docs.scrapecreators.com/v1/tiktok/shop/search): Scrape TikTok Shop products from a search.
+- [Shop Products](https://docs.scrapecreators.com/v1/tiktok/shop/products): Get the products from a TikTok Shop.
+- [Product Details](https://docs.scrapecreators.com/v1/tiktok/product): Get the details of a TikTok Shop product including stock and related videos.
+
+## Instagram API
+
+- [Profile](https://docs.scrapecreators.com/v1/instagram/profile): Gets public Instagram profile data, recent posts, and related accounts.
+- [Basic Profile](https://docs.scrapecreators.com/v1/instagram/basic-profile): Get a basic profile by user id.
+- [Posts](https://docs.scrapecreators.com/v2/instagram/user/posts): Get a public profile's public posts.
+- [Post/Reel Info](https://docs.scrapecreators.com/v1/instagram/post): Retrieve public post or reel details.
+- [Transcript](https://docs.scrapecreators.com/v2/instagram/media/transcript): Get the transcript of an Instagram post or reel using AI.
+- [Search Reels](https://docs.scrapecreators.com/v2/instagram/reels/search): Search for reels by keyword.
+- [Comments](https://docs.scrapecreators.com/v2/instagram/post/comments): Get comments from an Instagram post or reel.
+- [Reels](https://docs.scrapecreators.com/v1/instagram/user/reels): Get all public reels from a profile.
+- [Story Highlights](https://docs.scrapecreators.com/v1/instagram/user/highlights): Get story highlights from an Instagram user.
+- [Highlights Details](https://docs.scrapecreators.com/v1/instagram/user/highlight/detail): Get details about a specific highlight.
+- [Reels Using Song](https://docs.scrapecreators.com/v1/instagram/song/reels): Get reels using a song.
+- [Embed HTML](https://docs.scrapecreators.com/v1/instagram/user/embed): Get the HTML embed for a user's profile.
+
+## YouTube API
+
+- [Channel Details](https://docs.scrapecreators.com/v1/youtube/channel): Get comprehensive channel information including stats and metadata.
+- [Channel Videos](https://docs.scrapecreators.com/v1/youtube/channel-videos): Get all videos from a channel with detailed information.
+- [Channel Shorts](https://docs.scrapecreators.com/v1/youtube/channel/shorts): Get the shorts from a channel.
+- [Video/Short Details](https://docs.scrapecreators.com/v1/youtube/video): Get complete information about a video or short including transcript.
+- [Transcript](https://docs.scrapecreators.com/v1/youtube/video/transcript): Get transcript of a video or short.
+- [Search](https://docs.scrapecreators.com/v1/youtube/search): Search YouTube and get matching videos, channels, playlists, shorts, and lives.
+- [Search by Hashtag](https://docs.scrapecreators.com/v1/youtube/search/hashtag): Search YouTube by hashtag.
+- [Comments](https://docs.scrapecreators.com/v1/youtube/video/comments): Get comments from a YouTube video.
+- [Trending Shorts](https://docs.scrapecreators.com/v1/youtube/shorts/trending): Get trending shorts from YouTube.
+- [Playlist](https://docs.scrapecreators.com/v1/youtube/playlist): Get the videos of a YouTube playlist.
+- [Community Post Details](https://docs.scrapecreators.com/v1/youtube/community-post): Get the details of a YouTube community post.
+
+## LinkedIn API
+
+- [Person's Profile](https://docs.scrapecreators.com/v1/linkedin/profile): Get a person's public LinkedIn profile including recent posts.
+- [Company Page](https://docs.scrapecreators.com/v1/linkedin/company): Get a LinkedIn company page.
+- [Post](https://docs.scrapecreators.com/v1/linkedin/post): Get a LinkedIn post or article.
+
+## Facebook API
+
+- [Profile](https://docs.scrapecreators.com/v1/facebook/profile): Get public Facebook profile information.
+- [Profile Reels](https://docs.scrapecreators.com/v1/facebook/profile/reels): Get a public Facebook page's reels.
+- [Profile Photos](https://docs.scrapecreators.com/v1/facebook/profile/photos): Get a public Facebook page's photos.
+- [Profile Posts](https://docs.scrapecreators.com/v1/facebook/profile/posts): Get public Facebook profile posts.
+- [Facebook Group Posts](https://docs.scrapecreators.com/v1/facebook/group/posts): Get a public Facebook group's posts.
+- [Post](https://docs.scrapecreators.com/v1/facebook/post): Get a public Facebook post or reel by URL.
+- [Transcript](https://docs.scrapecreators.com/v1/facebook/post/transcript): Get the transcript of a Facebook post or reel.
+- [Comments](https://docs.scrapecreators.com/v1/facebook/post/comments): Get the comments of a Facebook post or reel.
+
+## Facebook Ad Library API
+
+- [Ad Details](https://docs.scrapecreators.com/v1/facebook/adLibrary/ad): Get details about a Facebook ad.
+- [Search](https://docs.scrapecreators.com/v1/facebook/adLibrary/search/ads): Search the Facebook (Meta) Ad Library by keyword.
+- [Company Ads](https://docs.scrapecreators.com/v1/facebook/adLibrary/company/ads): Get all the ads a company has running.
+- [Search for Companies](https://docs.scrapecreators.com/v1/facebook/adLibrary/search/companies): Search for companies by name and get their ad library page id.
+
+## Google Ad Library API
+
+- [Company Ads](https://docs.scrapecreators.com/v1/google/company/ads): Get the public ads for a company from Google Ad Transparency Library.
+- [Ad Details](https://docs.scrapecreators.com/v1/google/ad): Get the details for a Google ad.
+- [Advertiser Search](https://docs.scrapecreators.com/v1/google/adLibrary/advertisers/search): Search the Google Ad Transparency Library for advertisers.
+
+## LinkedIn Ad Library API
+
+- [Search Ads](https://docs.scrapecreators.com/v1/linkedin/ads/search): Search the LinkedIn Ad Library.
+- [Ad Details](https://docs.scrapecreators.com/v1/linkedin/ad): Get the details for a LinkedIn ad.
+
+## Twitter API
+
+- [Profile](https://docs.scrapecreators.com/v1/twitter/profile): Get Twitter profile information including stats and metadata.
+- [User Tweets](https://docs.scrapecreators.com/v1/twitter/user-tweets): Get tweets from a user's profile.
+- [Tweet Details](https://docs.scrapecreators.com/v1/twitter/tweet): Get detailed information about a specific tweet including engagement.
+- [Transcript](https://docs.scrapecreators.com/v1/twitter/tweet/transcript): Get the transcript of a video tweet.
+- [Community](https://docs.scrapecreators.com/v1/twitter/community): Get the details of a Twitter (X) Community.
+- [Community Tweets](https://docs.scrapecreators.com/v1/twitter/community/tweets): Get the tweets from a Twitter (X) Community.
+
+## Reddit API
+
+- [Subreddit Details](https://docs.scrapecreators.com/v1/reddit/subreddit/details): Get details about a subreddit.
+- [Subreddit Posts](https://docs.scrapecreators.com/v1/reddit/subreddit): Get recent posts from a subreddit with engagement metrics.
+- [Subreddit Search](https://docs.scrapecreators.com/v1/reddit/subreddit/search): Search within a subreddit for posts, comments, or media.
+- [Post Comments](https://docs.scrapecreators.com/v1/reddit/post/comments): Get comments and post information from a Reddit post.
+- [Search](https://docs.scrapecreators.com/v1/reddit/search): Search Reddit for posts.
+- [Search Ads](https://docs.scrapecreators.com/v1/reddit/ads/search): Search the Reddit Ad Library.
+- [Get Ad](https://docs.scrapecreators.com/v1/reddit/ad): Get a specific Reddit ad by id.
+
+## Truth Social API
+
+- [Profile](https://docs.scrapecreators.com/v1/truthsocial/profile): Get Truth Social profile info.
+- [User Posts](https://docs.scrapecreators.com/v1/truthsocial/user/posts): Get Truth Social user posts.
+- [Post](https://docs.scrapecreators.com/v1/truthsocial/post): Get a Truth Social post.
+
+## Threads API
+
+- [Profile](https://docs.scrapecreators.com/v1/threads/profile): Get Threads profile info.
+- [Posts](https://docs.scrapecreators.com/v1/threads/user/posts): Get Threads posts by user.
+- [Post](https://docs.scrapecreators.com/v1/threads/post): Get a Threads post by URL with comments and related posts.
+- [Search Users](https://docs.scrapecreators.com/v1/threads/search/users): Search for Threads users by username.
+
+## Bluesky API
+
+- [Profile](https://docs.scrapecreators.com/bluesky/profile): Get Bluesky profile info.
+- [Posts](https://docs.scrapecreators.com/bluesky/user/posts): Get Bluesky user posts.
+- [Post](https://docs.scrapecreators.com/bluesky/post): Get a Bluesky post.
+
+## Pinterest API
+
+- [Search](https://docs.scrapecreators.com/v1/pinterest/search): Search Pinterest.
+- [Pin](https://docs.scrapecreators.com/v1/pinterest/pin): Get a Pinterest pin.
+- [User Boards](https://docs.scrapecreators.com/v1/pinterest/user/boards): Get a user's Pinterest boards.
+- [Board](https://docs.scrapecreators.com/v1/pinterest/board): Get the pins of a Pinterest board.
+
+## Google Search API
+
+- [Search](https://docs.scrapecreators.com/v1/google/search): Search Google and get results.
+
+## Twitch API
+
+- [Profile](https://docs.scrapecreators.com/v1/twitch/profile): Get Twitch profile information.
+- [Clip](https://docs.scrapecreators.com/v1/twitch/clip): Get Twitch clip details.
+
+## Kick API
+
+- [Clip](https://docs.scrapecreators.com/v1/kick/clip): Get Kick clip details.
+
+## Snapchat API
+
+- [User Profile](https://docs.scrapecreators.com/v1/snapchat/profile): Get Snapchat user profile information.
+
+## Link-in-Bio APIs
+
+- [Linktree](https://docs.scrapecreators.com/v1/linktree): Scrape a Linktree page.
+- [Komi](https://docs.scrapecreators.com/v1/komi): Scrape a Komi page.
+- [Pillar](https://docs.scrapecreators.com/v1/pillar): Scrape a Pillar page.
+- [Linkbio](https://docs.scrapecreators.com/v1/linkbio): Scrape a Linkbio (lnk.bio) page.
+- [Linkme](https://docs.scrapecreators.com/v1/linkme): Get Linkme profile info by URL.
+
+## Amazon Shop API
+
+- [Amazon Shop Page](https://docs.scrapecreators.com/v1/amazon/shop): Get products and details from a creator's Amazon Shop page.
+
+## Utility APIs
+
+- [Get Age and Gender](https://docs.scrapecreators.com/v1/detect-age-gender): Detect age and gender of a creator using AI analysis of profile image.
+- [Get Credit Balance](https://docs.scrapecreators.com/v1/credit-balance): Check how many API credits you have remaining.

@@ -6,6 +6,7 @@ import EndpointMethod from "./api/EndpointMethod";
 import ParameterSection from "./api/ParameterSection";
 import ResponseFields from "./api/ResponseFields";
 import CodeBlock from "./CodeBlock";
+import CopyPageDropdown from "./api/CopyPageDropdown";
 import Introduction from "./Introduction";
 import { Helmet } from "react-helmet-async";
 import { Check, Sparkles, Coins } from "lucide-react";
@@ -207,6 +208,7 @@ export default function EndpointDocs({
       <EndpointHeader
         title={endpointData.name}
         description={endpointData.description}
+        action={<CopyPageDropdown endpoint={endpointData} api={api} />}
       />
 
       {/* Credit Cost Display */}

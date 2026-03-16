@@ -1,10 +1,66 @@
-import React from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ClipboardList, ExternalLink, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { apis } from "../constants/apis";
 
+// trim arrays to 1 item, recursively
+function trimResponse(obj, depth = 0) {
+  if (depth > 6) return obj;
+  if (Array.isArray(obj)) {
+    return obj.length ? [trimResponse(obj[0], depth + 1)] : [];
+  }
+  if (obj && typeof obj === "object") {
+    const out = {};
+    for (const [k, v] of Object.entries(obj)) {
+      out[k] = trimResponse(v, depth + 1);
+    }
+    return out;
+  }
+  return obj;
+}
+
+function buildLLMPrompt() {
+  let out = `# Scrape Creators API\n\n`;
+  out += `Base URL: https://api.scrapecreators.com\n`;
+  out += `Auth: x-api-key header\n`;
+  out += `Docs: https://docs.scrapecreators.com\n\n`;
+  out += `Example:\n`;
+  out += `curl "https://api.scrapecreators.com/v1/tiktok/profile?handle=khaby.lame" -H "x-api-key: YOUR_API_KEY"\n\n`;
+  out += `> Visit each endpoint's docs page for full params, response schema, and code examples.\n\n`;
+
+  for (const api of apis) {
+    out += `## ${api.name}\n\n`;
+    for (const ep of api.endpoints) {
+      out += `### ${ep.method} ${ep.path}\n`;
+      out += `${ep.description}\n`;
+      if (ep.params?.length) {
+        out += `Params:\n`;
+        for (const p of ep.params) {
+          out += `  ${p.name} (${p.type}${p.required ? ", required" : ""}) — ${p.description}${p.placeholder ? ` e.g. "${p.placeholder}"` : ""}\n`;
+        }
+      }
+      const sample = ep.sampleResponse;
+      if (sample) {
+        out += `Response:\n\`\`\`json\n${JSON.stringify(trimResponse(sample), null, 2)}\n\`\`\`\n`;
+      }
+      out += `\n`;
+    }
+  }
+
+  return out;
+}
+
 export default function Introduction() {
+  const [copied, setCopied] = useState(false);
+  const llmPrompt = useMemo(() => buildLLMPrompt(), []);
+
+  const handleCopyForLLM = useCallback(async () => {
+    await navigator.clipboard.writeText(llmPrompt);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }, [llmPrompt]);
+
   return (
     <div className="pb-24">
       <Helmet>
@@ -147,10 +203,33 @@ export default function Introduction() {
       <div className="eyebrow h-5 text-primary dark:text-primary-light text-sm font-semibold">
         API Documentation
       </div>
-      <div className="flex items-center mb-8">
+      <div className="flex items-center justify-between gap-4 mb-8">
         <h1 className="inline-block text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight dark:text-gray-200">
           Introduction
         </h1>
+        <div className="hidden sm:flex items-center gap-2 shrink-0">
+          <button
+            onClick={handleCopyForLLM}
+            className="flex items-center gap-2 px-3 py-1.5 text-xs font-semibold tracking-wide uppercase border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark hover:bg-gray-50 dark:hover:bg-white/5 rounded-xl transition-colors text-gray-700 dark:text-gray-300"
+          >
+            {copied ? (
+              <Check className="w-4 h-4 text-primary dark:text-primary-light" />
+            ) : (
+              <ClipboardList className="w-4 h-4" />
+            )}
+            {copied ? "Copied!" : "Copy for LLM"}
+          </button>
+          <button
+            onClick={() => {
+              const blob = new Blob([llmPrompt], { type: "text/plain;charset=utf-8" });
+              window.open(URL.createObjectURL(blob), "_blank");
+            }}
+            className="flex items-center gap-2 px-3 py-1.5 text-xs font-semibold tracking-wide uppercase border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark hover:bg-gray-50 dark:hover:bg-white/5 rounded-xl transition-colors text-gray-700 dark:text-gray-300"
+          >
+            <ExternalLink className="w-4 h-4" />
+            Markdown
+          </button>
+        </div>
       </div>
       <div className="prose prose-gray dark:prose-invert max-w-none pb-24">
         <p className="text-lg leading-relaxed">
