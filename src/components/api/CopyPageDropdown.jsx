@@ -129,7 +129,7 @@ export default function CopyPageDropdown({ endpoint, api }) {
   const markdown = generatePageMarkdown(endpoint, api);
   const pageUrl = `https://docs.scrapecreators.com${endpoint.path}`;
 
-  const aiPrompt = `Help me use this API endpoint with curl and code examples. Include all required parameters and the x-api-key auth header.\n\nThe OpenAPI 3.1 spec for this platform is at: https://docs.scrapecreators.com/openapi-spec-${api.id}.json — find the endpoint "${endpoint.path}" in it.`;
+  const aiPrompt = `Help me use this API endpoint with curl and code examples. Include all required parameters and the x-api-key auth header.\n\nThe OpenAPI 3.1 spec for this platform is at: https://docs.scrapecreators.com/openapi-spec-${api.id}.json — find the endpoint "${endpoint.path}" in it.\n\nIMPORTANT: The spec is the EXHAUSTIVE list of parameters. Do NOT add any parameters that are not explicitly defined in the spec — not even common ones like "limit", "page", or "offset" unless they appear in the spec.`;
 
   const handleCopyPage = async () => {
     await navigator.clipboard.writeText(markdown);
@@ -151,7 +151,7 @@ export default function CopyPageDropdown({ endpoint, api }) {
   };
 
   const handleOpenAITool = async (toolName, url) => {
-    await navigator.clipboard.writeText(markdown);
+    await navigator.clipboard.writeText(aiPrompt);
     window.open(url, "_blank");
     showCheck(toolName);
     setIsOpen(false);
