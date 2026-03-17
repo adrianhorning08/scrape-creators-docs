@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
-import { Check, ArrowUpRight, Copy, FileText, Link, ChevronDown } from "lucide-react";
-import { generatePageMarkdown } from "../../utils/markdownGenerator";
+import { Check, ArrowUpRight, Copy, FileText, Link, ChevronDown, Download } from "lucide-react";
+import { generatePageMarkdown, buildOpenAPISpec } from "../../utils/markdownGenerator";
 
 const CursorIcon = () => (
   <svg
@@ -155,6 +155,17 @@ export default function CopyPageDropdown({ endpoint, api }) {
     setIsOpen(false);
   };
 
+  const handleDownloadSpec = () => {
+    const yaml = buildOpenAPISpec(endpoint, api);
+    const blob = new Blob([yaml], { type: "text/yaml;charset=utf-8" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `${endpoint.path.replace(/\//g, "-").slice(1)}-openapi.yaml`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+    setIsOpen(false);
+  };
+
   return (
     <div ref={dropdownRef} className="relative hidden sm:inline-flex shrink-0">
       <button
@@ -267,6 +278,13 @@ export default function CopyPageDropdown({ endpoint, api }) {
                 `https://www.perplexity.ai/search?q=${encodeURIComponent(`Explain this API endpoint: ${pageUrl}`)}`
               )
             }
+          />
+          <DropdownItem
+            icon={<Download className="w-4 h-4" />}
+            title="Download OpenAPI Spec"
+            subtitle="Download as OpenAPI 3.1 YAML"
+            checked={false}
+            onClick={handleDownloadSpec}
           />
         </div>
       )}

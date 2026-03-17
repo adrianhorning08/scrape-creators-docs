@@ -1,64 +1,20 @@
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
-import { Sparkles, ClipboardList, ExternalLink, Check } from "lucide-react";
+import { Sparkles, Download, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { apis } from "../constants/apis";
-
-// trim arrays to 1 item, recursively
-function trimResponse(obj, depth = 0) {
-  if (depth > 6) return obj;
-  if (Array.isArray(obj)) {
-    return obj.length ? [trimResponse(obj[0], depth + 1)] : [];
-  }
-  if (obj && typeof obj === "object") {
-    const out = {};
-    for (const [k, v] of Object.entries(obj)) {
-      out[k] = trimResponse(v, depth + 1);
-    }
-    return out;
-  }
-  return obj;
-}
-
-function buildLLMPrompt() {
-  let out = `# Scrape Creators API\n\n`;
-  out += `Base URL: https://api.scrapecreators.com\n`;
-  out += `Auth: x-api-key header\n`;
-  out += `Docs: https://docs.scrapecreators.com\n\n`;
-  out += `Example:\n`;
-  out += `curl "https://api.scrapecreators.com/v1/tiktok/profile?handle=khaby.lame" -H "x-api-key: YOUR_API_KEY"\n\n`;
-  out += `> Visit each endpoint's docs page for full params, response schema, and code examples.\n\n`;
-
-  for (const api of apis) {
-    out += `## ${api.name}\n\n`;
-    for (const ep of api.endpoints) {
-      out += `### ${ep.method} ${ep.path}\n`;
-      out += `${ep.description}\n`;
-      if (ep.params?.length) {
-        out += `Params:\n`;
-        for (const p of ep.params) {
-          out += `  ${p.name} (${p.type}${p.required ? ", required" : ""}) — ${p.description}${p.placeholder ? ` e.g. "${p.placeholder}"` : ""}\n`;
-        }
-      }
-      const sample = ep.sampleResponse;
-      if (sample) {
-        out += `Response:\n\`\`\`json\n${JSON.stringify(trimResponse(sample), null, 2)}\n\`\`\`\n`;
-      }
-      out += `\n`;
-    }
-  }
-
-  return out;
-}
+import { buildFullOpenAPIYaml } from "../utils/openapi-generator";
 
 export default function Introduction() {
-  const [copied, setCopied] = useState(false);
-  const llmPrompt = useMemo(() => buildLLMPrompt(), []);
+  const llmPrompt = useMemo(() => buildFullOpenAPIYaml(apis), []);
 
-  const handleCopyForLLM = useCallback(async () => {
-    await navigator.clipboard.writeText(llmPrompt);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const handleDownload = useCallback(() => {
+    const blob = new Blob([llmPrompt], { type: "text/plain;charset=utf-8" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "scrape-creators-openapi.yaml";
+    a.click();
+    URL.revokeObjectURL(a.href);
   }, [llmPrompt]);
 
   return (
@@ -209,15 +165,11 @@ export default function Introduction() {
         </h1>
         <div className="hidden sm:flex items-center gap-2 shrink-0">
           <button
-            onClick={handleCopyForLLM}
+            onClick={handleDownload}
             className="flex items-center gap-2 px-3 py-1.5 text-xs font-semibold tracking-wide uppercase border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark hover:bg-gray-50 dark:hover:bg-white/5 rounded-xl transition-colors text-gray-700 dark:text-gray-300"
           >
-            {copied ? (
-              <Check className="w-4 h-4 text-primary dark:text-primary-light" />
-            ) : (
-              <ClipboardList className="w-4 h-4" />
-            )}
-            {copied ? "Copied!" : "Copy for LLM"}
+            <Download className="w-4 h-4" />
+            Download OpenAPI Specification for LLM
           </button>
           <button
             onClick={() => {

@@ -25,7 +25,12 @@ export function generatePageMarkdown(endpoint, api) {
   return md;
 }
 
-function buildOpenAPISpec(endpoint, api) {
+function y(s) {
+  if (!s) return '""';
+  return `"${String(s).replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
+}
+
+export function buildOpenAPISpec(endpoint, api) {
   const method = endpoint.method.toLowerCase();
   const lines = [];
 
@@ -41,41 +46,39 @@ function buildOpenAPISpec(endpoint, api) {
   lines.push("    url: https://scrapecreators.com");
   lines.push("servers:");
   lines.push("  - url: https://api.scrapecreators.com");
-  lines.push("    description: The production server of the Scrape Creators API.");
+  lines.push("    description: Production server");
   lines.push("security:");
   lines.push("  - apiKeyAuth: []");
   lines.push("tags:");
-  lines.push(`  - name: ${api.name}`);
-  lines.push(`    description: >-`);
-  lines.push(`      ${api.description}`);
+  lines.push(`  - name: ${y(api.name)}`);
+  lines.push(`    description: ${y(api.description)}`);
   lines.push("paths:");
   lines.push(`  ${endpoint.path}:`);
   lines.push(`    ${method}:`);
   lines.push("      tags:");
-  lines.push(`        - ${api.name}`);
-  lines.push(`      summary: ${endpoint.name}`);
-  lines.push(`      description: >-`);
-  lines.push(`        ${endpoint.description}`);
+  lines.push(`        - ${y(api.name)}`);
+  lines.push(`      summary: ${y(endpoint.name)}`);
+  lines.push(`      description: ${y(endpoint.description)}`);
 
   if (endpoint.params?.length > 0) {
     lines.push("      parameters:");
     for (const param of endpoint.params) {
       lines.push(`        - name: ${param.name}`);
       lines.push("          in: query");
-      lines.push(`          required: ${param.required}`);
-      lines.push(`          description: ${param.description}`);
+      lines.push(`          required: ${!!param.required}`);
+      lines.push(`          description: ${y(param.description)}`);
       lines.push("          schema:");
       if (param.type === "select" && param.options) {
         lines.push("            type: string");
         lines.push("            enum:");
         for (const opt of param.options) {
-          lines.push(`              - ${opt}`);
+          lines.push(`              - ${y(opt)}`);
         }
       } else {
         lines.push(`            type: ${param.type}`);
       }
       if (param.placeholder) {
-        lines.push(`          example: ${param.placeholder}`);
+        lines.push(`          example: ${y(param.placeholder)}`);
       }
     }
   }
@@ -92,11 +95,11 @@ function buildOpenAPISpec(endpoint, api) {
       lines.push(`                ${param.name}:`);
       const type = param.type === "select" ? "string" : param.type;
       lines.push(`                  type: ${type}`);
-      lines.push(`                  description: ${param.description}`);
+      lines.push(`                  description: ${y(param.description)}`);
       if (param.type === "select" && param.options) {
         lines.push("                  enum:");
         for (const opt of param.options) {
-          lines.push(`                    - ${opt}`);
+          lines.push(`                    - ${y(opt)}`);
         }
       }
     }
@@ -111,7 +114,7 @@ function buildOpenAPISpec(endpoint, api) {
 
   lines.push("      responses:");
   lines.push("        '200':");
-  lines.push("          description: Successful response.");
+  lines.push("          description: Successful response");
   lines.push("          content:");
   lines.push("            application/json:");
 
@@ -122,7 +125,7 @@ function buildOpenAPISpec(endpoint, api) {
     for (const field of endpoint.responseFields) {
       lines.push(`                  ${field.name}:`);
       lines.push(`                    type: ${field.type}`);
-      lines.push(`                    description: ${field.description}`);
+      lines.push(`                    description: ${y(field.description)}`);
     }
   }
 
