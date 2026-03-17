@@ -24228,8 +24228,6 @@ export const apis = [
               trackName: "",
             },
           ],
-          transcript: null,
-          transcript_only_text: null,
         },
         youtubeId: "NyOtXBBmjLY",
         codeExample:
