@@ -129,6 +129,8 @@ export default function CopyPageDropdown({ endpoint, api }) {
   const markdown = generatePageMarkdown(endpoint, api);
   const pageUrl = `https://docs.scrapecreators.com${endpoint.path}`;
 
+  const aiPrompt = `Help me use this API endpoint with curl and code examples. Include all required parameters and the x-api-key auth header.\n\nThe OpenAPI 3.1 spec for this platform is at: https://docs.scrapecreators.com/openapi-spec-${api.id}.json — find the endpoint "${endpoint.path}" in it.`;
+
   const handleCopyPage = async () => {
     await navigator.clipboard.writeText(markdown);
     showCheck("copy");
@@ -252,7 +254,7 @@ export default function CopyPageDropdown({ endpoint, api }) {
             onClick={() =>
               handleOpenAITool(
                 "chatgpt",
-                `https://chatgpt.com/?q=${encodeURIComponent(`Read this API documentation and help me use it:\n${pageUrl}`)}`
+                `https://chatgpt.com/?q=${encodeURIComponent(aiPrompt)}`
               )
             }
           />
@@ -263,7 +265,7 @@ export default function CopyPageDropdown({ endpoint, api }) {
             external
             checked={checkedItem === "claude"}
             onClick={() =>
-              handleOpenAITool("claude", "https://claude.ai/new")
+              handleOpenAITool("claude", `https://claude.ai/new?q=${encodeURIComponent(aiPrompt)}`)
             }
           />
           <DropdownItem
@@ -275,7 +277,7 @@ export default function CopyPageDropdown({ endpoint, api }) {
             onClick={() =>
               handleOpenAITool(
                 "perplexity",
-                `https://www.perplexity.ai/search?q=${encodeURIComponent(`Explain this API endpoint: ${pageUrl}`)}`
+                `https://www.perplexity.ai/search?q=${encodeURIComponent(aiPrompt)}`
               )
             }
           />

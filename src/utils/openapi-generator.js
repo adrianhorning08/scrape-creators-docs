@@ -138,6 +138,14 @@ export function buildFullOpenAPIJSON(apis) {
 }
 
 /**
+ * build OpenAPI 3.1.0 spec for a single platform as a JSON object.
+ * @param {Object} api - single entry from the apis array
+ */
+export function buildPlatformOpenAPIJSON(api) {
+  return buildFullOpenAPIJSON([api]);
+}
+
+/**
  * build full OpenAPI 3.1.0 spec as YAML string (for download/view buttons).
  * @param {Array} apis - the apis array from constants/apis.js
  */

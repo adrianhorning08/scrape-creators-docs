@@ -60,12 +60,18 @@ fs.writeFileSync(tmpFile, result.outputFiles[0].text);
 const { apis } = await import(tmpFile);
 
 // import the shared generator (works because project is type: module)
-const { buildFullOpenAPIJSON } = await import(
+const { buildFullOpenAPIJSON, buildPlatformOpenAPIJSON } = await import(
   path.resolve(root, "src/utils/openapi-generator.js")
 );
 
 const spec = buildFullOpenAPIJSON(apis);
 const outPath = path.resolve(root, "public/openapi-spec.json");
 fs.writeFileSync(outPath, JSON.stringify(spec));
-
 console.log(`openapi spec written to ${outPath} (${(fs.statSync(outPath).size / 1024).toFixed(1)} KB)`);
+
+for (const api of apis) {
+  const platformSpec = buildPlatformOpenAPIJSON(api);
+  const platformPath = path.resolve(root, `public/openapi-spec-${api.id}.json`);
+  fs.writeFileSync(platformPath, JSON.stringify(platformSpec));
+  console.log(`  ${api.id} spec → ${(fs.statSync(platformPath).size / 1024).toFixed(1)} KB`);
+}
