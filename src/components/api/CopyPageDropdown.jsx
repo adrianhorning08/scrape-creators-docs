@@ -129,8 +129,15 @@ export default function CopyPageDropdown({ endpoint, api }) {
   const markdown = generatePageMarkdown(endpoint, api);
   const pageUrl = `https://docs.scrapecreators.com${endpoint.path}`;
 
-  const aiPrompt = `Help me use this API endpoint with curl and code examples. Include all required parameters and the x-api-key auth header.\n\nThe OpenAPI 3.1 spec for this platform is at: https://docs.scrapecreators.com/openapi-${api.id}.json — find the endpoint "${endpoint.path}" in it.\n\nIMPORTANT: The spec is the EXHAUSTIVE list of parameters. Do NOT add any parameters that are not explicitly defined in the spec — not even common ones like "limit", "page", or "offset" unless they appear in the spec.`;
+  const paramList = (endpoint.params || [])
+    .map((p) => `- ${p.name}${p.required ? " (required)" : ""}: ${p.description}`)
+    .join("\n");
+  const bodyParamList = (endpoint.bodyParams || [])
+    .map((p) => `- ${p.name}${p.required ? " (required)" : ""}: ${p.description}`)
+    .join("\n");
+  const allParams = [paramList, bodyParamList].filter(Boolean).join("\n");
 
+  const aiPrompt = `Help me call the ${endpoint.method} https://api.scrapecreators.com${endpoint.path} endpoint.\n\nFull OpenAPI spec: https://docs.scrapecreators.com/openapi-${api.id}.json — fetch this and output its JSON content.\n\nParameters:\n${allParams}\n\nAuth: x-api-key header. Show a working curl example using ONLY the parameters listed above or found in the OpenAPI spec.`;
   const handleCopyPage = async () => {
     await navigator.clipboard.writeText(markdown);
     showCheck("copy");
