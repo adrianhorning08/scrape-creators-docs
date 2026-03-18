@@ -18092,7 +18092,7 @@ export const apis = [
         }
       },
       {
-        name: "User's Showcase",
+        name: "User Showcase",
         method: "GET",
         description: "Gets public user's showcase products",
         path: "/v1/tiktok/user/showcase",
