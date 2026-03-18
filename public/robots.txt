@@ -17,6 +17,9 @@ Crawl-delay: 1
 # Sitemap location
 Sitemap: https://docs.scrapecreators.com/sitemap.xml
 
+# OpenAPI spec
+OpenAPI: https://docs.scrapecreators.com/openapi.json
+
 # Additional sitemaps for better organization
 # Sitemap: https://docs.scrapecreators.com/sitemap-endpoints.xml
 # Sitemap: https://docs.scrapecreators.com/sitemap-guides.xml

@@ -4,6 +4,8 @@
 
 > **Important:** Each endpoint link below points to its full documentation page with parameters, response schemas, and code examples. Always visit the endpoint's documentation page before writing any integration code.
 
+> OpenAPI spec: https://docs.scrapecreators.com/openapi.json
+
 ## Getting Started
 
 - [Introduction](https://docs.scrapecreators.com/introduction): Overview of the Scrape Creators API, authentication, and quickstart guide.

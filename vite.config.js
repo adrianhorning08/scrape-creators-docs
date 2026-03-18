@@ -8,7 +8,7 @@ function injectOpenAPISpec() {
   return {
     name: 'inject-openapi-spec',
     transformIndexHtml(html) {
-      const specPath = path.resolve('public/openapi-spec.json');
+      const specPath = path.resolve('public/openapi.json');
       if (!fs.existsSync(specPath)) return html;
 
       const spec = fs.readFileSync(specPath, 'utf-8');

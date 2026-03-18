@@ -1,3 +1,3 @@
-/openapi-spec.json      /openapi-spec.json      200
-/openapi-spec-*         /openapi-spec-:splat    200
-/*                      /index.html             200
+/openapi.json            /openapi.json            200
+/openapi-*               /openapi-:splat          200
+/*                       /index.html              200

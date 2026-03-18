@@ -65,13 +65,13 @@ const { buildFullOpenAPIJSON, buildPlatformOpenAPIJSON } = await import(
 );
 
 const spec = buildFullOpenAPIJSON(apis);
-const outPath = path.resolve(root, "public/openapi-spec.json");
+const outPath = path.resolve(root, "public/openapi.json");
 fs.writeFileSync(outPath, JSON.stringify(spec));
 console.log(`openapi spec written to ${outPath} (${(fs.statSync(outPath).size / 1024).toFixed(1)} KB)`);
 
 for (const api of apis) {
   const platformSpec = buildPlatformOpenAPIJSON(api);
-  const platformPath = path.resolve(root, `public/openapi-spec-${api.id}.json`);
+  const platformPath = path.resolve(root, `public/openapi-${api.id}.json`);
   fs.writeFileSync(platformPath, JSON.stringify(platformSpec));
   console.log(`  ${api.id} spec → ${(fs.statSync(platformPath).size / 1024).toFixed(1)} KB`);
 }
