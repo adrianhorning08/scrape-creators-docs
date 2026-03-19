@@ -33702,7 +33702,7 @@ export const apis = [
         name: "Profile",
         method: "GET",
         description: "Get Bluesky profile info",
-        path: "/bluesky/profile",
+        path: "/v1/bluesky/profile",
         params: [
           {
             name: "handle",
@@ -33751,7 +33751,7 @@ export const apis = [
         method: "GET",
         description:
           "Get Bluesky user posts. Use user_id for faster response times.",
-        path: "/bluesky/user/posts",
+        path: "/v1/bluesky/user/posts",
         paginationField: "cursor",
         params: [
           {
@@ -33852,7 +33852,7 @@ export const apis = [
         name: "Post",
         method: "GET",
         description: "Get Bluesky post",
-        path: "/bluesky/post",
+        path: "/v1/bluesky/post",
         params: [
           {
             name: "url",
