@@ -33487,6 +33487,20 @@ export const apis = [
             placeholder: "basketball",
           },
           {
+            name: "start_date",
+            type: "string",
+            required: false,
+            description: "Start date to search for",
+            placeholder: "2026-01-01",
+          },
+          {
+            name: "end_date",
+            type: "string",
+            required: false,
+            description: "End date to search for",
+            placeholder: "2026-01-01",
+          },
+          {
             name: "trim",
             type: "boolean",
             required: false,
