@@ -146,6 +146,15 @@ export function buildPlatformOpenAPIJSON(api) {
 }
 
 /**
+ * build OpenAPI 3.1.0 spec for a single endpoint as a JSON object.
+ * @param {Object} api - parent api entry from the apis array
+ * @param {Object} endpoint - single endpoint from api.endpoints
+ */
+export function buildEndpointOpenAPIJSON(api, endpoint) {
+  return buildFullOpenAPIJSON([{ ...api, endpoints: [endpoint] }]);
+}
+
+/**
  * build full OpenAPI 3.1.0 spec as YAML string (for download/view buttons).
  * @param {Array} apis - the apis array from constants/apis.js
  */

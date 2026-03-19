@@ -7,6 +7,8 @@ Disallow: /v1/*demo*
 
 # Allow all important documentation paths
 Allow: /v1/
+Allow: /v2/
+Allow: /v3/
 Allow: /api/
 Allow: /introduction
 Allow: /
@@ -17,7 +19,8 @@ Crawl-delay: 1
 # Sitemap location
 Sitemap: https://docs.scrapecreators.com/sitemap.xml
 
-# OpenAPI spec
+# OpenAPI specs (full + per-endpoint at {path}/openapi.json)
+Allow: /*/openapi.json
 OpenAPI: https://docs.scrapecreators.com/openapi.json
 
 # Additional sitemaps for better organization

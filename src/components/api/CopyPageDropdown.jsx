@@ -137,7 +137,7 @@ export default function CopyPageDropdown({ endpoint, api }) {
     .join("\n");
   const allParams = [paramList, bodyParamList].filter(Boolean).join("\n");
 
-  const aiPrompt = `Help me call the ${endpoint.method} https://api.scrapecreators.com${endpoint.path} endpoint.\n\nFull OpenAPI spec: https://docs.scrapecreators.com/openapi-${api.id}.json — fetch this and output its JSON content.\n\nParameters:\n${allParams}\n\nAuth: x-api-key header. Show a working curl example using ONLY the parameters listed above or found in the OpenAPI spec.`;
+  const aiPrompt = `Help me call the ${endpoint.method} https://api.scrapecreators.com${endpoint.path} endpoint.\n\nFull OpenAPI spec: https://docs.scrapecreators.com${endpoint.path}/openapi.json — fetch this and output its JSON content.\n\nParameters:\n${allParams}\n\nAuth: x-api-key header. Show a working curl example using ONLY the parameters listed above or found in the OpenAPI spec.`;
   const handleCopyPage = async () => {
     await navigator.clipboard.writeText(markdown);
     showCheck("copy");

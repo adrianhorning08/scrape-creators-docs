@@ -60,7 +60,7 @@ fs.writeFileSync(tmpFile, result.outputFiles[0].text);
 const { apis } = await import(tmpFile);
 
 // import the shared generator (works because project is type: module)
-const { buildFullOpenAPIJSON, buildPlatformOpenAPIJSON } = await import(
+const { buildFullOpenAPIJSON, buildEndpointOpenAPIJSON } = await import(
   path.resolve(root, "src/utils/openapi-generator.js")
 );
 
@@ -69,9 +69,16 @@ const outPath = path.resolve(root, "public/openapi.json");
 fs.writeFileSync(outPath, JSON.stringify(spec));
 console.log(`openapi spec written to ${outPath} (${(fs.statSync(outPath).size / 1024).toFixed(1)} KB)`);
 
+// per-endpoint specs at public/{endpoint.path}/openapi.json
+let endpointCount = 0;
 for (const api of apis) {
-  const platformSpec = buildPlatformOpenAPIJSON(api);
-  const platformPath = path.resolve(root, `public/openapi-${api.id}.json`);
-  fs.writeFileSync(platformPath, JSON.stringify(platformSpec));
-  console.log(`  ${api.id} spec → ${(fs.statSync(platformPath).size / 1024).toFixed(1)} KB`);
+  for (const ep of api.endpoints) {
+    const epSpec = buildEndpointOpenAPIJSON(api, ep);
+    const epDir = path.resolve(root, `public${ep.path}`);
+    fs.mkdirSync(epDir, { recursive: true });
+    const epPath = path.resolve(epDir, "openapi.json");
+    fs.writeFileSync(epPath, JSON.stringify(epSpec));
+    endpointCount++;
+  }
 }
+console.log(`  ${endpointCount} per-endpoint specs generated`);

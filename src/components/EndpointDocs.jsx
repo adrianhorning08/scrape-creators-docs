@@ -116,6 +116,7 @@ export default function EndpointDocs({
           } request, REST API, ${api.name.toLowerCase()} data extraction, API documentation, Scrape Creators`}
         />
         <link rel="canonical" href={`https://docs.scrapecreators.com${path}`} />
+        <link rel="service-desc" href={`https://docs.scrapecreators.com${path}/openapi.json`} />
         <meta
           property="og:title"
           content={`${api.name} ${endpointData.name} API - Extract ${api.name} Data | Scrape Creators`}
