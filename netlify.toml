@@ -1,0 +1,19 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[[redirects]]
+  from = "/openapi.json"
+  to = "/openapi.json"
+  status = 200
+
+[[redirects]]
+  from = "/*/openapi.json"
+  to = "/:splat/openapi.json"
+  status = 200
+
+# spa fallback for any route without a pre-rendered html file
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

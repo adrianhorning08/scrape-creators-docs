@@ -4,7 +4,7 @@ import { apis } from "../constants/apis";
 
 export default function Sidebar() {
   const location = useLocation();
-  const currentPath = location.pathname;
+  const currentPath = location.pathname.replace(/\/+$/, "") || "/";
   const activeEndpointRef = useRef(null);
   const isUserClick = useRef(false);
 

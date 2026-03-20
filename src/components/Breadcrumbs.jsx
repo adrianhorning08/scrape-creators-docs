@@ -4,7 +4,7 @@ import { ChevronRight } from "lucide-react";
 
 const Breadcrumbs = () => {
   const location = useLocation();
-  const path = location.pathname;
+  const path = location.pathname.replace(/\/+$/, "") || "/";
 
   // Don't show breadcrumbs for home page
   if (path === "/" || path === "/introduction") {

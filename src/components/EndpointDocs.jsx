@@ -17,7 +17,7 @@ export default function EndpointDocs({
   setSelectedLanguage,
 }) {
   const location = useLocation();
-  const path = location.pathname;
+  const path = location.pathname.replace(/\/+$/, "") || "/";
   const [copied, setCopied] = React.useState(false);
 
   // Add function to get previous and next endpoints

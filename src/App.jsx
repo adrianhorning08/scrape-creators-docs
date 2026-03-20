@@ -11,11 +11,8 @@ import Breadcrumbs from "./components/Breadcrumbs";
 export default function App() {
   const [selectedLanguage, setSelectedLanguage] = React.useState("cURL");
   const location = useLocation();
-  const isIntroduction =
-    location.pathname === "/" || location.pathname === "/introduction";
-
-  // Find the current endpoint data
-  const path = location.pathname;
+  const path = location.pathname.replace(/\/+$/, "") || "/";
+  const isIntroduction = path === "/" || path === "/introduction";
   const api = apis.find((api) => api.endpoints.some((e) => e.path === path));
   const endpointData = api?.endpoints.find((e) => e.path === path);
 
