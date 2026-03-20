@@ -154,7 +154,7 @@ export default function SearchModal({ isOpen, onClose }) {
     search(searchQuery);
   }, [searchQuery]);
 
-  if (!isOpen) return null;
+  if (!isOpen || typeof document === "undefined") return null;
 
   return createPortal(
     <div className="fixed inset-0 z-50">

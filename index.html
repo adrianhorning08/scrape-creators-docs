@@ -30,15 +30,16 @@
     <title>
       Scrape Creators API Documentation - Social Media Data Extraction
     </title>
+    <!--ssr-head-->
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--ssr-outlet--></div>
     <div id="modal-root"></div>
     <noscript>
       <h1>Scrape Creators API Documentation</h1>
       <p>Please enable JavaScript to view the interactive API documentation.</p>
     </noscript>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/entry-client.jsx"></script>
   </body>
   <script
     async

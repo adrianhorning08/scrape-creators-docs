@@ -6,7 +6,7 @@
   "scripts": {
     "generate:openapi": "node scripts/build-openapi.mjs",
     "dev": "vite",
-    "build": "node scripts/build-openapi.mjs && vite build",
+    "build": "node scripts/build-openapi.mjs && vite build && vite build --ssr src/entry-server.jsx --outDir dist/server && node scripts/prerender.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

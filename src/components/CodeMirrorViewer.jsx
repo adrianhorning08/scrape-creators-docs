@@ -1,20 +1,41 @@
-import React from "react";
-import CodeMirror from "@uiw/react-codemirror";
-import { json } from "@codemirror/lang-json";
-import { githubDark } from "@uiw/codemirror-theme-github";
+import React, { useState, useEffect } from "react";
 
-export default function CodeMirrorViewer({
+function CodeMirrorViewerInner({
   value,
   readOnly = true,
   height = "100%",
   className = "",
 }) {
+  const [mod, setMod] = useState(null);
+
+  useEffect(() => {
+    Promise.all([
+      import("@uiw/react-codemirror"),
+      import("@codemirror/lang-json"),
+      import("@uiw/codemirror-theme-github"),
+    ]).then(([cm, langJson, theme]) => {
+      setMod({
+        CodeMirror: cm.default,
+        json: langJson.json,
+        githubDark: theme.githubDark,
+      });
+    });
+  }, []);
+
+  if (!mod) {
+    return (
+      <pre className={className}>
+        <code>{value}</code>
+      </pre>
+    );
+  }
+
   return (
-    <CodeMirror
+    <mod.CodeMirror
       value={value}
       height={height}
-      theme={githubDark}
-      extensions={[json()]}
+      theme={mod.githubDark}
+      extensions={[mod.json()]}
       readOnly={readOnly}
       className={className}
       basicSetup={{
@@ -45,4 +66,16 @@ export default function CodeMirrorViewer({
       }}
     />
   );
+}
+
+export default function CodeMirrorViewer(props) {
+  if (typeof window === "undefined") {
+    return (
+      <pre className={props.className || ""}>
+        <code>{props.value}</code>
+      </pre>
+    );
+  }
+
+  return <CodeMirrorViewerInner {...props} />;
 }

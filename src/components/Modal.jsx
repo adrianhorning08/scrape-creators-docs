@@ -30,7 +30,7 @@ export default function Modal({
     };
   }, [isOpen, onClose, setIsSearchOpen]);
 
-  if (!isOpen) return null;
+  if (!isOpen || typeof document === "undefined") return null;
 
   return createPortal(
     <div className="fixed inset-0 z-[100]">
