@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
-import { Check, ArrowUpRight, Copy, FileText, Link, ChevronDown, Download } from "lucide-react";
+import { Check, ArrowUpRight, Copy, FileText, Link, ChevronDown, Download, DollarSign } from "lucide-react";
 import { generatePageMarkdown, buildOpenAPISpec } from "../../utils/markdownGenerator";
+
+const PRICE_PER_CREDIT = 0.00099;
 
 const CursorIcon = () => (
   <svg
@@ -101,8 +103,18 @@ function DropdownItem({ icon, title, subtitle, external, checked, onClick }) {
 
 export default function CopyPageDropdown({ endpoint, api }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [showPricing, setShowPricing] = useState(false);
   const [checkedItem, setCheckedItem] = useState(null);
+  const [usage, setUsage] = useState(0);
+  const [showTooltip, setShowTooltip] = useState(false);
   const dropdownRef = useRef(null);
+
+  const creditCost = endpoint.credits
+    ? (typeof endpoint.credits === "number" ? endpoint.credits : endpoint.credits.cost)
+    : 1;
+  const unitCost = creditCost * PRICE_PER_CREDIT;
+  const maxUsage = 50;
+  const estimatedCost = usage * 1000 * unitCost;
 
   const showCheck = useCallback((id) => {
     setCheckedItem(id);
@@ -113,10 +125,14 @@ export default function CopyPageDropdown({ endpoint, api }) {
     const handler = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setIsOpen(false);
+        setShowPricing(false);
       }
     };
     const escHandler = (e) => {
-      if (e.key === "Escape") setIsOpen(false);
+      if (e.key === "Escape") {
+        setIsOpen(false);
+        setShowPricing(false);
+      }
     };
     document.addEventListener("mousedown", handler);
     document.addEventListener("keydown", escHandler);
@@ -178,30 +194,92 @@ export default function CopyPageDropdown({ endpoint, api }) {
   return (
     <div ref={dropdownRef} className="relative hidden sm:inline-flex shrink-0">
       <button
-        onClick={handleCopyPage}
+        onClick={() => {
+          setShowPricing((prev) => !prev);
+          setIsOpen(false);
+        }}
         className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark hover:bg-gray-50 dark:hover:bg-white/5 rounded-l-xl border-r-0 transition-colors"
       >
-        {checkedItem === "copy" ? (
-          <Check className="w-4 h-4 text-primary dark:text-primary-light" />
-        ) : (
-          <Copy className="w-4 h-4" />
-        )}
-        <span>{checkedItem === "copy" ? "Copied!" : "Copy page"}</span>
+        <DollarSign className="w-4 h-4" />
+        <span>View Pricing</span>
       </button>
       <button
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={() => {
+          setIsOpen((prev) => !prev);
+          setShowPricing(false);
+        }}
         className="flex items-center px-2 py-1.5 border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark hover:bg-gray-50 dark:hover:bg-white/5 rounded-r-xl transition-colors"
         aria-label="More actions"
       >
         <ChevronDown
           className={`w-3.5 h-3.5 text-gray-400 dark:text-gray-500 transition-transform ${
-            isOpen ? "rotate-180" : ""
+            isOpen || showPricing ? "rotate-180" : ""
           }`}
         />
       </button>
 
+      {showPricing && (
+        <div className="absolute right-0 top-full mt-1 z-50 w-[300px] rounded-2xl border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark shadow-xl shadow-gray-500/5 dark:shadow-none p-4 animate-in fade-in-0 zoom-in-95">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-sm font-medium text-gray-900 dark:text-gray-50">
+              Estimated Cost for{" "}
+              <span className="text-blue-400">{endpoint.name}</span>
+            </span>
+            <div
+              className="relative cursor-help text-gray-400"
+              onMouseEnter={() => setShowTooltip(true)}
+              onMouseLeave={() => setShowTooltip(false)}
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                <text x="8" y="11.5" textAnchor="middle" fontSize="10" fontWeight="bold" fill="currentColor">i</text>
+              </svg>
+              {showTooltip && (
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs rounded-lg shadow-lg w-[250px] z-[9999] bg-gray-900 dark:bg-gray-800 text-gray-200 pointer-events-none">
+                  Based on Business plan pricing ($0.99 per 1k single-credit requests). Endpoints that cost more credits are multiplied accordingly. Actual costs may vary by plan.
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">
+            Unit Cost: ${(unitCost * 1000).toFixed(2)} per 1k requests
+          </div>
+          <div className="flex justify-between text-sm mb-1">
+            <span className="text-gray-500 dark:text-gray-400">Usage</span>
+            <span className="text-gray-900 dark:text-gray-50">
+              {usage === 0 ? "0" : `${usage}k`} requests
+            </span>
+          </div>
+          <input
+            type="range"
+            min="0"
+            max={maxUsage}
+            value={usage}
+            onChange={(e) => setUsage(Number(e.target.value))}
+            className="w-full mb-2 accent-green-500"
+          />
+          <div className="flex justify-between text-xs">
+            <span className="text-gray-500 dark:text-gray-400">0k</span>
+            <span className="text-green-500 font-medium">
+              ${estimatedCost.toFixed(2)}
+            </span>
+            <span className="text-gray-500 dark:text-gray-400">{maxUsage}k</span>
+          </div>
+        </div>
+      )}
+
       {isOpen && (
         <div className="absolute right-0 top-full mt-1 z-50 min-w-[280px] max-h-[420px] overflow-y-auto rounded-2xl border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark shadow-xl shadow-gray-500/5 dark:shadow-none p-1 flex flex-col animate-in fade-in-0 zoom-in-95">
+          <DropdownItem
+            icon={<DollarSign className="w-4 h-4" />}
+            title="View Pricing"
+            subtitle="Estimate API costs based on usage"
+            checked={false}
+            onClick={() => {
+              setShowPricing(true);
+              setIsOpen(false);
+            }}
+          />
           <DropdownItem
             icon={<Copy className="w-4 h-4" />}
             title="Copy page"

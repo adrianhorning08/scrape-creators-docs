@@ -164,12 +164,21 @@ export default function Introduction() {
           Introduction
         </h1>
         <div className="hidden sm:flex items-center gap-2 shrink-0">
+          <a
+            href="https://docs.scrapecreators.com/openapi.json"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-3 py-1.5 text-xs font-semibold tracking-wide uppercase border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark hover:bg-gray-50 dark:hover:bg-white/5 rounded-xl transition-colors text-gray-700 dark:text-gray-300 no-underline"
+          >
+            <ExternalLink className="w-4 h-4" />
+            OpenAPI JSON
+          </a>
           <button
             onClick={handleDownload}
             className="flex items-center gap-2 px-3 py-1.5 text-xs font-semibold tracking-wide uppercase border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark hover:bg-gray-50 dark:hover:bg-white/5 rounded-xl transition-colors text-gray-700 dark:text-gray-300"
           >
             <Download className="w-4 h-4" />
-            Download OpenAPI Specification for LLM
+            Download OpenAPI Specification
           </button>
           <button
             onClick={() => {
