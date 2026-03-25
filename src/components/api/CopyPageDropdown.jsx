@@ -150,7 +150,7 @@ export default function CopyPageDropdown({ endpoint, api }) {
     setIsOpen(false);
   };
 
-  const mcpServerUrl = "https://mcp.scrapecreators.com/mcp";
+  const mcpServerUrl = "https://scrape-creators-mcp-server.onrender.com";
   const mcpInstall = { name: "ScrapeCreators", url: mcpServerUrl };
   const mcpConfig = btoa(JSON.stringify(mcpInstall));
 

@@ -1,59 +1,14 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import * as esbuild from "esbuild";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const dist = path.resolve(root, "dist");
 
-// --- discover all routes from apis.js (reuse esbuild stub pattern) ---
+// --- discover all routes from the shared api config ---
 
-const stubContents = [
-  "const noop = () => null;",
-  "export default noop;",
-  ...[
-    "SiYoutube", "SiTwitch", "SiThreads", "SiPinterest", "SiGoogle",
-    "SiTiktok", "SiInstagram", "SiLinkedin", "SiFacebook", "SiX",
-    "SiReddit", "SiKick", "SiPersonio", "SiSnapchat", "SiBluesky",
-    "SiAmazon", "SiLinktree", "MdPerson",
-    "TruthSocialIcon", "KomiIcon", "PillarIcon", "LinkBioIcon", "LinkmeIcon",
-    "ScrapeCreatorsIcon",
-  ].map((n) => `export const ${n} = noop;`),
-].join("\n");
-
-const result = await esbuild.build({
-  entryPoints: [path.resolve(root, "src/constants/apis.js")],
-  bundle: true,
-  format: "esm",
-  write: false,
-  platform: "node",
-  plugins: [
-    {
-      name: "stub-icons",
-      setup(build) {
-        build.onResolve({ filter: /^react-icons\// }, (args) => ({
-          path: args.path, namespace: "icon-stub",
-        }));
-        build.onResolve({ filter: /\.(jsx|tsx)$/ }, (args) => ({
-          path: args.path, namespace: "icon-stub",
-        }));
-        build.onResolve({ filter: /ScrapeCreatorsIcon/ }, (args) => ({
-          path: args.path, namespace: "icon-stub",
-        }));
-        build.onLoad({ filter: /.*/, namespace: "icon-stub" }, () => ({
-          contents: stubContents, loader: "js",
-        }));
-      },
-    },
-  ],
-});
-
-const cacheDir = path.resolve(root, "node_modules/.cache");
-fs.mkdirSync(cacheDir, { recursive: true });
-const tmpFile = path.resolve(cacheDir, "apis-routes.mjs");
-fs.writeFileSync(tmpFile, result.outputFiles[0].text);
-const { apis } = await import(tmpFile);
+const { apis } = await import("@scrape-creators/api-config");
 
 const routes = ["/", "/introduction"];
 for (const api of apis) {

@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "npm install && npm run build"
 
 [[redirects]]
   from = "/openapi.json"
