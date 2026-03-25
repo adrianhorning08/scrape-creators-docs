@@ -259,7 +259,7 @@ export default function CopyPageDropdown({ endpoint, api }) {
             className="w-full mb-2 accent-green-500"
           />
           <div className="flex justify-between text-xs">
-            <span className="text-gray-500 dark:text-gray-400">0k</span>
+            <span className="text-gray-500 dark:text-gray-400">0</span>
             <span className="text-green-500 font-medium">
               ${estimatedCost.toFixed(2)}
             </span>
