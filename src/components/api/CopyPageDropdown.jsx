@@ -166,10 +166,12 @@ export default function CopyPageDropdown({ endpoint, api }) {
     setIsOpen(false);
   };
 
+  const mcpServerUrl = "https://scrape-creators-mcp-server.onrender.com";
+  const mcpInstall = { name: "ScrapeCreators", url: mcpServerUrl };
+  const mcpConfig = btoa(JSON.stringify(mcpInstall));
+
   const handleCopyMcp = async () => {
-    await navigator.clipboard.writeText(
-      `npx @anthropic-ai/create-mcp --url ${pageUrl}`
-    );
+    await navigator.clipboard.writeText(mcpServerUrl);
     showCheck("mcp");
   };
 
@@ -295,10 +297,10 @@ export default function CopyPageDropdown({ endpoint, api }) {
             checked={false}
             onClick={handleViewMarkdown}
           />
-          {/* <DropdownItem
+          <DropdownItem
             icon={<Link className="w-4 h-4" />}
             title="Copy MCP Server"
-            subtitle="Copy MCP Server URL to clipboard"
+            subtitle="Copy MCP Server URL"
             checked={checkedItem === "mcp"}
             onClick={handleCopyMcp}
           />
@@ -310,7 +312,7 @@ export default function CopyPageDropdown({ endpoint, api }) {
             checked={false}
             onClick={() => {
               window.open(
-                `cursor://anysphere.cursor-deeplink/mcp/install?name=scrapecreators&config=${encodeURIComponent(JSON.stringify({ url: pageUrl }))}`,
+                `cursor://anysphere.cursor-deeplink/mcp/install?name=ScrapeCreators&config=${encodeURIComponent(mcpConfig)}`,
                 "_blank"
               );
               setIsOpen(false);
@@ -324,12 +326,12 @@ export default function CopyPageDropdown({ endpoint, api }) {
             checked={false}
             onClick={() => {
               window.open(
-                `vscode://ms-vscode.mcp/install?name=scrapecreators&config=${encodeURIComponent(JSON.stringify({ url: pageUrl }))}`,
+                `vscode:mcp/install?${encodeURIComponent(JSON.stringify(mcpInstall))}`,
                 "_blank"
               );
               setIsOpen(false);
             }}
-          /> */}
+          />
           <DropdownItem
             icon={<OpenAIIcon />}
             title="Open in ChatGPT"
