@@ -24,13 +24,13 @@ export default function EndpointDocs({
   const getNavigation = () => {
     // Find current API and endpoint index
     let currentApiIndex = apis.findIndex((api) =>
-      api.endpoints.some((e) => e.path === path)
+      api.endpoints.some((e) => e.path === path),
     );
     if (currentApiIndex === -1) return { prev: null, next: null };
 
     const currentApi = apis[currentApiIndex];
     const currentEndpointIndex = currentApi.endpoints.findIndex(
-      (e) => e.path === path
+      (e) => e.path === path,
     );
 
     let prev = null;
@@ -116,7 +116,10 @@ export default function EndpointDocs({
           } request, REST API, ${api.name.toLowerCase()} data extraction, API documentation, Scrape Creators`}
         />
         <link rel="canonical" href={`https://docs.scrapecreators.com${path}`} />
-        <link rel="service-desc" href={`https://docs.scrapecreators.com${path}/openapi.json`} />
+        <link
+          rel="service-desc"
+          href={`https://docs.scrapecreators.com${path}/openapi.json`}
+        />
         <meta
           property="og:title"
           content={`${api.name} ${endpointData.name} API - Extract ${api.name} Data | Scrape Creators`}
@@ -221,14 +224,14 @@ export default function EndpointDocs({
               {creditCost.type === "fixed"
                 ? `${creditCost.cost} credit${creditCost.cost !== 1 ? "s" : ""}`
                 : creditCost.type === "per_item"
-                ? `${creditCost.cost} credit${
-                    creditCost.cost !== 1 ? "s" : ""
-                  } per ${creditCost.per} item${
-                    creditCost.per !== 1 ? "s" : ""
-                  } returned`
-                : `${creditCost.cost} credit${
-                    creditCost.cost !== 1 ? "s" : ""
-                  }`}
+                  ? `${creditCost.cost} credit${
+                      creditCost.cost !== 1 ? "s" : ""
+                    } per ${creditCost.per} item${
+                      creditCost.per !== 1 ? "s" : ""
+                    } returned`
+                  : `${creditCost.cost} credit${
+                      creditCost.cost !== 1 ? "s" : ""
+                    }`}
             </span>
             {creditCost.type !== "per_item" && (
               <span className="text-yellow-700 dark:text-yellow-300 ml-1">
@@ -274,41 +277,29 @@ export default function EndpointDocs({
           </div>
         )}
 
-        <div className="flex items-center gap-6 p-6 bg-primary/10 dark:bg-primary-light/10 border border-primary/20 dark:border-primary-light/20 rounded-xl">
-          <div className="flex flex-col w-full gap-4">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-              🤖 Why Code When AI Can Do It For You?
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Stop writing code like it's 1970! Let AI do the heavy lifting -
-              click the sparkles to copy a perfectly formatted prompt for
-              ChatGPT, Claude, or your favorite AI assistant.
-            </p>
-            <div className="flex gap-3">
-              <button
-                onClick={() => {
-                  setCopied(true);
-                  setTimeout(() => setCopied(false), 2000);
-                  navigator.clipboard.writeText(
-                    generateAIPrompt(endpointData, selectedLanguage)
-                  );
-                }}
-                className="flex items-center gap-2 px-4 py-2 font-medium text-white rounded-lg bg-primary hover:opacity-90 transition-opacity"
-              >
-                {copied ? (
-                  <>
-                    <Check className="w-5 h-5" />
-                    Copied!
-                  </>
-                ) : (
-                  <>
-                    <Sparkles className="w-5 h-5" />
-                    Copy for AI
-                  </>
-                )}
-              </button>
-            </div>
-          </div>
+        <div className="">
+          <button
+            onClick={() => {
+              setCopied(true);
+              setTimeout(() => setCopied(false), 2000);
+              navigator.clipboard.writeText(
+                generateAIPrompt(endpointData, selectedLanguage),
+              );
+            }}
+            className="flex items-center gap-2 px-4 py-2 font-medium text-white rounded-lg bg-primary hover:opacity-90 transition-opacity"
+          >
+            {copied ? (
+              <>
+                <Check className="w-5 h-5" />
+                Copied!
+              </>
+            ) : (
+              <>
+                <Sparkles className="w-5 h-5" />
+                Copy for AI
+              </>
+            )}
+          </button>
         </div>
 
         {/* These code blocks are for mobile view */}
