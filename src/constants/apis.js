@@ -1,5 +1,5 @@
-import { apis as rawApis } from "@scrape-creators/api-config";
-import { withIcons } from "@scrape-creators/api-config/withIcons";
+import { apis as rawApis } from "../../api-config/apis.js";
+import { withIcons } from "../../api-config/withIcons.js";
 import ScrapeCreatorsIcon from "../components/ScrapeCreatorsIcon";
 import { TruthSocialIcon } from "../TruthSocialIcon.jsx";
 import { KomiIcon } from "../KomiIcon.jsx";

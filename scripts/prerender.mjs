@@ -8,7 +8,7 @@ const dist = path.resolve(root, "dist");
 
 // --- discover all routes from the shared api config ---
 
-const { apis } = await import("@scrape-creators/api-config");
+const { apis } = await import(path.resolve(root, "api-config/apis.js"));
 
 const routes = ["/", "/introduction"];
 for (const api of apis) {

@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 
-const { apis } = await import("@scrape-creators/api-config");
+const { apis } = await import(path.resolve(root, "api-config/apis.js"));
 
 const { buildFullOpenAPIJSON, buildEndpointOpenAPIJSON } = await import(
   path.resolve(root, "src/utils/openapi-generator.js")

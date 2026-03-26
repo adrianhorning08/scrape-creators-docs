@@ -4,14 +4,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "preinstall": "git config --global url.\"https://${GH_TOKEN}@github.com/\".insteadOf \"ssh://git@github.com/\"",
     "generate:openapi": "node scripts/build-openapi.mjs",
     "dev": "vite",
     "build": "node scripts/build-openapi.mjs && vite build && vite build --ssr src/entry-server.jsx --outDir dist/server && node scripts/prerender.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@scrape-creators/api-config": "github:adrianhorning08/scrape-creators-api-config",
     "@codemirror/lang-json": "^6.0.1",
     "@mdx-js/react": "^2.3.0",
     "@mdx-js/rollup": "^2.3.0",
