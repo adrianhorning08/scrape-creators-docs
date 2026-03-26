@@ -7,7 +7,7 @@ export const apis = [
       {
         name: "Profile",
         method: "GET",
-        description: "Scrapes a public TikTok profile..",
+        description: "Scrapes a public TikTok profile.",
         path: "/v1/tiktok/profile",
         params: [
           {
