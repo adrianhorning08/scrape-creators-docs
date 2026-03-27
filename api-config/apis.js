@@ -20165,7 +20165,7 @@ export const apis = [
             description: "Instagram post or reel URL",
           },
           {
-            region: "string",
+            name: "region",
             type: "string",
             required: false,
             description: "2 letter country code to set the proxy in",
