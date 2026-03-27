@@ -1,0 +1,40 @@
+name: Sync API Config
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "api-config/apis.js"
+      - "api-config/withIcons.js"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - repo: scrape-creators-app-v2
+            dest: api-config
+          - repo: scrape-creators-landing-v2
+            dest: api-config
+          - repo: scrape-creators-mcp-server
+            dest: api-config
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Copy to ${{ matrix.repo }}
+        run: |
+          git clone https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/adrianhorning08/${{ matrix.repo }}.git repo
+          mkdir -p repo/${{ matrix.dest }}
+          cp api-config/apis.js repo/${{ matrix.dest }}/apis.js
+          cp api-config/withIcons.js repo/${{ matrix.dest }}/withIcons.js
+          cd repo
+          if git diff --quiet; then
+            echo "no changes in ${{ matrix.repo }}"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "sync api config"
+          git push
