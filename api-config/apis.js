@@ -8,6 +8,7 @@ export const apis = [
         name: "Profile",
         method: "GET",
         description: "Scrapes a public TikTok profile",
+        fullDescription: "Fetches public profile data for a TikTok user by their handle — useful for looking up a creator's identity, bio, and account stats. Returns a `user` object (display name, avatar URLs, bio/signature, verification status, bio link) and a `stats` object (followerCount, followingCount, heartCount/total likes, videoCount). This only returns profile metadata, not the user's actual videos or followers list.",
         path: "/v1/tiktok/profile",
         params: [
           {
@@ -89,6 +90,7 @@ export const apis = [
         method: "GET",
         description:
           "Get the audience demographics of a TikTok user. Right now you can only get the audience countries. 🚨 Costs 26 credits per request.",
+        fullDescription: "Retrieves audience demographic data for a TikTok user, showing where their followers are located by country. Returns `audienceLocations`, an array of objects each containing `country`, `countryCode`, `count`, and `percentage`. Costs 26 credits per request.",
         path: "/v1/tiktok/user/audience",
         credits: 26,
         params: [
@@ -153,6 +155,7 @@ export const apis = [
         method: "GET",
         description:
           "Scrapes videos from a TikTok profile. Pass cursor to get more videos.",
+        fullDescription: "Fetches videos posted by a TikTok user, sortable by latest or most popular — use this to get a creator's video feed or TikToks. Returns `aweme_list`, an array of video objects each containing `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count/saves), and `video` (download URLs, duration, cover image). Paginate with `max_cursor` from the previous response.",
         path: "/v3/tiktok/profile/videos",
         paginationField: "max_cursor",
         params: [
@@ -3729,6 +3732,7 @@ export const apis = [
         name: "Video Info",
         method: "GET",
         description: "Scrapes data from a TikTok video",
+        fullDescription: "Fetches detailed data for a single TikTok video by URL, including its metadata, engagement stats, and optionally its transcript/captions. Returns `aweme_detail` with `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count), `video` (download URLs including no-watermark), `author` info, and `music` info; also returns `transcript` in WEBVTT format if `get_transcript=true`.",
         path: "/v2/tiktok/video",
         params: [
           {
@@ -5463,6 +5467,7 @@ export const apis = [
         name: "Transcript",
         method: "GET",
         description: "Scrapes transcript from a TikTok video",
+        fullDescription: "Extracts the transcript, captions, or subtitles from a TikTok video by URL. Returns `id`, `url`, and `transcript` as a WEBVTT-formatted string with timestamped text segments. Video must be under 2 minutes; costs an additional 10 credits when `use_ai_as_fallback=true`.",
         path: "/v1/tiktok/video/transcript",
         params: [
           {
@@ -5502,6 +5507,7 @@ export const apis = [
         name: "TikTok Live",
         method: "GET",
         description: "Scrapes a TikTok user's live stream",
+        fullDescription: "Checks if a TikTok user is currently live streaming and retrieves their live room details. Returns `liveRoomUserInfo` (nickname, avatar, followerCount, roomId) and `liveRoom` (title, startTime, status, `liveRoomStats` with enterCount and userCount, plus `streamData` with playback URLs in multiple qualities).",
         path: "/v1/tiktok/user/live",
         params: [
           {
@@ -5620,6 +5626,7 @@ export const apis = [
         name: "Comments",
         method: "GET",
         description: "Scrapes comments from a TikTok video",
+        fullDescription: "Fetches comments on a TikTok video by URL — useful for reading audience reactions, replies, and engagement. Returns `comments`, an array where each comment includes `text`, `digg_count` (likes), `reply_comment_total`, `create_time`, and a `user` object with the commenter's nickname and unique_id; also returns `total` comment count. Paginate with `cursor` from the previous response.",
         path: "/v1/tiktok/video/comments",
         paginationField: "cursor",
         params: [
@@ -5811,6 +5818,7 @@ export const apis = [
         name: "Following",
         method: "GET",
         description: "Scrapes accounts that a TikTok user follows",
+        fullDescription: "Retrieves the following list — accounts that a TikTok user follows — by their handle. Returns `followings`, an array of user objects each with `nickname`, `unique_id`, `uid`, `follower_count`, `following_count`, `signature`, and avatar URLs; also returns `total` count. Paginate with `min_time` from the previous response.",
         path: "/v1/tiktok/user/following",
         paginationField: "min_time",
         params: [
@@ -9901,6 +9909,7 @@ export const apis = [
         name: "Followers",
         method: "GET",
         description: "Scrapes followers of a TikTok account",
+        fullDescription: "Retrieves the follower list of a TikTok account by handle or user_id — useful for seeing who follows a creator or getting subscriber data. Returns `followers`, an array of user objects each with `nickname`, `unique_id`, `uid`, `follower_count`, `following_count`, and avatar URLs; also returns `total` follower count. Paginate with `min_time` from the previous response.",
         path: "/v1/tiktok/user/followers",
         paginationField: "min_time",
         params: [
@@ -10218,6 +10227,7 @@ export const apis = [
         name: "Search Users",
         method: "GET",
         description: "Scrapes TikTok users matching a search query",
+        fullDescription: "Searches for TikTok users by keyword or name — useful for finding creators or accounts matching a query. Returns `users`, an array of objects each containing `user_info` (nickname, unique_id, signature/bio, follower_count, following_count, avatar) and associated `items`. Paginate with `cursor` from the previous response.",
         path: "/v1/tiktok/search/users",
         paginationField: "cursor",
         sampleResponse: {
@@ -10468,6 +10478,7 @@ export const apis = [
         name: "Search by Hashtag",
         method: "GET",
         description: "Scrapes TikTok videos by hashtag",
+        fullDescription: "Searches for TikTok videos under a specific hashtag — useful for finding content by topic or trend. Returns `aweme_list`, an array of video objects each with `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count), `video` info, and `author` details. Paginate with `cursor` from the previous response.",
         path: "/v1/tiktok/search/hashtag",
         paginationField: "cursor",
         sampleResponse: {
@@ -12278,6 +12289,7 @@ export const apis = [
         name: "Search by Keyword",
         method: "GET",
         description: "Scrapes TikTok videos matching a keyword",
+        fullDescription: "Searches for TikTok videos by keyword or phrase — the general video search across all of TikTok. Returns `search_item_list`, an array of objects each containing `aweme_info` with `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count), `video` info, and `author` details. Paginate with `cursor`.",
         path: "/v1/tiktok/search/keyword",
         paginationField: "cursor",
         sampleResponse: {
@@ -14250,6 +14262,7 @@ export const apis = [
         method: "GET",
         description:
           "There is a 'Top' Search in TikTok and this is that. You can get Photo Carousels and Videos. Whereas with just the Keyword Search, you can only get Videos.",
+        fullDescription: "Searches TikTok's 'Top' results by query — returns both videos and photo carousels, unlike keyword search which only returns videos. Returns `items`, an array of objects each with `id`, `desc` (caption), `content_type` (video or photo carousel), `statistics` (play_count, digg_count/likes, comment_count, share_count), `video` info, and `images` for carousels. Paginate with `cursor`.",
         path: "/v1/tiktok/search/top",
         params: [
           {
@@ -14787,6 +14800,7 @@ export const apis = [
         method: "GET",
         description:
           "This endpoint can take up to 30 seconds. Get popular songs from TikTok. If you want to check out the page this is actually scraping, check out: https://ads.tiktok.com/business/creativecenter/inspiration/popular/music/pc/en",
+        fullDescription: "Gets the current trending and popular songs/sounds on TikTok, sourced from the TikTok Creative Center. Returns `sound_list`, an array of song objects each with `title`, `author`, `clip_id`, `rank`, `cover` image URL, `duration`, `link` to the sound page, and a `trend` array showing popularity over time. Filter by country, time period (7/30/120 days), rank type (popular vs surging), and commercial music approval.",
         path: "/v1/tiktok/songs/popular",
         youtubeId: "YMOQjj9seaY",
         params: [
@@ -15013,6 +15027,7 @@ export const apis = [
         method: "GET",
         description:
           "Get popular creators from TikTok. Filter by follower count, creator country, audience country, and sort by engagement, follower count, or average views.",
+        fullDescription: "Discovers trending and popular TikTok creators, filterable by follower count range, creator country, and audience country. Returns `creator_list`, an array of creator objects each with `nickname`, `unique_id`, `follower_count`, `likes_count`, `video_views`, `engagement_rate`, and avatar URLs. Sortable by engagement, follower count, or average views.",
         path: "/v1/tiktok/creators/popular",
         params: [
           {
@@ -15189,6 +15204,7 @@ export const apis = [
         method: "GET",
         description:
           "Get popular videos from TikTok. Filter by time period, country, and sort by likes, views (hot), comments, or reposts.",
+        fullDescription: "Discovers trending and popular TikTok videos, filterable by time period (7 or 30 days) and country. Returns a list of video objects each with `title`, `item_url` (link to the TikTok), `cover`, `region`, and engagement stats. Sortable by likes, views (hot), comments, or reposts.",
         path: "/v1/tiktok/videos/popular",
         params: [
           {
@@ -15289,6 +15305,7 @@ export const apis = [
         method: "GET",
         description:
           "Get popular hashtags from TikTok. Filter by time period, country, and show newly trending hashtags.",
+        fullDescription: "Discovers trending and popular TikTok hashtags, filterable by time period (7/30/120 days) and country. Returns a list of hashtag objects each with `hashtag_name`, `rank`, `trend` data, and related video examples. Useful for identifying viral topics and content trends on TikTok.",
         path: "/v1/tiktok/hashtags/popular",
         params: [
           {
@@ -15458,6 +15475,7 @@ export const apis = [
         name: "Get Song Details",
         method: "GET",
         description: "Scraping details from the song detail",
+        fullDescription: "Fetches detailed metadata for a specific TikTok sound or song by its clipId. Returns `music_info` with `title`, `author`, `album`, `duration`, `user_count` (number of videos using this sound), `play_url`, cover art, and artist details. Use the `clipId` from a sound URL or from the popular songs endpoint.",
         path: "/v1/tiktok/song",
         youtubeId: "YMOQjj9seaY",
         params: [
@@ -15709,6 +15727,7 @@ export const apis = [
       {
         name: "TikToks using Song",
         description: "Get the TikToks using a song",
+        fullDescription: "Fetches TikTok videos that use a specific sound or song, identified by its clipId. Returns `aweme_list`, an array of video objects each with `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count), `video` info, and `author` details. Paginate with `cursor` from the previous response.",
         path: "/v1/tiktok/song/videos",
         method: "GET",
         paginationField: "cursor",
@@ -16951,6 +16970,7 @@ export const apis = [
         name: "Trending Feed",
         method: "GET",
         description: "Get the trending feed from TikTok.",
+        fullDescription: "Fetches TikTok's trending/For You feed for a given region — useful for discovering viral content and what's currently popular. Returns `aweme_list`, an array of video objects each with `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count), `video` (playback and download URLs, cover), `author` info, and `image_post_info` for photo carousels.",
         path: "/v1/tiktok/get-trending-feed",
         params: [
           {
@@ -17167,6 +17187,7 @@ export const apis = [
         name: "Shop Search",
         method: "GET",
         description: "Scrape TikTok Shop Products from a search!",
+        fullDescription: "Searches TikTok Shop for products matching a keyword query. Returns an array of product objects each with `title`, `cover` image, `url` (product page link), `price`, `sold_count`, `review_count`, `rating`, and `shop_name`. Paginate with `page`; filter by region.",
         path: "/v1/tiktok/shop/search",
         params: [
           {
@@ -17345,6 +17366,7 @@ export const apis = [
         method: "GET",
         description:
           "Get the products from a TikTok Shop. This endpoint costs 1 credit per request. Use the cursor from the response to paginate through results.",
+        fullDescription: "Lists all products from a specific TikTok Shop store by its URL. Returns an array of product objects each with `title`, `cover` images, `url`, `price` info, `sold_count`, `review_count`, and `rating`. Paginate with `cursor` from the previous response; filter by region.",
         path: "/v1/tiktok/shop/products",
         params: [
           {
@@ -17525,6 +17547,7 @@ export const apis = [
         method: "GET",
         description:
           "Get the details of a TikTok Shop Product! Get the exact amount of stock the product has, related tiktok videos promoting the product, and more!",
+        fullDescription: "Fetches full details for a specific TikTok Shop product by its URL, including stock levels and affiliate videos. Returns `product_info` with `product_base` (title, images, sold_count, price), `skus` (variants with exact `stock` counts), and `product_detail_review` (product_rating, review_count, sample reviews); also returns `shop_info` (shop_name, shop_rating, followers_count) and `related_videos` (affiliate TikToks promoting the product).",
         path: "/v1/tiktok/product",
         params: [
           {
@@ -17907,6 +17930,7 @@ export const apis = [
         name: "Product Reviews",
         method: "GET",
         description: "Get a product's reviews",
+        fullDescription: "Fetches customer reviews for a TikTok Shop product by URL or product_id. Returns `product_reviews`, an array of review objects each with `rating`, `display_text`, `review_timestamp_fmt`, `review_user` (name, avatar), and `sku_specification` (variant purchased); also returns `total_reviews` count and `rating_distribution`. Paginate with `page`.",
         path: "/v1/tiktok/shop/product/reviews",
         params: [
           {
@@ -18066,6 +18090,7 @@ export const apis = [
         name: "User Showcase",
         method: "GET",
         description: "Gets public user's showcase products",
+        fullDescription: "Fetches products featured in a TikTok user's public showcase — the products a creator promotes on their profile. Returns an array of product objects each with title, price, images, and shop details.",
         path: "/v1/tiktok/user/showcase",
         params: [
           {
@@ -18216,6 +18241,8 @@ export const apis = [
         method: "GET",
         description:
           "Gets public Instagram profile data, recent posts, and related accounts",
+        fullDescription:
+          "Retrieves comprehensive public Instagram profile information including biography, bio links, follower and following counts, verification status, and profile picture URLs. Also returns recent timeline posts with engagement metrics such as likes, comments, and video view counts, plus a list of related profiles. Useful for account overview, audience analysis, or discovering similar creators.",
         path: "/v1/instagram/profile",
         responseFields: [
           {
@@ -18696,6 +18723,8 @@ export const apis = [
         name: "Basic Profile",
         method: "GET",
         description: "Get a basic profile by user id.",
+        fullDescription:
+          "Fetches a lightweight Instagram profile summary by user ID, returning username, full name, biography, profile picture URL, verification status, follower count, following count, media count, and account privacy and type. Ideal for quick lookups or enrichment when you already have the numeric user ID.",
         path: "/v1/instagram/basic-profile",
         params: [
           {
@@ -18774,6 +18803,8 @@ export const apis = [
         name: "Posts",
         method: "GET",
         description: "Get a persons public posts. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views.",
+        fullDescription:
+          "Returns a paginated feed of a user's public Instagram posts, including photos, videos, and carousels. Each item includes media type, shortcode, caption text, like count, comment count, play count, video URLs, image URLs, and tagged users. Play counts reflect Instagram-only views and exclude cross-posted Facebook views. Supports cursor-based pagination via next_max_id for scrolling through the full timeline.",
         path: "/v2/instagram/user/posts",
         paginationField: "next_max_id",
         responseFields: [
@@ -19575,6 +19606,8 @@ export const apis = [
         method: "GET",
         description:
           "Retrieve public post/reel details. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views.",
+        fullDescription:
+          "Fetches detailed metadata for a single Instagram post or reel by shortcode or URL. Returns caption text, like count, comment count, video URL, video play count, video duration, display images, owner info, tagged users, and carousel sidecar children when applicable. Play counts are Instagram-only views and exclude cross-posted Facebook views.",
         path: "/v1/instagram/post",
         responseFields: [
           {
@@ -20185,6 +20218,8 @@ export const apis = [
         method: "GET",
         description:
           "Get the transcript of an Instagram post or reel. This is a little slow since I run it through an AI. You can only get a transcript if the video is under 2 minutes. You should get results in 10-30 seconds. If no one is spreaking it should return null. Since some posts are carousel, it will return a transcript for each item in the carousel.",
+        fullDescription:
+          "Generates an AI-powered speech-to-text transcription for an Instagram video post or reel. The video must be under 2 minutes long. Returns a transcripts array with each item's shortcode and transcribed text; carousel posts produce one transcript per video slide. Expect 10-30 second response times, and null when no speech is detected.",
         path: "/v2/instagram/media/transcript",
         params: [
           {
@@ -20925,6 +20960,8 @@ export const apis = [
         method: "GET",
         description:
           "Search for reels by keyword. Uses Google Search to find reels. This is because IG puts search behind the login, and we only scrape public data",
+        fullDescription:
+          "Searches for Instagram reels matching a keyword or phrase via Google Search, bypassing Instagram's login-gated search. Returns a list of reels with shortcode, caption, thumbnail, video URL, play count, like count, comment count, video duration, owner details, location, and audio attribution info. Play counts are Instagram-only views and exclude cross-posted Facebook views. Supports page-based pagination for browsing additional results.",
         path: "/v2/instagram/reels/search",
         params: [
           {
@@ -21533,6 +21570,8 @@ export const apis = [
         name: "Comments",
         method: "GET",
         description: "Get comments from an Instagram post or reel",
+        fullDescription:
+          "Retrieves comments on a public Instagram post or reel. Each comment includes the comment text, creation timestamp, and commenter details such as username, user ID, verification status, and profile picture URL. Supports cursor-based pagination to load additional comment pages.",
         path: "/v2/instagram/post/comments",
         params: [
           {
@@ -21594,6 +21633,8 @@ export const apis = [
         method: "GET",
         description:
           "Get all public reels from a profile. Can provide a user_id or handle, but for faster response times, use user_id. This won't include pinned reels right now. And I'm not sure why, but it looks like IG doesn't return the description of the reel on this endpoint :( You'll have to use the post detail endpoint to get that. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views.",
+        fullDescription:
+          "Returns a paginated list of a user's public Instagram reels (short-form videos). Each reel includes its shortcode, play count, like count, comment count, video versions with download URLs, thumbnail image, and owner info. Note that reel captions are not returned by this endpoint. Play counts are Instagram-only views and exclude cross-posted Facebook views. Supports cursor-based pagination via max_id; providing a user_id instead of a handle yields faster responses.",
         path: "/v1/instagram/user/reels",
         paginationField: "max_id",
         sampleResponse: {
@@ -22988,6 +23029,8 @@ export const apis = [
         name: "Story Highlights",
         method: "GET",
         description: "Get story highlights from an Instagram user",
+        fullDescription:
+          "Lists all story highlight albums for an Instagram user. Each highlight includes its ID, title, cover thumbnail URL, and owner info with username and profile picture. Accepts either a user_id or handle; providing user_id yields faster responses.",
         path: "/v1/instagram/user/highlights",
         sampleResponse: {
           success: true,
@@ -23033,6 +23076,8 @@ export const apis = [
         name: "Highlights Details",
         method: "GET",
         description: "Get details about a specific highlight",
+        fullDescription:
+          "Fetches the full contents of a specific Instagram story highlight album by its ID. Returns the highlight's cover image, title, user info, and an items array containing each story with its media type, image or video URLs, dimensions, timestamp, and sticker/interactive element data. Useful for archiving or analyzing individual highlight reels.",
         path: "/v1/instagram/user/highlight/detail",
         params: [
           {
@@ -23253,6 +23298,8 @@ export const apis = [
         name: "Reels using Song (Deprecated)",
         method: "GET",
         description: "Instagram removed the public pages for this, so now we can't scrape it anymore :(",
+        fullDescription:
+          "DEPRECATED — this endpoint is no longer functional. Instagram removed the public audio pages that this endpoint relied on, so it cannot return data. Do not use this endpoint; there is currently no replacement available.",
         path: "/v1/instagram/song/reels",
         params: [
           {
@@ -23916,6 +23963,8 @@ export const apis = [
         name: "Embed HTML",
         method: "GET",
         description: "Get the HTML embed for a user's profile",
+        fullDescription:
+          "Returns the raw HTML embed snippet for an Instagram user's profile widget. The response contains a single html string that can be inserted into a webpage to render an embeddable Instagram profile card. Requires the user's handle as input.",
         path: "/v1/instagram/user/embed",
         sampleResponse: {
           success: true,
@@ -23943,6 +23992,8 @@ export const apis = [
         method: "GET",
         description:
           "Get comprehensive channel information including stats and metadata. Can pass channelId, handle, or url.",
+        fullDescription:
+          "Retrieves comprehensive YouTube channel profile data including name, avatar images, subscriber count (subscribers), total video and view counts, join date, tags, and linked social accounts like Twitter and Instagram. Accepts a channelId, handle, or full channel URL as input. Returns channel metadata such as country, email, and external store links when available.",
         path: "/v1/youtube/channel",
         sampleResponse: {
           channelId: "UCxcTeAKWJca6XyJ37_ZoKIQ",
@@ -24028,6 +24079,8 @@ export const apis = [
         method: "GET",
         description:
           "Get all videos from a channel with detailed information. Can pass channelId or handle.",
+        fullDescription:
+          "Fetches a paginated list of videos uploaded by a YouTube channel, including each video's title, URL, thumbnail, view count (views), publish date, duration, and description. Supports sorting by latest or popular, and use the continuationToken to page through all results. Optionally include extras like like count, comment count, and descriptions for each video.",
         path: "/v1/youtube/channel-videos",
         paginationField: "continuationToken",
         sampleResponse: {
@@ -24100,6 +24153,8 @@ export const apis = [
         method: "GET",
         description:
           "Get the shorts from a channel. If you need more details about the short like description, publish date, etc, you'll need to use the 'Video/Short Details' endpoint.",
+        fullDescription:
+          "Retrieves a paginated list of short-form videos (Shorts) from a YouTube channel, including each short's title, URL, view count (views), likes, comments, and description. Supports sorting by newest or popular, and use the continuationToken to page through all results. Returns data in the shorts array.",
         path: "/v1/youtube/channel/shorts",
         paginationField: "continuationToken",
         sampleResponse: {
@@ -24256,6 +24311,8 @@ export const apis = [
         method: "GET",
         description:
           "Get complete information about a video or short including the transcript! There is a 'transcript' field and a 'transcript_only_text' field.",
+        fullDescription:
+          "Fetches full details for a YouTube video or short, including title, description, thumbnail, view count (views), like count (likes), comment count, publish date, duration, genre, keywords, chapters, collaborators, and available caption tracks (subtitles/captions). Also returns related recommended videos in watchNextVideos and channel info for the uploader.",
         path: "/v1/youtube/video",
         sampleResponse: {
           success: true,
@@ -24364,6 +24421,8 @@ export const apis = [
         name: "Transcript",
         method: "GET",
         description: "Get transcript of a video or short",
+        fullDescription:
+          "Retrieves the captions, subtitles, or transcript of a YouTube video or short. Returns both a timestamped transcript array with start/end times and a plain-text version in transcript_only_text. Supports specifying a language code. Note: the video must be under 2 minutes for transcript extraction to work.",
         path: "/v1/youtube/video/transcript",
         params: [
           {
@@ -24410,6 +24469,8 @@ export const apis = [
         method: "GET",
         description:
           "Search YouTube and get matching videos, channels, playlists, shorts, lives, etc. Video explaining the response format: https://www.tella.tv/video/explaining-youtube-search-results-payload-353a",
+        fullDescription:
+          "Searches YouTube by keyword query and returns matching videos, channels, playlists, shorts, shelves, and live streams. Each video result includes title, URL, thumbnail, view count (views), publish date, duration, channel info, and badges. Supports filtering by upload date, sorting by relevance or popularity, and paginating with continuationToken.",
         path: "/v1/youtube/search",
         paginationField: "continuationToken",
         sampleResponse: {
@@ -24766,6 +24827,8 @@ export const apis = [
         method: "GET",
         description:
           "Search YouTube and get matching videos, channels, and playlists",
+        fullDescription:
+          "Searches YouTube for content matching a specific hashtag and returns matching videos with title, URL, thumbnail, view count (views), publish date, duration, and channel info. Supports pagination via continuationToken and filtering to return all content types or only shorts.",
         path: "/v1/youtube/search/hashtag",
         paginationField: "continuationToken",
         sampleResponse: {
@@ -24827,6 +24890,8 @@ export const apis = [
         method: "GET",
         description:
           "Get comments from a video. Can only get 1k top comments and about 7k new comments.",
+        fullDescription:
+          "Fetches comments and replies from a YouTube video, including each comment's text content, author details, like count, reply count, and publish date. Supports ordering by top or newest, and paginating with continuationToken. Limited to approximately 1,000 top comments or 7,000 newest comments.",
         path: "/v1/youtube/video/comments",
         paginationField: "continuationToken",
         sampleResponse: {
@@ -24883,6 +24948,8 @@ export const apis = [
         method: "GET",
         description:
           "Get about 48 trending shorts. Continue hitting this to get more shorts (get new ones with each call)",
+        fullDescription:
+          "Fetches approximately 48 currently trending YouTube Shorts (viral/popular short-form videos) per call, returning each short's title, URL, thumbnail, view count (views), like count (likes), comment count, publish date, channel info, keywords, and duration. Each subsequent call returns a fresh batch of different trending shorts.",
         path: "/v1/youtube/shorts/trending",
         params: [],
         sampleResponse: {
@@ -25018,6 +25085,8 @@ export const apis = [
         name: "Playlist",
         method: "GET",
         description: "Get the videos of a YouTube playlist",
+        fullDescription:
+          "Retrieves all videos in a YouTube playlist, including the playlist title, owner info, total video count, and each video's title, URL, thumbnail, duration, and channel. Accepts the playlist ID found in the 'list' URL parameter.",
         path: "/v1/youtube/playlist",
         params: [
           {
@@ -25075,6 +25144,8 @@ export const apis = [
         name: "Community Post Details",
         method: "GET",
         description: "Get the details of a community post",
+        fullDescription:
+          "Retrieves the full details of a YouTube community post, including its text content, attached images, like count, publish date, and associated channel info. Also returns a linked video if the post includes one.",
         path: "/v1/youtube/community-post",
         params: [
           {
@@ -25122,6 +25193,8 @@ export const apis = [
         method: "GET",
         description:
           "Get a person's public profile (including recent posts) *Note this is for a persons public profile. This only returns what's publicly available, ie what you see in an incognito browser. So unfortunately LinkedIn doesn't return work history or job title publicly anymore :(",
+        fullDescription:
+          "Retrieves a person's public LinkedIn profile data, including their name, photo, location, follower count (followers), about/bio summary, recent posts, work experience, education, articles, activity feed, publications, projects, recommendations, and similar profiles. Only returns publicly available information visible in an incognito browser.",
         path: "/v1/linkedin/profile",
         sampleResponse: {
           success: true,
@@ -25310,6 +25383,8 @@ export const apis = [
         name: "Company Page",
         method: "GET",
         description: "Get a LinkedIn company page",
+        fullDescription:
+          "Fetches a LinkedIn company page with details including name, description, logo, cover image, slogan, location, headquarters, employee count (headcount/staff size), website, industry, company type, founded year, specialties, funding rounds with investors, featured employees, recent posts, and similar company pages.",
         path: "/v1/linkedin/company",
         params: [
           {
@@ -25432,6 +25507,8 @@ export const apis = [
         name: "Company Posts",
         method: "GET",
         description: "Get a LinkedIn company posts. Can only get 7 pages total (LinkedIn limitation)",
+        fullDescription:
+          "Retrieves paginated posts from a LinkedIn company page, including each post's URL, ID, publication date, and full text content. Supports page-based pagination up to a maximum of 7 pages due to a LinkedIn platform limitation.",
         path: "/v1/linkedin/company/posts",
         params: [
           {
@@ -25508,6 +25585,8 @@ export const apis = [
         name: "Post",
         method: "GET",
         description: "Get a Linkedin post. This can be a post or an article.",
+        fullDescription:
+          "Fetches a single LinkedIn post or article, returning the title, headline, full description text, author info with follower count, publication date, like count (reactions), comment count, and individual comments. Also includes related articles from the same author in moreArticles.",
         path: "/v1/linkedin/post",
         params: [
           {
@@ -25566,6 +25645,8 @@ export const apis = [
         name: "Profile",
         method: "GET",
         description: "Get public Facebook profile information",
+        fullDescription:
+          "Retrieves public Facebook page details including category, address, email, phone, website, services, priceRange, rating, likeCount, and followerCount. Also returns adLibrary status with the page's ad activity and pageId. Optionally includes businessHours when get_business_hours is set to true.",
         path: "/v1/facebook/profile",
         sampleResponse: {
           success: true,
@@ -25767,6 +25848,8 @@ export const apis = [
         method: "GET",
         description:
           "Get a public Facebook page's reels. Returns 10 reels at a time. Need 'next_page_id' and 'cursor' to paginate.",
+        fullDescription:
+          "Fetches up to 10 reels per request from a public Facebook page. Each reel includes id, url, view_count, description, creation_time, video_url, thumbnail, play_time_in_ms, and music details. Pagination requires passing both next_page_id and cursor from the previous response.",
         path: "/v1/facebook/profile/reels",
         paginationField: "cursor",
         params: [
@@ -25888,6 +25971,8 @@ export const apis = [
         method: "GET",
         description:
           "Get a public Facebook page's photos. Need 'next_page_id' and 'cursor' to paginate.",
+        fullDescription:
+          "Fetches photos from a public Facebook page with pagination support. Each photo includes photo_id, accessibility_caption, viewer_image with uri, height, and width, plus a thumbnail and direct url. Pagination requires passing both next_page_id and cursor from the previous response.",
         path: "/v1/facebook/profile/photos",
         paginationField: "cursor",
         params: [
@@ -25958,6 +26043,8 @@ export const apis = [
         method: "GET",
         description:
           "Get public Facebook profile posts. This only returns the posts you would see from an incognito browser session. You can pass a url or a pageId. pageId is faster. pageId is the id of the profile page. Only returns 3 posts at a time.",
+        fullDescription:
+          "Returns publicly visible Facebook profile posts, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails with sdUrl, hdUrl, and thumbnailUrl, plus topComments. Accepts either a url or pageId parameter, where pageId is faster.",
         path: "/v1/facebook/profile/posts",
         paginationField: "cursor",
         params: [
@@ -26105,6 +26192,8 @@ export const apis = [
         method: "GET",
         description:
           "Get a public Facebook groups posts. Only can get 3 posts at a time :( (Facebook API limit)",
+        fullDescription:
+          "Fetches posts from a public Facebook group, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails, and topComments. Supports sorting by TOP_POSTS, RECENT_ACTIVITY, CHRONOLOGICAL, or CHRONOLOGICAL_LISTINGS, with cursor-based pagination.",
         path: "/v1/facebook/group/posts",
         params: [
           {
@@ -26761,6 +26850,8 @@ export const apis = [
         name: "Post",
         method: "GET",
         description: "Get a public Facebook post or reel by url.",
+        fullDescription:
+          "Retrieves a single public Facebook post or reel by URL. Returns post_id, like_count, comment_count, share_count, view_count, description, creation_time, and author details. For video posts, includes video sd_url, hd_url, thumbnail, and length_in_second. Optionally fetches comments and transcript via get_comments and get_transcript parameters.",
         path: "/v1/facebook/post",
         params: [
           {
@@ -26836,6 +26927,8 @@ export const apis = [
         method: "GET",
         description:
           "Get the transcript of a Facebook post. Can be a post or reel. You can only get a transcript if the video is under 2 minutes.",
+        fullDescription:
+          "Extracts the transcript text from a Facebook video post or reel. Returns the transcript as a single text string with line breaks. Only works on videos under 2 minutes in length.",
         path: "/v1/facebook/post/transcript",
         sampleResponse: {
           "success": true,
@@ -26856,6 +26949,8 @@ export const apis = [
         name: "Comments",
         method: "GET",
         description: "Get the comments of a Facebook post (or reel)",
+        fullDescription:
+          "Fetches comments from a Facebook post or reel with cursor-based pagination. Each comment includes id, text, created_at, reply_count, reaction_count, and author details with name and profile_picture. Passing a feedback_id instead of a url significantly speeds up the request.",
         path: "/v1/facebook/post/comments",
         params: [
           {
@@ -27051,6 +27146,8 @@ export const apis = [
         method: "GET",
         description:
           "Pass the Ad ID and get back details about the ad. Be careful that if an ad has multiple versions, you're actually going to want to get the title from the 'cards' object. If you ask for the transcipt, we will only transcribe the video if it's under 2 minutes.",
+        fullDescription:
+          "Retrieves detailed information about a specific Facebook ad by its ID or URL. Returns adArchiveID, pageName, isActive, startDate, endDate, and a snapshot containing body, images, videos, display_format, link_url, and cta_text. For ads with multiple versions, the ad creative is found in the snapshot.cards array rather than snapshot.body.",
         path: "/v1/facebook/adLibrary/ad",
         sampleResponse: {
           adid: 0,
@@ -27406,6 +27503,8 @@ export const apis = [
         method: "GET",
         description:
           "Search the Facebook (Meta) Ad Library By Keyword. This endpoint will tap out around 1,500 results, beacuse the cursor becomes too big for a GET request. If you need more results, call this endpoint as a POST, and pass the query params in the body.",
+        fullDescription:
+          "Searches the Meta Ad Library by keyword and returns matching ads. Each result includes ad_archive_id, page_name, is_active, publisher_platform, and a snapshot with body text, images, videos, and cta_text. Results cap around 1,500 via GET due to cursor size limits; switch to POST method with body params for larger result sets.",
         path: "/v1/facebook/adLibrary/search/ads",
         sampleResponse: {
           searchResults: [
@@ -27725,6 +27824,8 @@ export const apis = [
         paginationField: "cursor",
         description:
           "Get all the ads a company has running. If params become too large, make this a POST request and pass the params in the body.",
+        fullDescription:
+          "Fetches all ads currently running for a specific company from the Meta Ad Library. Each ad includes ad_archive_id, page_name, is_active, publisher_platform, and a snapshot with body, images, videos, and display_format. Supports filtering by country, media_type, date range, and language with cursor-based pagination.",
         path: "/v1/facebook/adLibrary/company/ads",
         youtubeId: "M_wgqCtznjM",
         codeExample:
@@ -28056,6 +28157,8 @@ export const apis = [
         method: "GET",
         description:
           "Search for companies by name and get their ad library page id",
+        fullDescription:
+          "Searches for companies by name in the Meta Ad Library and returns their page IDs for use with other ad library endpoints. Each result includes page_id, name, category, likes, verification status, and Instagram details like ig_username and ig_followers.",
         path: "/v1/facebook/adLibrary/search/companies",
         youtubeId: "M_wgqCtznjM",
         codeExample:
@@ -28119,6 +28222,8 @@ export const apis = [
         method: "GET",
         description:
           "Get the ads for a company. *This only gets the public ads. Some ads you need to log in for and sadly we can't get those. Starting November 10th 2025, you will need to add get_ad_details=true to get the ad details (and will cost 25 credits). If you don't add that, only the advertiserId and creativeId from each ad will be returned (and will continue to cost just 1 credit)",
+        fullDescription:
+          "Fetches public ads for a company from the Google Ad Transparency Library by domain or advertiser_id. Each ad includes advertiserId, creativeId, format, adUrl, advertiserName, domain, firstShown, and lastShown. Costs 25 credits per request when get_ad_details=true; without it, only advertiserId and creativeId are returned at 1 credit.",
         path: "/v1/google/company/ads",
         paginationField: "cursor",
         params: [
@@ -28258,6 +28363,8 @@ export const apis = [
         method: "GET",
         description:
           "Get the details for an ad. I'm using an OCR to get the text from the ad, so it might not be 100% accurate. If you find any errors or irregularities, please email me: support@scrapecreators.com",
+        fullDescription:
+          "Retrieves detailed information about a specific Google ad including advertiserId, creativeId, format, firstShown, lastShown, and overallImpressions. Returns creativeRegions, regionStats with per-region impression data, and variations with destinationUrl, headline, description, and imageUrl. Text extraction uses OCR, so accuracy may vary.",
         path: "/v1/google/ad",
         params: [
           {
@@ -28321,6 +28428,8 @@ export const apis = [
         method: "GET",
         description:
           "Search the Google Ad Transparency Library for advertisers to get their advertiser id",
+        fullDescription:
+          "Searches the Google Ad Transparency Library for advertisers by name. Returns a list of matching advertisers with their name, advertiser_id, and region, plus a list of associated website domains. Use the returned advertiser_id to look up a company's ads.",
         path: "/v1/google/adLibrary/advertisers/search",
         params: [
           {
@@ -28432,6 +28541,8 @@ export const apis = [
         name: "Search Ads",
         method: "GET",
         description: "Search the LinkedIn Ad Library",
+        fullDescription:
+          "Searches the LinkedIn Ad Library by company name, keyword, or companyId with optional country and date filters. Each ad includes id, description, headline, adType, advertiser, targeting details, image or video URLs, totalImpressions, and impressionsByCountry. Supports pagination via paginationToken.",
         path: "/v1/linkedin/ads/search",
         sampleResponse: {
           success: true,
@@ -28553,6 +28664,8 @@ export const apis = [
         name: "Ad Details",
         method: "GET",
         description: "Get the details for an ad",
+        fullDescription:
+          "Retrieves detailed information about a specific LinkedIn ad by URL. Returns id, description, headline, adType, advertiser, and targeting with language, location, and audience criteria. Also includes totalImpressions, impressionsByCountry, adDuration, startDate, and endDate.",
         path: "/v1/linkedin/ad",
         params: [
           {
@@ -28621,6 +28734,8 @@ export const apis = [
         method: "GET",
         description:
           "Get Twitter profile information including stats and metadata",
+        fullDescription:
+          "Retrieves a Twitter user's profile by handle, including account metadata and statistics. Returns name, screen_name, description, followers_count, friends_count, statuses_count, favourites_count, location, profile_image_url_https, and is_blue_verified. Also includes verification_info, tipjar_settings, highlights_info, and creator_subscriptions_count.",
         path: "/v1/twitter/profile",
         sampleResponse: {
           __typename: "User",
@@ -28765,6 +28880,8 @@ export const apis = [
         method: "GET",
         description:
           "Get tweets from a user's profile. *These aren't the users latest tweets. Sadly, Twitter publicly only returns 100 of the users most popular tweets.",
+        fullDescription:
+          "Fetches tweets from a Twitter user's profile by handle. Note: Twitter publicly returns only ~100 of the user's most popular tweets, not chronological or latest. Each tweet includes rest_id, full_text, views count, favorite_count, retweet_count, reply_count, bookmark_count, quote_count, created_at, media entities, and url. Supports a trim parameter for a lighter response.",
         path: "/v1/twitter/user-tweets",
         sampleResponse: {
           tweets: [
@@ -29052,6 +29169,8 @@ export const apis = [
         method: "GET",
         description:
           "Get detailed information about a specific tweet including engagement",
+        fullDescription:
+          "Retrieves detailed information about a specific tweet by URL, including the author's profile and engagement metrics. Returns rest_id, full_text, views count, favorite_count, retweet_count, reply_count, bookmark_count, quote_count, created_at, source, and media entities. Supports a trim parameter for a lighter response.",
         path: "/v1/twitter/tweet",
         sampleResponse: {
           __typename: "Tweet",
@@ -29306,6 +29425,8 @@ export const apis = [
         method: "GET",
         description:
           "Get the transcript of a video tweet. Unfortunately this is a little slow because I'm using AI to get the transcript",
+        fullDescription:
+          "Extracts the transcript from a Twitter video tweet using AI-powered transcription. The video must be under 2 minutes long. Returns a success flag and the full transcript text. This endpoint is slower than others due to the AI processing step.",
         path: "/v1/twitter/tweet/transcript",
         params: [
           {
@@ -29326,6 +29447,8 @@ export const apis = [
         name: "Community",
         method: "GET",
         description: "Get the details of a Twitter(X) Community",
+        fullDescription:
+          "Retrieves details about a Twitter/X Community by URL. Returns the community name, description, rest_id, join_policy, created_at, member_count, rules, and creator_results with the creator's profile. Also includes members_facepile_results with avatar images of recent members.",
         path: "/v1/twitter/community",
         params: [
           {
@@ -29466,6 +29589,8 @@ export const apis = [
         name: "Community Tweets",
         method: "GET",
         description: "Get the tweets from a Twitter(X) Community",
+        fullDescription:
+          "Fetches tweets posted within a Twitter/X Community by URL. Returns an array of tweets, each with id, full_text, view_count, favorite_count, retweet_count, reply_count, bookmark_count, quote_count, created_at, and source. Each tweet includes a user object with the author's name, screen_name, avatar, followers_count, and is_blue_verified status.",
         path: "/v1/twitter/community/tweets",
         params: [
           {
@@ -29596,6 +29721,8 @@ export const apis = [
         method: "GET",
         description:
           "Get details about a subreddit. Pass a subreddit name or URL to the subreddit.",
+        fullDescription:
+          "Retrieves metadata about a subreddit by name or URL. The subreddit name must be case-sensitive. Returns display_name, description, subscribers, weekly_active_users, weekly_contributions, rules, icon_img, header_img, advertiser_category, submit_text, and created_at.",
         path: "/v1/reddit/subreddit/details",
         params: [
           {
@@ -29639,6 +29766,8 @@ export const apis = [
         method: "GET",
         description:
           "Get recent posts from a subreddit with engagement metrics",
+        fullDescription:
+          "Fetches posts from a subreddit with sorting and filtering options. Each post includes title, author, selftext, score, ups, upvote_ratio, num_comments, created_utc, url, permalink, subreddit_subscribers, and is_video. Supports sort (best, hot, new, top, rising), timeframe filtering, pagination via the after token, and a trim parameter for lighter responses.",
         path: "/v1/reddit/subreddit",
         paginationField: "after",
         sampleResponse: {
@@ -29840,6 +29969,8 @@ export const apis = [
         method: "GET",
         description:
           "Search within a subreddit for posts, comments, or media matching a query",
+        fullDescription:
+          "Searches within a specific subreddit for posts, comments, and media matching a query. Returns posts with title, votes, num_comments, url, and created_at; comments with author, body, votes, and parent post info; and media with title, media_type, image dimensions, and gallery_count. Supports sort, timeframe filtering, and cursor-based pagination.",
         path: "/v1/reddit/subreddit/search",
         paginationField: "cursor",
         params: [
@@ -30002,6 +30133,8 @@ export const apis = [
         name: "Post Comments",
         method: "GET",
         description: "Get comments + post information from a Reddit post",
+        fullDescription:
+          "Retrieves comments and post details from a Reddit post by URL. Returns the post with title, author, score, ups, upvote_ratio, num_comments, and created_utc, plus a comments array where each comment includes author, body, body_html, score, created_utc, parent_id, permalink, and nested replies. Supports cursor-based pagination for loading more comments and a trim parameter for lighter responses.",
         path: "/v1/reddit/post/comments",
         params: [
           {
@@ -31323,6 +31456,8 @@ export const apis = [
         name: "Search",
         method: "GET",
         description: "Search Reddit for posts",
+        fullDescription:
+          "Searches across all of Reddit for posts matching a query. Each post includes title, author, selftext, subreddit, score, ups, upvote_ratio, num_comments, created_utc, url, permalink, and is_video. Supports sort (relevance, new, top, comment_count), timeframe filtering, pagination via the after token, and a trim parameter for lighter responses.",
         path: "/v1/reddit/search",
         paginationField: "after",
         params: [
@@ -31530,6 +31665,8 @@ export const apis = [
         method: "GET",
         description:
           "Search the Reddit Ad Library. Can only get a max of 30 ads.",
+        fullDescription:
+          "Searches the Reddit Ad Library for ads matching a query, returning a maximum of 30 results. Each ad includes id, budget_category, industry, placements, objective, and a creative object with headline, body, thumbnail_url, type, created_at, and post_url. Also includes profile_info with the advertiser's name. Supports filtering by industries, budgets, formats, placements, and objectives.",
         path: "/v1/reddit/ads/search",
         params: [
           {
@@ -31642,6 +31779,8 @@ export const apis = [
         name: "Get Ad",
         method: "GET",
         description: "Get a specific ad by id",
+        fullDescription:
+          "Retrieves detailed information about a specific Reddit ad by its id. Returns an analysis_summary with headline and media insights, plus the full inspiration_creative object containing id, budget_category, industry, placements, objective, and creative details (headline, body, type, thumbnail_url, created_at, post_url). Also includes profile_info with the advertiser's name.",
         path: "/v1/reddit/ad",
         params: [
           {
@@ -31712,6 +31851,8 @@ export const apis = [
         name: "Profile",
         method: "GET",
         description: "Get Truth Social profile info",
+        fullDescription:
+          "Retrieves a Truth Social user's public profile including display_name, username, avatar, header, followers_count, following_count, statuses_count, verified status, website, and created_at. Only prominent public figures (e.g., Trump, Vance) are accessible without authentication; most other accounts will not work.",
         path: "/v1/truthsocial/profile",
         params: [
           {
@@ -31768,6 +31909,8 @@ export const apis = [
         method: "GET",
         description:
           "As of 8/27/2025, Truth Social is only letting you view the public profile/posts of prominent users (like Trump and Vance), but requiring auth for everyone else. So sadly most other accounts will not work :(",
+        fullDescription:
+          "Fetches a paginated list of posts from a Truth Social user, returning text, id, created_at, url, content, account info, media_attachments, card link previews, replies_count, reblogs_count, and favourites_count. Supports pagination via next_max_id and a trim option for lighter responses. Only prominent public figures (e.g., Trump, Vance) are accessible without authentication.",
         path: "/v1/truthsocial/user/posts",
         paginationField: "next_max_id",
         params: [
@@ -32462,6 +32605,8 @@ export const apis = [
         name: "Post",
         method: "GET",
         description: "Get Truth Social post",
+        fullDescription:
+          "Fetches a single Truth Social post by URL, returning text, id, created_at, url, content, account details, media_attachments, card link previews, replies_count, reblogs_count, and favourites_count. Only posts from prominent public figures (e.g., Trump, Vance) are accessible without authentication.",
         path: "/v1/truthsocial/post",
         params: [
           {
@@ -32667,6 +32812,8 @@ export const apis = [
         name: "Profile",
         method: "GET",
         description: "Get Threads profile info",
+        fullDescription:
+          "Retrieves a Threads user's public profile including username, full_name, biography, profile_pic_url, follower_count, is_verified, bio_links, and hd_profile_pic_versions. Also indicates whether the account is a threads-only user via is_threads_only_user.",
         path: "/v1/threads/profile",
         params: [
           {
@@ -32739,6 +32886,8 @@ export const apis = [
         method: "GET",
         description:
           "Get Threads posts by user. Sadly, Threads only allows you to see the last 20-30ish posts of the user :(",
+        fullDescription:
+          "Fetches the most recent posts from a Threads user, returning id, caption text, code, like_count, reshare_count, direct_reply_count, repost_count, image_versions2, video_versions, and taken_at. Only the last 20-30 posts are publicly visible. Supports a trim option for lighter responses.",
         path: "/v1/threads/user/posts",
         params: [
           {
@@ -33000,6 +33149,8 @@ export const apis = [
         method: "GET",
         description:
           "Get a post by url. Also returns comments and related posts.",
+        fullDescription:
+          "Fetches a single Threads post by URL, returning the post's caption, like_count, view_counts, reshare_count, direct_reply_count, image_versions2, and taken_at. Also includes comments and related_posts arrays. Supports a trim option for lighter responses.",
         path: "/v1/threads/post",
         params: [
           {
@@ -33444,6 +33595,8 @@ export const apis = [
         method: "GET",
         description:
           "Search for posts by keyword. Sadly Threads only publicly returns only 10 results at a time :( We can only scrape public data, so sadly this is all we can get at once. Run multiple times per day to get more results.",
+        fullDescription:
+          "Searches Threads for posts matching a keyword, returning up to 10 results with caption text, like_count, reshare_count, direct_reply_count, user info, and image_versions2. Supports optional start_date and end_date filters plus a trim option. Only 10 results are returned per request due to public API limitations.",
         path: "/v1/threads/search",
         params: [
           {
@@ -33644,6 +33797,8 @@ export const apis = [
         name: "Search Users",
         method: "GET",
         description: "Search for users by username",
+        fullDescription:
+          "Searches for Threads users by username, returning matching profiles with username, full_name, profile_pic_url, is_verified, and pk. Useful for finding user accounts before fetching their profile or posts.",
         path: "/v1/threads/search/users",
         params: [
           {
@@ -33682,6 +33837,8 @@ export const apis = [
         name: "Profile",
         method: "GET",
         description: "Get Bluesky profile info",
+        fullDescription:
+          "Retrieves a Bluesky user's public profile including handle, displayName, avatar, description, followersCount, followsCount, postsCount, createdAt, and verification status. The associated field shows counts for lists, feed generators, and starter packs.",
         path: "/v1/bluesky/profile",
         params: [
           {
@@ -33731,6 +33888,8 @@ export const apis = [
         method: "GET",
         description:
           "Get Bluesky user posts. Use user_id for faster response times.",
+        fullDescription:
+          "Fetches a paginated feed of posts from a Bluesky user, returning each post's uri, record text, author info, embed content, replyCount, repostCount, likeCount, quoteCount, and indexedAt. Supports pagination via cursor. Use user_id (the 'did') instead of handle for faster response times.",
         path: "/v1/bluesky/user/posts",
         paginationField: "cursor",
         params: [
@@ -33832,6 +33991,8 @@ export const apis = [
         name: "Post",
         method: "GET",
         description: "Get Bluesky post",
+        fullDescription:
+          "Fetches a single Bluesky post by URL, returning the post's record text, author info, embed content, replyCount, repostCount, likeCount, and quoteCount. Also includes a replies array with threaded reply posts.",
         path: "/v1/bluesky/post",
         params: [
           {
@@ -33994,6 +34155,8 @@ export const apis = [
         name: "Search",
         method: "GET",
         description: "Search Pinterest",
+        fullDescription:
+          "Searches Pinterest for pins matching a query, returning results with id, url, title, description, images, link, domain, board info, and pinner details. Supports pagination via cursor and a trim option for lighter responses.",
         path: "/v1/pinterest/search",
         params: [
           {
@@ -34229,6 +34392,8 @@ export const apis = [
         name: "Pin",
         method: "GET",
         description: "Get Pinterest pin",
+        fullDescription:
+          "Fetches detailed information about a single Pinterest pin by URL, returning title, description, link, dominantColor, originPinner, pinner, images at multiple resolutions (imageSpec_236x through imageSpec_orig), and pinJoin with visual annotations. Supports a trim option for lighter responses.",
         path: "/v1/pinterest/pin",
         params: [
           {
@@ -34796,6 +34961,8 @@ export const apis = [
         name: "User Boards",
         method: "GET",
         description: "Get a user's boards",
+        fullDescription:
+          "Fetches a paginated list of boards for a Pinterest user, returning each board's name, url, description, pin_count, follower_count, owner info, cover_images, and created_at. Supports pagination via cursor and a trim option for lighter responses.",
         path: "/v1/pinterest/user/boards",
         paginationField: "cursor",
         params: [
@@ -34946,6 +35113,8 @@ export const apis = [
         name: "Board",
         method: "GET",
         description: "Get the pins of a pinterest board",
+        fullDescription:
+          "Fetches a paginated list of pins from a Pinterest board by URL, returning each pin's id, description, title, images, board info, pin_join annotations, and aggregated_pin_data. Supports pagination via cursor and a trim option for lighter responses.",
         path: "/v1/pinterest/board",
         paginationField: "cursor",
         params: [
@@ -35252,6 +35421,8 @@ export const apis = [
         name: "Search",
         method: "GET",
         description: "Search Google",
+        fullDescription:
+          "Performs a Google search and returns organic results with url, title, and description for each result. Supports an optional region parameter (2-letter country code) to get localized results from a specific country.",
         path: "/v1/google/search",
         params: [
           {
@@ -35670,6 +35841,8 @@ export const apis = [
         name: "Profile",
         method: "GET",
         description: "Get Twitch profile",
+        fullDescription:
+          "Retrieves a Twitch user's public profile by handle, including identity, social links, and content. Returns id, handle, displayName, description, followers count, and linked social accounts (instagram, x, tiktok). Also includes allVideos with game info, duration, and view counts, featuredClips with clip metadata and thumbnails, and similarStreamers.",
         path: "/v1/twitch/profile",
         params: [
           {
@@ -35824,6 +35997,8 @@ export const apis = [
         name: "Clip",
         method: "GET",
         description: "Get Twitch clip",
+        fullDescription:
+          "Fetches detailed data for a Twitch clip by URL, including metadata and direct video URLs. Returns clip id, slug, url, embedURL, title, viewCount, language, durationSeconds, game info, broadcaster details with follower count, thumbnailURL, and videoQualities at multiple resolutions with a signed videoURL for playback. Also includes additional clips from the same broadcaster.",
         path: "/v1/twitch/clip",
         sampleResponse: [
           {
@@ -37023,6 +37198,8 @@ export const apis = [
         name: "Clip",
         method: "GET",
         description: "Get Kick clip",
+        fullDescription:
+          "Fetches detailed data for a Kick clip by URL, including video, metadata, and channel info. Returns clip id, title, clip_url, thumbnail_url, video_url, view_count, likes_count, duration, privacy status, and is_mature flag. Also includes category details (name, slug), creator info (username), and channel info (username, profile_picture).",
         path: "/v1/kick/clip",
         sampleResponse: {
           clip: {
@@ -37098,6 +37275,8 @@ export const apis = [
         name: "User Profile",
         method: "GET",
         description: "Get Snapchat user profile",
+        fullDescription:
+          "Retrieves a Snapchat user's public profile by handle, including identity, stories, and spotlight content. Returns userProfile with username, title, snapcodeImageUrl, subscriberCount, bio, and profilePictureUrl. Also includes highlightStoryMetadata with individual story snaps (mediaUrl, mediaType, thumbnailUrl) and spotlightStoryMetadata with video details and engagement stats (viewCount, shareCount, commentCount).",
         path: "/v1/snapchat/profile",
         sampleResponse: {
           success: true,
@@ -37459,6 +37638,8 @@ export const apis = [
         name: "Linktree page",
         method: "GET",
         description: "Linktree page",
+        fullDescription:
+          "Scrapes a Linktree page by URL, extracting the creator's profile and all their links. Returns id, username, profilePictureUrl, description, verticals, timezone, and links — an array of link objects each with id, type, title, and url. Also includes detected social accounts (instagram, tiktok, spotify, youtube, soundcloud, apple_music) and email_address.",
         path: "/v1/linktree",
         params: [
           {
@@ -37551,6 +37732,8 @@ export const apis = [
         name: "Komi page",
         method: "GET",
         description: "Komi page",
+        fullDescription:
+          "Scrapes a Komi page by URL, extracting the creator's profile, social links, and featured content. Returns id, username, avatar, displayName, bio, and social accounts (instagram, tiktok, youtube, twitter, facebook, snapchat). Also includes links, an array of link and product objects each with id, url, title, type, thumbnail, and optional price and currency for products.",
         path: "/v1/komi",
         params: [
           {
@@ -37620,6 +37803,8 @@ export const apis = [
         name: "Pillar page",
         method: "GET",
         description: "Pillar page",
+        fullDescription:
+          "Scrapes a Pillar page by URL, extracting the creator's profile, social links, and products. Returns id, first_name, last_name, email, location, and social accounts (tiktok, spotify, twitter, youtube, facebook, linkedin, instagram, and more). Also includes links with click counts and products with title, price, description, and image.",
         path: "/v1/pillar",
         params: [
           {
@@ -37698,6 +37883,8 @@ export const apis = [
         name: "Linkbio page",
         method: "GET",
         description: "Linkbio (lnk.bio) page",
+        fullDescription:
+          "Scrapes a Linkbio (lnk.bio) page by URL, extracting the creator's profile and all their links. Returns handle, id, social accounts (instagram, tiktok, youtube, twitter, whatsapp), email, website, and links — an array of link objects each with url and text.",
         path: "/v1/linkbio",
         params: [
           {
@@ -37783,6 +37970,8 @@ export const apis = [
         method: "GET",
         description:
           "Get products and other details from a creator's Amazon Shop page",
+        fullDescription:
+          "Scrapes a creator's Amazon Shop page by URL, returning their storefront profile and product collections. Returns avatar, name, description, socials, and lists with title and itemCount. Also includes trendingPicks with price and discount, curations with title and postCount, and a pageToken for pagination.",
         path: "/v1/amazon/shop",
         params: [
           {
@@ -37918,6 +38107,8 @@ export const apis = [
         method: "GET",
         description:
           "Get age and gender of creator. This uses AI to analyze the profile image. *The profile photo must have a clear face to get an accurate result.*",
+        fullDescription:
+          "Uses AI to analyze a creator's profile photo and estimate their age and gender. Returns ageRange with low and high bounds, gender, and a confidence score for the gender prediction. The profile photo must contain a clear, visible face for accurate results.",
         path: "/v1/detect-age-gender",
         sampleResponse: {
           ageRange: { low: 23, high: 29 },
@@ -37945,6 +38136,8 @@ export const apis = [
         name: "Get credit balance",
         method: "GET",
         description: "How many credits you have left",
+        fullDescription:
+          "Returns the number of API credits remaining on your Scrape Creators account. The response contains a single creditCount field with your current balance.",
         path: "/v1/credit-balance",
         params: [],
         sampleResponse: {
@@ -37962,6 +38155,8 @@ export const apis = [
         name: "Profile",
         method: "GET",
         description: "Get Linkme profile info by URL",
+        fullDescription:
+          "Retrieves a Linkme profile by URL, including identity, social links, and contact details. Returns profile with id, firstName, username, bio, profileVisitCount, profileImage, verifiedAccount, and isAmbassador flag. Also includes infoLinks (email addresses) and webLinks, an array of categorized social platform links (Spotify, Instagram, YouTube, Twitter, Facebook, and more) each with linkValue and faceValue.",
         path: "/v1/linkme",
         params: [
           {
