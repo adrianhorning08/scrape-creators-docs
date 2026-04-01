@@ -21598,6 +21598,7 @@ export const apis = [
               id: "18051843701642870",
               text: '"...but who wants to know people who don\'t love animals anyway?". ❤️',
               created_at: "2025-09-16T17:03:04.000Z",
+              "comment_like_count": 0,
               user: {
                 is_verified: false,
                 id: "46773599357",
@@ -21613,6 +21614,7 @@ export const apis = [
               id: "18111838858552963",
               text: "What a lovely lady, I'm with her who wants to know anyone who doesn't love animals ❤️👏",
               created_at: "2025-09-16T19:53:21.000Z",
+              "comment_like_count": 0,
               user: {
                 is_verified: false,
                 id: "45139684051",
@@ -21625,7 +21627,7 @@ export const apis = [
               },
             },
           ],
-          cursor: "eyJjYWNoZWRfY29tbWVudHNfY3Vy....",
+          cursor: "AQHSpoi6HyDbzYRMzrD.........",
         },
       },
       {
