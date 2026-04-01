@@ -8,6 +8,10 @@ import ResponseFields from "./api/ResponseFields";
 import CodeBlock from "./CodeBlock";
 import CopyPageDropdown from "./api/CopyPageDropdown";
 import Introduction from "./Introduction";
+import IntegrationsOverview from "./integrations/IntegrationsOverview";
+import McpIntegration from "./integrations/McpIntegration";
+import N8nIntegration from "./integrations/N8nIntegration";
+import ApifyIntegration from "./integrations/ApifyIntegration";
 import { Helmet } from "react-helmet-async";
 import { Check, Sparkles, Coins } from "lucide-react";
 import { generateAIPrompt } from "../utils/promptGenerator";
@@ -81,9 +85,20 @@ export default function EndpointDocs({
     return { type: "fixed", cost: 1 };
   };
 
-  // Show introduction for root path or /introduction
   if (path === "/" || path === "/introduction") {
     return <Introduction />;
+  }
+
+  const integrationPages = {
+    "/integrations/overview": IntegrationsOverview,
+    "/integrations/mcp": McpIntegration,
+    "/integrations/n8n": N8nIntegration,
+    "/integrations/apify": ApifyIntegration,
+  };
+
+  if (integrationPages[path]) {
+    const IntegrationPage = integrationPages[path];
+    return <IntegrationPage />;
   }
 
   // Find the API and endpoint that matches this exact path

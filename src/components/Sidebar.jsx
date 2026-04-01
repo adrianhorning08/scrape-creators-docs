@@ -73,94 +73,132 @@ export default function Sidebar() {
                 Blog
               </a>
             </li> */}
-            <div className="mt-12 lg:mt-8">
-              <h5 className="pl-4 mb-3.5 lg:mb-2.5 font-semibold text-gray-900 dark:text-gray-200">
-                API Documentation
-              </h5>
-              <ul>
-                <li className="scroll-m-4 first:scroll-m-20">
-                  <Link
-                    to="/introduction"
-                    className={`group mt-2 lg:mt-0 flex items-center pr-3 py-1.5 cursor-pointer focus:outline-primary dark:focus:outline-primary-light space-x-3 rounded-xl ${
-                      currentPath === "/introduction" || currentPath === "/"
-                        ? "bg-primary/10 text-primary font-semibold dark:text-primary-light dark:bg-primary-light/10"
-                        : "hover:bg-gray-600/5 dark:hover:bg-gray-200/5 text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
-                    }`}
-                    style={{ paddingLeft: "1rem" }}
-                  >
-                    <div className="flex-1 flex items-center space-x-2.5">
-                      <div>Introduction</div>
-                    </div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="mt-12 lg:mt-8">
-              {apis.map((api) => (
-                <div key={api.id} className="mb-8">
-                  <div className="flex items-center gap-2 pl-4 mb-3.5 lg:mb-2.5">
-                    <api.icon className="w-4 h-4" />
-                    <h5 className="font-semibold text-gray-900 dark:text-gray-200">
-                      {api.name}
-                    </h5>
-                  </div>
+            {currentPath.startsWith("/integrations") ? (
+              <>
+                <div className="mt-12 lg:mt-8">
+                  <h5 className="pl-4 mb-3.5 lg:mb-2.5 font-semibold text-gray-900 dark:text-gray-200">
+                    Integrations
+                  </h5>
                   <ul>
-                    {api.endpoints.map((endpoint) => (
-                      <li key={endpoint.path}>
+                    {[
+                      { name: "Overview", path: "/integrations/overview" },
+                      { name: "MCP", path: "/integrations/mcp" },
+                      { name: "n8n", path: "/integrations/n8n" },
+                      { name: "Apify", path: "/integrations/apify" },
+                    ].map((item) => (
+                      <li key={item.path}>
                         <Link
-                          to={endpoint.path}
+                          to={item.path}
                           onClick={handleLinkClick}
-                          ref={
-                            currentPath === endpoint.path
-                              ? activeEndpointRef
-                              : null
-                          }
-                          className={`group mt-2 lg:mt-0 flex items-center pr-3 py-1.5 cursor-pointer focus:outline-primary dark:focus:outline-primary-light rounded-xl relative ${
-                            currentPath === endpoint.path
-                              ? endpoint.method === "POST"
-                                ? "bg-blue-100/80 text-blue-700 font-semibold dark:bg-blue-400/10 dark:text-blue-400"
-                                : "bg-primary/10 text-primary font-semibold dark:text-primary-light dark:bg-primary-light/10"
+                          ref={currentPath === item.path ? activeEndpointRef : null}
+                          className={`group mt-2 lg:mt-0 flex items-center pr-3 py-1.5 cursor-pointer focus:outline-primary dark:focus:outline-primary-light space-x-3 rounded-xl ${
+                            currentPath === item.path
+                              ? "bg-primary/10 text-primary font-semibold dark:text-primary-light dark:bg-primary-light/10"
                               : "hover:bg-gray-600/5 dark:hover:bg-gray-200/5 text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
                           }`}
                           style={{ paddingLeft: "1rem" }}
                         >
-                          <div className="flex items-center min-w-0 gap-3">
-                            <span className="w-8 flex-shrink-0">
-                              <span
-                                className={`px-1 py-0.5 rounded-md text-[0.55rem] leading-tight font-bold ${
-                                  endpoint.method === "GET"
-                                    ? "bg-green-400/20 text-green-700 dark:bg-green-400/20 dark:text-green-400"
-                                    : endpoint.method === "POST"
-                                    ? "bg-blue-400/20 text-blue-700 dark:bg-blue-400/20 dark:text-blue-400"
-                                    : endpoint.method === "PUT"
-                                    ? "bg-yellow-400/20 text-yellow-700 dark:bg-yellow-400/20 dark:text-yellow-400"
-                                    : "bg-red-400/20 text-red-700 dark:bg-red-400/20 dark:text-red-400"
-                                }`}
-                              >
-                                {endpoint.method}
-                              </span>
-                            </span>
-                            <div
-                              className={`truncate ${
-                                currentPath === endpoint.path &&
-                                endpoint.method === "POST"
-                                  ? "text-blue-700 dark:text-blue-400"
-                                  : ""
-                              }`}
-                            >
-                              {endpoint.name}
-                            </div>
+                          <div className="flex-1 flex items-center space-x-2.5">
+                            <div>{item.name}</div>
                           </div>
-                          {endpoint.creditCost > 1 && (
-                            <span className="absolute right-3 h-2 w-2 rounded-full bg-purple-800 dark:bg-purple-800" />
-                          )}
                         </Link>
                       </li>
                     ))}
                   </ul>
                 </div>
-              ))}
-            </div>
+              </>
+            ) : (
+              <>
+                <div className="mt-12 lg:mt-8">
+                  <h5 className="pl-4 mb-3.5 lg:mb-2.5 font-semibold text-gray-900 dark:text-gray-200">
+                    API Documentation
+                  </h5>
+                  <ul>
+                    <li className="scroll-m-4 first:scroll-m-20">
+                      <Link
+                        to="/introduction"
+                        className={`group mt-2 lg:mt-0 flex items-center pr-3 py-1.5 cursor-pointer focus:outline-primary dark:focus:outline-primary-light space-x-3 rounded-xl ${
+                          currentPath === "/introduction" || currentPath === "/"
+                            ? "bg-primary/10 text-primary font-semibold dark:text-primary-light dark:bg-primary-light/10"
+                            : "hover:bg-gray-600/5 dark:hover:bg-gray-200/5 text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
+                        }`}
+                        style={{ paddingLeft: "1rem" }}
+                      >
+                        <div className="flex-1 flex items-center space-x-2.5">
+                          <div>Introduction</div>
+                        </div>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                <div className="mt-12 lg:mt-8">
+                  {apis.map((api) => (
+                    <div key={api.id} className="mb-8">
+                      <div className="flex items-center gap-2 pl-4 mb-3.5 lg:mb-2.5">
+                        <api.icon className="w-4 h-4" />
+                        <h5 className="font-semibold text-gray-900 dark:text-gray-200">
+                          {api.name}
+                        </h5>
+                      </div>
+                      <ul>
+                        {api.endpoints.map((endpoint) => (
+                          <li key={endpoint.path}>
+                            <Link
+                              to={endpoint.path}
+                              onClick={handleLinkClick}
+                              ref={
+                                currentPath === endpoint.path
+                                  ? activeEndpointRef
+                                  : null
+                              }
+                              className={`group mt-2 lg:mt-0 flex items-center pr-3 py-1.5 cursor-pointer focus:outline-primary dark:focus:outline-primary-light rounded-xl relative ${
+                                currentPath === endpoint.path
+                                  ? endpoint.method === "POST"
+                                    ? "bg-blue-100/80 text-blue-700 font-semibold dark:bg-blue-400/10 dark:text-blue-400"
+                                    : "bg-primary/10 text-primary font-semibold dark:text-primary-light dark:bg-primary-light/10"
+                                  : "hover:bg-gray-600/5 dark:hover:bg-gray-200/5 text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
+                              }`}
+                              style={{ paddingLeft: "1rem" }}
+                            >
+                              <div className="flex items-center min-w-0 gap-3">
+                                <span className="w-8 flex-shrink-0">
+                                  <span
+                                    className={`px-1 py-0.5 rounded-md text-[0.55rem] leading-tight font-bold ${
+                                      endpoint.method === "GET"
+                                        ? "bg-green-400/20 text-green-700 dark:bg-green-400/20 dark:text-green-400"
+                                        : endpoint.method === "POST"
+                                        ? "bg-blue-400/20 text-blue-700 dark:bg-blue-400/20 dark:text-blue-400"
+                                        : endpoint.method === "PUT"
+                                        ? "bg-yellow-400/20 text-yellow-700 dark:bg-yellow-400/20 dark:text-yellow-400"
+                                        : "bg-red-400/20 text-red-700 dark:bg-red-400/20 dark:text-red-400"
+                                    }`}
+                                  >
+                                    {endpoint.method}
+                                  </span>
+                                </span>
+                                <div
+                                  className={`truncate ${
+                                    currentPath === endpoint.path &&
+                                    endpoint.method === "POST"
+                                      ? "text-blue-700 dark:text-blue-400"
+                                      : ""
+                                  }`}
+                                >
+                                  {endpoint.name}
+                                </div>
+                              </div>
+                              {endpoint.creditCost > 1 && (
+                                <span className="absolute right-3 h-2 w-2 rounded-full bg-purple-800 dark:bg-purple-800" />
+                              )}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

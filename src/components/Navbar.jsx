@@ -159,13 +159,32 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex px-12 h-12">
           <div className="h-full flex text-sm space-x-6">
-            <a
-              className="group relative h-full flex items-center text-gray-800 dark:text-gray-200 font-semibold"
-              href="/api-reference/introduction"
+            <Link
+              to="/introduction"
+              className={`group relative h-full flex items-center font-semibold ${
+                !location.pathname.startsWith("/integrations")
+                  ? "text-gray-800 dark:text-gray-200"
+                  : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+              }`}
             >
               API Reference
-              <div className="absolute bottom-0 h-[1.5px] w-full bg-primary dark:bg-primary-light"></div>
-            </a>
+              {!location.pathname.startsWith("/integrations") && (
+                <div className="absolute bottom-0 h-[1.5px] w-full bg-primary dark:bg-primary-light"></div>
+              )}
+            </Link>
+            <Link
+              to="/integrations/overview"
+              className={`group relative h-full flex items-center font-semibold ${
+                location.pathname.startsWith("/integrations")
+                  ? "text-gray-800 dark:text-gray-200"
+                  : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+              }`}
+            >
+              Integrations
+              {location.pathname.startsWith("/integrations") && (
+                <div className="absolute bottom-0 h-[1.5px] w-full bg-primary dark:bg-primary-light"></div>
+              )}
+            </Link>
           </div>
         </div>
       </div>
@@ -233,6 +252,26 @@ export default function Navbar() {
               >
                 Introduction
               </Link>
+              <div className="mt-6">
+                <h5 className="font-semibold text-gray-900 dark:text-gray-200 mb-2">
+                  Integrations
+                </h5>
+                {[
+                  { name: "Overview", path: "/integrations/overview" },
+                  { name: "MCP", path: "/integrations/mcp" },
+                  { name: "n8n", path: "/integrations/n8n" },
+                  { name: "Apify", path: "/integrations/apify" },
+                ].map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className="block py-2 pl-6 text-base text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
               {apis.map((api) => (
                 <div key={api.id} className="mt-6">
                   <div className="flex items-center gap-2 mb-2">

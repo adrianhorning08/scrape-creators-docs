@@ -6,31 +6,36 @@ const Breadcrumbs = () => {
   const location = useLocation();
   const path = location.pathname.replace(/\/+$/, "") || "/";
 
-  // Don't show breadcrumbs for home page
   if (path === "/" || path === "/introduction") {
     return null;
   }
 
-  // For API endpoints, create a simple flat structure: Home > Endpoint Name
   const breadcrumbItems = [{ name: "Home", path: "/", isActive: false }];
 
-  // Get a user-friendly name for the current page
+  const integrationNames = {
+    "/integrations/overview": "Overview",
+    "/integrations/mcp": "MCP",
+    "/integrations/n8n": "n8n",
+    "/integrations/apify": "Apify",
+  };
+
   let pageName = "API Documentation";
 
-  if (path === "/introduction") {
-    pageName = "Introduction";
-  } else if (path.includes("/v1/")) {
-    // Extract platform and endpoint from path like /v1/tiktok/profile
+  if (integrationNames[path]) {
+    breadcrumbItems.push({
+      name: "Integrations",
+      path: "/integrations/overview",
+      isActive: false,
+    });
+    pageName = integrationNames[path];
+  } else if (path.includes("/v1/") || path.includes("/v2/") || path.includes("/v3/")) {
     const pathParts = path.split("/").filter((p) => p);
     if (pathParts.length >= 3) {
-      const platform = pathParts[1]; // tiktok
-      const endpoint = pathParts[2]; // profile
-
-      // Capitalize platform name
+      const platform = pathParts[1];
+      const endpoint = pathParts[2];
       const platformName = platform.charAt(0).toUpperCase() + platform.slice(1);
       const endpointName =
         endpoint.charAt(0).toUpperCase() + endpoint.slice(1).replace(/-/g, " ");
-
       pageName = `${platformName} ${endpointName} API`;
     }
   }

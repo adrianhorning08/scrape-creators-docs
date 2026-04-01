@@ -12,7 +12,7 @@ export default function App() {
   const [selectedLanguage, setSelectedLanguage] = React.useState("cURL");
   const location = useLocation();
   const path = location.pathname.replace(/\/+$/, "") || "/";
-  const isIntroduction = path === "/" || path === "/introduction";
+  const isIntroduction = path === "/" || path === "/introduction" || path.startsWith("/integrations");
   const api = apis.find((api) => api.endpoints.some((e) => e.path === path));
   const endpointData = api?.endpoints.find((e) => e.path === path);
 
