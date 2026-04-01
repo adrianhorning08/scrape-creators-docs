@@ -34,7 +34,6 @@ export default function Sidebar() {
     <div className="z-20 hidden lg:block fixed bottom-0 right-auto w-[18rem] top-[7.1rem]">
       <div className="absolute inset-0 z-10 stable-scrollbar-gutter overflow-auto pr-8 pb-10">
         <div className="relative lg:text-sm lg:leading-6">
-          <div className="sticky top-0 h-8 bg-gradient-to-b from-background-light dark:from-background-dark"></div>
           <div id="navigation-items">
             {/* <li className="list-none">
               <a href="https://mintlify.com/docs" target="_blank" rel="noreferrer" className="pl-4 group flex items-center lg:text-sm lg:leading-6 mb-5 sm:mb-4 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">
@@ -90,7 +89,9 @@ export default function Sidebar() {
                         <Link
                           to={item.path}
                           onClick={handleLinkClick}
-                          ref={currentPath === item.path ? activeEndpointRef : null}
+                          ref={
+                            currentPath === item.path ? activeEndpointRef : null
+                          }
                           className={`group mt-2 lg:mt-0 flex items-center pr-3 py-1.5 cursor-pointer focus:outline-primary dark:focus:outline-primary-light space-x-3 rounded-xl ${
                             currentPath === item.path
                               ? "bg-primary/10 text-primary font-semibold dark:text-primary-light dark:bg-primary-light/10"
@@ -167,10 +168,10 @@ export default function Sidebar() {
                                       endpoint.method === "GET"
                                         ? "bg-green-400/20 text-green-700 dark:bg-green-400/20 dark:text-green-400"
                                         : endpoint.method === "POST"
-                                        ? "bg-blue-400/20 text-blue-700 dark:bg-blue-400/20 dark:text-blue-400"
-                                        : endpoint.method === "PUT"
-                                        ? "bg-yellow-400/20 text-yellow-700 dark:bg-yellow-400/20 dark:text-yellow-400"
-                                        : "bg-red-400/20 text-red-700 dark:bg-red-400/20 dark:text-red-400"
+                                          ? "bg-blue-400/20 text-blue-700 dark:bg-blue-400/20 dark:text-blue-400"
+                                          : endpoint.method === "PUT"
+                                            ? "bg-yellow-400/20 text-yellow-700 dark:bg-yellow-400/20 dark:text-yellow-400"
+                                            : "bg-red-400/20 text-red-700 dark:bg-red-400/20 dark:text-red-400"
                                     }`}
                                   >
                                     {endpoint.method}
