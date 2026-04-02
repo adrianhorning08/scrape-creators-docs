@@ -4,8 +4,7 @@ on:
   push:
     branches: [master]
     paths:
-      - "api-config/apis.js"
-      - "api-config/withIcons.js"
+      - "api-config/**"
 
 jobs:
   sync:
@@ -26,8 +25,7 @@ jobs:
         run: |
           git clone https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/adrianhorning08/${{ matrix.repo }}.git repo
           mkdir -p repo/${{ matrix.dest }}
-          cp api-config/apis.js repo/${{ matrix.dest }}/apis.js
-          cp api-config/withIcons.js repo/${{ matrix.dest }}/withIcons.js
+          cp api-config/*.js repo/${{ matrix.dest }}/
           cd repo
           if git diff --quiet; then
             echo "no changes in ${{ matrix.repo }}"
