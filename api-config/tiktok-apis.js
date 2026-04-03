@@ -5818,7 +5818,7 @@ export const tiktokBaseApis = {
       method: "GET",
       description: "Scrapes replies to a TikTok comment",
       fullDescription: "Fetches replies to a specific TikTok comment by its ID. Returns `comments`, an array of comment objects each with `text`, `user` info, and `create_time`. Paginate with `cursor` from the previous response.",
-      path: "/v1/tiktok/comment/replies",
+      path: "/v1/tiktok/video/comment/replies",
       paginationField: "cursor",
       params: [
         {
