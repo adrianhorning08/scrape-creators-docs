@@ -937,6 +937,7 @@ export const apis = [
                 channelUrl: "https://youtube.com/@SimonT80",
               },
               engagement: { likes: 110, replies: 5 },
+              repliesContinuationToken: "Eg0SC2RRdzR3OVdnWGNRGAYy1AEK..."
             },
           ],
           continuationToken: "Eg0SCzVFV2F4bVd....",
@@ -964,6 +965,48 @@ export const apis = [
             description: "Order of comments",
             options: ["top", "newest"],
             placeholder: "top",
+          },
+        ],
+      },
+      {
+        name: "Comment Replies",
+        method: "GET",
+        description:
+          "Get replies to a specific comment on a YouTube video.",
+        fullDescription:
+          "Fetches replies to a specific comment on a YouTube video, including each reply's text content, author details (name, channel ID, avatar, verified/creator status), like count, and publish date. Requires a continuationToken obtained from the 'repliesContinuationToken' field on comments returned by the Comments endpoint. Supports paginating through additional replies with the continuationToken returned in each response.",
+        path: "/v1/youtube/video/comment/replies",
+        paginationField: "continuationToken",
+        sampleResponse: {
+          comments: [
+            {
+              id: "UgyfayX-QqgkPGkcKbt4AaABAg.AV5O1akOhw9AV5RdnpN-SY",
+              content: "Me",
+              publishedTimeText: "20 hours ago",
+              publishedTime: "2026-04-03T05:52:36.883Z",
+              replyLevel: 1,
+              author: {
+                name: "@pepisakkout2522",
+                channelId: "UCjEBcO_VQ32GUzUZGwlxy1w",
+                isVerified: false,
+                isCreator: false,
+                avatarUrl:
+                  "https://yt3.ggpht.com/ytc/AIdro_lYQDmh7-5JOb_QcEsPJIp4vmKm5a0uyzAXT-JC0rY=s88-c-k-c0x00ffffff-no-rj",
+                channelUrl: "https://youtube.com/@pepisakkout2522",
+              },
+              engagement: { likes: 2, replies: 0 },
+            },
+          ],
+          continuationToken: "Eg0SC2RRdzR3OVdnWGNRGAYy1AEK...",
+        },
+        params: [
+          {
+            name: "continuationToken",
+            type: "string",
+            required: true,
+            description:
+              "Continuation token for the comment replies. Use 'repliesContinuationToken' from the Comments endpoint, or 'continuationToken' from a previous replies response to paginate.",
+            placeholder: "Eg0SC2RRdzR3OVdnWGNRGAYygwEaUBIa...",
           },
         ],
       },
