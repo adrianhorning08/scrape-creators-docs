@@ -910,7 +910,7 @@ export const tiktokShopApis = {
       name: "User Showcase",
       method: "GET",
       description: "Gets public user's showcase products",
-      fullDescription: "Fetches products featured in a TikTok user's public showcase — the products a creator promotes on their profile. Returns an array of product objects each with title, price, images, and shop details.",
+      fullDescription: "Fetches products featured in a TikTok user's public showcase — the products a creator promotes on their profile. Returns an array of product objects each with title, price, images, and shop details. Use POST request if pagination is cutting off too early. Just send the query params in the body.",
       path: "/v1/tiktok/user/showcase",
       params: [
         {
