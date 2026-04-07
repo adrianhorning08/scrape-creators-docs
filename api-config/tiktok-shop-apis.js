@@ -379,14 +379,6 @@ export const tiktokShopApis = {
             "https://www.tiktok.com/shop/pdp/goli-ashwagandha-gummies-with-vitamin-d-ksm-66-vegan-non-gmo/1729587769570529799",
         },
         {
-          name: "get_related_videos",
-          required: false,
-          type: "string",
-          description:
-            "Whether to get related videos for the product. These are affiliate videos promoting the product.",
-          placeholder: "false",
-        },
-        {
           name: "region",
           required: false,
           type: "string",
