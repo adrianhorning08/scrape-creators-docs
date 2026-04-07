@@ -367,7 +367,7 @@ export const tiktokShopApis = {
       method: "GET",
       description:
         "Get the details of a TikTok Shop Product! Get the exact amount of stock the product has, related tiktok videos promoting the product, and more!",
-      fullDescription: "Fetches full details for a specific TikTok Shop product by its URL, including stock levels and affiliate videos. Returns `product_info` with `product_base` (title, images, sold_count, price), `skus` (variants with exact `stock` counts), and `product_detail_review` (product_rating, review_count, sample reviews); also returns `shop_info` (shop_name, shop_rating, followers_count) and `related_videos` (affiliate TikToks promoting the product).",
+      fullDescription: "Fetches full details for a specific TikTok Shop product by its URL, including stock levels and affiliate videos. Returns `product_info` with `product_base` (title, images, sold_count, price), `skus` (variants with exact `stock` counts), and `product_detail_review` (product_rating, review_count, sample reviews); also returns `shop_info` (shop_name, shop_rating, followers_count) and `related_videos` (affiliate TikToks promoting the product). Related videos are only available in the US region.",
       path: "/v1/tiktok/product",
       params: [
         {
