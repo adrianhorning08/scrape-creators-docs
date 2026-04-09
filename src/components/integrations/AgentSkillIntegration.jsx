@@ -46,8 +46,8 @@ const compatibleAgents = [
 ];
 
 export default function AgentSkillIntegration() {
-  const installCmd = "npx skills add adrianhorning08/scrape-creators-agent-skills";
-  const repoUrl = "https://github.com/adrianhorning08/scrape-creators-agent-skills";
+  const installCmd = "npx skills add scrapecreators/agent-skills";
+  const repoUrl = "https://github.com/scrapecreators/agent-skills";
 
   return (
     <div className="pb-24">
