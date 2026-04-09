@@ -829,6 +829,13 @@ export const apis = [
             placeholder: "all",
           },
           {
+            name: "region",
+            type: "string",
+            required: false,
+            description: "2 letter country code of the country to put the proxy in.",
+            placeholder: "US",
+          },
+          {
             name: "continuationToken",
             type: "string",
             required: false,
