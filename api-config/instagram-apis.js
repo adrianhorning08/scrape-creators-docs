@@ -1978,6 +1978,13 @@ export const instagramBaseApis =   {
           description: "Set to true to get a trimmed response",
           placeholder: false,
         },
+        {
+          name: "download_media",
+          type: "boolean",
+          required: false,
+          description: "Set to true to download the video/images and get back permanent Supabase URLs. Costs 10 credits if media is found, 1 credit otherwise.",
+          placeholder: false,
+        },
       ],
     },
     {
