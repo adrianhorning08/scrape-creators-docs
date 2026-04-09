@@ -6,7 +6,7 @@ export function generatePageMarkdown(endpoint, api) {
   md += `> Full API reference: https://docs.scrapecreators.com/llms.txt\n\n`;
 
   md += `# ${api.name} - ${endpoint.name}\n\n`;
-  md += `${endpoint.description}\n\n`;
+  md += `${endpoint.fullDescription || endpoint.description}\n\n`;
 
   md += `**Base URL:** \`https://api.scrapecreators.com\`\n\n`;
   md += `**Endpoint:** \`${endpoint.method} ${endpoint.path}\`\n\n`;
@@ -58,7 +58,7 @@ export function buildOpenAPISpec(endpoint, api) {
   lines.push("      tags:");
   lines.push(`        - ${y(api.name)}`);
   lines.push(`      summary: ${y(endpoint.name)}`);
-  lines.push(`      description: ${y(endpoint.description)}`);
+  lines.push(`      description: ${y(endpoint.fullDescription || endpoint.description)}`);
 
   if (endpoint.params?.length > 0) {
     lines.push("      parameters:");

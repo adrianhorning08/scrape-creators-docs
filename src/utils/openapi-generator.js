@@ -39,7 +39,7 @@ export function buildFullOpenAPIJSON(apis) {
       description:
         "The easiest way to scrape public social media data at scale. " +
         "Extract profiles, posts, videos, comments, and more from TikTok, " +
-        "Instagram, YouTube, Twitter, LinkedIn, Facebook, Reddit, and 15+ platforms.",
+        "Instagram, YouTube, Twitter, LinkedIn, Facebook, Reddit, and 27+ platforms.",
       version: "1.0.0",
       contact: {
         name: "Scrape Creators",
@@ -71,7 +71,7 @@ export function buildFullOpenAPIJSON(apis) {
       const operation = {
         tags: [api.name],
         summary: ep.name,
-        description: ep.description,
+        description: ep.fullDescription || ep.description,
       };
 
       if (ep.params?.length) {
@@ -170,7 +170,7 @@ export function buildFullOpenAPIYaml(apis) {
     "    Extract profiles, posts, videos, comments, and more from TikTok,"
   );
   lines.push(
-    "    Instagram, YouTube, Twitter, LinkedIn, Facebook, Reddit, and 15+ platforms."
+    "    Instagram, YouTube, Twitter, LinkedIn, Facebook, Reddit, and 27+ platforms."
   );
   lines.push("  version: 1.0.0");
   lines.push("  contact:");
@@ -198,7 +198,7 @@ export function buildFullOpenAPIYaml(apis) {
       lines.push("      tags:");
       lines.push(`        - ${yamlStr(api.name)}`);
       lines.push(`      summary: ${yamlStr(ep.name)}`);
-      lines.push(`      description: ${yamlStr(ep.description)}`);
+      lines.push(`      description: ${yamlStr(ep.fullDescription || ep.description)}`);
 
       if (ep.params?.length) {
         lines.push("      parameters:");
