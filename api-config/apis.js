@@ -11514,6 +11514,13 @@ export const apis = [
               "2 letter country code, ie US, UK, CA, etc This will show results from that country",
             placeholder: "US",
           },
+          {
+            name: "page",
+            type: "number",
+            required: false,
+            description: "Page number to retrieve",
+            placeholder: "1",
+          }
         ],
         sampleResponse: {
           success: true,
