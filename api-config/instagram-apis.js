@@ -1,4 +1,4 @@
-export const instagramBaseApis =   {
+export const instagramBaseApis = {
   id: "instagram",
   name: "Instagram",
   description: "Gets Instagram profiles, posts, and reels",
@@ -2737,6 +2737,14 @@ export const instagramBaseApis =   {
           required: true,
           description: "The keyword to search for",
           placeholder: "dogs",
+        },
+        {
+          name: "date_posted",
+          type: "select",
+          required: false,
+          description: "Date posted",
+          options: ["last-hour", "last-day", "last-week", "last-month", "last-year"],
+          placeholder: "last-hour",
         },
         {
           name: "page",
