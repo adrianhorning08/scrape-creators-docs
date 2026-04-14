@@ -334,7 +334,7 @@ export const apis = [
         name: "Video/Short Details",
         method: "GET",
         description:
-          "Get complete information about a video or short including the transcript! There is a 'transcript' field and a 'transcript_only_text' field.",
+          "Get complete information about a video or short.",
         fullDescription:
           "Fetches full details for a YouTube video or short, including title, description, thumbnail, view count (views), like count (likes), comment count, publish date, duration, genre, keywords, chapters, collaborators, and available caption tracks (subtitles/captions). Also returns related recommended videos in watchNextVideos and channel info for the uploader.",
         path: "/v1/youtube/video",
