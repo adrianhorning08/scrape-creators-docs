@@ -439,6 +439,13 @@ export const apis = [
             description: "YouTube video or short URL",
             placeholder: "https://www.youtube.com/watch?v=Y2Ah_DFr8cw",
           },
+          {
+            name: "language",
+            type: "string",
+            required: false,
+            description: "Preferred response language (mapped to Accept-Language header; not guaranteed due to YouTube localization behavior). 2 letter language code, ie 'en', 'es', 'fr' etc.",
+            placeholder: "en",
+          }
         ],
       },
       {
