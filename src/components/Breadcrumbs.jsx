@@ -18,6 +18,7 @@ const Breadcrumbs = () => {
     "/integrations/n8n": "n8n",
     "/integrations/apify": "Apify",
     "/integrations/agent-skill": "Agent Skill",
+    "/integrations/cli": "CLI",
   };
 
   let pageName = "API Documentation";

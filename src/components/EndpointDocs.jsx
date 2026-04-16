@@ -13,6 +13,7 @@ import McpIntegration from "./integrations/McpIntegration";
 import N8nIntegration from "./integrations/N8nIntegration";
 import ApifyIntegration from "./integrations/ApifyIntegration";
 import AgentSkillIntegration from "./integrations/AgentSkillIntegration";
+import CliIntegration from "./integrations/CliIntegration";
 import { Helmet } from "react-helmet-async";
 import { Check, Sparkles, Coins } from "lucide-react";
 import { generateAIPrompt } from "../utils/promptGenerator";
@@ -96,6 +97,7 @@ export default function EndpointDocs({
     "/integrations/n8n": N8nIntegration,
     "/integrations/apify": ApifyIntegration,
     "/integrations/agent-skill": AgentSkillIntegration,
+    "/integrations/cli": CliIntegration,
   };
 
   if (integrationPages[path]) {

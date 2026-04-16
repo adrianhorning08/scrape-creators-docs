@@ -260,6 +260,7 @@ export default function Navbar() {
                   { name: "Overview", path: "/integrations/overview" },
                   { name: "MCP", path: "/integrations/mcp" },
                   { name: "Agent Skill", path: "/integrations/agent-skill" },
+                  { name: "CLI", path: "/integrations/cli" },
                   { name: "n8n", path: "/integrations/n8n" },
                   { name: "Apify", path: "/integrations/apify" },
                 ].map((item) => (

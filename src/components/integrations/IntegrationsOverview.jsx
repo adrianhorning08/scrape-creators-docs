@@ -27,6 +27,18 @@ const integrations = [
     ),
   },
   {
+    name: "CLI",
+    description:
+      "Scrape 27+ social media platforms from the terminal. 110+ endpoints, one command.",
+    path: "/integrations/cli",
+    npm: "https://www.npmjs.com/package/@scrapecreators/cli",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+      </svg>
+    ),
+  },
+  {
     name: "n8n",
     description:
       "Open-source workflow automation tool with Scrape Creators community node.",
@@ -99,6 +111,20 @@ export default function IntegrationsOverview() {
             <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
               {integration.description}
             </p>
+            {integration.npm && (
+              <a
+                href={integration.npm}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light transition-colors mt-1"
+              >
+                <svg className="w-3.5 h-3.5" viewBox="0 0 576 512" fill="currentColor">
+                  <path d="M288 288h-32v-64h32v64zm288-128v192H288v32H160v-32H0V160h576zm-416 32H32v128h64v-96h32v96h32V192zm160 0H192v160h64v-32h64V192zm224 0H352v128h64v-96h32v96h32v-96h32v96h32V192z" />
+                </svg>
+                npm
+              </a>
+            )}
           </Link>
         ))}
       </div>
