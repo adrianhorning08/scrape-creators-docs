@@ -827,13 +827,20 @@ export const apis = [
             placeholder: "relevance",
           },
           {
-            name: "filter",
+            name: "type",
             type: "select",
             required: false,
-            description:
-              "Filter by these options. Note this doesn't work when you use either 'uploadDate' or 'sortBy'. It basically only works when you have a query.",
-            options: ["shorts"],
-            placeholder: "all",
+            description: "Type of content to search for",
+            options: ["videos", "shorts", "channels", "playlists"],
+            placeholder: "videos",
+          },
+          {
+            name: "duration",
+            type: "select",
+            required: false,
+            description: "Duration of the video. Only applies to videos (not shorts).",
+            options: ["under_3_min", "between_3_and_20_min", "over_20_min"],
+            placeholder: "under_3_min",
           },
           {
             name: "region",
