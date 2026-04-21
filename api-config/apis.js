@@ -2942,21 +2942,6 @@ export const apis = [
             description: "The URL of the post to get",
             placeholder: "https://www.facebook.com/reel/1535656380759655",
           },
-          {
-            name: "get_comments",
-            type: "boolean",
-            required: false,
-            description:
-              "Whether you want to get the first several comments of the post",
-            placeholder: "false",
-          },
-          {
-            name: "get_transcript",
-            type: "boolean",
-            required: false,
-            description: "Whether you want to get the transcript of the post",
-            placeholder: "false",
-          },
         ],
         sampleResponse: {
           success: true,
