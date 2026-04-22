@@ -760,6 +760,13 @@ export const tiktokShopApis = {
           placeholder: "1731578642912612516",
         },
         {
+          name: "region",
+          description: "The region of the product. This is *very* important.",
+          type: "string",
+          required: false,
+          placeholder: "US",
+        },
+        {
           name: "page",
           description: "The page number of the reviews",
           type: "number",
