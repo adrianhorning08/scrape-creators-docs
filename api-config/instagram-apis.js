@@ -3352,7 +3352,7 @@ export const instagramBaseApis = {
     {
       name: "Comments",
       method: "GET",
-      description: "Get comments from an Instagram post or reel",
+      description: "Get comments from an Instagram post or reel. Not gonna lie, this is one of our most error prone endpoints. You should expect ~90% success rate.",
       fullDescription:
         "Retrieves comments on a public Instagram post or reel. Each comment includes the comment text, creation timestamp, and commenter details such as username, user ID, verification status, and profile picture URL. Supports cursor-based pagination to load additional comment pages.",
       path: "/v2/instagram/post/comments",
