@@ -15343,7 +15343,7 @@ export const tiktokBaseApis = {
       name: "Get popular songs",
       method: "GET",
       description:
-        "This endpoint can take up to 30 seconds. Get popular songs from TikTok. If you want to check out the page this is actually scraping, check out: https://ads.tiktok.com/business/creativecenter/inspiration/popular/music/pc/en",
+        "This endpoint doesn't work right now :( Looks like its down even on TikToks website :( https://ads.tiktok.com/business/creativecenter/inspiration/popular/music/pc/en. Sadly we have to wait for it to be back up since that's what we were scraping. Get popular songs from TikTok. If you want to check out the page this is actually scraping, check out: https://ads.tiktok.com/business/creativecenter/inspiration/popular/music/pc/en",
       fullDescription: "Gets the current trending and popular songs/sounds on TikTok, sourced from the TikTok Creative Center. Returns `sound_list`, an array of song objects each with `title`, `author`, `clip_id`, `rank`, `cover` image URL, `duration`, `link` to the sound page, and a `trend` array showing popularity over time. Filter by country, time period (7/30/120 days), rank type (popular vs surging), and commercial music approval.",
       path: "/v1/tiktok/songs/popular",
       youtubeId: "YMOQjj9seaY",
@@ -15747,7 +15747,7 @@ export const tiktokBaseApis = {
       name: "Get popular videos",
       method: "GET",
       description:
-        "Get popular videos from TikTok. Filter by time period, country, and sort by likes, views (hot), comments, or reposts.",
+        "This endpoint doesn't work right now :( Looks like its down even on TikToks website :( https://ads.tiktok.com/business/creativecenter/inspiration/popular/pc/en. Sadly we have to wait for it to be back up since that's what we were scraping. Get popular videos from TikTok. Filter by time period, country, and sort by likes, views (hot), comments, or reposts.",
       fullDescription: "Discovers trending and popular TikTok videos, filterable by time period (7 or 30 days) and country. Returns a list of video objects each with `title`, `item_url` (link to the TikTok), `cover`, `region`, and engagement stats. Sortable by likes, views (hot), comments, or reposts.",
       path: "/v1/tiktok/videos/popular",
       params: [
